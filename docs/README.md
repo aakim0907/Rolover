@@ -36,15 +36,15 @@ sufficient CSS styling:
 
 ### Phase 1: Backend setup and Front End User Authentication (1 day)
 
-**Objective:** Functioning rails project with front-end Authentication, , forms for signing up, log in and guest login.
+**Objective:** Functioning rails project with front-end Authentication, forms for signing up, log in and guest login.
 
 ### Phase 2: Trainers Model, API, and Components (2 days)
 
 **Objective:** Trainers can be viewed in index & show page.
 
-### Phase 3: Search (2 days)
+### Phase 3: Search & Home page(2 days)
 
-**Objective:** Trainers can be searched and filtered by location and types of training. Set up home page.
+**Objective:** Trainers can be searched and filtered by location and types of training. Have search feature and index contents rendered on home page.
 
 ### Phase 4: Bookings (1 day)
 

@@ -3,7 +3,7 @@
   session: {
     currentUser: {
       id: 1,
-      name: "Young Eun Kim",
+      name: "Carrie Underwood",
       bookings: [
         {
           trainer_id: 1,

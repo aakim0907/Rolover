@@ -23,8 +23,7 @@
 **UserProfileContainer**
 * BookingListContainer
 
-**NavBarContainer**
-
+**NavBar**
 **Footer**
 
 ## Routes
