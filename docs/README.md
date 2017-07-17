@@ -6,15 +6,15 @@
 
 ## Minimum Viable Product
 
-Rolover is a web application inspired by Rover built using Ruby on Rails
-and React/Redux. By the end of Week 9, this app will, at a minimum, satisfy the
+Rolover is a web application inspired by Rover built using Ruby on Rails for backend
+and React/Redux for frontend. By the end of Week 9, this app will, at a minimum, satisfy the
 following criteria with smooth, bug-free navigation, adequate seed data and
 sufficient CSS styling:
 
 - [ ] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
-- [ ] Search
-- [ ] Profile Page
+- [ ] Search Trainers
+- [ ] Trainer Profile Page
 - [ ] Bookings
 - [ ] Reviews
 - [ ] Production README
@@ -34,32 +34,32 @@ sufficient CSS styling:
 
 ## Implementation Timeline
 
-### Phase 1: Backend setup and Front End User Authentication (2 days)
+### Phase 1: Backend setup and Front End User Authentication (1 day)
 
-**Objective:** Functioning rails project with front-end Authentication
+**Objective:** Functioning rails project with front-end Authentication, , forms for signing up, log in and guest login.
 
-### Phase 2: Notes Model, API, and components (2 days)
+### Phase 2: Trainers Model, API, and Components (2 days)
 
-**Objective:** Notes can be created, read, edited and destroyed through
-the API.
+**Objective:** Trainers can be viewed in index & show page.
 
-### Phase 3: Notebooks (2 days)
+### Phase 3: Search (2 days)
 
-**Objective:** Notes belong to Notebooks that can be created, read, edited and destroyed through the API.
+**Objective:** Trainers can be searched and filtered by location and types of training. Set up home page.
 
-### Phase 4: Tags (1 day)
+### Phase 4: Bookings (1 day)
 
-**Objective:** Notes can be tagged with multiple tags, and tags are searchable.
+**Objective:** Logged in users can request booking to a trainer.
 
-### Phase 5: Allow Complex Styling in Notes (1 day, W2 Th 6pm)
+### Phase 5: Reviews (1 day)
 
-**Objective:** Allow rich text editing of notes.
+**Objective:** Users can add a review which is listed on the trainers show page. Total reviews and an average ratings is displayed for every trainers.
 
-### Phase 6: - Pagination / infinite scroll for Notes Index (1 day, W2 F 6pm)
+### Phase 6: User Profile Page (1 day)
 
-**Objective:** Add infinite scroll to Notes Index
+**Objective:** Users have their own profile page which contains a list of user's booking history. Users can delete booking requests.
 
 ### Bonus Features (TBD)
+- [ ] Google Map API
+- [ ] Save Dog Information
+- [ ] Search filters
 - [ ] User/Dog-sitter profiles
-- [ ] Follows
-- [ ] Messaging

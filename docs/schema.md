@@ -1,0 +1,39 @@
+## users
+column name       | data type | details
+------------------|-----------|-----------------------
+id                | integer   | not null, primary key
+name              | string    | not null
+email             | string    | not null, unique
+password_digest   | string    | not null, unique
+session_token     | string    | not null, unique
+
+## trainers
+column name        | data type | details
+-------------------|-----------|-----------------------
+id                 | integer   | not null, primary key
+name               | string    | not null
+profile_image_url  | string    | not null
+profile            | text      | not null
+price              | integer   | not null
+zip                | integer   | not null
+city               | string    | not null
+state              | string    | not null
+
+## bookings
+column name | data type | details
+------------|-----------|-----------------------------------------------------------
+id          | integer   | not null, primary key
+user_id     | integer   | not null, foreign key (references users), indexed
+trainer_id  | integer   | not null, foreign key (references trainers), indexed
+start_date  | date      | not null
+end_date    | date      | not null
+status      | string    | not null, default = "PENDING" ([PENDING, APPROVED, DENIED])
+
+## reviews
+column name | data type | details
+------------|-----------|-----------------------------------------------------
+id          | integer   | not null, primary key
+user_id     | integer   | not null, foreign key (references users), indexed
+trainer_id  | integer   | not null, foreign key (references trainers), indexed
+rating      | integer   | not null
+body        | text      | not null
