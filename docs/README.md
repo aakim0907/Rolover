@@ -55,7 +55,6 @@ sufficient CSS styling:
 **Objective:** Users can add a review which is listed on the trainers show page. Total reviews and an average ratings is displayed for every trainers.
 
 ### Bonus Features (TBD)
-- [ ] Google Map API
 - [ ] Save Dog Information
-- [ ] Search filters
+- [ ] Google Map API
 - [ ] User/Dog-sitter profiles
