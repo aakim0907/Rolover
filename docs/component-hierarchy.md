@@ -1,7 +1,7 @@
 ## Component Hierarchy
 
-**AuthFormContainer**
-* AuthForm
+**SessionFormContainer**
+* SessionForm
 
 **NavBar**
 * GreetingsContainer
@@ -32,8 +32,8 @@
 
 | Route Type | Path  | Component   |
 |------------|-------|-------------|
-| AuthRoute | "/sign-up" | "AuthFormContainer" |
-| AuthRoute | "/sign-in" | "AuthFormContainer" |
+| AuthRoute | "/sign-up" | "SessionFormContainer" |
+| AuthRoute | "/sign-in" | "SessionFormContainer" |
 | Route(exact path) | "/" | "HomeContainer" |
 | Route | "/search-results" | "TrainerListContainer" |
 | Route | "/trainers/:id" | "TrainerDetailContainer" |

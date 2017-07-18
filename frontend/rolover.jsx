@@ -14,7 +14,7 @@ document.addEventListener('DOMContentLoaded', () => {
   ReactDOM.render(<Root store={ store }/>, root);
 
   // start of testing
-  window.getState = store.getState();
+  window.getState = store.getState;
   window.dispatch = store.dispatch;
   window.login = login;
   window.signup = signup;
