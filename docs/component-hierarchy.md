@@ -3,19 +3,19 @@
 **AuthFormContainer**
 * AuthForm
 
+**NavBar**
+* GreetingsContainer
+
 **HomeContainer**
-* NavBar
 * SearchContainer
 * HomeIndex
 
 **TrainerListContainer**
-* NavBar
 * SearchContainer
 * TrainerList
   * TrainerListItem
 
 **TrainerDetailContainer**
-* NavBar
 * TrainerDetail
 * ReviewContainer
   * ReviewList
@@ -24,7 +24,6 @@
     * ReviewForm
 
 **BookingFormContainer**
-* NavBar
 * BookingForm
 
 **Footer**
