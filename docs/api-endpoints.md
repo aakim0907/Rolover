@@ -6,16 +6,20 @@
   * Loads React web app
 
 ## JSON API
+### Session
+* `POST /api/session`
+* Log In
+
+* `DELETE /api/session`
+* Log Out
+
 ### Users
 * `POST /api/users`
   * Sign Up
 
-### Session
-* `POST /api/session`
-  * Log In
-
-* `DELETE /api/session`
-  * Log Out
+### Dogs
+* `GET /api/users/:id/dogs`
+  * Fetch current user's dogs
 
 ### Trainers
 * `GET /api/trainers/?query_params`

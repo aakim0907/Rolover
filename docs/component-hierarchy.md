@@ -10,6 +10,7 @@
 
 **TrainerListContainer**
 * NavBar
+* SearchContainer
 * TrainerList
   * TrainerListItem
 
