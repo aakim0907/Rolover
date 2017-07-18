@@ -9780,6 +9780,7 @@ document.addEventListener('DOMContentLoaded', function () {
   } else {
     store = (0, _store2.default)();
   }
+
   var root = document.getElementById('root');
   _reactDom2.default.render(_react2.default.createElement(_root2.default, { store: store }), root);
 });
@@ -42135,6 +42136,11 @@ var App = function App() {
       _react2.default.createElement(_nav_bar2.default, null)
     ),
     _react2.default.createElement(
+      'div',
+      null,
+      _react2.default.createElement(_session_form_container2.default, null)
+    ),
+    _react2.default.createElement(
       'switch',
       null,
       _react2.default.createElement(_route_util.AuthRoute, { path: '/login', component: _session_form_container2.default }),
@@ -45315,9 +45321,7 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(
 "use strict";
 
 
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(82);
 
@@ -45325,99 +45329,130 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(244);
 
+var _reactRedux = __webpack_require__(220);
+
+var _SessionFormContainer = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../session_form/SessionFormContainer\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+var _SessionFormContainer2 = _interopRequireDefault(_SessionFormContainer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 // START CLONEBNB
-// import { connect } from 'react-redux';
+
 
 // import { showModal } from '../../actions/modal_actions';
-// import SessionFormContainer from '../session_form/SessionFormContainer';
+
+
 // import LogInFormContainer from '../session_form/LogInFormContainer';
 // import SignUpFormContainer from '../session_form/SignUpFormContainer';
 // END CLONEBNB
 
-var sessionLinks = function sessionLinks() {
-  return _react2.default.createElement(
-    'nav',
-    { className: 'login-signup' },
-    _react2.default.createElement(
-      _reactRouterDom.Link,
-      { to: '/login' },
-      'Log In'
-    ),
-    _react2.default.createElement(
-      _reactRouterDom.Link,
-      { to: '/signup' },
-      'Sign Up'
-    )
-  );
-};
-
-var personalGreeting = function personalGreeting(currentUser, logout) {
-  return _react2.default.createElement(
-    'nav',
-    { className: 'greeting-longout' },
-    _react2.default.createElement(
-      'h2',
-      { className: 'header-name' },
-      currentUser.email
-    ),
-    _react2.default.createElement(
-      'button',
-      { className: 'header-button', onClick: logout },
-      'Log Out'
-    )
-  );
-};
-
-var Greeting = function Greeting(_ref) {
-  var currentUser = _ref.currentUser,
-      logout = _ref.logout;
-  return currentUser ? personalGreeting(currentUser, logout) : sessionLinks();
-};
-
-exports.default = Greeting;
+// START BENCHBNB
+// const sessionLinks = () => (
+//   <nav className="login-signup">
+//     <Link to="/login">Log In</Link>
+//     <Link to="/signup">Sign Up</Link>
+//   </nav>
+// );
+//
+// const personalGreeting = (currentUser, logout) => (
+// 	<nav className="greeting-longout">
+//     <span className="header-name">{currentUser.email}</span>
+//     <button className="header-button" onClick={logout}>Log Out</button>
+// 	</nav>
+// );
+//
+// const Greeting = ({ currentUser, logout }) => (
+//   currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
+// );
+//
+// export default Greeting;
+// END BENCHBNB
 
 // START CLONEBNB
-// class Greeting extends React.Component {
-//   constructor(props) {
-//     super(props);
-//
-//     this.handleDemoClick = this.handleDemoClick.bind(this);
-//   }
-//
-//   handleDemoClick(e) {
-//     e.preventDefault();
-//     this.props.login({ user: {email: "bob@gmail", password: "123456"} });
-//   }
-//
-//   render() {
-//     const { currentUser, logout } = this.props;
-//
-//     const sessionLinks = () => (
-//       <div className="login-signup">
-//         <button className="demo" onClick={this.handleDemoClick}>Demo Account</button>
-//         <button onClick={this.props.showSignUp}>Sign Up</button>
-//         <button onClick={this.props.showLogIn}>Log In</button>
-//       </div>
-//     );
-//
-//     const personalGreeting = (currentUser, logout) => (
-//     	<div className="login-signup">
-//         <Link to={"/trips"}>Trips</Link>
-//         <button className="header-button" onClick={logout}>Log Out</button>
-//         <div>
-//           <img src={currentUser.avatar_url} alt="User Avatar" />
-//         </div>
-//
-//     	</div>
-//     );
-//
-//     return (
-//       currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
-//     );
-//   }
-// }
+var Greeting = function (_React$Component) {
+  _inherits(Greeting, _React$Component);
+
+  function Greeting(props) {
+    _classCallCheck(this, Greeting);
+
+    var _this = _possibleConstructorReturn(this, (Greeting.__proto__ || Object.getPrototypeOf(Greeting)).call(this, props));
+
+    _this.handleDemoClick = _this.handleDemoClick.bind(_this);
+    return _this;
+  }
+
+  _createClass(Greeting, [{
+    key: 'handleDemoClick',
+    value: function handleDemoClick(e) {
+      e.preventDefault();
+      this.props.login({ user: { email: "bob@gmail", password: "123456" } });
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      var _props = this.props,
+          currentUser = _props.currentUser,
+          logout = _props.logout;
+
+
+      var sessionLinks = function sessionLinks() {
+        return _react2.default.createElement(
+          'div',
+          { className: 'login-signup' },
+          _react2.default.createElement(
+            'button',
+            { className: 'demo', onClick: _this2.handleDemoClick },
+            'Demo Account'
+          ),
+          _react2.default.createElement(
+            'button',
+            { onClick: _this2.props.showSignUp },
+            'Sign Up'
+          ),
+          _react2.default.createElement(
+            'button',
+            { onClick: _this2.props.showLogIn },
+            'Log In'
+          )
+        );
+      };
+
+      var personalGreeting = function personalGreeting(currentUser, logout) {
+        return _react2.default.createElement(
+          'div',
+          { className: 'login-signup' },
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: "/trips" },
+            'Trips'
+          ),
+          _react2.default.createElement(
+            'button',
+            { className: 'header-button', onClick: logout },
+            'Log Out'
+          ),
+          _react2.default.createElement(
+            'div',
+            null,
+            _react2.default.createElement('img', { src: currentUser.email, alt: 'User Avatar' })
+          )
+        );
+      };
+
+      return currentUser ? personalGreeting(currentUser, logout) : sessionLinks();
+    }
+  }]);
+
+  return Greeting;
+}(_react2.default.Component);
 
 // const mapDispatchToProps = (dispatch) => ({
 //   showSignUp: () => dispatch(showModal(<SignUpFormContainer formType={'signup'}/>)),
@@ -45535,23 +45570,6 @@ var SessionForm = function (_React$Component) {
       e.preventDefault();
       var user = this.state;
       this.props.processForm(user);
-    }
-  }, {
-    key: 'navLink',
-    value: function navLink() {
-      if (this.props.formType === 'login') {
-        return _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/signup' },
-          'sign up instead'
-        );
-      } else {
-        return _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/login' },
-          'log in instead'
-        );
-      }
     }
   }, {
     key: 'renderErrors',
@@ -45701,7 +45719,7 @@ var NavBar = function NavBar(props) {
         _react2.default.createElement(
           _reactRouterDom.Link,
           { to: "/" },
-          _react2.default.createElement('img', { src: '', alt: 'Rolover Logo' })
+          _react2.default.createElement('img', { src: window.images.logo, alt: 'Rolover Logo', width: '35px' })
         )
       )
     ),

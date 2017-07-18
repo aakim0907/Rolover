@@ -6,7 +6,7 @@ const NavBar = (props) => (
     <section className="nav-bar">
       <div className="left-nav">
         <div className="logo">
-          <Link to={"/"} ><img src="" alt="Rolover Logo" /></Link>
+          <Link to={"/"} ><img src={ window.images.logo } alt="Rolover Logo" width="35px"/></Link>
         </div>
       </div>
 
