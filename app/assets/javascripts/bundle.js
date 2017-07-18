@@ -9757,7 +9757,11 @@ var _reactDom = __webpack_require__(98);
 
 var _reactDom2 = _interopRequireDefault(_reactDom);
 
+var _session_api_util = __webpack_require__(184);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// end of testing
 
 document.addEventListener('DOMContentLoaded', function () {
   var root = document.getElementById('root');
@@ -9766,7 +9770,15 @@ document.addEventListener('DOMContentLoaded', function () {
     null,
     'Welcome to Rolover'
   ), root);
+
+  // testing
+  window.login = _session_api_util.login;
+  window.signup = _session_api_util.signup;
+  window.logout = _session_api_util.logout;
+  // end of testing
 });
+
+// testing
 
 /***/ }),
 /* 82 */
@@ -22403,6 +22415,39 @@ var ReactDOMInvalidARIAHook = {
 
 module.exports = ReactDOMInvalidARIAHook;
 /* WEBPACK VAR INJECTION */}.call(exports, __webpack_require__(0)))
+
+/***/ }),
+/* 184 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var signup = exports.signup = function signup(user) {
+  return $.ajax({
+    method: 'POST',
+    url: '/api/user',
+    data: user
+  });
+};
+
+var login = exports.login = function login(user) {
+  return $.ajax({
+    method: 'POST',
+    url: '/api/session',
+    data: user
+  });
+};
+
+var logout = exports.logout = function logout() {
+  return $.ajax({
+    method: 'DELETE',
+    url: '/api/session'
+  });
+};
 
 /***/ })
 /******/ ]);
