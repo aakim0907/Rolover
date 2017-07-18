@@ -12,8 +12,11 @@ column name        | data type | details
 -------------------|-----------|-----------------------
 id                 | integer   | not null, primary key
 name               | string    | not null
-profile_image_url  | string    | not null
-profile            | text      | not null
+training_type      | string    | not null
+profile_quote      | text      | not null
+description        | text      | not null
+profile_image_url  | string    |
+image_urls         | array     |
 price              | integer   | not null
 zip                | integer   | not null
 city               | string    | not null
@@ -35,5 +38,5 @@ column name | data type | details
 id          | integer   | not null, primary key
 user_id     | integer   | not null, foreign key (references users), indexed
 trainer_id  | integer   | not null, foreign key (references trainers), indexed
-rating      | integer   | not null
+rating      | float     | not null
 body        | text      | not null

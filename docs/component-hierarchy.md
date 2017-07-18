@@ -4,36 +4,38 @@
 * AuthForm
 
 **HomeContainer**
+* NavBar
 * SearchContainer
 * HomeIndex
 
 **TrainerListContainer**
+* NavBar
 * TrainerList
   * TrainerListItem
 
 **TrainerDetailContainer**
+* NavBar
 * TrainerDetail
 * ReviewContainer
   * ReviewList
     * ReviewListItem
   * ReviewFormContainer
+    * ReviewForm
 
 **BookingFormContainer**
+* NavBar
+* BookingForm
 
-**UserProfileContainer**
-* BookingListContainer
-
-**NavBar**
 **Footer**
 
 ## Routes
 
-|Path   | Component   |
-|-------|-------------|
-| "/sign-up" | "AuthFormContainer" |
-| "/sign-in" | "AuthFormContainer" |
-| "/users/:id" | "UserProfileContainer" |
-| "/" | "HomeContainer" |
-| "/search-results" | "TrainerListContainer" |
-| "/trainers/:id" | "TrainerDetailContainer" |
-| "/trainers/:id/bookings/new" | "BookingFormContainer" |
+| Route Type | Path  | Component   |
+|------------|-------|-------------|
+| AuthRoute | "/sign-up" | "AuthFormContainer" |
+| AuthRoute | "/sign-in" | "AuthFormContainer" |
+| Route(exact path) | "/" | "HomeContainer" |
+| Route | "/search-results" | "TrainerListContainer" |
+| Route | "/trainers/:id" | "TrainerDetailContainer" |
+| ProtectedRoute | "/trainers/:id" | "ReviewFormContainer" |
+| ProtectedRoute | "/trainers/:id/bookings/new" | "BookingFormContainer" |

@@ -54,10 +54,6 @@ sufficient CSS styling:
 
 **Objective:** Users can add a review which is listed on the trainers show page. Total reviews and an average ratings is displayed for every trainers.
 
-### Phase 6: User Profile Page (1 day)
-
-**Objective:** Users have their own profile page which contains a list of user's booking history. Users can delete booking requests.
-
 ### Bonus Features (TBD)
 - [ ] Google Map API
 - [ ] Save Dog Information

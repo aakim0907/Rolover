@@ -26,7 +26,7 @@
   * Show trainer detail page
 
 ### Bookings
-* `GET /api/bookings/:userId`
+* `GET /api/users/:id/bookings`
   * Fetch current user's bookings
 
 * `POST /api/trainers/:id/bookings`

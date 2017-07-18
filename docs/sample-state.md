@@ -3,14 +3,7 @@
   session: {
     currentUser: {
       id: 1,
-      name: "Carrie Underwood",
-      bookings: [
-        {
-          trainer_id: 1,
-          start_date: { month: "Jul", day: 16, year: 2017 },
-          end_date: { month: "Jul", day: 17, year: 2017 }
-        }
-      ]
+      name: "Carrie Underwood"
     },
     errors: []
   },
@@ -19,8 +12,12 @@
     1: {
       id: 1,
       name: "John Doe",
+      training_type: "obedience",
+      profile_quote: "Awesome Animal Lover",
+      description: "John Doe is a .......",
+      profile_image_url: "",
       image_urls: [],
-      profile: "Awesome Animal Lover",
+      price: 45,
       zip: 94109,
       city: "San Francisco",
       state: "California",
@@ -47,6 +44,24 @@
         body: "My dog can sit & stay now! Yay!"
       }
     ]
+  },
+
+  bookings: {
+    1: {
+      user_id: 3,
+      trainer_id: 1,
+      start_date: { month: "Jul", day: 16, year: 2017 },
+      end_date: { month: "Jul", day: 17, year: 2017 }
+    }
+  },
+
+  reviews: {
+    1: {
+      user_id: 21,
+      trainer_id: 4,
+      rating: 5,
+      body: "My dog can sit & stay now! Yay!"
+    }
   }
 }
 ```
