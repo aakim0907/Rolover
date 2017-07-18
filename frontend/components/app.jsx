@@ -4,14 +4,12 @@ import { Route, Switch, Link } from 'react-router-dom';
 import { AuthRoute, ProtectedRoute } from '../util/route_util';
 import GreetingsContainer from './greetings/greeting_container';
 import SessionFormContainer from './session_form/session_form_container';
+import NavBar from './nav_bar';
 
 const App = () => (
   <div>
     <header>
-      <GreetingsContainer />
-      <Link to="/">
-        <h1>Rolover</h1>
-      </Link>
+      <NavBar />
     </header>
 
     <switch>

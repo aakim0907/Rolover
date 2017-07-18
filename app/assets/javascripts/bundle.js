@@ -9765,27 +9765,24 @@ var _root = __webpack_require__(219);
 
 var _root2 = _interopRequireDefault(_root);
 
-var _session_actions = __webpack_require__(212);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// end of testing
-
 document.addEventListener('DOMContentLoaded', function () {
-  var store = (0, _store2.default)();
+  var store = void 0;
+  if (window.currentUser) {
+    var preloadedState = {
+      session: {
+        currentUser: window.currentUser
+      }
+    };
+    store = (0, _store2.default)(preloadedState);
+    delete window.currentUser;
+  } else {
+    store = (0, _store2.default)();
+  }
   var root = document.getElementById('root');
   _reactDom2.default.render(_react2.default.createElement(_root2.default, { store: store }), root);
-
-  // start of testing
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.login = _session_actions.login;
-  window.signup = _session_actions.signup;
-  window.logout = _session_actions.logout;
-  // end of testing
 });
-
-// start of testing
 
 /***/ }),
 /* 82 */
@@ -40782,7 +40779,6 @@ var signup = exports.signup = function signup(user) {
 
 var login = exports.login = function login(user) {
   return function (dispatch) {
-    console.log(user);
     return APIUtil.login(user).then(function (user) {
       return dispatch(receiveCurrentUser(user));
     }, function (err) {
@@ -42123,6 +42119,10 @@ var _session_form_container = __webpack_require__(275);
 
 var _session_form_container2 = _interopRequireDefault(_session_form_container);
 
+var _nav_bar = __webpack_require__(278);
+
+var _nav_bar2 = _interopRequireDefault(_nav_bar);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
@@ -42132,16 +42132,7 @@ var App = function App() {
     _react2.default.createElement(
       'header',
       null,
-      _react2.default.createElement(_greeting_container2.default, null),
-      _react2.default.createElement(
-        _reactRouterDom.Link,
-        { to: '/' },
-        _react2.default.createElement(
-          'h1',
-          null,
-          'Rolover'
-        )
-      )
+      _react2.default.createElement(_nav_bar2.default, null)
     ),
     _react2.default.createElement(
       'switch',
@@ -45364,12 +45355,12 @@ var sessionLinks = function sessionLinks() {
 
 var personalGreeting = function personalGreeting(currentUser, logout) {
   return _react2.default.createElement(
-    'hgroup',
-    { className: 'header-group' },
+    'nav',
+    { className: 'greeting-longout' },
     _react2.default.createElement(
       'h2',
       { className: 'header-name' },
-      currentUser.name
+      currentUser.email
     ),
     _react2.default.createElement(
       'button',
@@ -45543,7 +45534,7 @@ var SessionForm = function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var user = this.state;
-      this.props.processForm({ user: user });
+      this.props.processForm(user);
     }
   }, {
     key: 'navLink',
@@ -45582,29 +45573,22 @@ var SessionForm = function (_React$Component) {
     value: function render() {
       return _react2.default.createElement(
         'div',
-        { className: 'login-form-container' },
+        { className: 'session-form-container' },
         _react2.default.createElement(
           'form',
-          { onSubmit: this.handleSubmit, className: 'login-form-box' },
-          'Welcome to Rolover!',
-          _react2.default.createElement('br', null),
-          'Please ',
-          this.props.formType,
-          ' or ',
-          this.navLink(),
-          this.renderErrors(),
+          { onSubmit: this.handleSubmit, className: 'session-form-box' },
           _react2.default.createElement(
             'div',
-            { className: 'login-form' },
+            { className: 'session-form' },
             _react2.default.createElement('br', null),
             _react2.default.createElement(
               'label',
               null,
               'Email:',
               _react2.default.createElement('input', { type: 'text',
-                value: this.state.username,
-                onChange: this.update('username'),
-                className: 'login-input'
+                value: this.state.email,
+                onChange: this.update('email'),
+                className: 'session-input'
               })
             ),
             _react2.default.createElement('br', null),
@@ -45615,7 +45599,7 @@ var SessionForm = function (_React$Component) {
               _react2.default.createElement('input', { type: 'password',
                 value: this.state.password,
                 onChange: this.update('password'),
-                className: 'login-input'
+                className: 'session-input'
               })
             ),
             _react2.default.createElement('br', null),
@@ -45672,12 +45656,65 @@ var Protected = function Protected(_ref2) {
 };
 
 var mapStateToProps = function mapStateToProps(state) {
-  return { loggedIn: Boolean(state.session.currentUser) };
+  return {
+    loggedIn: Boolean(state.session.currentUser)
+  };
 };
 
 var AuthRoute = exports.AuthRoute = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, null)(Auth));
 
 var ProtectedRoute = exports.ProtectedRoute = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, null)(Protected));
+
+/***/ }),
+/* 278 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(82);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(244);
+
+var _greeting_container = __webpack_require__(273);
+
+var _greeting_container2 = _interopRequireDefault(_greeting_container);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var NavBar = function NavBar(props) {
+  return _react2.default.createElement(
+    'section',
+    { className: 'nav-bar' },
+    _react2.default.createElement(
+      'div',
+      { className: 'left-nav' },
+      _react2.default.createElement(
+        'div',
+        { className: 'logo' },
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: "/" },
+          _react2.default.createElement('img', { src: '', alt: 'Rolover Logo' })
+        )
+      )
+    ),
+    _react2.default.createElement(
+      'nav',
+      { className: 'right-nav' },
+      _react2.default.createElement(_greeting_container2.default, null)
+    )
+  );
+};
+
+exports.default = NavBar;
+// <Link to={"/about"}>About</Link>
 
 /***/ })
 /******/ ]);
