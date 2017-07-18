@@ -1,6 +1,6 @@
 # Rolover
 
-[Heroku link](http://www.herokuapp.com)
+[Heroku link](http://rolover.herokuapp.com/)
 
 [Trello link](https://trello.com/b/wtC0OSYv/rolover)
 
