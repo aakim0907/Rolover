@@ -28,11 +28,11 @@
       training_type: "obedience",
       profile_quote: "Awesome Animal Lover",
       description: "John Doe is a .......",
-      profile_image_url: "",
       price: 45,
       zip: 94109,
       city: "San Francisco",
-      state: "California"
+      state: "California",
+      profile_image_id: 7
     },
 
     2: {
@@ -47,12 +47,11 @@
       name: "John Doe",
       profile_quote: "Awesome Animal Lover",
       description: "John Doe is a .......",
-      profile_image_url: "",
-      image_urls: [],
       price: 45,
       zip: 94109,
       city: "San Francisco",
-      state: "California"
+      state: "California",
+      image_url_ids: [2, 17, 92]
     }
     reviews: [
       {
