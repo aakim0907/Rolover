@@ -45316,17 +45316,17 @@ var _reactRouterDom = __webpack_require__(24);
 
 var _route_util = __webpack_require__(273);
 
-var _greeting_container = __webpack_require__(112);
+var _nav_bar = __webpack_require__(276);
 
-var _greeting_container2 = _interopRequireDefault(_greeting_container);
+var _nav_bar2 = _interopRequireDefault(_nav_bar);
 
 var _session_form_container = __webpack_require__(113);
 
 var _session_form_container2 = _interopRequireDefault(_session_form_container);
 
-var _nav_bar = __webpack_require__(276);
+var _main_page = __webpack_require__(278);
 
-var _nav_bar2 = _interopRequireDefault(_nav_bar);
+var _main_page2 = _interopRequireDefault(_main_page);
 
 var _footer = __webpack_require__(277);
 
@@ -45351,14 +45351,15 @@ var App = function App() {
         null,
         _react2.default.createElement(_route_util.AuthRoute, { path: '/login', component: _session_form_container2.default }),
         _react2.default.createElement(_route_util.AuthRoute, { path: '/signup', component: _session_form_container2.default }),
-        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/' })
+        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _main_page2.default })
       )
-    ),
-    _react2.default.createElement(_footer2.default, null)
+    )
   );
 };
 
 exports.default = App;
+
+// add footer
 
 /***/ }),
 /* 273 */
@@ -45813,13 +45814,43 @@ var Footer = function Footer() {
             { className: 'footer-p' },
             'Rolover is a web application inspired by Rover built using Ruby on Rails for backend and React/Redux for frontend.'
           )
-        )
+        ),
+        _react2.default.createElement('div', { className: 'footer-about-me' })
       )
     )
   );
 };
 
 exports.default = Footer;
+
+/***/ }),
+/* 278 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(24);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var MainPage = function MainPage() {
+  return _react2.default.createElement(
+    'div',
+    { className: 'mainpage-container' },
+    _react2.default.createElement('div', { className: 'main-image' })
+  );
+};
+
+exports.default = MainPage;
 
 /***/ })
 /******/ ]);

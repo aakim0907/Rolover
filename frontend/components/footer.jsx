@@ -11,6 +11,10 @@ const Footer = () => (
             and React/Redux for frontend.
           </p>
         </div>
+
+        <div className="footer-about-me">
+          
+        </div>
       </div>
     </div>
   </div>
