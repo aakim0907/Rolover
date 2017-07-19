@@ -26,6 +26,11 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
+  handleDemoClick(e) {
+    e.preventDefault();
+    this.props.processForm({mail: "bob@gmail", password: "123456"})
+  }
+
   renderMessage() {
     if (this.props.formType === "login") {
       return (
@@ -38,10 +43,18 @@ class SessionForm extends React.Component {
     }
   }
 
+  renderDemo() {
+    if (this.props.formType === 'login') {
+      return (
+        <button className="btn teal" onClick={this.handleDemoClick}>Demo Account</button>
+      );
+    }
+  }
+
   renderRedirect() {
     if (this.props.formType === "login") {
       return (
-        <div>
+        <div className="other-link">
           <p>Don't have an account?</p>
           <Link to={'/signup'}>
             <span>Sign Up</span>
@@ -50,7 +63,7 @@ class SessionForm extends React.Component {
       );
     } else {
       return (
-        <div>
+        <div className="other-link">
           <p>Already have an account?</p>
           <Link to={'/login'}>
             <span>Log In</span>
@@ -62,7 +75,7 @@ class SessionForm extends React.Component {
 
   renderErrors() {
     return(
-      <ul>
+      <ul className="errors">
         {this.props.errors.map( (error, i) => (
           <li key={`error-${i}`}>
             {error}
@@ -79,27 +92,28 @@ class SessionForm extends React.Component {
         {this.renderMessage()}
         {this.renderErrors()}
 
-        <form onSubmit={this.handleSubmit} className="session-form-box">
-          <div className="session-form">
+          <form onSubmit={this.handleSubmit} className="session-form-box">
+            <div className="session-form">
             <br/>
-            <label>Email:
               <input type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
+                placeholder="rolover@gmail.com"
                 className="session-input"
               />
-            </label>
+              <i className="fa fa-envelope-o fa-lg side-icon" aria-hidden="true"></i>
             <br/>
-            <label>Password:
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
+                placeholder="password"
                 className="session-input"
               />
-            </label>
+            <i className="fa fa-lock fa-lg side-icon" aria-hidden="true"></i>
             <br/>
 
-            <input type="submit" value="Submit" />
+            <input type="submit" className="btn" value={this.props.formType === 'login' ? 'Log In' : 'Sign Up'}/>
+            {this.renderDemo()}
           </div>
         </form>
 

@@ -12,10 +12,11 @@
  *
  *= require_self
  */
+
+ // @import "vendor/normalize.scss";
+
  @import "base/colors.scss";
  @import "base/fonts.scss";
  @import "base/core.scss";
 
- // components
- @import "components/nav_bar.scss";
- @import "components/session_form.scss";
+ @import "components/*";

@@ -1,3 +1,75 @@
 .session-form-container {
   border: 1px solid $green;
+  box-sizing: border-box;
+  width: 100%;
+  max-width: 550px;
+  padding: 20px;
+  background-color: $white;
+  margin: 0 auto;
+
+  .side-icon {
+    float: right;
+    margin-right: 15px;
+    margin-top: -40px;
+    position: relative;
+    z-index: 2;
+    color: $gray;
+  }
+
+  .session-input {
+    box-sizing: border-box;
+    font-size: 18px;
+    width: 100%;
+    padding: 12px;
+    margin: 8px 0;
+    border: 1px solid $light-gray;
+    color: $gray;
+    // background-color: $yellow;
+
+     &:focus {
+       outline: none;
+       border-color: $green;
+     }
+
+  }
+}
+
+.session-form-box {
+  border: 1px solid red;
+  padding: 7px;
+  // width: 500px;
+  // text-align: left;
+  // display: block;
+  // width: 600px;
+  // height: 400px;
+  // padding-top: 30px;
+  // padding-right: 10px;
+  // padding-left: 10px;
+  // text-align: left;
+}
+
+.other-link {
+  display: flex;
+  justify-content: space-between;
+  align-items: center;
+  margin-top: 20px;
+  padding-top: 12px;
+  border-top: 1px solid $light-gray;
+
+  p {
+    font-size: 18px;
+  }
+
+button {
+  background-color: transparent;
+  border: 2px solid $green;
+  border-radius: 2px;;
+  color: $green;
+  padding: 7px 12px;
+
+  &:focus {
+    outline: none;
+    border-color: $black;
+    }
+  }
 }
