@@ -16,7 +16,7 @@ age_year          | integer   |
 age_month         | integer   |
 weight            | integer   | not null
 breed             | string    | not null
-sex               | string    | not null, ([Male, Female])
+sex               | string    | not null, inclusion: [Male, Female]
 
 ## trainers
 column name        | data type | details
@@ -37,7 +37,7 @@ column name        | data type | details
 id                 | integer   | not null, primary key
 trainer_id         | integer   | not null, foreign key (references trainers), indexed
 url                | string    | not null
-training_type      | string    | not null
+type               | string    | not null, inclusion: [profile, main]
 
 ## bookings
 column name | data type | details
@@ -48,7 +48,7 @@ dog_id      | integer   | not null, foreign key (references dogs), indexed
 trainer_id  | integer   | not null, foreign key (references trainers), indexed
 start_date  | date      | not null
 end_date    | date      | not null
-status      | string    | not null, default = "PENDING" ([PENDING, APPROVED, DENIED])
+status      | string    | not null, default = "PENDING", inclusion: [PENDING, APPROVED, DENIED]
 message     | text      |
 
 
