@@ -45565,6 +45565,7 @@ var SessionForm = function (_React$Component) {
 
     _this.state = { email: '', password: '' };
     _this.handleSubmit = _this.handleSubmit.bind(_this);
+    _this.handleDemoClick = _this.handleDemoClick.bind(_this);
     return _this;
   }
 

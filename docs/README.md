@@ -12,7 +12,7 @@ following criteria with smooth, bug-free navigation, adequate seed data and
 sufficient CSS styling:
 
 - [V] Hosting on Heroku
-- [ ] New account creation, login, and guest/demo login
+- [V] New account creation, login, and guest/demo login
 - [ ] Search Trainers
 - [ ] Trainer Profile Page
 - [ ] Bookings
