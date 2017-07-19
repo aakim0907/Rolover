@@ -27,7 +27,7 @@ training_type      | string    | not null
 profile_quote      | text      | not null
 description        | text      | not null
 profile_image_url  | string    |
-image_urls         | array     |
+main_image_url     | string    |
 price              | integer   | not null
 zip                | integer   | not null
 city               | string    | not null
