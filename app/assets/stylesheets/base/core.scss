@@ -18,7 +18,7 @@ img{
 }
 
 a {
-  color: $teal;
+  color: $green;
   text-decoration: none;
   font-size: 14px;
   &:hover {
@@ -61,29 +61,29 @@ button {
   font-size: 18px;
   width: 100%;
   border: none;
-  border-radius: $border-radius;
+  border-radius: 2px;
   padding: 14px 0;
   margin-top: 16px;
   color: #fff;
   cursor: pointer;
 
-  &.teal {
-    background-color: $teal;
+  &.green {
+    background-color: $green;
   }
 
   &.pink {
-    background-color: $pink;
+    background-color: pink;
   }
 }
 
 .errors {
-  color: $dark-pink;
+  color: red;
   list-style: none;
   padding: 0;
 }
 
 .star {
-  color: $teal;
+  color: $green;
 
   &.sm {
     font-size: 14px;
@@ -139,14 +139,14 @@ button {
   border-radius: 4px;
   padding: 7px 12px;
 
-  &.teal {
-    border: 2px solid $teal;
-    color: $teal;
+  &.green {
+    border: 2px solid $green;
+    color: $green;
   }
 
   &.pink {
-    border: 2px solid $pink;
-    color: $pink;
+    border: 2px solid pink;
+    color: pink;
   }
   &:focus {
     outline: none;
@@ -160,14 +160,14 @@ button {
   padding: 7px 12px;
   color: $white;
 
-  &.teal {
-    border: 2px solid $teal;
-    background-color: $teal;
+  &.green {
+    border: 2px solid $green;
+    background-color: $green;
   }
 
   &.pink {
-    border: 2px solid $pink;
-    background-color: $pink;
+    border: 2px solid pink;
+    background-color: pink;
   }
   &:focus {
     outline: none;

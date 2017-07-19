@@ -11,7 +11,7 @@ and React/Redux for frontend. By the end of Week 9, this app will, at a minimum,
 following criteria with smooth, bug-free navigation, adequate seed data and
 sufficient CSS styling:
 
-- [ ] Hosting on Heroku
+- [V] Hosting on Heroku
 - [ ] New account creation, login, and guest/demo login
 - [ ] Search Trainers
 - [ ] Trainer Profile Page

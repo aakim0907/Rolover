@@ -4,7 +4,7 @@ import { Link, withRouter } from 'react-router-dom';
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { username: '', password: '' };
+    this.state = { email: '', password: '' };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -28,7 +28,7 @@ class SessionForm extends React.Component {
 
   handleDemoClick(e) {
     e.preventDefault();
-    this.props.processForm({mail: "bob@gmail", password: "123456"})
+    this.props.processForm({email: "bob@gmail", password: "123456"});
   }
 
   renderMessage() {
@@ -46,7 +46,7 @@ class SessionForm extends React.Component {
   renderDemo() {
     if (this.props.formType === 'login') {
       return (
-        <button className="btn teal" onClick={this.handleDemoClick}>Demo Account</button>
+        <button className="btn green" onClick={this.handleDemoClick}>Demo Account</button>
       );
     }
   }
@@ -98,7 +98,7 @@ class SessionForm extends React.Component {
               <input type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
-                placeholder="rolover@gmail.com"
+                placeholder="Enter your email address"
                 className="session-input"
               />
               <i className="fa fa-envelope-o fa-lg side-icon" aria-hidden="true"></i>

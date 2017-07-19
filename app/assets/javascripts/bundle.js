@@ -45501,7 +45501,7 @@ var Greeting = function (_React$Component) {
           ),
           _react2.default.createElement(
             'button',
-            { className: 'header-button', onClick: logout },
+            { className: 'logout', onClick: logout },
             'Log Out'
           )
         );
@@ -45515,10 +45515,6 @@ var Greeting = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Greeting;
-
-// <button onClick={this.props.showSignUp}>Sign Up</button>
-// <button onClick={this.props.showLogIn}>Log In</button>
-// END CLONEBNB
 
 /***/ }),
 /* 275 */
@@ -45557,7 +45553,7 @@ var SessionForm = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (SessionForm.__proto__ || Object.getPrototypeOf(SessionForm)).call(this, props));
 
-    _this.state = { username: '', password: '' };
+    _this.state = { email: '', password: '' };
     _this.handleSubmit = _this.handleSubmit.bind(_this);
     return _this;
   }
@@ -45589,7 +45585,7 @@ var SessionForm = function (_React$Component) {
     key: 'handleDemoClick',
     value: function handleDemoClick(e) {
       e.preventDefault();
-      this.props.processForm({ mail: "bob@gmail", password: "123456" });
+      this.props.processForm({ email: "bob@gmail", password: "123456" });
     }
   }, {
     key: 'renderMessage',
@@ -45614,7 +45610,7 @@ var SessionForm = function (_React$Component) {
       if (this.props.formType === 'login') {
         return _react2.default.createElement(
           'button',
-          { className: 'btn teal', onClick: this.handleDemoClick },
+          { className: 'btn green', onClick: this.handleDemoClick },
           'Demo Account'
         );
       }
@@ -45695,7 +45691,7 @@ var SessionForm = function (_React$Component) {
             _react2.default.createElement('input', { type: 'text',
               value: this.state.email,
               onChange: this.update('email'),
-              placeholder: 'rolover@gmail.com',
+              placeholder: 'Enter your email address',
               className: 'session-input'
             }),
             _react2.default.createElement('i', { className: 'fa fa-envelope-o fa-lg side-icon', 'aria-hidden': 'true' }),
@@ -45758,7 +45754,7 @@ var NavBar = function NavBar() {
         _react2.default.createElement(
           _reactRouterDom.Link,
           { to: "/" },
-          _react2.default.createElement('img', { src: window.images.logo, alt: 'Rolover Logo', width: '35px' })
+          _react2.default.createElement('img', { src: window.images.rolover, alt: 'Rolover Logo' })
         )
       )
     ),

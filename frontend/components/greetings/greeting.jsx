@@ -35,7 +35,7 @@ class Greeting extends React.Component {
     const personalGreeting = (currentUser, logout) => (
     	<div className="login-signup">
         <span className="header-name">{currentUser.email}</span>
-        <button className="header-button" onClick={logout}>Log Out</button>
+        <button className="logout" onClick={logout}>Log Out</button>
     	</div>
     );
 
@@ -46,7 +46,3 @@ class Greeting extends React.Component {
 }
 
 export default Greeting;
-
-// <button onClick={this.props.showSignUp}>Sign Up</button>
-// <button onClick={this.props.showLogIn}>Log In</button>
-// END CLONEBNB
