@@ -26,6 +26,40 @@ class SessionForm extends React.Component {
     this.props.processForm(user);
   }
 
+  renderMessage() {
+    if (this.props.formType === "login") {
+      return (
+        <h2>Log In</h2>
+      );
+    } else {
+      return (
+        <h2>Sign Up for Rolover</h2>
+      );
+    }
+  }
+
+  renderRedirect() {
+    if (this.props.formType === "login") {
+      return (
+        <div>
+          <p>Don't have an account?</p>
+          <Link to={'/signup'}>
+            <span>Sign Up</span>
+          </Link>
+        </div>
+      );
+    } else {
+      return (
+        <div>
+          <p>Already have an account?</p>
+          <Link to={'/login'}>
+            <span>Log In</span>
+          </Link>
+        </div>
+      );
+    }
+  }
+
   renderErrors() {
     return(
       <ul>
@@ -41,6 +75,9 @@ class SessionForm extends React.Component {
   render() {
     return (
       <div className="session-form-container">
+
+        {this.renderMessage()}
+        {this.renderErrors()}
 
         <form onSubmit={this.handleSubmit} className="session-form-box">
           <div className="session-form">
@@ -61,9 +98,12 @@ class SessionForm extends React.Component {
               />
             </label>
             <br/>
+
             <input type="submit" value="Submit" />
           </div>
         </form>
+
+        {this.renderRedirect()}
 
       </div>
     );

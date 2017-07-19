@@ -2,7 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 import GreetingContainer from './greetings/greeting_container';
 
-const NavBar = (props) => (
+const NavBar = () => (
     <section className="nav-bar">
       <div className="left-nav">
         <div className="logo">

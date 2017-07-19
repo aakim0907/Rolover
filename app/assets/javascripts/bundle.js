@@ -42136,11 +42136,6 @@ var App = function App() {
       _react2.default.createElement(_nav_bar2.default, null)
     ),
     _react2.default.createElement(
-      'div',
-      null,
-      _react2.default.createElement(_session_form_container2.default, null)
-    ),
-    _react2.default.createElement(
       'switch',
       null,
       _react2.default.createElement(_route_util.AuthRoute, { path: '/login', component: _session_form_container2.default }),
@@ -45321,6 +45316,10 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(
 "use strict";
 
 
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(82);
@@ -45329,11 +45328,9 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(244);
 
-var _reactRedux = __webpack_require__(220);
+var _session_form_container = __webpack_require__(275);
 
-var _SessionFormContainer = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"../session_form/SessionFormContainer\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
-
-var _SessionFormContainer2 = _interopRequireDefault(_SessionFormContainer);
+var _session_form_container2 = _interopRequireDefault(_session_form_container);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -45342,39 +45339,7 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-// START CLONEBNB
 
-
-// import { showModal } from '../../actions/modal_actions';
-
-
-// import LogInFormContainer from '../session_form/LogInFormContainer';
-// import SignUpFormContainer from '../session_form/SignUpFormContainer';
-// END CLONEBNB
-
-// START BENCHBNB
-// const sessionLinks = () => (
-//   <nav className="login-signup">
-//     <Link to="/login">Log In</Link>
-//     <Link to="/signup">Sign Up</Link>
-//   </nav>
-// );
-//
-// const personalGreeting = (currentUser, logout) => (
-// 	<nav className="greeting-longout">
-//     <span className="header-name">{currentUser.email}</span>
-//     <button className="header-button" onClick={logout}>Log Out</button>
-// 	</nav>
-// );
-//
-// const Greeting = ({ currentUser, logout }) => (
-//   currentUser ? personalGreeting(currentUser, logout) : sessionLinks()
-// );
-//
-// export default Greeting;
-// END BENCHBNB
-
-// START CLONEBNB
 var Greeting = function (_React$Component) {
   _inherits(Greeting, _React$Component);
 
@@ -45391,7 +45356,7 @@ var Greeting = function (_React$Component) {
     key: 'handleDemoClick',
     value: function handleDemoClick(e) {
       e.preventDefault();
-      this.props.login({ user: { email: "bob@gmail", password: "123456" } });
+      this.props.login({ email: "bob@gmail", password: "123456" });
     }
   }, {
     key: 'render',
@@ -45413,14 +45378,22 @@ var Greeting = function (_React$Component) {
             'Demo Account'
           ),
           _react2.default.createElement(
-            'button',
-            { onClick: _this2.props.showSignUp },
-            'Sign Up'
+            _reactRouterDom.Link,
+            { to: '/login' },
+            _react2.default.createElement(
+              'span',
+              null,
+              'Log In'
+            )
           ),
           _react2.default.createElement(
-            'button',
-            { onClick: _this2.props.showLogIn },
-            'Log In'
+            _reactRouterDom.Link,
+            { to: '/signup' },
+            _react2.default.createElement(
+              'span',
+              null,
+              'Sign Up'
+            )
           )
         );
       };
@@ -45430,19 +45403,14 @@ var Greeting = function (_React$Component) {
           'div',
           { className: 'login-signup' },
           _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: "/trips" },
-            'Trips'
+            'span',
+            { className: 'header-name' },
+            currentUser.email
           ),
           _react2.default.createElement(
             'button',
             { className: 'header-button', onClick: logout },
             'Log Out'
-          ),
-          _react2.default.createElement(
-            'div',
-            null,
-            _react2.default.createElement('img', { src: currentUser.email, alt: 'User Avatar' })
           )
         );
       };
@@ -45454,12 +45422,10 @@ var Greeting = function (_React$Component) {
   return Greeting;
 }(_react2.default.Component);
 
-// const mapDispatchToProps = (dispatch) => ({
-//   showSignUp: () => dispatch(showModal(<SignUpFormContainer formType={'signup'}/>)),
-//   showLogIn: () => dispatch(showModal(<LogInFormContainer formType={'login'}/>))
-// })
-//
-// export default connect(null, mapDispatchToProps)(Greeting);
+exports.default = Greeting;
+
+// <button onClick={this.props.showSignUp}>Sign Up</button>
+// <button onClick={this.props.showLogIn}>Log In</button>
 // END CLONEBNB
 
 /***/ }),
@@ -45572,6 +45538,66 @@ var SessionForm = function (_React$Component) {
       this.props.processForm(user);
     }
   }, {
+    key: 'renderMessage',
+    value: function renderMessage() {
+      if (this.props.formType === "login") {
+        return _react2.default.createElement(
+          'h2',
+          null,
+          'Log In'
+        );
+      } else {
+        return _react2.default.createElement(
+          'h2',
+          null,
+          'Sign Up for Rolover'
+        );
+      }
+    }
+  }, {
+    key: 'renderRedirect',
+    value: function renderRedirect() {
+      if (this.props.formType === "login") {
+        return _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'p',
+            null,
+            'Don\'t have an account?'
+          ),
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/signup' },
+            _react2.default.createElement(
+              'span',
+              null,
+              'Sign Up'
+            )
+          )
+        );
+      } else {
+        return _react2.default.createElement(
+          'div',
+          null,
+          _react2.default.createElement(
+            'p',
+            null,
+            'Already have an account?'
+          ),
+          _react2.default.createElement(
+            _reactRouterDom.Link,
+            { to: '/login' },
+            _react2.default.createElement(
+              'span',
+              null,
+              'Log In'
+            )
+          )
+        );
+      }
+    }
+  }, {
     key: 'renderErrors',
     value: function renderErrors() {
       return _react2.default.createElement(
@@ -45592,6 +45618,8 @@ var SessionForm = function (_React$Component) {
       return _react2.default.createElement(
         'div',
         { className: 'session-form-container' },
+        this.renderMessage(),
+        this.renderErrors(),
         _react2.default.createElement(
           'form',
           { onSubmit: this.handleSubmit, className: 'session-form-box' },
@@ -45623,7 +45651,8 @@ var SessionForm = function (_React$Component) {
             _react2.default.createElement('br', null),
             _react2.default.createElement('input', { type: 'submit', value: 'Submit' })
           )
-        )
+        ),
+        this.renderRedirect()
       );
     }
   }]);
@@ -45706,7 +45735,7 @@ var _greeting_container2 = _interopRequireDefault(_greeting_container);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var NavBar = function NavBar(props) {
+var NavBar = function NavBar() {
   return _react2.default.createElement(
     'section',
     { className: 'nav-bar' },
