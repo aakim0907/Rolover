@@ -45328,6 +45328,10 @@ var _nav_bar = __webpack_require__(276);
 
 var _nav_bar2 = _interopRequireDefault(_nav_bar);
 
+var _footer = __webpack_require__(277);
+
+var _footer2 = _interopRequireDefault(_footer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var App = function App() {
@@ -45340,12 +45344,17 @@ var App = function App() {
       _react2.default.createElement(_nav_bar2.default, null)
     ),
     _react2.default.createElement(
-      'switch',
-      null,
-      _react2.default.createElement(_route_util.AuthRoute, { path: '/login', component: _session_form_container2.default }),
-      _react2.default.createElement(_route_util.AuthRoute, { path: '/signup', component: _session_form_container2.default }),
-      _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/' })
-    )
+      'div',
+      { className: 'body-content' },
+      _react2.default.createElement(
+        'switch',
+        null,
+        _react2.default.createElement(_route_util.AuthRoute, { path: '/login', component: _session_form_container2.default }),
+        _react2.default.createElement(_route_util.AuthRoute, { path: '/signup', component: _session_form_container2.default }),
+        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/' })
+      )
+    ),
+    _react2.default.createElement(_footer2.default, null)
   );
 };
 
@@ -45766,6 +45775,51 @@ var NavBar = function NavBar() {
 
 exports.default = NavBar;
 // <Link to={"/about"}>About</Link>
+
+/***/ }),
+/* 277 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(5);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(24);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var Footer = function Footer() {
+  return _react2.default.createElement(
+    'div',
+    { className: 'footer' },
+    _react2.default.createElement(
+      'div',
+      { className: 'footer-wrapper' },
+      _react2.default.createElement(
+        'div',
+        { className: 'footer-container' },
+        _react2.default.createElement(
+          'div',
+          { className: 'footer-about' },
+          _react2.default.createElement(
+            'p',
+            { className: 'footer-p' },
+            'Rolover is a web application inspired by Rover built using Ruby on Rails for backend and React/Redux for frontend.'
+          )
+        )
+      )
+    )
+  );
+};
+
+exports.default = Footer;
 
 /***/ })
 /******/ ]);
