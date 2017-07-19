@@ -26,12 +26,18 @@ name               | string    | not null
 training_type      | string    | not null
 profile_quote      | text      | not null
 description        | text      | not null
-profile_image_url  | string    |
-main_image_url     | string    |
 price              | integer   | not null
 zip                | integer   | not null
 city               | string    | not null
 state              | string    | not null
+
+## images
+column name        | data type | details
+-------------------|-----------|-----------------------
+id                 | integer   | not null, primary key
+trainer_id         | integer   | not null, foreign key (references trainers), indexed
+url                | string    | not null
+training_type      | string    | not null
 
 ## bookings
 column name | data type | details
