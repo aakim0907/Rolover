@@ -58,7 +58,7 @@ button {
 }
 
 .btn {
-  font-size: 18px;
+  font-size: 19px;
   width: 100%;
   border: none;
   border-radius: 2px;
@@ -71,8 +71,10 @@ button {
     background-color: $green;
   }
 
-  &.pink {
-    background-color: pink;
+  &.demo-btn {
+    background-color: $white;
+    border: 3px solid $green;
+    color: $dark-green
   }
 }
 

@@ -45592,13 +45592,13 @@ var SessionForm = function (_React$Component) {
     value: function renderMessage() {
       if (this.props.formType === "login") {
         return _react2.default.createElement(
-          'h2',
+          'h3',
           null,
           'Log In'
         );
       } else {
         return _react2.default.createElement(
-          'h2',
+          'h3',
           null,
           'Sign Up for Rolover'
         );
@@ -45610,7 +45610,7 @@ var SessionForm = function (_React$Component) {
       if (this.props.formType === 'login') {
         return _react2.default.createElement(
           'button',
-          { className: 'btn green', onClick: this.handleDemoClick },
+          { className: 'btn demo-btn', onClick: this.handleDemoClick },
           'Demo Account'
         );
       }
@@ -45683,28 +45683,26 @@ var SessionForm = function (_React$Component) {
         this.renderErrors(),
         _react2.default.createElement(
           'form',
-          { onSubmit: this.handleSubmit, className: 'session-form-box' },
+          { onSubmit: this.handleSubmit },
           _react2.default.createElement(
             'div',
-            { className: 'session-form' },
+            { className: 'session-form-box' },
             _react2.default.createElement('br', null),
             _react2.default.createElement('input', { type: 'text',
               value: this.state.email,
               onChange: this.update('email'),
-              placeholder: 'Enter your email address',
+              placeholder: '&#f003; Enter your email address',
               className: 'session-input'
             }),
-            _react2.default.createElement('i', { className: 'fa fa-envelope-o fa-lg side-icon', 'aria-hidden': 'true' }),
             _react2.default.createElement('br', null),
             _react2.default.createElement('input', { type: 'password',
               value: this.state.password,
               onChange: this.update('password'),
-              placeholder: 'password',
+              placeholder: '&#f023; Password',
               className: 'session-input'
             }),
-            _react2.default.createElement('i', { className: 'fa fa-lock fa-lg side-icon', 'aria-hidden': 'true' }),
             _react2.default.createElement('br', null),
-            _react2.default.createElement('input', { type: 'submit', className: 'btn', value: this.props.formType === 'login' ? 'Log In' : 'Sign Up' }),
+            _react2.default.createElement('input', { type: 'submit', className: 'btn green', value: this.props.formType === 'login' ? 'Log In' : 'Sign Up' }),
             this.renderDemo()
           )
         ),

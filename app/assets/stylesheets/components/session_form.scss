@@ -3,49 +3,60 @@
   box-sizing: border-box;
   width: 100%;
   max-width: 550px;
-  padding: 20px;
+  padding: 10px 20px;
   background-color: $white;
-  margin: 0 auto;
+  margin: 70px auto;
 
-  .side-icon {
-    float: right;
-    margin-right: 15px;
-    margin-top: -40px;
-    position: relative;
-    z-index: 2;
-    color: $gray;
+  // .side-icon {
+  //   float: right;
+  //   margin-right: 15px;
+  //   margin-top: -40px;
+  //   position: relative;
+  //   z-index: 3;
+  //   color: $gray;
+  // }
+
+  h3 {
+    margin-top: 20px;
+    padding-left: 15px;
   }
 
   .session-input {
     box-sizing: border-box;
-    font-size: 18px;
+    font-size: 16px;
     width: 100%;
-    padding: 12px;
+    padding: 10px;
     margin: 8px 0;
     border: 1px solid $light-gray;
     color: $gray;
-    // background-color: $yellow;
+    border-radius: 3px;
+
+    font-family: "FontAwesome", $font-stack;
+    font-style: normal;
+    font-weight: normal;
+    text-decoration: inherit;
 
      &:focus {
-       outline: none;
-       border-color: $green;
+       box-shadow: 0 0 5px $gray;
+       border: 1px solid rgba(81, 203, 238, 1);
      }
-
   }
 }
 
 .session-form-box {
-  border: 1px solid red;
-  padding: 7px;
-  // width: 500px;
-  // text-align: left;
+  // border: 1px solid red;
+  // padding: 0px 7px;
+  width: 500px;
+  text-align: left;
   // display: block;
-  // width: 600px;
-  // height: 400px;
-  // padding-top: 30px;
-  // padding-right: 10px;
-  // padding-left: 10px;
-  // text-align: left;
+  padding-top: 0px;
+  padding-right: 10px;
+  padding-left: 10px;
+  text-align: left;
+
+  .btn {
+    height: 40px;
+  }
 }
 
 .other-link {
@@ -53,17 +64,22 @@
   justify-content: space-between;
   align-items: center;
   margin-top: 20px;
-  padding-top: 12px;
+  padding-top: 14px;
+  padding-left: 10px;
   border-top: 1px solid $light-gray;
 
   p {
-    font-size: 18px;
+    font-size: 15px;
+  }
+
+  span {
+    margin-right: 10px;
+    margin-bottom: 20px;
   }
 
 button {
   background-color: transparent;
-  border: 2px solid $green;
-  border-radius: 2px;;
+  border-radius: 2px;
   color: $green;
   padding: 7px 12px;
 

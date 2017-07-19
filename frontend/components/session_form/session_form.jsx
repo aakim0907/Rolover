@@ -34,11 +34,11 @@ class SessionForm extends React.Component {
   renderMessage() {
     if (this.props.formType === "login") {
       return (
-        <h2>Log In</h2>
+        <h3>Log In</h3>
       );
     } else {
       return (
-        <h2>Sign Up for Rolover</h2>
+        <h3>Sign Up for Rolover</h3>
       );
     }
   }
@@ -46,7 +46,7 @@ class SessionForm extends React.Component {
   renderDemo() {
     if (this.props.formType === 'login') {
       return (
-        <button className="btn green" onClick={this.handleDemoClick}>Demo Account</button>
+        <button className="btn demo-btn" onClick={this.handleDemoClick}>Demo Account</button>
       );
     }
   }
@@ -92,27 +92,26 @@ class SessionForm extends React.Component {
         {this.renderMessage()}
         {this.renderErrors()}
 
-          <form onSubmit={this.handleSubmit} className="session-form-box">
-            <div className="session-form">
+          <form onSubmit={this.handleSubmit}>
+            <div className="session-form-box">
             <br/>
               <input type="text"
                 value={this.state.email}
                 onChange={this.update('email')}
-                placeholder="Enter your email address"
+                placeholder="&#f003; Enter your email address"
                 className="session-input"
-              />
-              <i className="fa fa-envelope-o fa-lg side-icon" aria-hidden="true"></i>
+                />
             <br/>
+
               <input type="password"
                 value={this.state.password}
                 onChange={this.update('password')}
-                placeholder="password"
+                placeholder="&#f023; Password"
                 className="session-input"
-              />
-            <i className="fa fa-lock fa-lg side-icon" aria-hidden="true"></i>
+                />
             <br/>
 
-            <input type="submit" className="btn" value={this.props.formType === 'login' ? 'Log In' : 'Sign Up'}/>
+            <input type="submit" className="btn green" value={this.props.formType === 'login' ? 'Log In' : 'Sign Up'}/>
             {this.renderDemo()}
           </div>
         </form>
