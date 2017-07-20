@@ -10,7 +10,7 @@
 * SearchContainer
 * HomeIndex
 
-**TrainerListContainer**
+**TrainerContainer**
 * SearchContainer
 * TrainerList
   * TrainerListItem
@@ -32,8 +32,6 @@
 
 | Route Type | Path  | Component   |
 |------------|-------|-------------|
-| AuthRoute | "/sign-up" | "SessionFormContainer" |
-| AuthRoute | "/sign-in" | "SessionFormContainer" |
 | Route(exact path) | "/" | "HomeContainer" |
 | Route | "/search-results" | "TrainerListContainer" |
 | Route | "/trainers/:id" | "TrainerDetailContainer" |

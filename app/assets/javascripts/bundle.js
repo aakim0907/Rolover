@@ -47107,10 +47107,9 @@ exports.selectAllTrainers = undefined;
 
 var _lodash = __webpack_require__(62);
 
-var selectAllTrainers = exports.selectAllTrainers = function selectAllTrainers(_ref) {
-  var trainers = _ref.trainers;
+var selectAllTrainers = exports.selectAllTrainers = function selectAllTrainers(trainers) {
   return (0, _lodash.values)(trainers.byID);
-}; // import in container when mapSTateToPRop
+};
 
 /***/ })
 /******/ ]);
