@@ -12470,7 +12470,7 @@ var _root = __webpack_require__(236);
 
 var _root2 = _interopRequireDefault(_root);
 
-var _trainer_api_util = __webpack_require__(279);
+var _trainer_actions = __webpack_require__(281);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -12494,8 +12494,10 @@ document.addEventListener('DOMContentLoaded', function () {
   _reactDom2.default.render(_react2.default.createElement(_root2.default, { store: store }), root);
 
   // START TESTING
-  window.fetchTrainers = _trainer_api_util.fetchTrainers;
-  window.fetchTrainer = _trainer_api_util.fetchTrainer;
+  window.getState = store.getState;
+  window.dispatch = store.dispatch;
+  window.fetchTrainers = _trainer_actions.fetchTrainers;
+  window.fetchTrainer = _trainer_actions.fetchTrainer;
   // END TESTING
 });
 
@@ -45878,11 +45880,11 @@ exports.default = MainPage;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var fetchTrainers = exports.fetchTrainers = function fetchTrainers(filters) {
+var fetchTrainers = exports.fetchTrainers = function fetchTrainers() {
   return $.ajax({
     method: 'GET',
-    url: '/api/trainers',
-    data: { filters: filters }
+    url: '/api/trainers'
+    // data: { filters }
   });
 };
 
@@ -45976,18 +45978,19 @@ var receiveTrainer = exports.receiveTrainer = function receiveTrainer(trainer) {
 };
 
 // async action
-var fetchTrainers = exports.fetchTrainers = function fetchTrainers(filters) {
+var fetchTrainers = exports.fetchTrainers = function fetchTrainers() {
   return function (dispatch) {
-    return APIUtil.fetchTrainers(filters).then(function (trainers) {
+    return APIUtil.fetchTrainers().then(function (trainers) {
       return dispatch(receiveTrainers(trainers));
     });
   };
 };
+// argument filter removed
 
 var fetchTrainer = exports.fetchTrainer = function fetchTrainer(trainer) {
   return function (dispatch) {
     return APIUtil.fetchTrainer(trainer).then(function (trainer) {
-      return dispatch(receiveTrainers(trainer));
+      return dispatch(receiveTrainer(trainer));
     });
   };
 };

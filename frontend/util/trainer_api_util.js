@@ -1,8 +1,8 @@
-export const fetchTrainers = filters => (
+export const fetchTrainers = () => (
   $.ajax({
     method: 'GET',
-    url: '/api/trainers',
-    data: { filters }
+    url: '/api/trainers'
+    // data: { filters }
   })
 );
 

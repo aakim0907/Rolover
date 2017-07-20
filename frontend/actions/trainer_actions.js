@@ -15,14 +15,15 @@ export const receiveTrainer = trainer => ({
 });
 
 // async action
-export const fetchTrainers = filters => dispatch => (
-  APIUtil.fetchTrainers(filters).then(
+export const fetchTrainers = () => dispatch => (
+  APIUtil.fetchTrainers().then(
     trainers => (dispatch(receiveTrainers(trainers)))
   )
 );
+// argument filter removed
 
 export const fetchTrainer = trainer => dispatch => (
   APIUtil.fetchTrainer(trainer).then(
-    trainer => (dispatch(receiveTrainers(trainer)))
+    trainer => (dispatch(receiveTrainer(trainer)))
   )
 );

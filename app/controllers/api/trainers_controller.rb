@@ -3,9 +3,9 @@ class Api::TrainersController < ApplicationController
 
   def index
     if params[:search]
-      @trainers = Trainers.search(params[:search])
+      @trainers = Trainer.search(params[:search])
     else
-      @trainers = Trainers.all
+      @trainers = Trainer.all
     end
   end
 
