@@ -45987,7 +45987,8 @@ var Greeting = function (_React$Component) {
       var _props = this.props,
           currentUser = _props.currentUser,
           logout = _props.logout;
-
+      // <AuthModal formType='login'/>
+      // <AuthModal formType='signup'/>
 
       var sessionLinks = function sessionLinks() {
         return _react2.default.createElement(
@@ -45998,8 +45999,7 @@ var Greeting = function (_React$Component) {
             { className: 'demo', onClick: _this2.handleDemoClick },
             'Demo Account'
           ),
-          _react2.default.createElement(_auth_modal2.default, { formType: 'login' }),
-          _react2.default.createElement(_auth_modal2.default, { formType: 'signup' })
+          _react2.default.createElement(_auth_modal2.default, null)
         );
       };
 

@@ -18,13 +18,14 @@ class Greeting extends React.Component {
 
   render() {
     const { currentUser, logout } = this.props;
+    // <AuthModal formType='login'/>
+    // <AuthModal formType='signup'/>
 
     const sessionLinks = () => (
       <div className="login-signup">
         <button className="demo" onClick={this.handleDemoClick}>Demo Account</button>
 
-        <AuthModal formType='login'/>
-        <AuthModal formType='signup'/>
+        <AuthModal />
       </div>
     );
 
