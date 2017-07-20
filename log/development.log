@@ -14556,3 +14556,15 @@ Processing by Api::SessionsController#destroy as JSON
 Completed 200 OK in 24ms (Views: 3.8ms | ActiveRecord: 7.5ms)
 
 
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "training_type", "profile_quote", "description", "price", "zip", "city", "state", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "David"], ["training_type", "obedience"], ["profile_quote", "Capybara David"], ["description", "I will take care of your dogs!!"], ["price", 20], ["zip", 94109], ["city", "San Francisco"], ["state", "California"], ["created_at", "2017-07-20 00:34:40.392273"], ["updated_at", "2017-07-20 00:34:40.392273"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "training_type", "profile_quote", "description", "price", "zip", "city", "state", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Kelly"], ["training_type", "obedience"], ["profile_quote", "Y'all good?"], ["description", "Hash Browns"], ["price", 50], ["zip", 94109], ["city", "San Francisco"], ["state", "California"], ["created_at", "2017-07-20 00:34:40.398851"], ["updated_at", "2017-07-20 00:34:40.398851"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "training_type", "profile_quote", "description", "price", "zip", "city", "state", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10) RETURNING "id"[0m  [["name", "Aaron"], ["training_type", "behavior"], ["profile_quote", "Love for dogs"], ["description", "React is awesome"], ["price", 20], ["zip", 94109], ["city", "San Francisco"], ["state", "California"], ["created_at", "2017-07-20 00:34:40.407299"], ["updated_at", "2017-07-20 00:34:40.407299"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+  [1m[36mTrainer Load (0.7ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
