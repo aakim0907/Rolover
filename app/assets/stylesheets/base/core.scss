@@ -62,7 +62,7 @@ button {
 }
 
 .btn {
-  font-size: 17px;
+  font-size: 20px;
   width: 100%;
   border: none;
   border-radius: 2px;
@@ -78,13 +78,12 @@ button {
   &.demo-btn {
     // background-color: $white;
     // border: 3px solid $green;
-    background-color: #224F56;
+    background-color: $dark-blue;
     // color: $dark-green;
     color: $white;
     border-radius: 2px;
     padding: 7px 12px;
   }
-
 }
 
 .errors {
