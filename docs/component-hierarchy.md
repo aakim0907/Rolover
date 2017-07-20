@@ -13,12 +13,12 @@
   * TrainerContainer
     * TrainerList
       * TrainerListItem
-        * TrainerDetail
-          * ReviewContainer
-            * ReviewList
-              * ReviewListItem
-          * ReviewFormContainer
-            * ReviewForm
+    * TrainerDetail
+      * ReviewContainer
+        * ReviewList
+          * ReviewListItem
+      * ReviewFormContainer
+        * ReviewForm
   * BookingFormContainer
     * BookingForm
   * Footer
