@@ -3,7 +3,7 @@ import sessionReducer from './session_reducer';
 import trainersReducer from './trainer_reducer';
 
  const rootReducer = combineReducers({
-   session: sessionReducer
+   session: sessionReducer,
    trainers: trainersReducer
  });
 
