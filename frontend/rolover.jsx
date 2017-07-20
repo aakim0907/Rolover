@@ -6,6 +6,7 @@ import Root from './components/root';
 
 // START TESTING
 import { fetchTrainer, fetchTrainers } from './actions/trainer_actions';
+import {selectAllTrainers} from './reducers/selectors';
 // END TESTING
 
 document.addEventListener('DOMContentLoaded', () => {
@@ -30,5 +31,6 @@ document.addEventListener('DOMContentLoaded', () => {
   window.dispatch = store.dispatch;
   window.fetchTrainers = fetchTrainers;
   window.fetchTrainer = fetchTrainer;
+  window.selectAllTrainers = selectAllTrainers;
   // END TESTING
 });

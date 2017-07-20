@@ -15146,3 +15146,28 @@ Processing by Api::TrainersController#index as JSON
 Completed 200 OK in 36ms (Views: 23.0ms | ActiveRecord: 8.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-07-19 20:46:19 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 449ms (Views: 448.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-19 20:46:22 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 68ms (Views: 66.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-19 20:46:46 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.5ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (5.0ms)
+Completed 200 OK in 9ms (Views: 7.5ms | ActiveRecord: 0.4ms)
+
+

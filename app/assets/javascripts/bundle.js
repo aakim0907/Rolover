@@ -12472,10 +12472,13 @@ var _root2 = _interopRequireDefault(_root);
 
 var _trainer_actions = __webpack_require__(281);
 
+var _selectors = __webpack_require__(282);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 // END TESTING
 
+// START TESTING
 document.addEventListener('DOMContentLoaded', function () {
   var store = void 0;
   if (window.currentUser) {
@@ -12498,10 +12501,9 @@ document.addEventListener('DOMContentLoaded', function () {
   window.dispatch = store.dispatch;
   window.fetchTrainers = _trainer_actions.fetchTrainers;
   window.fetchTrainer = _trainer_actions.fetchTrainer;
+  window.selectAllTrainers = _selectors.selectAllTrainers;
   // END TESTING
 });
-
-// START TESTING
 
 /***/ }),
 /* 115 */
@@ -45994,6 +45996,25 @@ var fetchTrainer = exports.fetchTrainer = function fetchTrainer(trainer) {
     });
   };
 };
+
+/***/ }),
+/* 282 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.selectAllTrainers = undefined;
+
+var _lodash = __webpack_require__(234);
+
+var selectAllTrainers = exports.selectAllTrainers = function selectAllTrainers(_ref) {
+  var trainers = _ref.trainers;
+  return (0, _lodash.values)(trainers.byID);
+}; // import in container when mapSTateToPRop
 
 /***/ })
 /******/ ]);
