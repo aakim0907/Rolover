@@ -40,33 +40,30 @@ class AuthModal extends React.Component {
     this.setState({modalIsOpen: false});
   }
 
-  render() {
+  displayModal(formType) {
+    const modalName = (
+      formType === 'login' ? "Log In" : "Sign Up"
+    );
     return (
       <div>
-        {
-        this.props.formType === 'signup' ?
-          <div>
-            <button onClick={this.openModal}>Sign Up</button>
-            <Modal
-              isOpen={this.state.modalIsOpen}
-              onRequestClose={this.closeModal}
-              style={customStyles}
-              contentLabel="modal-signup">
-              <button onClick={this.closeModal}>X</button>
-              <SessionFormContainer formType='signup' />
-            </Modal>
-          </div> : <div>
-            <button onClick={this.openModal}>Log In</button>
-            <Modal
-              isOpen={this.state.modalIsOpen}
-              onRequestClose={this.closeModal}
-              style={customStyles}
-              contentLabel="modal-login">
-              <button onClick={this.closeModal}>X</button>
-              <SessionFormContainer formType='login' />
-            </Modal>
-          </div>
-        }
+        <button onClick={this.openModal}>{modalName}</button>
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          contentLabel="modal">
+          <button onClick={this.closeModal}>X</button>
+          <SessionFormContainer formType={formType} />
+        </Modal>
+      </div>
+    );
+  }
+
+  render() {
+    const formType = this.props.formType;
+    return (
+      <div>
+        {this.displayModal(formType)}
       </div>
     );
   }

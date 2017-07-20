@@ -53,7 +53,6 @@ class SessionForm extends React.Component {
   }
 
   renderRedirect() {
-    console.log(this.props);
     if (this.props.formType === "login") {
       return (
         <div className="other-link">

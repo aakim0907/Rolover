@@ -45633,7 +45633,6 @@ var SessionForm = function (_React$Component) {
   }, {
     key: 'renderRedirect',
     value: function renderRedirect() {
-      console.log(this.props);
       if (this.props.formType === "login") {
         return _react2.default.createElement(
           'div',
@@ -46275,56 +46274,41 @@ var AuthModal = function (_React$Component) {
       this.setState({ modalIsOpen: false });
     }
   }, {
-    key: 'render',
-    value: function render() {
+    key: 'displayModal',
+    value: function displayModal(formType) {
+      var modalName = formType === 'login' ? "Log In" : "Sign Up";
       return _react2.default.createElement(
         'div',
         null,
-        this.props.formType === 'signup' ? _react2.default.createElement(
-          'div',
-          null,
+        _react2.default.createElement(
+          'button',
+          { onClick: this.openModal },
+          modalName
+        ),
+        _react2.default.createElement(
+          _reactModal2.default,
+          {
+            isOpen: this.state.modalIsOpen,
+            onRequestClose: this.closeModal,
+            style: customStyles,
+            contentLabel: 'modal' },
           _react2.default.createElement(
             'button',
-            { onClick: this.openModal },
-            'Sign Up'
+            { onClick: this.closeModal },
+            'X'
           ),
-          _react2.default.createElement(
-            _reactModal2.default,
-            {
-              isOpen: this.state.modalIsOpen,
-              onRequestClose: this.closeModal,
-              style: customStyles,
-              contentLabel: 'modal-signup' },
-            _react2.default.createElement(
-              'button',
-              { onClick: this.closeModal },
-              'X'
-            ),
-            _react2.default.createElement(_session_form_container2.default, { formType: 'signup' })
-          )
-        ) : _react2.default.createElement(
-          'div',
-          null,
-          _react2.default.createElement(
-            'button',
-            { onClick: this.openModal },
-            'Log In'
-          ),
-          _react2.default.createElement(
-            _reactModal2.default,
-            {
-              isOpen: this.state.modalIsOpen,
-              onRequestClose: this.closeModal,
-              style: customStyles,
-              contentLabel: 'modal-login' },
-            _react2.default.createElement(
-              'button',
-              { onClick: this.closeModal },
-              'X'
-            ),
-            _react2.default.createElement(_session_form_container2.default, { formType: 'login' })
-          )
+          _react2.default.createElement(_session_form_container2.default, { formType: formType })
         )
+      );
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var formType = this.props.formType;
+      return _react2.default.createElement(
+        'div',
+        null,
+        this.displayModal(formType)
       );
     }
   }]);
