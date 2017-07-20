@@ -29632,24 +29632,23 @@ var AuthModal = function (_React$Component) {
 
     _this.state = {
       modalIsOpen: false
+      // formtype
     };
 
     _this.openModal = _this.openModal.bind(_this);
-    // this.afterOpenModal = this.afterOpenModal.bind(this);
     _this.closeModal = _this.closeModal.bind(_this);
     return _this;
   }
 
+  // button onclick=(this.openModal.bind(this, 'login'))
+
   _createClass(AuthModal, [{
     key: 'openModal',
     value: function openModal() {
+      //arg
       this.setState({ modalIsOpen: true });
+      // formtype
     }
-
-    // afterOpenModal() {
-    //   this.subtitle.style.color = '#f00';
-    // }
-
   }, {
     key: 'closeModal',
     value: function closeModal() {
@@ -42830,7 +42829,7 @@ exports.default = trainersReducer;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var fetchTrainers = exports.fetchTrainers = function fetchTrainers(search) {
+var fetchTrainers = exports.fetchTrainers = function fetchTrainers() {
   return $.ajax({
     method: 'GET',
     url: '/api/trainers'
@@ -47144,8 +47143,9 @@ var TrainerList = function (_React$Component) {
     key: 'render',
     value: function render() {
       var trainers = this.props.trainers;
+      // console.log(this.props);
+      // console.log(trainers);
 
-      console.log(trainers);
       var trainerItems = trainers.map(function (trainer) {
         return _react2.default.createElement(_trainer_list_item2.default, { key: trainer.id, trainer: trainer });
       });
@@ -47251,6 +47251,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var mapStateToProps = function mapStateToProps(_ref) {
   var trainers = _ref.trainers;
+
+  // console.log(trainers);
   return {
     trainers: (0, _selectors.selectAllTrainers)(trainers)
   };

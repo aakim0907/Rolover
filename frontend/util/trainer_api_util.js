@@ -1,4 +1,4 @@
-export const fetchTrainers = search => (
+export const fetchTrainers = () => (
   $.ajax({
     method: 'GET',
     url: '/api/trainers'

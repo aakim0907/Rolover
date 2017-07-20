@@ -26,20 +26,19 @@ class AuthModal extends React.Component {
 
     this.state = {
       modalIsOpen: false
+      // formtype
     };
 
     this.openModal = this.openModal.bind(this);
-    // this.afterOpenModal = this.afterOpenModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
-  openModal() {
-    this.setState({modalIsOpen: true});
-  }
+  // button onclick=(this.openModal.bind(this, 'login'))
 
-  // afterOpenModal() {
-  //   this.subtitle.style.color = '#f00';
-  // }
+  openModal() { //arg
+    this.setState({modalIsOpen: true});
+    // formtype
+  }
 
   closeModal() {
     this.setState({modalIsOpen: false});

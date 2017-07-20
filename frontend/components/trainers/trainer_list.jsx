@@ -10,7 +10,8 @@ class TrainerList extends React.Component {
 
   render() {
     const { trainers } = this.props;
-    console.log(trainers);
+    // console.log(this.props);
+    // console.log(trainers);
     const trainerItems = trainers.map(trainer => <TrainerListItem key={trainer.id} trainer={trainer} />);
 
     if (trainers.length === 0) {

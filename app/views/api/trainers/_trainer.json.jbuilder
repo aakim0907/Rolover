@@ -1,1 +1,1 @@
-json.extract! trainer, :id, :name, :training_type, :profile_quote, :description, :price, :zip, :city, :state
+json.extract! trainer, :id, :name, :obedience, :behavior, :advanced, :profile_quote, :description, :price, :zip, :city, :state
