@@ -22,51 +22,29 @@
   }
 
   trainers: {
-    1: {
-      id: 1,
-      name: "John Doe",
-      training_type: "obedience",
-      profile_quote: "Awesome Animal Lover",
-      description: "John Doe is a .......",
-      price: 45,
-      zip: 94109,
-      city: "San Francisco",
-      state: "California",
-      profile_image_id: 7
+    byID: {
+      1: {
+        id: 1,
+        name: "John Doe",
+        training_type: "obedience",
+        profile_quote: "Awesome Animal Lover",
+        description: "John Doe is a .......",
+        price: 45,
+        zip: 94109,
+        city: "San Francisco",
+        state: "California",
+        profile_image_id: 7
+      },
+
+      2: {
+        id: 2,
+        ...,
+      }
     },
 
-    2: {
-      id: 2,
-      ...,
-    }
+    currentTrainer: 3
   },
-
-  trainerDetail: {
-    currentTrainer: {
-      id: 1,
-      name: "John Doe",
-      profile_quote: "Awesome Animal Lover",
-      description: "John Doe is a .......",
-      price: 45,
-      zip: 94109,
-      city: "San Francisco",
-      state: "California",
-      image_url_ids: [2, 17, 92]
-    }
-    reviews: [
-      {
-        user_id: 3,
-        rating: 5,
-        body: "John was such a great trainer!"
-      },
-      {
-        user_id: 21,
-        rating: 4,
-        body: "My dog can sit & stay now! Yay!"
-      }
-    ]
-  },
-
+  
   bookings: {
     1: {
       user_id: 3,

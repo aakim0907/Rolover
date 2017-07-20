@@ -25277,7 +25277,6 @@ var sessionReducer = function sessionReducer() {
   switch (action.type) {
     case _session_actions.RECEIVE_CURRENT_USER:
       var currentUser = action.currentUser;
-      console.log(currentUser);
       return (0, _lodash.merge)({}, nullUser, {
         currentUser: currentUser
       });
