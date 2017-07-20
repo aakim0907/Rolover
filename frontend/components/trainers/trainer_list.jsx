@@ -10,12 +10,19 @@ class TrainerList extends React.Component {
 
   render() {
     const { trainers } = this.props;
-    const trainerItems = trainers.map( trainer => <TrainerListItem key={trainer.id} trainer={trainer} />)
+    console.log(trainers);
+    const trainerItems = trainers.map(trainer => <TrainerListItem key={trainer.id} trainer={trainer} />);
 
     if (trainers.length === 0) {
       return (<div>No Results</div>);
     } else {
-
+      return (
+        <section className="trainer-index">
+          <ul>
+            { trainerItems }
+          </ul>
+        </section>
+      );
     }
   }
 }

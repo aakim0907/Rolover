@@ -5,7 +5,7 @@ import {ProtectedRoute} from '../util/route_util';
 
 import NavBar from './nav_bar';
 import MainPage from './main_page';
-import TrainerList from './trainers/trainer_list';
+import TrainerListContainer from './trainers/trainer_list_container';
 import Footer from './footer';
 
 const App = () => (
@@ -16,7 +16,7 @@ const App = () => (
 
     <div className="body-content">
       <switch>
-        <Route path="/trainers" component={TrainerList} />
+        <Route path="/trainers" component={TrainerListContainer} />
         <Route exact path="/" component={MainPage} />
       </switch>
     </div>

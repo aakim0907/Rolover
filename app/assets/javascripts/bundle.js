@@ -45760,9 +45760,9 @@ var _main_page = __webpack_require__(292);
 
 var _main_page2 = _interopRequireDefault(_main_page);
 
-var _trainer_list = __webpack_require__(295);
+var _trainer_list_container = __webpack_require__(297);
 
-var _trainer_list2 = _interopRequireDefault(_trainer_list);
+var _trainer_list_container2 = _interopRequireDefault(_trainer_list_container);
 
 var _footer = __webpack_require__(293);
 
@@ -45785,7 +45785,7 @@ var App = function App() {
       _react2.default.createElement(
         'switch',
         null,
-        _react2.default.createElement(_reactRouterDom.Route, { path: '/trainers', component: _trainer_list2.default }),
+        _react2.default.createElement(_reactRouterDom.Route, { path: '/trainers', component: _trainer_list_container2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _main_page2.default })
       )
     )
@@ -47145,6 +47145,7 @@ var TrainerList = function (_React$Component) {
     value: function render() {
       var trainers = this.props.trainers;
 
+      console.log(trainers);
       var trainerItems = trainers.map(function (trainer) {
         return _react2.default.createElement(_trainer_list_item2.default, { key: trainer.id, trainer: trainer });
       });
@@ -47155,7 +47156,17 @@ var TrainerList = function (_React$Component) {
           null,
           'No Results'
         );
-      } else {}
+      } else {
+        return _react2.default.createElement(
+          'section',
+          { className: 'trainer-index' },
+          _react2.default.createElement(
+            'ul',
+            null,
+            trainerItems
+          )
+        );
+      }
     }
   }]);
 
@@ -47214,6 +47225,46 @@ var TrainerIndexItem = function TrainerIndexItem(_ref) {
 };
 
 exports.default = TrainerIndexItem;
+
+/***/ }),
+/* 297 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(40);
+
+var _selectors = __webpack_require__(294);
+
+var _trainer_actions = __webpack_require__(107);
+
+var _trainer_list = __webpack_require__(295);
+
+var _trainer_list2 = _interopRequireDefault(_trainer_list);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(_ref) {
+  var trainers = _ref.trainers;
+  return {
+    trainers: (0, _selectors.selectAllTrainers)(trainers)
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    fetchTrainers: function fetchTrainers() {
+      return dispatch((0, _trainer_actions.fetchTrainers)());
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_trainer_list2.default);
 
 /***/ })
 /******/ ]);
