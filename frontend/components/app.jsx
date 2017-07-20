@@ -1,11 +1,11 @@
 import React from 'react';
 import {Route, Switch, Link} from 'react-router-dom';
 
-import {AuthRoute, ProtectedRoute} from '../util/route_util';
+import {ProtectedRoute} from '../util/route_util';
 
 import NavBar from './nav_bar';
-import SessionFormContainer from './session_form/session_form_container';
 import MainPage from './main_page';
+import trainerList from './trainers/trainer_list';
 import Footer from './footer';
 
 const App = () => (
@@ -16,9 +16,8 @@ const App = () => (
 
     <div className="body-content">
       <switch>
-        <AuthRoute path="/login" component={SessionFormContainer}/>
-        <AuthRoute path="/signup" component={SessionFormContainer}/>
-        <Route exact path="/" component={MainPage}/>
+        <Route path="/trainers" component={trainerList} />
+        <Route exact path="/" component={MainPage} />
       </switch>
     </div>
 

@@ -45741,13 +45741,13 @@ var _nav_bar = __webpack_require__(281);
 
 var _nav_bar2 = _interopRequireDefault(_nav_bar);
 
-var _session_form_container = __webpack_require__(69);
-
-var _session_form_container2 = _interopRequireDefault(_session_form_container);
-
 var _main_page = __webpack_require__(292);
 
 var _main_page2 = _interopRequireDefault(_main_page);
+
+var _trainer_list = __webpack_require__(295);
+
+var _trainer_list2 = _interopRequireDefault(_trainer_list);
 
 var _footer = __webpack_require__(293);
 
@@ -45770,8 +45770,7 @@ var App = function App() {
       _react2.default.createElement(
         'switch',
         null,
-        _react2.default.createElement(_route_util.AuthRoute, { path: '/login', component: _session_form_container2.default }),
-        _react2.default.createElement(_route_util.AuthRoute, { path: '/signup', component: _session_form_container2.default }),
+        _react2.default.createElement(_reactRouterDom.Route, { path: '/trainers', component: _trainer_list2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _main_page2.default })
       )
     )
@@ -45792,7 +45791,7 @@ exports.default = App;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.ProtectedRoute = exports.AuthRoute = undefined;
+exports.ProtectedRoute = undefined;
 
 var _react = __webpack_require__(4);
 
@@ -45804,19 +45803,10 @@ var _reactRouterDom = __webpack_require__(17);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Auth = function Auth(_ref) {
+var Protected = function Protected(_ref) {
   var Component = _ref.component,
       path = _ref.path,
       loggedIn = _ref.loggedIn;
-  return _react2.default.createElement(_reactRouterDom.Route, { path: path, render: function render(props) {
-      return !loggedIn ? _react2.default.createElement(Component, props) : _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' });
-    } });
-};
-
-var Protected = function Protected(_ref2) {
-  var Component = _ref2.component,
-      path = _ref2.path,
-      loggedIn = _ref2.loggedIn;
   return _react2.default.createElement(_reactRouterDom.Route, { path: path, render: function render(props) {
       return loggedIn ? _react2.default.createElement(Component, props) : _react2.default.createElement(_reactRouterDom.Redirect, { to: '/login' });
     } });
@@ -45827,8 +45817,6 @@ var mapStateToProps = function mapStateToProps(state) {
     loggedIn: Boolean(state.session.currentUser)
   };
 };
-
-var AuthRoute = exports.AuthRoute = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, null)(Auth));
 
 var ProtectedRoute = exports.ProtectedRoute = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, null)(Protected));
 
@@ -47110,6 +47098,52 @@ var _lodash = __webpack_require__(62);
 var selectAllTrainers = exports.selectAllTrainers = function selectAllTrainers(trainers) {
   return (0, _lodash.values)(trainers.byID);
 };
+
+/***/ }),
+/* 295 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(17);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var trainerList = function (_React$Component) {
+  _inherits(trainerList, _React$Component);
+
+  function trainerList(props) {
+    _classCallCheck(this, trainerList);
+
+    return _possibleConstructorReturn(this, (trainerList.__proto__ || Object.getPrototypeOf(trainerList)).call(this, props));
+  }
+
+  _createClass(trainerList, [{
+    key: 'render',
+    value: function render() {}
+  }]);
+
+  return trainerList;
+}(_react2.default.Component);
+
+exports.default = trainerList;
 
 /***/ })
 /******/ ]);
