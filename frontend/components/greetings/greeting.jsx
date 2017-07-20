@@ -31,7 +31,7 @@ class Greeting extends React.Component {
     const personalGreeting = (currentUser, logout) => (
     	<div className="login-signup">
         <span className="header-name">{currentUser.email}</span>
-        <button className="session-btn" onClick={logout}>Log Out</button>
+        <button onClick={logout}>Log Out</button>
     	</div>
     );
 

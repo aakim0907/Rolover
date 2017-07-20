@@ -29608,7 +29608,7 @@ var customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    height: '450px',
+    height: '500px',
     border: '1px solid $green'
   }
 };
@@ -29656,7 +29656,7 @@ var AuthModal = function (_React$Component) {
         null,
         _react2.default.createElement(
           'button',
-          { className: 'session-btn', onClick: this.openModal },
+          { className: this.props.formType, onClick: this.openModal },
           modalName
         ),
         _react2.default.createElement(
@@ -46000,7 +46000,7 @@ var Greeting = function (_React$Component) {
           ),
           _react2.default.createElement(
             'button',
-            { className: 'session-btn', onClick: logout },
+            { onClick: logout },
             'Log Out'
           )
         );
@@ -46091,42 +46091,20 @@ var SessionForm = function (_React$Component) {
       this.props.processForm({ email: "bob@gmail", password: "123456" });
     }
   }, {
-    key: 'renderDemo',
-    value: function renderDemo() {
-      if (this.props.formType === 'login') {
-        return _react2.default.createElement(
-          'button',
-          { className: 'btn demo-btn', onClick: this.handleDemoClick },
-          'Demo Account'
-        );
-      }
-    }
-  }, {
     key: 'renderRedirect',
     value: function renderRedirect() {
-      if (this.props.formType === "login") {
-        return _react2.default.createElement(
-          'div',
-          { className: 'other-link' },
-          _react2.default.createElement(
-            'p',
-            null,
-            'Don\'t have an account?'
-          ),
-          _react2.default.createElement(_auth_modal2.default, { formType: 'signup' })
-        );
-      } else {
-        return _react2.default.createElement(
-          'div',
-          { className: 'other-link' },
-          _react2.default.createElement(
-            'p',
-            null,
-            'Already have an account?'
-          ),
-          _react2.default.createElement(_auth_modal2.default, { formType: 'login' })
-        );
-      }
+      var redirectMsg = this.props.formType === 'login' ? "Don't have an account?" : "Already have an account?";
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'other-link' },
+        _react2.default.createElement(
+          'p',
+          null,
+          redirectMsg
+        ),
+        _react2.default.createElement(_auth_modal2.default, { buttonClass: 'session-redirect-btn', formType: this.props.formType })
+      );
     }
   }, {
     key: 'renderErrors',
@@ -46156,7 +46134,6 @@ var SessionForm = function (_React$Component) {
           null,
           renderMessage
         ),
-        this.renderErrors(),
         _react2.default.createElement(
           'form',
           { onSubmit: this.handleSubmit },
@@ -46178,8 +46155,13 @@ var SessionForm = function (_React$Component) {
               className: 'session-input'
             }),
             _react2.default.createElement('br', null),
+            this.renderErrors(),
             _react2.default.createElement('input', { type: 'submit', className: 'btn green', value: this.props.formType === 'login' ? 'Log In' : 'Sign Up' }),
-            this.renderDemo()
+            _react2.default.createElement(
+              'button',
+              { className: 'btn demo-btn', onClick: this.handleDemoClick },
+              'Demo Account'
+            )
           )
         ),
         this.renderRedirect()

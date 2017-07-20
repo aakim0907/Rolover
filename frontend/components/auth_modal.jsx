@@ -15,7 +15,7 @@ const customStyles = {
     bottom      : 'auto',
     marginRight : '-50%',
     transform   : 'translate(-50%, -50%)',
-    height      : '450px',
+    height      : '500px',
     border      : '1px solid $green'
   }
 };
@@ -52,7 +52,7 @@ class AuthModal extends React.Component {
 
     return (
       <div>
-        <button className="session-btn" onClick={this.openModal}>{modalName}</button>
+        <button className={this.props.formType} onClick={this.openModal}>{modalName}</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}

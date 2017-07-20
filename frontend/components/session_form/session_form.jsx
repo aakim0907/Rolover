@@ -31,33 +31,21 @@ class SessionForm extends React.Component {
 
   handleDemoClick(e) {
     e.preventDefault();
-    this.props.processForm({email: "bob@gmail", password: "123456"});
-  }
-
-  renderDemo() {
-    if (this.props.formType === 'login') {
-      return (
-        <button className="btn demo-btn" onClick={this.handleDemoClick}>Demo Account</button>
-      );
-    }
+    this.props.processForm({ email: "bob@gmail", password: "123456" });
   }
 
   renderRedirect() {
-    if (this.props.formType === "login") {
-      return (
-        <div className="other-link">
-          <p>Don't have an account?</p>
-          <AuthModal formType='signup' />
-        </div>
-      );
-    } else {
-      return (
-        <div className="other-link">
-          <p>Already have an account?</p>
-          <AuthModal formType='login' />
-        </div>
-      );
-    }
+    const redirectMsg = (
+      this.props.formType === 'login' ?
+      "Don't have an account?" : "Already have an account?"
+    );
+
+    return (
+      <div className="other-link">
+        <p>{redirectMsg}</p>
+        <AuthModal buttonClass='session-redirect-btn' formType={this.props.formType} />
+      </div>
+    );
   }
 
   renderErrors() {
@@ -81,7 +69,6 @@ class SessionForm extends React.Component {
       <div className="session-form-container">
 
         <h3>{renderMessage}</h3>
-        {this.renderErrors()}
 
           <form onSubmit={this.handleSubmit}>
             <div className="session-form-box">
@@ -102,8 +89,10 @@ class SessionForm extends React.Component {
                 />
             <br/>
 
+            {this.renderErrors()}
+
             <input type="submit" className="btn green" value={this.props.formType === 'login' ? 'Log In' : 'Sign Up'}/>
-            {this.renderDemo()}
+            <button className="btn demo-btn" onClick={this.handleDemoClick}>Demo Account</button>
           </div>
         </form>
 

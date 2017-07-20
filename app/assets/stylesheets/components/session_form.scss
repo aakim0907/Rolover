@@ -77,20 +77,12 @@
     margin-right: 10px;
     margin-bottom: 20px;
   }
-
-button {
-  &:focus {
-    outline: none;
-    border-color: $black;
-    }
-  }
 }
-
-.session-btn {
-  color: red;
-}
-
-.errors {
-  padding-top: 10px;
-  margin-left: 20px;
-}
+// button {
+//
+//   &:focus {
+//     outline: none;
+//     border-color: $black;
+//     }
+//   }
+// }
