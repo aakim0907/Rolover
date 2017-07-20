@@ -47161,8 +47161,6 @@ var TrainerList = function (_React$Component) {
     key: 'render',
     value: function render() {
       var trainers = this.props.trainers;
-      // console.log(this.props);
-      // console.log(trainers);
 
       var trainerItems = trainers.map(function (trainer) {
         return _react2.default.createElement(_trainer_list_item2.default, { key: trainer.id, trainer: trainer });
