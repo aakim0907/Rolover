@@ -12470,7 +12470,11 @@ var _root = __webpack_require__(236);
 
 var _root2 = _interopRequireDefault(_root);
 
+var _trainer_api_util = __webpack_require__(279);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// END TESTING
 
 document.addEventListener('DOMContentLoaded', function () {
   var store = void 0;
@@ -12488,7 +12492,14 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var root = document.getElementById('root');
   _reactDom2.default.render(_react2.default.createElement(_root2.default, { store: store }), root);
+
+  // START TESTING
+  window.fetchTrainers = _trainer_api_util.fetchTrainers;
+  window.fetchTrainer = _trainer_api_util.fetchTrainer;
+  // END TESTING
 });
+
+// START TESTING
 
 /***/ }),
 /* 115 */
@@ -45852,6 +45863,31 @@ var MainPage = function MainPage() {
 };
 
 exports.default = MainPage;
+
+/***/ }),
+/* 279 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var fetchTrainers = exports.fetchTrainers = function fetchTrainers(searchParam) {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/trainers',
+    data: searchParam
+  });
+};
+
+var fetchTrainer = exports.fetchTrainer = function fetchTrainer(id) {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/trainers/' + id
+  });
+};
 
 /***/ })
 /******/ ]);
