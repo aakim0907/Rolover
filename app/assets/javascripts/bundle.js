@@ -45874,11 +45874,11 @@ exports.default = MainPage;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var fetchTrainers = exports.fetchTrainers = function fetchTrainers(searchParam) {
+var fetchTrainers = exports.fetchTrainers = function fetchTrainers(filters) {
   return $.ajax({
     method: 'GET',
     url: '/api/trainers',
-    data: searchParam
+    data: filters
   });
 };
 

@@ -1,8 +1,8 @@
-export const fetchTrainers = searchParam => (
+export const fetchTrainers = filters => (
   $.ajax({
     method: 'GET',
     url: '/api/trainers',
-    data: searchParam
+    data: filters
   })
 );
 
