@@ -1,18 +1,18 @@
 import { connect } from 'react-redux';
 
 import { selectAllTrainers } from '../../reducers/selectors';
-import trainersList from './trainer_list';
+import { fetchTrainers } from '../../actions/trainer_actions';
+import TrainersList from './trainer_list';
 
 const mapStateToProps = ({ trainers }) => ({
-  trainersList: selectAllTrainers(trainers),
-  currentTrainer: trainers.currentTrainer
+  trainers: selectAllTrainers(trainers),
 });
 
 const mapDispatchToProps = dispatch => ({
-
+  fetchTrainers: () => dispatch(fetchTrainers())
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(trainersList);
+)(TrainersList);

@@ -1,14 +1,23 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
-class trainerList extends React.Component {
-  constructor(props) {
-    super(props);
+import TrainerListItem from './trainer_list_item';
+
+class TrainerList extends React.Component {
+  componentDidMount() {
+    this.props.fetchTrainers();
   }
 
   render() {
-    
+    const { trainers } = this.props;
+    const trainerItems = trainers.map( trainer => <TrainerListItem key={trainer.id} trainer={trainer} />)
+
+    if (trainers.length === 0) {
+      return (<div>No Results</div>);
+    } else {
+
+    }
   }
 }
 
-export default trainerList;
+export default TrainerList;

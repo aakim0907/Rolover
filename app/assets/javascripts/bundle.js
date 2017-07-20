@@ -47114,6 +47114,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(17);
 
+var _trainer_list_item = __webpack_require__(296);
+
+var _trainer_list_item2 = _interopRequireDefault(_trainer_list_item);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -47122,24 +47126,94 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-var trainerList = function (_React$Component) {
-  _inherits(trainerList, _React$Component);
+var TrainerList = function (_React$Component) {
+  _inherits(TrainerList, _React$Component);
 
-  function trainerList(props) {
-    _classCallCheck(this, trainerList);
+  function TrainerList() {
+    _classCallCheck(this, TrainerList);
 
-    return _possibleConstructorReturn(this, (trainerList.__proto__ || Object.getPrototypeOf(trainerList)).call(this, props));
+    return _possibleConstructorReturn(this, (TrainerList.__proto__ || Object.getPrototypeOf(TrainerList)).apply(this, arguments));
   }
 
-  _createClass(trainerList, [{
+  _createClass(TrainerList, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.props.fetchTrainers();
+    }
+  }, {
     key: 'render',
-    value: function render() {}
+    value: function render() {
+      var trainers = this.props.trainers;
+
+      var trainerItems = trainers.map(function (trainer) {
+        return _react2.default.createElement(_trainer_list_item2.default, { key: trainer.id, trainer: trainer });
+      });
+
+      if (trainers.length === 0) {
+        return _react2.default.createElement(
+          'div',
+          null,
+          'No Results'
+        );
+      } else {}
+    }
   }]);
 
-  return trainerList;
+  return TrainerList;
 }(_react2.default.Component);
 
-exports.default = trainerList;
+exports.default = TrainerList;
+
+/***/ }),
+/* 296 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(17);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// import renderStars from '../helper/star';
+
+var TrainerIndexItem = function TrainerIndexItem(_ref) {
+  var trainer = _ref.trainer;
+
+  //   const imgStyle = {
+  //   height: "100%",
+  //   width: "100%",
+  //   backgroundImage: `url(${room.main_pic_url})`
+  // };
+
+  return _react2.default.createElement(
+    'li',
+    null,
+    _react2.default.createElement(
+      _reactRouterDom.Link,
+      { to: '/trainers/' + trainer.id },
+      _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'span',
+          null,
+          trainer.name
+        )
+      )
+    )
+  );
+};
+
+exports.default = TrainerIndexItem;
 
 /***/ })
 /******/ ]);
