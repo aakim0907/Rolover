@@ -1,32 +1,27 @@
 ## Component Hierarchy
 
-**SessionFormContainer**
-* SessionForm
+* SessionFormContainer
+  * SessionForm
 
-**NavBar**
-* GreetingsContainer
-
-**HomeContainer**
-* SearchContainer
-* HomeIndex
-
-**TrainerContainer**
-* SearchContainer
-* TrainerList
-  * TrainerListItem
-
-**TrainerDetailContainer**
-* TrainerDetail
-* ReviewContainer
-  * ReviewList
-    * ReviewListItem
-  * ReviewFormContainer
-    * ReviewForm
-
-**BookingFormContainer**
-* BookingForm
-
-**Footer**
+* App
+  * NavBar
+    * GreetingContainer
+      * Greeting
+  * MainPage
+    * SearchContainer
+      * SearchBox
+  * TrainerContainer
+    * TrainerList
+      * TrainerListItem
+        * TrainerDetail
+          * ReviewContainer
+            * ReviewList
+              * ReviewListItem
+          * ReviewFormContainer
+            * ReviewForm
+  * BookingFormContainer
+    * BookingForm
+  * Footer
 
 ## Routes
 
