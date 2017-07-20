@@ -41,7 +41,7 @@ class SessionForm extends React.Component {
     return (
       <div className="other-link">
         <p>{redirectMsg}</p>
-        <AuthModal buttonClass='session-redirect-btn' formType={this.props.formType} />
+        <AuthModal buttonClass='session-redirect-btn' formType={this.props.formType} redirect='true'/>
       </div>
     );
   }

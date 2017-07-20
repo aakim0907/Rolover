@@ -29631,8 +29631,8 @@ var AuthModal = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (AuthModal.__proto__ || Object.getPrototypeOf(AuthModal)).call(this));
 
     _this.state = {
-      modalIsOpen: false
-      // formtype
+      modalIsOpen: false,
+      formtype: 'login'
     };
 
     _this.openModal = _this.openModal.bind(_this);
@@ -29640,20 +29640,34 @@ var AuthModal = function (_React$Component) {
     return _this;
   }
 
-  // button onclick=(this.openModal.bind(this, 'login'))
-
   _createClass(AuthModal, [{
     key: 'openModal',
-    value: function openModal() {
-      //arg
-      this.setState({ modalIsOpen: true });
-      // formtype
+    value: function openModal(formType) {
+      this.setState({
+        modalIsOpen: true,
+        formType: formType
+      });
     }
   }, {
     key: 'closeModal',
     value: function closeModal() {
       this.setState({ modalIsOpen: false });
     }
+
+    // renderButton() {
+    //   if (this.props.redirect === 'true') {
+    //     return (
+    //       <button className="login" onClick={this.openModal.bind(this, 'login')}>Log In</button>
+    //       <button className="signup" onClick={this.openModal.bind(this, 'signup')}>Sign Up</button>
+    //     );
+    //   } else {
+    //     const { buttonClass, formType } = this.props;
+    //     return (
+    //       <button className={buttonClass} onClick={this.openModal.bind(this, formType)}>{formType}</button>
+    //     )
+    //   }
+    // }
+
   }, {
     key: 'displayModal',
     value: function displayModal(formType) {
@@ -29664,8 +29678,13 @@ var AuthModal = function (_React$Component) {
         null,
         _react2.default.createElement(
           'button',
-          { className: this.props.formType, onClick: this.openModal },
-          modalName
+          { className: 'login', onClick: this.openModal.bind(this, 'login') },
+          'Log In'
+        ),
+        _react2.default.createElement(
+          'button',
+          { className: 'signup', onClick: this.openModal.bind(this, 'signup') },
+          'Sign Up'
         ),
         _react2.default.createElement(
           _reactModal2.default,
@@ -29681,7 +29700,7 @@ var AuthModal = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var formType = this.props.formType;
+      var formType = this.state.formType;
       return _react2.default.createElement(
         'div',
         null,
@@ -45987,8 +46006,7 @@ var Greeting = function (_React$Component) {
       var _props = this.props,
           currentUser = _props.currentUser,
           logout = _props.logout;
-      // <AuthModal formType='login'/>
-      // <AuthModal formType='signup'/>
+
 
       var sessionLinks = function sessionLinks() {
         return _react2.default.createElement(
@@ -46116,7 +46134,7 @@ var SessionForm = function (_React$Component) {
           null,
           redirectMsg
         ),
-        _react2.default.createElement(_auth_modal2.default, { buttonClass: 'session-redirect-btn', formType: this.props.formType })
+        _react2.default.createElement(_auth_modal2.default, { buttonClass: 'session-redirect-btn', formType: this.props.formType, redirect: 'true' })
       );
     }
   }, {

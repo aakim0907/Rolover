@@ -23,26 +23,39 @@ const customStyles = {
 class AuthModal extends React.Component {
   constructor() {
     super();
-
     this.state = {
-      modalIsOpen: false
-      // formtype
+      modalIsOpen: false,
+      formtype: 'login'
     };
 
     this.openModal = this.openModal.bind(this);
     this.closeModal = this.closeModal.bind(this);
   }
 
-  // button onclick=(this.openModal.bind(this, 'login'))
-
-  openModal() { //arg
-    this.setState({modalIsOpen: true});
-    // formtype
+  openModal(formType) {
+    this.setState({
+      modalIsOpen: true,
+      formType
+    });
   }
 
   closeModal() {
     this.setState({modalIsOpen: false});
   }
+
+  // renderButton() {
+  //   if (this.props.redirect === 'true') {
+  //     return (
+  //       <button className="login" onClick={this.openModal.bind(this, 'login')}>Log In</button>
+  //       <button className="signup" onClick={this.openModal.bind(this, 'signup')}>Sign Up</button>
+  //     );
+  //   } else {
+  //     const { buttonClass, formType } = this.props;
+  //     return (
+  //       <button className={buttonClass} onClick={this.openModal.bind(this, formType)}>{formType}</button>
+  //     )
+  //   }
+  // }
 
   displayModal(formType) {
     const modalName = (
@@ -51,7 +64,9 @@ class AuthModal extends React.Component {
 
     return (
       <div>
-        <button className={this.props.formType} onClick={this.openModal}>{modalName}</button>
+        <button className="login" onClick={this.openModal.bind(this, 'login')}>Log In</button>
+        <button className="signup" onClick={this.openModal.bind(this, 'signup')}>Sign Up</button>
+
         <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
@@ -64,7 +79,7 @@ class AuthModal extends React.Component {
   }
 
   render() {
-    const formType = this.props.formType;
+    const formType = this.state.formType;
     return (
       <div>
         {this.displayModal(formType)}

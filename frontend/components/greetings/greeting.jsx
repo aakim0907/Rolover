@@ -18,8 +18,6 @@ class Greeting extends React.Component {
 
   render() {
     const { currentUser, logout } = this.props;
-    // <AuthModal formType='login'/>
-    // <AuthModal formType='signup'/>
 
     const sessionLinks = () => (
       <div className="login-signup">
