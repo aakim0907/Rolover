@@ -42815,11 +42815,11 @@ exports.default = trainersReducer;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var fetchTrainers = exports.fetchTrainers = function fetchTrainers() {
+var fetchTrainers = exports.fetchTrainers = function fetchTrainers(search) {
   return $.ajax({
     method: 'GET',
     url: '/api/trainers'
-    // data: { filters }
+    // data: { search }
   });
 };
 
