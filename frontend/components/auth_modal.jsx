@@ -43,7 +43,8 @@ class AuthModal extends React.Component {
   render() {
     return (
       <div>
-        { this.props.formType === 'signup' ?
+        {
+        this.props.formType === 'signup' ?
           <div>
             <button onClick={this.openModal}>Sign Up</button>
             <Modal
