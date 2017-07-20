@@ -23,7 +23,9 @@ column name        | data type | details
 -------------------|-----------|-----------------------
 id                 | integer   | not null, primary key
 name               | string    | not null
-training_type      | string    | not null, inclusion: [obedience, behavior, advanced]
+obedience          | boolean   | not null
+behavior           | boolean   | not null
+advanced           | boolean   | not null
 profile_quote      | text      | not null
 description        | text      | not null
 price              | integer   | not null

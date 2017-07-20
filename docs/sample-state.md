@@ -31,7 +31,9 @@
       1: {
         id: 1,
         name: "John Doe",
-        training_type: "obedience",
+        obedience: true,
+        behavior: true,
+        advanced: false,
         profile_quote: "Awesome Animal Lover",
         description: "John Doe is a .......",
         price: 45,
