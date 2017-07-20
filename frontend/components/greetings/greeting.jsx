@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import SessionFormContainer from '../session_form/session_form_container';
+import AuthModal from './auth_modal';
 
 class Greeting extends React.Component {
   constructor(props) {
@@ -22,13 +23,9 @@ class Greeting extends React.Component {
       <div className="login-signup">
         <button className="demo" onClick={this.handleDemoClick}>Demo Account</button>
 
-        <Link to={'/login'}>
-          <span>Log In</span>
-        </Link>
+        <AuthModal formType='login' />
+        <AuthModal formType='signup' />
 
-        <Link to={'/signup'}>
-          <span>Sign Up</span>
-        </Link>
       </div>
     );
 
@@ -46,3 +43,11 @@ class Greeting extends React.Component {
 }
 
 export default Greeting;
+
+// <Link to={'/login'}>
+//   <span>Log In</span>
+// </Link>
+//
+// <Link to={'/signup'}>
+//   <span>Sign Up</span>
+// </Link>

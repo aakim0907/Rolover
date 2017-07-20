@@ -45453,6 +45453,10 @@ var _session_form_container = __webpack_require__(113);
 
 var _session_form_container2 = _interopRequireDefault(_session_form_container);
 
+var _auth_modal = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./auth_modal\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+var _auth_modal2 = _interopRequireDefault(_auth_modal);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -45498,24 +45502,8 @@ var Greeting = function (_React$Component) {
             { className: 'demo', onClick: _this2.handleDemoClick },
             'Demo Account'
           ),
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: '/login' },
-            _react2.default.createElement(
-              'span',
-              null,
-              'Log In'
-            )
-          ),
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: '/signup' },
-            _react2.default.createElement(
-              'span',
-              null,
-              'Sign Up'
-            )
-          )
+          _react2.default.createElement(_auth_modal2.default, { formType: 'login' }),
+          _react2.default.createElement(_auth_modal2.default, { formType: 'signup' })
         );
       };
 
@@ -45544,6 +45532,14 @@ var Greeting = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = Greeting;
+
+// <Link to={'/login'}>
+//   <span>Log In</span>
+// </Link>
+//
+// <Link to={'/signup'}>
+//   <span>Sign Up</span>
+// </Link>
 
 /***/ }),
 /* 275 */
