@@ -22,6 +22,11 @@
   }
 
   trainers: {
+    currentTrainer: {
+      id: 7,
+      ...
+    },
+
     byID: {
       1: {
         id: 1,
@@ -40,11 +45,9 @@
         id: 2,
         ...,
       }
-    },
-
-    currentTrainer: 3
+    }
   },
-  
+
   bookings: {
     1: {
       user_id: 3,

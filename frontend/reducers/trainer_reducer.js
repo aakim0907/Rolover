@@ -6,10 +6,8 @@ import {
 } from '../actions/trainer_actions';
 
 const _defaultState = {
-  trainers: {
-    byID: {},
-    currentTrainerID: null
-  }
+  currentTrainer: null,
+  byID: {}
 };
 
 const trainersReducer = (state = _defaultState, action) => {
@@ -19,13 +17,13 @@ const trainersReducer = (state = _defaultState, action) => {
     case RECEIVE_TRAINERS:
       const trainers = action.trainers;
       return merge({}, _defaultState, {
-        trainers
+        byID: trainers
       });
 
     case RECEIVE_TRAINER:
-      const errors = action.errors;
+      const trainer = action.trainer;
       return merge({}, _defaultState, {
-        errors
+        currentTrainer: trainer
       });
 
     default:

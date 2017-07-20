@@ -2,7 +2,7 @@ export const fetchTrainers = filters => (
   $.ajax({
     method: 'GET',
     url: '/api/trainers',
-    data: filters
+    data: { filters }
   })
 );
 
