@@ -34,18 +34,6 @@ class SessionForm extends React.Component {
     this.props.processForm({email: "bob@gmail", password: "123456"});
   }
 
-  renderMessage() {
-    if (this.props.formType === "login") {
-      return (
-        <h3>Log In</h3>
-      );
-    } else {
-      return (
-        <h3>Sign Up for Rolover</h3>
-      );
-    }
-  }
-
   renderDemo() {
     if (this.props.formType === 'login') {
       return (
@@ -85,10 +73,14 @@ class SessionForm extends React.Component {
   }
 
   render() {
+    const renderMessage = (
+      this.props.formType === 'login' ? 'Log In' : 'Sign Up for Rolover'
+    );
+
     return (
       <div className="session-form-container">
 
-        {this.renderMessage()}
+        <h3>{renderMessage}</h3>
         {this.renderErrors()}
 
           <form onSubmit={this.handleSubmit}>
