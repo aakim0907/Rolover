@@ -6,6 +6,10 @@ class Trainer < ApplicationRecord
   has_many :images
   # has_many :reviews
 
+  def self.search(search_params)
+    self.where("training_type LIKE", "%#{search_params}%")
+  end
+
   def profile_image
     images.select{ |img| img.type == "profile" }.first
   end
