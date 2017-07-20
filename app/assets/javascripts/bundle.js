@@ -45550,6 +45550,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(24);
 
+var _auth_modal = __webpack_require__(287);
+
+var _auth_modal2 = _interopRequireDefault(_auth_modal);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
@@ -45642,15 +45646,7 @@ var SessionForm = function (_React$Component) {
             null,
             'Don\'t have an account?'
           ),
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: '/signup' },
-            _react2.default.createElement(
-              'span',
-              null,
-              'Sign Up'
-            )
-          )
+          _react2.default.createElement(_auth_modal2.default, { formType: 'signup' })
         );
       } else {
         return _react2.default.createElement(
@@ -45661,15 +45657,7 @@ var SessionForm = function (_React$Component) {
             null,
             'Already have an account?'
           ),
-          _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: '/login' },
-            _react2.default.createElement(
-              'span',
-              null,
-              'Log In'
-            )
-          )
+          _react2.default.createElement(_auth_modal2.default, { formType: 'login' })
         );
       }
     }

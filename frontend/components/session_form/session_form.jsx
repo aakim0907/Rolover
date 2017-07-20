@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
+import AuthModal from '../auth_modal';
+
 class SessionForm extends React.Component {
   constructor(props) {
     super(props);
@@ -57,18 +59,14 @@ class SessionForm extends React.Component {
       return (
         <div className="other-link">
           <p>Don't have an account?</p>
-          <Link to={'/signup'}>
-            <span>Sign Up</span>
-          </Link>
+          <AuthModal formType='signup' />
         </div>
       );
     } else {
       return (
         <div className="other-link">
           <p>Already have an account?</p>
-          <Link to={'/login'}>
-            <span>Log In</span>
-          </Link>
+          <AuthModal formType='login' />
         </div>
       );
     }
