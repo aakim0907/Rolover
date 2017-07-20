@@ -57,12 +57,12 @@ button {
   margin: 0 auto;
 
   &.con-pad {
-      padding: 0 15px;
+    padding: 0 15px;
   }
 }
 
 .btn {
-  font-size: 19px;
+  font-size: 17px;
   width: 100%;
   border: none;
   border-radius: 2px;
@@ -76,10 +76,15 @@ button {
   }
 
   &.demo-btn {
-    background-color: $white;
-    border: 3px solid $green;
-    color: $dark-green
+    // background-color: $white;
+    // border: 3px solid $green;
+    background-color: #224F56;
+    // color: $dark-green;
+    color: $white;
+    border-radius: 2px;
+    padding: 7px 12px;
   }
+
 }
 
 .errors {
@@ -151,9 +156,10 @@ button {
   }
 
   &.pink {
-    border: 2px solid pink;
+    // border: 2px solid pink;
     color: pink;
   }
+
   &:focus {
     outline: none;
     border-color: $black;
@@ -172,9 +178,10 @@ button {
   }
 
   &.pink {
-    border: 2px solid pink;
+    // border: 2px solid pink;
     background-color: pink;
   }
+
   &:focus {
     outline: none;
     border-color: $black;

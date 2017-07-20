@@ -29598,13 +29598,18 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
 var customStyles = {
+  overlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.7)'
+  },
   content: {
-    top: '50%',
+    top: '45%',
     left: '50%',
     right: 'auto',
     bottom: 'auto',
     marginRight: '-50%',
-    transform: 'translate(-50%, -50%)'
+    transform: 'translate(-50%, -50%)',
+    height: '450px',
+    border: '1px solid $green'
   }
 };
 
@@ -29645,6 +29650,7 @@ var AuthModal = function (_React$Component) {
     key: 'displayModal',
     value: function displayModal(formType) {
       var modalName = formType === 'login' ? "Log In" : "Sign Up";
+
       return _react2.default.createElement(
         'div',
         null,
@@ -29660,11 +29666,6 @@ var AuthModal = function (_React$Component) {
             onRequestClose: this.closeModal,
             style: customStyles,
             contentLabel: 'modal' },
-          _react2.default.createElement(
-            'button',
-            { onClick: this.closeModal },
-            'X'
-          ),
           _react2.default.createElement(_session_form_container2.default, { formType: formType })
         )
       );
@@ -29685,6 +29686,8 @@ var AuthModal = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = AuthModal;
+
+// <button className="btn" onClick={this.closeModal}>X</button>
 
 /***/ }),
 /* 117 */

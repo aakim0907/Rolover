@@ -5,13 +5,18 @@ import Modal from 'react-modal';
 import SessionFormContainer from './session_form/session_form_container';
 
 const customStyles = {
+  overlay : {
+    backgroundColor : 'rgba(0, 0, 0, 0.7)'
+  },
   content : {
-    top         : '50%',
+    top         : '45%',
     left        : '50%',
     right       : 'auto',
     bottom      : 'auto',
     marginRight : '-50%',
-    transform   : 'translate(-50%, -50%)'
+    transform   : 'translate(-50%, -50%)',
+    height      : '450px',
+    border      : '1px solid $green'
   }
 };
 
@@ -44,6 +49,7 @@ class AuthModal extends React.Component {
     const modalName = (
       formType === 'login' ? "Log In" : "Sign Up"
     );
+
     return (
       <div>
         <button className="session-btn" onClick={this.openModal}>{modalName}</button>
@@ -52,7 +58,6 @@ class AuthModal extends React.Component {
           onRequestClose={this.closeModal}
           style={customStyles}
           contentLabel="modal">
-          <button onClick={this.closeModal}>X</button>
           <SessionFormContainer formType={formType} />
         </Modal>
       </div>
@@ -70,3 +75,5 @@ class AuthModal extends React.Component {
 }
 
 export default AuthModal;
+
+          // <button className="btn" onClick={this.closeModal}>X</button>

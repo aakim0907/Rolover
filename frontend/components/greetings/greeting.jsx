@@ -23,9 +23,8 @@ class Greeting extends React.Component {
       <div className="login-signup">
         <button className="demo" onClick={this.handleDemoClick}>Demo Account</button>
 
-        <AuthModal formType='login' />
-        <AuthModal formType='signup' />
-
+        <AuthModal formType='login'/>
+        <AuthModal formType='signup'/>
       </div>
     );
 
