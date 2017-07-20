@@ -43,11 +43,3 @@ class Greeting extends React.Component {
 }
 
 export default Greeting;
-
-// <Link to={'/login'}>
-//   <span>Log In</span>
-// </Link>
-//
-// <Link to={'/signup'}>
-//   <span>Sign Up</span>
-// </Link>

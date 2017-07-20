@@ -9,11 +9,11 @@ class SessionForm extends React.Component {
     this.handleDemoClick = this.handleDemoClick.bind(this);
   }
 
-  componentWillReceiveProps(nextProps) {
-    if (nextProps.loggedIn) {
-      this.props.history.push('/');
-    }
-  }
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.loggedIn) {
+  //     this.props.history.push('/');
+  //   }
+  // }
 
   update(field) {
     return e => this.setState({
@@ -53,6 +53,7 @@ class SessionForm extends React.Component {
   }
 
   renderRedirect() {
+    console.log(this.props);
     if (this.props.formType === "login") {
       return (
         <div className="other-link">

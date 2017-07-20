@@ -50,7 +50,8 @@ class AuthModal extends React.Component {
             <Modal
               isOpen={this.state.modalIsOpen}
               onRequestClose={this.closeModal}
-              style={customStyles}>
+              style={customStyles}
+              contentLabel="modal-signup">
               <button onClick={this.closeModal}>X</button>
               <SessionFormContainer formType='signup' />
             </Modal>
@@ -59,7 +60,8 @@ class AuthModal extends React.Component {
             <Modal
               isOpen={this.state.modalIsOpen}
               onRequestClose={this.closeModal}
-              style={customStyles}>
+              style={customStyles}
+              contentLabel="modal-login">
               <button onClick={this.closeModal}>X</button>
               <SessionFormContainer formType='login' />
             </Modal>
@@ -71,26 +73,3 @@ class AuthModal extends React.Component {
 }
 
 export default AuthModal;
-
-// START DOC
-// <button onClick={this.openModal}>Open Modal</button>
-// <Modal
-//   isOpen={this.state.modalIsOpen}
-//   onAfterOpen={this.afterOpenModal}
-//   onRequestClose={this.closeModal}
-//   style={customStyles}
-//   contentLabel="Example Modal"
-// >
-//
-//   <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
-//   <button onClick={this.closeModal}>close</button>
-//   <div>I am a modal</div>
-//   <form>
-//     <input />
-//     <button>tab navigation</button>
-//     <button>stays</button>
-//     <button>inside</button>
-//     <button>the modal</button>
-//   </form>
-// </Modal>
-// END OF DOC

@@ -12432,7 +12432,8 @@ var mapStateToProps = function mapStateToProps(_ref) {
   };
 };
 
-var mapDispatchToProps = function mapDispatchToProps(dispatch, formType) {
+var mapDispatchToProps = function mapDispatchToProps(dispatch, param) {
+  var formType = param.formType;
   var _processForm = formType === 'login' ? _session_actions.login : _session_actions.signup;
   return {
     processForm: function processForm(user) {
@@ -45530,14 +45531,6 @@ var Greeting = function (_React$Component) {
 
 exports.default = Greeting;
 
-// <Link to={'/login'}>
-//   <span>Log In</span>
-// </Link>
-//
-// <Link to={'/signup'}>
-//   <span>Sign Up</span>
-// </Link>
-
 /***/ }),
 /* 275 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -45581,14 +45574,13 @@ var SessionForm = function (_React$Component) {
     return _this;
   }
 
+  // componentWillReceiveProps(nextProps) {
+  //   if (nextProps.loggedIn) {
+  //     this.props.history.push('/');
+  //   }
+  // }
+
   _createClass(SessionForm, [{
-    key: 'componentWillReceiveProps',
-    value: function componentWillReceiveProps(nextProps) {
-      if (nextProps.loggedIn) {
-        this.props.history.push('/');
-      }
-    }
-  }, {
     key: 'update',
     value: function update(field) {
       var _this2 = this;
@@ -45641,6 +45633,7 @@ var SessionForm = function (_React$Component) {
   }, {
     key: 'renderRedirect',
     value: function renderRedirect() {
+      console.log(this.props);
       if (this.props.formType === "login") {
         return _react2.default.createElement(
           'div',
@@ -46300,7 +46293,8 @@ var AuthModal = function (_React$Component) {
             {
               isOpen: this.state.modalIsOpen,
               onRequestClose: this.closeModal,
-              style: customStyles },
+              style: customStyles,
+              contentLabel: 'modal-signup' },
             _react2.default.createElement(
               'button',
               { onClick: this.closeModal },
@@ -46321,7 +46315,8 @@ var AuthModal = function (_React$Component) {
             {
               isOpen: this.state.modalIsOpen,
               onRequestClose: this.closeModal,
-              style: customStyles },
+              style: customStyles,
+              contentLabel: 'modal-login' },
             _react2.default.createElement(
               'button',
               { onClick: this.closeModal },
@@ -46338,29 +46333,6 @@ var AuthModal = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = AuthModal;
-
-// START DOC
-// <button onClick={this.openModal}>Open Modal</button>
-// <Modal
-//   isOpen={this.state.modalIsOpen}
-//   onAfterOpen={this.afterOpenModal}
-//   onRequestClose={this.closeModal}
-//   style={customStyles}
-//   contentLabel="Example Modal"
-// >
-//
-//   <h2 ref={subtitle => this.subtitle = subtitle}>Hello</h2>
-//   <button onClick={this.closeModal}>close</button>
-//   <div>I am a modal</div>
-//   <form>
-//     <input />
-//     <button>tab navigation</button>
-//     <button>stays</button>
-//     <button>inside</button>
-//     <button>the modal</button>
-//   </form>
-// </Modal>
-// END OF DOC
 
 /***/ }),
 /* 288 */
