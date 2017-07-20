@@ -11,11 +11,9 @@ class SessionForm extends React.Component {
     this.handleDemoClick = this.handleDemoClick.bind(this);
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.loggedIn) {
-  //     this.props.history.push('/');
-  //   }
-  // }
+  componentWillUnmount() {
+    this.props.clearErrors();
+  }
 
   update(field) {
     return e => this.setState({

@@ -24184,7 +24184,7 @@ function isPlainObject(value) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.logout = exports.login = exports.signup = exports.receiveErrors = exports.receiveCurrentUser = exports.RECEIVE_ERRORS = exports.RECEIVE_CURRENT_USER = undefined;
+exports.logout = exports.login = exports.signup = exports.clearErrors = exports.receiveErrors = exports.receiveCurrentUser = exports.CLEAR_ERRORS = exports.RECEIVE_ERRORS = exports.RECEIVE_CURRENT_USER = undefined;
 
 var _session_api_util = __webpack_require__(240);
 
@@ -24194,7 +24194,7 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 var RECEIVE_CURRENT_USER = exports.RECEIVE_CURRENT_USER = 'RECEIVE_CURRENT_USER';
 var RECEIVE_ERRORS = exports.RECEIVE_ERRORS = 'RECEIVE_ERRORS';
-// need clear errors?
+var CLEAR_ERRORS = exports.CLEAR_ERRORS = 'CLEAR_ERRORS';
 
 // sync action
 var receiveCurrentUser = exports.receiveCurrentUser = function receiveCurrentUser(currentUser) {
@@ -24208,6 +24208,12 @@ var receiveErrors = exports.receiveErrors = function receiveErrors(errors) {
   return {
     type: RECEIVE_ERRORS,
     errors: errors
+  };
+};
+
+var clearErrors = exports.clearErrors = function clearErrors() {
+  return {
+    type: CLEAR_ERRORS
   };
 };
 
@@ -24670,6 +24676,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, param) {
   var formType = param.formType;
   var _processForm = formType === 'login' ? _session_actions.login : _session_actions.signup;
   return {
+    clearErrors: function clearErrors() {
+      return dispatch((0, _session_actions.clearErrors)());
+    },
     processForm: function processForm(user) {
       return dispatch(_processForm(user));
     },
@@ -42719,6 +42728,12 @@ var sessionReducer = function sessionReducer() {
         errors: errors
       });
 
+    case _session_actions.CLEAR_ERRORS:
+      // return merge({}, state, { errors: [] });
+      var newState = (0, _lodash.merge)({}, state, { errors: [] });
+      newState.errors = [];
+      return newState;
+
     default:
       return state;
   }
@@ -46062,13 +46077,12 @@ var SessionForm = function (_React$Component) {
     return _this;
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (nextProps.loggedIn) {
-  //     this.props.history.push('/');
-  //   }
-  // }
-
   _createClass(SessionForm, [{
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.props.clearErrors();
+    }
+  }, {
     key: 'update',
     value: function update(field) {
       var _this2 = this;
