@@ -37,7 +37,8 @@ state              | string    | not null
 column name        | data type | details
 -------------------|-----------|-----------------------
 id                 | integer   | not null, primary key
-trainer_id         | integer   | not null, foreign key (references trainers), indexed
+trainer_id         | integer   | foreign key (references trainers), indexed
+user_id            | integer   | foreign key (references users), indexed
 url                | string    | not null
 type               | string    | not null, inclusion: [profile, main]
 

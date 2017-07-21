@@ -69,18 +69,25 @@ button {
   border-radius: 2px;
   padding: 14px 0;
   margin-top: 16px;
-  color: #fff;
+  color: $white;
   cursor: pointer;
 
   &.green {
     background-color: $green;
+
+    &:hover {
+      filter: brightness(85%);
+    }
   }
 
   &.demo-btn {
     background-color: $dark-blue;
-    color: $white;
-    border-radius: 2px;
     padding: 7px 12px;
+
+    &:hover {
+      filter: brightness(115%);
+      color: $white;
+    }
   }
 }
 
@@ -92,8 +99,9 @@ button {
   padding: 5px 7px;
 
   &:hover {
+    // background-color: $dark-blue;
+    // color: $white;
     background-color: $dark-blue;
-    color: $white;
   }
 }
 
@@ -167,11 +175,6 @@ button {
     color: $green;
   }
 
-  &.pink {
-    // border: 2px solid pink;
-    color: pink;
-  }
-
   &:focus {
     outline: none;
     border-color: $black;
@@ -187,11 +190,6 @@ button {
   &.green {
     border: 2px solid $green;
     background-color: $green;
-  }
-
-  &.pink {
-    // border: 2px solid pink;
-    background-color: pink;
   }
 
   &:focus {

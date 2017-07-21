@@ -9,9 +9,19 @@
 }
 
 .trainer-list-item {
-  border: 1px solid $gray;
+  border-bottom: 1px solid $gray;
   display: flex;
   width: 100%;
   margin: 0 10px 0 10px;
   padding: 15px;
+}
+
+.trainer-list-profile {
+  display: flex;
+  border: 1px solid $dark-blue;
+}
+
+.trainer-list-description {
+  display: flex;
+  border: 1px solid $dark-blue;
 }

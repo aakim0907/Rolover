@@ -47223,51 +47223,56 @@ var TrainerIndexItem = function TrainerIndexItem(_ref) {
   return _react2.default.createElement(
     'div',
     { className: 'trainer-list-item' },
+    _react2.default.createElement('div', { className: 'trainer-list-profile' }),
     _react2.default.createElement(
       'div',
-      { className: 'trainer-list-name' },
+      { className: 'trainer-list-description' },
       _react2.default.createElement(
-        _reactRouterDom.Link,
-        { to: '/trainers/' + trainer.id },
+        'div',
+        { className: 'trainer-list-name' },
+        _react2.default.createElement(
+          _reactRouterDom.Link,
+          { to: '/trainers/' + trainer.id },
+          _react2.default.createElement(
+            'span',
+            null,
+            trainer.name
+          )
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'trainer-list-quote' },
         _react2.default.createElement(
           'span',
           null,
-          trainer.name
+          '"',
+          trainer.profile_quote,
+          '"'
         )
-      )
-    ),
-    _react2.default.createElement(
-      'div',
-      { className: 'trainer-list-quote' },
+      ),
       _react2.default.createElement(
-        'span',
-        null,
-        '"',
-        trainer.profile_quote,
-        '"'
-      )
-    ),
-    _react2.default.createElement(
-      'div',
-      { className: 'trainer-list-price' },
+        'div',
+        { className: 'trainer-list-price' },
+        _react2.default.createElement(
+          'span',
+          null,
+          trainer.price,
+          '$'
+        )
+      ),
       _react2.default.createElement(
-        'span',
-        null,
-        trainer.price,
-        '$'
-      )
-    ),
-    _react2.default.createElement(
-      'div',
-      { className: 'trainer-list-address' },
-      _react2.default.createElement(
-        'span',
-        null,
-        trainer.city,
-        ', ',
-        trainer.state,
-        ' ',
-        trainer.zip
+        'div',
+        { className: 'trainer-list-address' },
+        _react2.default.createElement(
+          'span',
+          null,
+          trainer.city,
+          ', ',
+          trainer.state,
+          ' ',
+          trainer.zip
+        )
       )
     )
   );
