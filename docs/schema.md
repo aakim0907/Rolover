@@ -39,8 +39,8 @@ column name        | data type | details
 -------------------|-----------|-----------------------
 id                 | integer   | not null, primary key
 trainer_id         | integer   | foreign key (references trainers), indexed
-url                | string    | not null
-type               | string    | not null, inclusion: [profile, main]
+img_url            | string    | not null
+img_type           | string    | not null, inclusion: [profile, main]
 
 ## bookings
 column name | data type | details

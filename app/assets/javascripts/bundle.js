@@ -47220,13 +47220,16 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var TrainerIndexItem = function TrainerIndexItem(_ref) {
   var trainer = _ref.trainer;
 
+  var profile = trainer.images.find(function (img) {
+    return img.img_type === 'profile';
+  });
   return _react2.default.createElement(
     'div',
     { className: 'trainer-list-item' },
     _react2.default.createElement(
       'div',
       { className: 'trainer-list-profile' },
-      _react2.default.createElement('img', { src: 'http://res.cloudinary.com/rolover/image/upload/v1500615252/pete-bellis-217830_o7hl7o.jpg' })
+      _react2.default.createElement('img', { src: profile.img_url })
     ),
     _react2.default.createElement(
       'div',
@@ -47381,6 +47384,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // import renderStars from '../helper/star';
 
 // should have review & booking container!!!
+
+//trainer.images.filter(img => img.img_type === 'main')
 var TrainerDetail = function (_React$Component) {
   _inherits(TrainerDetail, _React$Component);
 
@@ -47393,15 +47398,18 @@ var TrainerDetail = function (_React$Component) {
   _createClass(TrainerDetail, [{
     key: 'render',
     value: function render() {
-      console.log(this.props);
       return _react2.default.createElement(
         'div',
-        null,
+        { className: 'trainer-detail-container' },
         _react2.default.createElement(
-          'p',
-          null,
-          'hi ',
-          this.props.trainer.name
+          'div',
+          { className: 'trainer-header' },
+          _react2.default.createElement(
+            'p',
+            null,
+            'hi ',
+            this.props.trainer.name
+          )
         )
       );
     }

@@ -3,13 +3,15 @@ import { Route, Link } from 'react-router-dom';
 // import renderStars from '../helper/star';
 
 // should have review & booking container!!!
+
+//trainer.images.filter(img => img.img_type === 'main')
 class TrainerDetail extends React.Component {
   render() {
-    console.log(this.props);
     return (
-      <div>
+      <div className="trainer-detail-container">
+        <div className="trainer-header">
           <p>hi {this.props.trainer.name}</p>
-
+        </div>
       </div>
     );
   }
