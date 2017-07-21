@@ -2,68 +2,93 @@
   border: 1px solid green;
   margin-top: 50px;
   margin-left: 150px;
-  width: 670px;
+  width: 600px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
+  // text-decoration: none;
 }
 
 .trainer-list-item {
   border-bottom: 1px solid $gray;
   display: flex;
   // width: 100%;
-  width: 668px;
+  width: 598px;
   height: 170px;
 
   &:hover {
     cursor: pointer;
     border-left: 3px solid $orange;
-    text-decoration: none;
+    // text-decoration: none;
   }
 }
 
 .trainer-list-profile {
+  background: url(http://res.cloudinary.com/rolover/image/upload/v1500615274/hannah-busing-310503_dyj1vz.jpg) no-repeat center;
+  background-size: 90% 90%;
   display: flex;
-  border: 1px solid $dark-blue;
-  width: 170px;
-  padding: 15px;
+  width: 25%;
 }
 
 .trainer-list-main {
+  // border: 1px solid $dark-blue;
   display: flex;
   flex-wrap: wrap;
-  border: 1px solid $dark-blue;
+  width: 65%;
+  padding: 7px;
+}
+
+.trainer-list-price {
+  // border: 1px solid $green;
+  display: flex;
+  width: 10%;
+  font-size: 25px;
+  padding-top: 15px;
+  padding-right: 7px;
+  justify-content: flex-end;
 }
 
 .trainer-list-name {
-  border: 1px solid $green;
+  // border: 1px solid $light-green;
   display: flex;
   width: 100%;
-  height: 50px;
+  height: 25%;
 
-  h3 {
-    margin-top: 10px;
-    margin-left: 10px;
+  h2 {
+    margin-top: 5px;
+    // margin-left: 10px;
+    // display: flex;
     color: $dark-blue;
+    // font-weight: 500;
+  }
+}
+
+.trainer-list-quote {
+  // border: 1px solid $light-green;
+  display: flex;
+  width: 100%;
+  height: 15%;
+  color: black;
+  font-weight: bold;
+  // padding-left: 10px;
+}
+
+.trainer-list-address {
+  // border: 1px solid $light-green;
+  display: flex;
+  width: 100%;
+  height: 15%;
+
+  span {
+    font-size: 12px;
   }
 }
 
 .trainer-list-description {
-  border: 1px solid $green;
+  // border: 1px solid $light-green;
   display: flex;
-  flex-wrap: wrap;
   width: 100%;
-  height: 110px;
-}
-
-.trainer-list-quote {
-  display: flex;
-}
-
-.trainer-list-price {
-  display: flex;
-}
-
-.trainer-list-address {
-  display: flex;
+  height: 45%;
+  padding-top: 10px;
+  padding-left: 10px;
 }

@@ -24110,3 +24110,1877 @@ Processing by Api::TrainersController#index as JSON
 Completed 200 OK in 9ms (Views: 8.0ms | ActiveRecord: 0.4ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:20:52 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (9.3ms)
+Completed 200 OK in 180ms (Views: 176.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:20:54 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.4ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (5.3ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:21:20 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (6.2ms)
+Completed 200 OK in 147ms (Views: 144.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:21:21 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.6ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (8.2ms)
+Completed 200 OK in 13ms (Views: 11.6ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:21:39 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 164ms (Views: 162.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:21:41 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.5ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.3ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (9.2ms)
+Completed 200 OK in 12ms (Views: 11.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:22:12 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (75.5ms)
+Completed 200 OK in 204ms (Views: 200.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:22:14 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (19.5ms)
+Completed 200 OK in 24ms (Views: 21.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:22:36 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 143ms (Views: 141.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:22:37 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (1.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (6.0ms)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:23:08 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 124ms (Views: 123.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:23:10 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (1.0ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (9.6ms)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:23:56 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (11.9ms)
+Completed 200 OK in 203ms (Views: 200.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:23:58 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (1.1ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.5ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.3ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (9.2ms)
+Completed 200 OK in 14ms (Views: 12.1ms | ActiveRecord: 1.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:24:09 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 171ms (Views: 168.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:24:11 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (8.3ms)
+Completed 200 OK in 13ms (Views: 10.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:24:20 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (12.1ms)
+Completed 200 OK in 202ms (Views: 198.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:24:22 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (7.1ms)
+Completed 200 OK in 10ms (Views: 9.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:24:29 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 161ms (Views: 157.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:24:30 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (7.0ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:24:34 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.7ms)
+Completed 200 OK in 189ms (Views: 185.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:24:36 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (8.9ms)
+Completed 200 OK in 12ms (Views: 10.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:24:46 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 125ms (Views: 124.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:24:48 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (1.4ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.3ms)
+  Rendered api/trainers/index.json.jbuilder (9.5ms)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:24:55 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 183ms (Views: 180.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:24:57 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (1.0ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (8.7ms)
+Completed 200 OK in 12ms (Views: 11.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:25:03 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 186ms (Views: 182.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:25:05 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (8.4ms)
+Completed 200 OK in 13ms (Views: 11.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:25:23 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 204ms (Views: 201.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:25:25 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (9.1ms)
+Completed 200 OK in 16ms (Views: 14.2ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:25:32 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 196ms (Views: 192.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:25:34 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  Rendered api/trainers/index.json.jbuilder (7.0ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:27:21 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 116ms (Views: 115.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:27:22 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.5ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.4ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (5.7ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:28:11 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 138ms (Views: 134.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:28:12 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (7.6ms)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:28:14 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 64ms (Views: 56.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:28:16 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.6ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (7.6ms)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:28:26 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (16.1ms)
+Completed 200 OK in 228ms (Views: 223.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:28:28 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (2.8ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.3ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (1.3ms)
+  Rendered api/trainers/index.json.jbuilder (10.3ms)
+Completed 200 OK in 15ms (Views: 9.7ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:28:34 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (9.6ms)
+Completed 200 OK in 187ms (Views: 181.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:28:36 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (9.0ms)
+Completed 200 OK in 14ms (Views: 12.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:31:08 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 145ms (Views: 144.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:31:10 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (1.9ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (8.8ms)
+Completed 200 OK in 12ms (Views: 9.1ms | ActiveRecord: 1.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:31:37 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (10.1ms)
+Completed 200 OK in 182ms (Views: 178.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:31:39 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (1.3ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (1.0ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.4ms)
+  Rendered api/trainers/index.json.jbuilder (9.9ms)
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:31:44 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 73ms (Views: 70.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:31:45 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (9.1ms)
+Completed 200 OK in 14ms (Views: 12.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:34:14 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 799ms (Views: 798.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:34:16 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.5ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (1.0ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (7.1ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:34:18 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 341ms (Views: 338.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:34:20 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (6.7ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:34:33 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 40ms (Views: 36.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:34:34 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (7.6ms)
+Completed 200 OK in 10ms (Views: 9.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:34:41 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (1.8ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (8.8ms)
+Completed 200 OK in 13ms (Views: 10.0ms | ActiveRecord: 1.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:35:29 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 129ms (Views: 128.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:35:30 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (9.7ms)
+Completed 200 OK in 15ms (Views: 13.0ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:35:46 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 208ms (Views: 207.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:35:48 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (6.8ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:37:28 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (4.5ms)
+Completed 200 OK in 110ms (Views: 107.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:37:30 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.5ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (6.4ms)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:37:44 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 193ms (Views: 188.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:37:46 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (1.0ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (6.2ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:38:51 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 119ms (Views: 116.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:38:53 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (7.4ms)
+Completed 200 OK in 11ms (Views: 9.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:39:08 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 36ms (Views: 34.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:39:09 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (6.8ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:39:47 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 134ms (Views: 132.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:39:49 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (1.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.9ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (10.7ms)
+Completed 200 OK in 14ms (Views: 11.5ms | ActiveRecord: 1.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:44:33 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 632ms (Views: 631.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:44:35 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.8ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.5ms)
+  Rendered api/trainers/index.json.jbuilder (7.0ms)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:44:40 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.8ms)
+Completed 200 OK in 35ms (Views: 32.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:44:42 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (1.3ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (8.7ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:44:56 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 121ms (Views: 119.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:44:57 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (5.7ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:47:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 622ms (Views: 621.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:47:07 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.5ms)
+  Rendered api/trainers/index.json.jbuilder (8.0ms)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:47:22 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 69ms (Views: 68.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:47:24 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (6.5ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:47:42 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 740ms (Views: 736.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:47:44 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.5ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (5.2ms)
+Completed 200 OK in 8ms (Views: 6.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:48:02 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (13.2ms)
+Completed 200 OK in 279ms (Views: 275.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:48:04 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.5ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (6.9ms)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:48:12 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 108ms (Views: 106.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:48:14 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.8ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (6.0ms)
+Completed 200 OK in 9ms (Views: 7.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:48:20 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 119ms (Views: 118.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:48:22 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (8.0ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:48:27 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 187ms (Views: 183.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:48:29 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.5ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (4.4ms)
+Completed 200 OK in 7ms (Views: 5.7ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:48:41 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.9ms)
+Completed 200 OK in 184ms (Views: 180.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:48:42 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (6.2ms)
+Completed 200 OK in 9ms (Views: 8.3ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:48:57 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 212ms (Views: 208.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:48:58 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (7.5ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:51:07 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 164ms (Views: 163.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:51:09 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.5ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.8ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (7.7ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:52:42 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 129ms (Views: 128.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:52:44 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.5ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (6.0ms)
+Completed 200 OK in 9ms (Views: 7.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:53:01 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 217ms (Views: 214.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:53:03 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (7.0ms)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:53:12 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 126ms (Views: 125.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:53:13 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.3ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (6.6ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:53:22 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (9.7ms)
+Completed 200 OK in 185ms (Views: 182.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:53:24 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.5ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (4.8ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:53:53 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.4ms)
+Completed 200 OK in 121ms (Views: 120.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:53:54 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.8ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (7.6ms)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:54:01 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 128ms (Views: 125.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:54:02 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.5ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.3ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (6.1ms)
+Completed 200 OK in 8ms (Views: 7.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:54:32 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.7ms)
+Completed 200 OK in 137ms (Views: 135.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:54:34 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.4ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (5.9ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:54:55 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 120ms (Views: 119.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:54:57 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.5ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (5.5ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:55:11 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 120ms (Views: 119.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:55:12 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (1.5ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (6.6ms)
+Completed 200 OK in 9ms (Views: 6.6ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:55:26 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 129ms (Views: 128.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:55:28 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (6.0ms)
+Completed 200 OK in 9ms (Views: 7.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:55:39 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (14.3ms)
+Completed 200 OK in 189ms (Views: 185.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:55:41 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.4ms)
+  Rendered api/trainers/index.json.jbuilder (5.9ms)
+Completed 200 OK in 9ms (Views: 7.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:56:00 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.0ms)
+Completed 200 OK in 117ms (Views: 115.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:56:02 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.9ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (7.6ms)
+Completed 200 OK in 10ms (Views: 8.6ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:56:07 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 95ms (Views: 92.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:56:09 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.4ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (4.5ms)
+Completed 200 OK in 8ms (Views: 6.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:57:12 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 629ms (Views: 626.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:57:14 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (6.5ms)
+Completed 200 OK in 10ms (Views: 8.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:57:42 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 190ms (Views: 186.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:57:44 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (1.0ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (5.9ms)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:57:56 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 125ms (Views: 124.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:57:58 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.4ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (4.4ms)
+Completed 200 OK in 8ms (Views: 7.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:58:08 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 129ms (Views: 128.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:58:10 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.4ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (5.7ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:59:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 132ms (Views: 131.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:59:07 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.9ms)
+  Rendered api/trainers/index.json.jbuilder (10.3ms)
+Completed 200 OK in 13ms (Views: 12.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:59:31 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.6ms)
+Completed 200 OK in 141ms (Views: 139.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:59:33 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (7.6ms)
+Completed 200 OK in 12ms (Views: 9.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 10:59:57 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 123ms (Views: 122.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 10:59:59 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.5ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.3ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (8.5ms)
+Completed 200 OK in 12ms (Views: 10.4ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:00:04 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 121ms (Views: 120.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:00:06 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.4ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (4.5ms)
+Completed 200 OK in 7ms (Views: 5.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:00:59 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (9.1ms)
+Completed 200 OK in 224ms (Views: 220.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:01:01 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (1.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (6.6ms)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:01:39 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 172ms (Views: 170.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:01:41 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (1.2ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.4ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (7.1ms)
+Completed 200 OK in 10ms (Views: 7.8ms | ActiveRecord: 1.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:02:17 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 117ms (Views: 116.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:02:19 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (1.0ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (8.4ms)
+Completed 200 OK in 11ms (Views: 9.1ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:02:38 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (10.7ms)
+Completed 200 OK in 162ms (Views: 159.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:02:39 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (6.6ms)
+Completed 200 OK in 10ms (Views: 8.4ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:02:59 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 190ms (Views: 187.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:03:01 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (1.0ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (9.2ms)
+Completed 200 OK in 13ms (Views: 10.9ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:03:15 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 208ms (Views: 204.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:03:17 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.9ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.3ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (6.5ms)
+Completed 200 OK in 10ms (Views: 8.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:03:24 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (9.0ms)
+Completed 200 OK in 181ms (Views: 177.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:03:26 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (5.6ms)
+Completed 200 OK in 8ms (Views: 7.0ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:05:38 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (9.5ms)
+Completed 200 OK in 175ms (Views: 171.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:05:39 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.5ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (9.5ms)
+Completed 200 OK in 14ms (Views: 12.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:06:19 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 201ms (Views: 198.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:06:21 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (1.3ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (8.7ms)
+Completed 200 OK in 13ms (Views: 11.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:06:35 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 217ms (Views: 213.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:06:37 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.5ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (7.0ms)
+Completed 200 OK in 12ms (Views: 10.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:07:03 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.0ms)
+Completed 200 OK in 187ms (Views: 183.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:07:04 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.7ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (9.4ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:07:14 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.2ms)
+Completed 200 OK in 212ms (Views: 208.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:07:16 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.5ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (7.8ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:07:24 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 109ms (Views: 106.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:07:26 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (1.0ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.4ms)
+  Rendered api/trainers/index.json.jbuilder (10.8ms)
+Completed 200 OK in 15ms (Views: 12.6ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:07:49 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 128ms (Views: 127.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:07:51 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (1.6ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (7.7ms)
+Completed 200 OK in 12ms (Views: 9.3ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:08:01 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 118ms (Views: 116.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:08:03 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.5ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (8.5ms)
+Completed 200 OK in 11ms (Views: 10.1ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:08:12 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.4ms)
+Completed 200 OK in 145ms (Views: 144.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:08:14 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.3ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (7.6ms)
+Completed 200 OK in 10ms (Views: 8.8ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:08:28 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (11.6ms)
+Completed 200 OK in 188ms (Views: 183.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:08:30 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (7.3ms)
+Completed 200 OK in 12ms (Views: 10.5ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:08:41 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 40ms (Views: 37.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:08:44 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (8.2ms)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:09:19 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 127ms (Views: 126.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:09:21 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (6.2ms)
+Completed 200 OK in 11ms (Views: 9.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:09:33 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 143ms (Views: 141.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:09:35 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.3ms)
+  Rendered api/trainers/index.json.jbuilder (6.9ms)
+Completed 200 OK in 10ms (Views: 8.5ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:09:46 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 114ms (Views: 113.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:09:48 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (6.8ms)
+Completed 200 OK in 11ms (Views: 9.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:09:54 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 163ms (Views: 160.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:09:55 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.5ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (5.9ms)
+Completed 200 OK in 10ms (Views: 7.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:10:37 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.3ms)
+Completed 200 OK in 623ms (Views: 622.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:10:39 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (7.7ms)
+Completed 200 OK in 13ms (Views: 11.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:13:33 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.9ms)
+Completed 200 OK in 143ms (Views: 138.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:13:35 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (6.2ms)
+Completed 200 OK in 10ms (Views: 8.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:13:37 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (5.1ms)
+Completed 200 OK in 34ms (Views: 31.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:13:37 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.4ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (5.0ms)
+Completed 200 OK in 9ms (Views: 7.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:14:39 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.9ms)
+Completed 200 OK in 113ms (Views: 112.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:14:41 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (2.3ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (1.4ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (9.3ms)
+Completed 200 OK in 13ms (Views: 9.7ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:14:48 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 121ms (Views: 120.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:14:49 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (7.5ms)
+Completed 200 OK in 11ms (Views: 9.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:14:53 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 122ms (Views: 121.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:14:54 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (1.7ms)
+  Rendered api/trainers/_trainer.json.jbuilder (2.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (9.8ms)
+Completed 200 OK in 15ms (Views: 13.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:16:35 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 118ms (Views: 117.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:16:37 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.8ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (8.0ms)
+Completed 200 OK in 12ms (Views: 10.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:16:44 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.8ms)
+Completed 200 OK in 24ms (Views: 23.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:16:44 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.5ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.3ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (8.1ms)
+Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.5ms)
+
+

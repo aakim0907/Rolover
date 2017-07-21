@@ -10,36 +10,36 @@ const TrainerIndexItem = ({ trainer }) => {
   // };
 
   return (
-    <Link to ={`trainers/${trainer.id}`}>
-      <div className="trainer-list-item">
-        <div className="trainer-list-profile">
-
-        </div>
-
-        <div className="trainer-list-main">
-          <div className="trainer-list-name">
-            <Link to={`/trainers/${trainer.id}`}>
-              <h3>{trainer.name}</h3>
-            </Link>
-          </div>
-
-          <div className="trainer-list-description">
-            <div className="trainer-list-quote">
-              <span>&quot;{trainer.profile_quote}&quot;</span>
-            </div>
-
-            <div className="trainer-list-price">
-              <span>{trainer.price}&#36;</span>
-            </div>
-
-            <div className="trainer-list-address">
-              <span>{trainer.city}, {trainer.state} {trainer.zip}</span>
-            </div>
-          </div>
-        </div>
+    <div className="trainer-list-item">
+      <div className="trainer-list-profile">
 
       </div>
-    </Link>
+
+      <div className="trainer-list-main">
+        <div className="trainer-list-name">
+          <Link to={`/trainers/${trainer.id}`}>
+            <h2>{trainer.name}</h2>
+          </Link>
+        </div>
+
+        <div className="trainer-list-quote">
+          <span>&quot;{trainer.profile_quote}&quot;</span>
+        </div>
+
+        <div className="trainer-list-address">
+          <span>{trainer.city}, {trainer.state} {trainer.zip}</span>
+        </div>
+
+        <div className="trainer-list-description">
+          <p>{trainer.description}</p>
+        </div>
+      </div>
+
+      <div className="trainer-list-price">
+        <span>&#36;{trainer.price}</span>
+      </div>
+
+    </div>
   );
 };
 

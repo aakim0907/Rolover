@@ -47162,10 +47162,7 @@ var TrainerList = function (_React$Component) {
     key: 'render',
     value: function render() {
       var trainers = this.props.trainers;
-
-      var trainerItems = trainers.map(function (trainer) {
-        return _react2.default.createElement(_trainer_list_item2.default, { key: trainer.id, trainer: trainer });
-      });
+      // const trainerItems = trainers.map(trainer => <TrainerListItem key={trainer.id} trainer={trainer} />);
 
       if (trainers.length === 0) {
         return _react2.default.createElement(
@@ -47177,7 +47174,13 @@ var TrainerList = function (_React$Component) {
         return _react2.default.createElement(
           'section',
           { className: 'trainer-container' },
-          trainerItems
+          trainers.map(function (trainer) {
+            return _react2.default.createElement(
+              _reactRouterDom.Link,
+              { to: '/trainers/' + trainer.id },
+              _react2.default.createElement(_trainer_list_item2.default, { key: trainer.id, trainer: trainer })
+            );
+          })
         );
       }
     }
@@ -47219,66 +47222,67 @@ var TrainerIndexItem = function TrainerIndexItem(_ref) {
   // };
 
   return _react2.default.createElement(
-    _reactRouterDom.Link,
-    { to: 'trainers/' + trainer.id },
+    'div',
+    { className: 'trainer-list-item' },
+    _react2.default.createElement('div', { className: 'trainer-list-profile' }),
     _react2.default.createElement(
       'div',
-      { className: 'trainer-list-item' },
-      _react2.default.createElement('div', { className: 'trainer-list-profile' }),
+      { className: 'trainer-list-main' },
       _react2.default.createElement(
         'div',
-        { className: 'trainer-list-main' },
+        { className: 'trainer-list-name' },
         _react2.default.createElement(
-          'div',
-          { className: 'trainer-list-name' },
+          _reactRouterDom.Link,
+          { to: '/trainers/' + trainer.id },
           _react2.default.createElement(
-            _reactRouterDom.Link,
-            { to: '/trainers/' + trainer.id },
-            _react2.default.createElement(
-              'h3',
-              null,
-              trainer.name
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'trainer-list-description' },
-          _react2.default.createElement(
-            'div',
-            { className: 'trainer-list-quote' },
-            _react2.default.createElement(
-              'span',
-              null,
-              '"',
-              trainer.profile_quote,
-              '"'
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'trainer-list-price' },
-            _react2.default.createElement(
-              'span',
-              null,
-              trainer.price,
-              '$'
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'trainer-list-address' },
-            _react2.default.createElement(
-              'span',
-              null,
-              trainer.city,
-              ', ',
-              trainer.state,
-              ' ',
-              trainer.zip
-            )
+            'h2',
+            null,
+            trainer.name
           )
         )
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'trainer-list-quote' },
+        _react2.default.createElement(
+          'span',
+          null,
+          '"',
+          trainer.profile_quote,
+          '"'
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'trainer-list-address' },
+        _react2.default.createElement(
+          'span',
+          null,
+          trainer.city,
+          ', ',
+          trainer.state,
+          ' ',
+          trainer.zip
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'trainer-list-description' },
+        _react2.default.createElement(
+          'p',
+          null,
+          trainer.description
+        )
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'trainer-list-price' },
+      _react2.default.createElement(
+        'span',
+        null,
+        '$',
+        trainer.price
       )
     )
   );
