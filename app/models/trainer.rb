@@ -1,8 +1,6 @@
 class Trainer < ApplicationRecord
-  validates :name, :profile_quote, :description, :price, :zip, :city, :state, presence: true
-  # validates :training_type, presence: true, inclusion: { in: %w[obedience behavior advanced] }
+  validates :name, :profile_quote, :obedience, :behavior, :advanced, :description, :price, :zip, :city, :state, presence: true
 
-  # add associations
   has_many :images
   # has_many :reviews
 
@@ -11,11 +9,12 @@ class Trainer < ApplicationRecord
   end
 
   def profile_image
-    images.select{ |img| img.type == "profile" }.first
+    images.select{ |img| img.img_type == "profile" }.first.img_url
   end
 
   def main_images
-    images.reject { |img| img.type == "profile" }
+    mains = images.reject { |img| img.img_type == "profile" }
+    mains.map { |main| main.img_url }
   end
 
   # def rating
