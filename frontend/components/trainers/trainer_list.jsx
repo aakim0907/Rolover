@@ -17,9 +17,7 @@ class TrainerList extends React.Component {
     } else {
       return (
         <section className="trainer-container">
-          <ul className="trainer-list">
-            { trainerItems }
-          </ul>
+          { trainerItems }
         </section>
       );
     }

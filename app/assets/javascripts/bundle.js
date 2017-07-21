@@ -29617,7 +29617,7 @@ var customStyles = {
     bottom: 'auto',
     marginRight: '-50%',
     transform: 'translate(-50%, -50%)',
-    height: '500px',
+    height: '450px',
     border: '1px solid $green'
   }
 };
@@ -47179,11 +47179,7 @@ var TrainerList = function (_React$Component) {
         return _react2.default.createElement(
           'section',
           { className: 'trainer-container' },
-          _react2.default.createElement(
-            'ul',
-            { className: 'trainer-list' },
-            trainerItems
-          )
+          trainerItems
         );
       }
     }
@@ -47225,19 +47221,53 @@ var TrainerIndexItem = function TrainerIndexItem(_ref) {
   // };
 
   return _react2.default.createElement(
-    'li',
+    'div',
     { className: 'trainer-list-item' },
     _react2.default.createElement(
-      _reactRouterDom.Link,
-      { to: '/trainers/' + trainer.id },
+      'div',
+      { className: 'trainer-list-name' },
       _react2.default.createElement(
-        'div',
-        { className: 'trainer-list-name' },
+        _reactRouterDom.Link,
+        { to: '/trainers/' + trainer.id },
         _react2.default.createElement(
           'span',
           null,
           trainer.name
         )
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'trainer-list-quote' },
+      _react2.default.createElement(
+        'span',
+        null,
+        '"',
+        trainer.profile_quote,
+        '"'
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'trainer-list-price' },
+      _react2.default.createElement(
+        'span',
+        null,
+        trainer.price,
+        '$'
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'trainer-list-address' },
+      _react2.default.createElement(
+        'span',
+        null,
+        trainer.city,
+        ', ',
+        trainer.state,
+        ' ',
+        trainer.zip
       )
     )
   );

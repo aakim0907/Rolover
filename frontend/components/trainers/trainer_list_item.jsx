@@ -10,13 +10,26 @@ const TrainerIndexItem = ({ trainer }) => {
   // };
 
   return (
-    <li className="trainer-list-item">
-      <Link to={`/trainers/${trainer.id}`}>
-        <div className="trainer-list-name">
-          <span>{trainer.name}</span>
-        </div>
-      </Link>
-    </li>
+    <div className="trainer-list-item">
+      <div className="trainer-list-name">
+        <Link to={`/trainers/${trainer.id}`}>
+            <span>{trainer.name}</span>
+        </Link>
+      </div>
+
+      <div className="trainer-list-quote">
+        <span>&quot;{trainer.profile_quote}&quot;</span>
+      </div>
+
+      <div className="trainer-list-price">
+        <span>{trainer.price}&#36;</span>
+      </div>
+
+      <div className="trainer-list-address">
+        <span>{trainer.city}, {trainer.state} {trainer.zip}</span>
+      </div>
+
+    </div>
   );
 };
 

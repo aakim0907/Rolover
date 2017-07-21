@@ -1,19 +1,17 @@
 .trainer-container {
   border: 1px solid green;
   margin-top: 50px;
-  margin-left: 100px;
-  width: 900px;
+  margin-left: 150px;
+  width: 650px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
 }
 
-.trainer-list {
-  list-style: none;
-  margin-bottom: 0;
-}
-
 .trainer-list-item {
+  border: 1px solid $gray;
   display: flex;
-  margin: 5px;
+  width: 100%;
+  margin: 0 10px 0 10px;
+  padding: 15px;
 }
