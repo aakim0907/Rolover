@@ -40,32 +40,14 @@ class AuthModal extends React.Component {
   }
 
   closeModal() {
-    this.setState({modalIsOpen: false});
+    this.setState({ modalIsOpen: false });
   }
-
-  // renderButton() {
-  //   console.log(this.props);
-  //   if (this.props.redirect) {
-  //     return (
-  //       <div>
-  //         <button className="login" onClick={this.openModal.bind(this, 'login')}>Log In</button>
-  //         <button className="signup" onClick={this.openModal.bind(this, 'signup')}>Sign Up</button>
-  //       </div>
-  //     );
-  //   } else {
-  //     const { redirectForm } = this.props;
-  //     return (
-  //       <button className="session-redirect-btn" onClick={this.openModal.bind(this, redirectForm)}>{redirectForm}</button>
-  //     )
-  //   }
-  // }
 
   displayModal(formType) {
     const modalName = (
       formType === 'login' ? "Log In" : "Sign Up"
     );
 
-    // {this.renderButton}
     return (
       <div>
         <button className="login" onClick={this.openModal.bind(this, 'login')}>Log In</button>
@@ -75,7 +57,7 @@ class AuthModal extends React.Component {
           onRequestClose={this.closeModal}
           style={customStyles}
           contentLabel="modal">
-          <SessionFormContainer formType={formType} />
+          <SessionFormContainer formType={formType} modalFunction={this.openModal.bind(this)}/>
         </Modal>
       </div>
     );
@@ -92,5 +74,3 @@ class AuthModal extends React.Component {
 }
 
 export default AuthModal;
-
-          // <button className="btn" onClick={this.closeModal}>X</button>

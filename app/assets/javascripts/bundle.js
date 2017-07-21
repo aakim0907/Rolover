@@ -29563,6 +29563,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch, param) {
     processForm: function processForm(user) {
       return dispatch(_processForm(user));
     },
+    login: function login(user) {
+      return dispatch((0, _session_actions.login)(user));
+    },
     formType: formType
   };
 };
@@ -29653,30 +29656,11 @@ var AuthModal = function (_React$Component) {
     value: function closeModal() {
       this.setState({ modalIsOpen: false });
     }
-
-    // renderButton() {
-    //   console.log(this.props);
-    //   if (this.props.redirect) {
-    //     return (
-    //       <div>
-    //         <button className="login" onClick={this.openModal.bind(this, 'login')}>Log In</button>
-    //         <button className="signup" onClick={this.openModal.bind(this, 'signup')}>Sign Up</button>
-    //       </div>
-    //     );
-    //   } else {
-    //     const { redirectForm } = this.props;
-    //     return (
-    //       <button className="session-redirect-btn" onClick={this.openModal.bind(this, redirectForm)}>{redirectForm}</button>
-    //     )
-    //   }
-    // }
-
   }, {
     key: 'displayModal',
     value: function displayModal(formType) {
       var modalName = formType === 'login' ? "Log In" : "Sign Up";
 
-      // {this.renderButton}
       return _react2.default.createElement(
         'div',
         null,
@@ -29697,7 +29681,7 @@ var AuthModal = function (_React$Component) {
             onRequestClose: this.closeModal,
             style: customStyles,
             contentLabel: 'modal' },
-          _react2.default.createElement(_session_form_container2.default, { formType: formType })
+          _react2.default.createElement(_session_form_container2.default, { formType: formType, modalFunction: this.openModal.bind(this) })
         )
       );
     }
@@ -29717,8 +29701,6 @@ var AuthModal = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = AuthModal;
-
-// <button className="btn" onClick={this.closeModal}>X</button>
 
 /***/ }),
 /* 117 */
@@ -46120,9 +46102,11 @@ var SessionForm = function (_React$Component) {
   }
 
   _createClass(SessionForm, [{
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      this.props.clearErrors();
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (this.props.formType !== nextProps.formType) {
+        this.props.clearErrors();
+      }
     }
   }, {
     key: 'update',
@@ -46144,12 +46128,48 @@ var SessionForm = function (_React$Component) {
     key: 'handleDemoClick',
     value: function handleDemoClick(e) {
       e.preventDefault();
-      this.props.processForm({ email: "bob@gmail", password: "123456" });
+      this.props.login({ email: 'bob@gmail', password: '123456' });
     }
   }, {
     key: 'renderRedirect',
     value: function renderRedirect() {
-      var redirectMsg = this.props.formType === 'login' ? "Don't have an account?" : "Already have an account?";
+      var _this3 = this;
+
+      var redirect = void 0;
+      if (this.props.formType === 'login') {
+        redirect = {
+          redirectMsg: "Don't have an account?",
+          buttonName: 'Sign Up',
+          redirectForm: 'singup'
+        };
+        // const redirectMsg = "Don't have an account?";
+        // const buttonName = 'Sign Up';
+        // const redirectForm = 'signup';
+      } else {
+        redirect = {
+          redirectMsg: 'Already have an account?',
+          buttonName: 'Log In',
+          redirectForm: 'signup'
+          // const redirectMsg = 'Already have an account?';
+          // const buttonName = 'Log In';
+          // const redirectForm = 'signup';
+        };
+      }
+
+      // const redirectMsg = (
+      //   this.props.formType === 'login' ?
+      //   "Don't have an account?" : "Already have an account?"
+      // );
+      //
+      // const buttonName = (
+      //   this.props.formType === 'login' ?
+      //   "Sign Up" : "Log In"
+      // );
+      //
+      // const redirectFunction = (
+      //   this.props.formType === 'login' ?
+      //   "signup" : 'login'
+      // );
 
       return _react2.default.createElement(
         'div',
@@ -46157,9 +46177,15 @@ var SessionForm = function (_React$Component) {
         _react2.default.createElement(
           'p',
           null,
-          redirectMsg
+          redirect.redirectMsg
         ),
-        _react2.default.createElement(_auth_modal2.default, { redirectForm: this.props.formType, redirect: 'true' })
+        _react2.default.createElement(
+          'button',
+          { onClick: function onClick() {
+              return _this3.props.modalFunction(redirect.redirectForm);
+            } },
+          redirect.buttonName
+        )
       );
     }
   }, {
@@ -47162,7 +47188,7 @@ var TrainerList = function (_React$Component) {
     key: 'render',
     value: function render() {
       var trainers = this.props.trainers;
-      // const trainerItems = trainers.map(trainer => <TrainerListItem key={trainer.id} trainer={trainer} />);
+
 
       if (trainers.length === 0) {
         return _react2.default.createElement(
@@ -47177,8 +47203,8 @@ var TrainerList = function (_React$Component) {
           trainers.map(function (trainer) {
             return _react2.default.createElement(
               _reactRouterDom.Link,
-              { to: '/trainers/' + trainer.id },
-              _react2.default.createElement(_trainer_list_item2.default, { key: trainer.id, trainer: trainer })
+              { key: trainer.id, to: '/trainers/' + trainer.id },
+              _react2.default.createElement(_trainer_list_item2.default, { trainer: trainer })
             );
           })
         );
@@ -47232,13 +47258,9 @@ var TrainerIndexItem = function TrainerIndexItem(_ref) {
         'div',
         { className: 'trainer-list-name' },
         _react2.default.createElement(
-          _reactRouterDom.Link,
-          { to: '/trainers/' + trainer.id },
-          _react2.default.createElement(
-            'h2',
-            null,
-            trainer.name
-          )
+          'h2',
+          null,
+          trainer.name
         )
       ),
       _react2.default.createElement(

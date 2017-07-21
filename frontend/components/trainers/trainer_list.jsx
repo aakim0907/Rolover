@@ -10,7 +10,6 @@ class TrainerList extends React.Component {
 
   render() {
     const { trainers } = this.props;
-    // const trainerItems = trainers.map(trainer => <TrainerListItem key={trainer.id} trainer={trainer} />);
 
     if (trainers.length === 0) {
       return (<div>No Results</div>);
@@ -18,8 +17,8 @@ class TrainerList extends React.Component {
       return (
         <section className="trainer-container">
           { trainers.map(trainer => (
-            <Link to={`/trainers/${trainer.id}`}>
-              <TrainerListItem key={trainer.id} trainer={trainer} />
+            <Link key={trainer.id} to={`/trainers/${trainer.id}`}>
+              <TrainerListItem trainer={trainer} />
             </Link>
           ))}
         </section>

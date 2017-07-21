@@ -25984,3 +25984,636 @@ Processing by Api::TrainersController#index as JSON
 Completed 200 OK in 12ms (Views: 11.0ms | ActiveRecord: 0.5ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:21:55 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.6ms)
+Completed 200 OK in 658ms (Views: 654.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:21:59 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 61ms (Views: 58.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:22:10 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.2ms)
+Completed 200 OK in 45ms (Views: 42.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:22:15 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (9.2ms)
+Completed 200 OK in 546ms (Views: 542.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:24:58 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.8ms)
+Completed 200 OK in 517ms (Views: 514.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:25:11 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.7ms)
+Completed 200 OK in 36ms (Views: 35.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:25:37 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 564ms (Views: 562.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:26:07 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 62ms (Views: 60.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:26:17 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.6ms)
+Completed 200 OK in 913ms (Views: 912.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:26:46 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (4.7ms)
+Completed 200 OK in 817ms (Views: 816.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:26:51 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (5.3ms)
+Completed 200 OK in 597ms (Views: 593.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:28:24 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (4.1ms)
+Completed 200 OK in 705ms (Views: 702.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:28:29 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.4ms)
+Completed 200 OK in 90ms (Views: 87.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/user" for 127.0.0.1 at 2017-07-21 11:28:40 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"asdfasd", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdfasd"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 140ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:30:19 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (6.7ms)
+Completed 200 OK in 534ms (Views: 531.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:30:24 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 96ms (Views: 92.5ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2017-07-21 11:30:29 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"asdf", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdf"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 15ms (Views: 0.7ms | ActiveRecord: 4.4ms)
+
+
+Started POST "/api/user" for 127.0.0.1 at 2017-07-21 11:30:35 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"asdfasdfa", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "asdfasdfa"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 130ms (Views: 0.2ms | ActiveRecord: 1.3ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2017-07-21 11:30:44 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bob@gmail", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bob@gmail"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "bob@gmail"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "_SbCg2KUoRtzHickd44czw"], ["updated_at", "2017-07-21 18:30:45.012094"], ["id", 1]]
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  Rendered api/users/show.json.jbuilder (2.6ms)
+Completed 200 OK in 153ms (Views: 7.8ms | ActiveRecord: 9.1ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2017-07-21 11:30:46 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "_SbCg2KUoRtzHickd44czw"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "bob@gmail"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "i_Na2HwoPcCD91ByPwXazA"], ["updated_at", "2017-07-21 18:30:46.341773"], ["id", 1]]
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (1.3ms)
+  Rendered api/users/show.json.jbuilder (4.7ms)
+Completed 200 OK in 33ms (Views: 11.3ms | ActiveRecord: 8.5ms)
+
+
+Started POST "/api/user" for 127.0.0.1 at 2017-07-21 11:30:48 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"bob@gmail", "password"=>"[FILTERED]"}}
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bob@gmail"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 148ms (Views: 0.2ms | ActiveRecord: 0.6ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2017-07-21 11:30:55 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bob@gmail", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bob@gmail"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "bob@gmail"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "RhQrqbsNDkY_f37TglHBdg"], ["updated_at", "2017-07-21 18:30:55.352743"], ["id", 1]]
+  [1m[35m (4.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.1ms)
+Completed 200 OK in 143ms (Views: 2.6ms | ActiveRecord: 5.8ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2017-07-21 11:30:56 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "RhQrqbsNDkY_f37TglHBdg"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "bob@gmail"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "yfrla4ZrUoa9r7o9-gbqKQ"], ["updated_at", "2017-07-21 18:30:56.338412"], ["id", 1]]
+  [1m[35m (4.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (1.1ms)
+  Rendered api/users/show.json.jbuilder (4.0ms)
+Completed 200 OK in 32ms (Views: 10.3ms | ActiveRecord: 9.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:31:22 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.4ms)
+Completed 200 OK in 558ms (Views: 555.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:31:27 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.6ms)
+Completed 200 OK in 35ms (Views: 33.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:31:55 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.1ms)
+Completed 200 OK in 39ms (Views: 32.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:31:59 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (12.4ms)
+Completed 200 OK in 577ms (Views: 574.0ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2017-07-21 11:32:03 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bob@gmail", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bob@gmail"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "bob@gmail"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "KUfyqCK6Jsl2syrLeEYqAQ"], ["updated_at", "2017-07-21 18:32:04.035686"], ["id", 1]]
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  Rendered api/users/show.json.jbuilder (1.5ms)
+Completed 200 OK in 97ms (Views: 4.1ms | ActiveRecord: 6.3ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2017-07-21 11:32:06 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "KUfyqCK6Jsl2syrLeEYqAQ"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.1ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "bob@gmail"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.2ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "hZQ385zC7jizJH6Om8KRQA"], ["updated_at", "2017-07-21 18:32:06.444044"], ["id", 1]]
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (1.7ms)
+  Rendered api/users/show.json.jbuilder (5.0ms)
+Completed 200 OK in 33ms (Views: 11.9ms | ActiveRecord: 7.8ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2017-07-21 11:32:07 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bob@gmail", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bob@gmail"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "bob@gmail"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "c-4-aafT9T2JiQZPkBCFGA"], ["updated_at", "2017-07-21 18:32:07.526481"], ["id", 1]]
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (2.0ms)
+Completed 200 OK in 184ms (Views: 3.6ms | ActiveRecord: 7.2ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2017-07-21 11:32:08 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (1.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "c-4-aafT9T2JiQZPkBCFGA"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.0ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "bob@gmail"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "G3Ou_aK2ZCipgrumh8LYeA"], ["updated_at", "2017-07-21 18:32:08.132619"], ["id", 1]]
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (1.3ms)
+  Rendered api/users/show.json.jbuilder (4.6ms)
+Completed 200 OK in 34ms (Views: 11.5ms | ActiveRecord: 9.2ms)
+
+
+Started POST "/api/user" for 127.0.0.1 at 2017-07-21 11:32:09 -0700
+Processing by Api::UsersController#create as JSON
+  Parameters: {"user"=>{"email"=>"", "password"=>"[FILTERED]"}}
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", ""], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 155ms (Views: 0.2ms | ActiveRecord: 0.8ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2017-07-21 11:32:11 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bob@gmail", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bob@gmail"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "bob@gmail"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "AOi0Hui0J6B_TdQ8oD0rzA"], ["updated_at", "2017-07-21 18:32:11.134238"], ["id", 1]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.4ms)
+  Rendered api/users/show.json.jbuilder (1.2ms)
+Completed 200 OK in 130ms (Views: 2.8ms | ActiveRecord: 6.7ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2017-07-21 11:32:13 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "AOi0Hui0J6B_TdQ8oD0rzA"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "bob@gmail"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Cm9rB3PzO8qQZwMKUDLuZQ"], ["updated_at", "2017-07-21 18:32:13.754431"], ["id", 1]]
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (1.6ms)
+  Rendered api/users/show.json.jbuilder (5.1ms)
+Completed 200 OK in 34ms (Views: 11.9ms | ActiveRecord: 8.9ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2017-07-21 11:32:15 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bob@gmail", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bob@gmail"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "bob@gmail"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "3xaEGp8dkvQAWhA833_uDA"], ["updated_at", "2017-07-21 18:32:15.214243"], ["id", 1]]
+  [1m[35m (5.2ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.3ms)
+  Rendered api/users/show.json.jbuilder (1.2ms)
+Completed 200 OK in 134ms (Views: 2.9ms | ActiveRecord: 7.3ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2017-07-21 11:32:16 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "3xaEGp8dkvQAWhA833_uDA"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (1.2ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "bob@gmail"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (1.1ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "LpPlbrBCF5xXGq9mQ365nQ"], ["updated_at", "2017-07-21 18:32:17.010708"], ["id", 1]]
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  Rendered api/users/show.json.jbuilder (2.2ms)
+Completed 200 OK in 32ms (Views: 6.1ms | ActiveRecord: 9.5ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:32:38 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (1.3ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (2.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/index.json.jbuilder (26.4ms)
+Completed 200 OK in 41ms (Views: 35.9ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:32:47 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.8ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (6.1ms)
+Completed 200 OK in 13ms (Views: 10.6ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:35:50 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.4ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (5.0ms)
+Completed 200 OK in 7ms (Views: 6.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:38:39 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 67ms (Views: 64.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:38:41 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (4.7ms)
+Completed 200 OK in 8ms (Views: 6.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:40:34 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.5ms)
+Completed 200 OK in 754ms (Views: 753.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:40:36 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (1.4ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (7.6ms)
+Completed 200 OK in 12ms (Views: 9.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:40:38 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (6.0ms)
+Completed 200 OK in 290ms (Views: 288.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:40:40 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (1.3ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (1.7ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (109.4ms)
+Completed 200 OK in 117ms (Views: 114.3ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:41:38 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (6.1ms)
+Completed 200 OK in 530ms (Views: 526.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:41:41 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (5.7ms)
+Completed 200 OK in 9ms (Views: 7.4ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:41:42 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 123ms (Views: 120.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:41:43 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.5ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (5.3ms)
+Completed 200 OK in 8ms (Views: 6.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:41:47 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.5ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (7.3ms)
+Completed 200 OK in 13ms (Views: 10.3ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:41:49 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (2.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (15.6ms)
+Completed 200 OK in 29ms (Views: 19.2ms | ActiveRecord: 2.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:43:41 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.5ms)
+Completed 200 OK in 156ms (Views: 155.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:43:43 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.5ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (7.4ms)
+Completed 200 OK in 11ms (Views: 9.5ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:44:00 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (2.2ms)
+Completed 200 OK in 155ms (Views: 154.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:44:02 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.4ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (5.4ms)
+Completed 200 OK in 8ms (Views: 6.8ms | ActiveRecord: 0.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:46:05 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.3ms)
+Completed 200 OK in 57ms (Views: 53.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:46:06 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.5ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (7.8ms)
+Completed 200 OK in 11ms (Views: 9.7ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:46:10 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1.8ms)
+Completed 200 OK in 22ms (Views: 21.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:46:12 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.5ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.5ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (11.4ms)
+Completed 200 OK in 15ms (Views: 13.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:46:41 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (9.2ms)
+Completed 200 OK in 13ms (Views: 11.3ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:47:56 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.7ms)
+Completed 200 OK in 87ms (Views: 84.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:47:58 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.4ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/index.json.jbuilder (4.4ms)
+Completed 200 OK in 7ms (Views: 5.9ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 11:48:00 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (3.9ms)
+Completed 200 OK in 27ms (Views: 25.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-21 11:48:01 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (0.8ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.1ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/index.json.jbuilder (6.4ms)
+Completed 200 OK in 10ms (Views: 8.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 12:01:56 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (5.4ms)
+Completed 200 OK in 525ms (Views: 521.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-21 12:02:00 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (6.8ms)
+Completed 200 OK in 65ms (Views: 62.8ms | ActiveRecord: 0.0ms)
+
+

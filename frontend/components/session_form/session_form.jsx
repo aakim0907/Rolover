@@ -11,8 +11,10 @@ class SessionForm extends React.Component {
     this.handleDemoClick = this.handleDemoClick.bind(this);
   }
 
-  componentWillUnmount() {
-    this.props.clearErrors();
+  componentWillReceiveProps(nextProps) {
+    if (this.props.formType !== nextProps.formType) {
+      this.props.clearErrors();
+    }
   }
 
   update(field) {
@@ -29,19 +31,50 @@ class SessionForm extends React.Component {
 
   handleDemoClick(e) {
     e.preventDefault();
-    this.props.processForm({ email: "bob@gmail", password: "123456" });
+    this.props.login({ email: 'bob@gmail', password: '123456' });
   }
 
   renderRedirect() {
-    const redirectMsg = (
-      this.props.formType === 'login' ?
-      "Don't have an account?" : "Already have an account?"
-    );
+    let redirect;
+    if ( this.props.formType === 'login' ) {
+      redirect = {
+        redirectMsg: "Don't have an account?",
+        buttonName: 'Sign Up',
+        redirectForm: 'singup'
+      };
+      // const redirectMsg = "Don't have an account?";
+      // const buttonName = 'Sign Up';
+      // const redirectForm = 'signup';
+    } else {
+      redirect = {
+        redirectMsg: 'Already have an account?',
+        buttonName: 'Log In',
+        redirectForm: 'signup'
+      }
+      // const redirectMsg = 'Already have an account?';
+      // const buttonName = 'Log In';
+      // const redirectForm = 'signup';
+    }
+
+    // const redirectMsg = (
+    //   this.props.formType === 'login' ?
+    //   "Don't have an account?" : "Already have an account?"
+    // );
+    //
+    // const buttonName = (
+    //   this.props.formType === 'login' ?
+    //   "Sign Up" : "Log In"
+    // );
+    //
+    // const redirectFunction = (
+    //   this.props.formType === 'login' ?
+    //   "signup" : 'login'
+    // );
 
     return (
       <div className="other-link">
-        <p>{redirectMsg}</p>
-        <AuthModal redirectForm={this.props.formType} redirect='true'/>
+        <p>{redirect.redirectMsg}</p>
+        <button onClick={() => this.props.modalFunction(redirect.redirectForm)}>{redirect.buttonName}</button>
       </div>
     );
   }

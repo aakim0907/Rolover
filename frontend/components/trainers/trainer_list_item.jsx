@@ -17,9 +17,7 @@ const TrainerIndexItem = ({ trainer }) => {
 
       <div className="trainer-list-main">
         <div className="trainer-list-name">
-          <Link to={`/trainers/${trainer.id}`}>
             <h2>{trainer.name}</h2>
-          </Link>
         </div>
 
         <div className="trainer-list-quote">
