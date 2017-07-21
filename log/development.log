@@ -28824,3 +28824,282 @@ Completed 200 OK in 123ms (Views: 98.2ms | ActiveRecord: 6.5ms)
   [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
   [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "profile_quote", "description", "price", "zip", "city", "state", "created_at", "updated_at", "obedience", "behavior", "advanced") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Aaron"], ["profile_quote", "Love for dogs"], ["description", "React is awesome"], ["price", 20], ["zip", 94109], ["city", "San Francisco"], ["state", "California"], ["created_at", "2017-07-21 22:56:59.222969"], ["updated_at", "2017-07-21 22:56:59.222969"], ["obedience", "t"], ["behavior", "t"], ["advanced", "f"]]
   [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (112.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Rolover_development"[0m
+  [1m[35m (116.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Rolover_test"[0m
+  [1m[35m (262.9ms)[0m  [1m[35mCREATE DATABASE "Rolover_development" ENCODING = 'unicode'[0m
+  [1m[35m (268.4ms)[0m  [1m[35mCREATE DATABASE "Rolover_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (16.1ms)[0m  [1m[35mCREATE TABLE "images" ("id" serial primary key, "trainer_id" integer NOT NULL, "url" character varying NOT NULL, "type" character varying NOT NULL)[0m
+  [1m[35m (4.6ms)[0m  [1m[35mCREATE  INDEX  "index_images_on_trainer_id" ON "images" USING btree ("trainer_id")[0m
+  [1m[35m (10.9ms)[0m  [1m[35mCREATE TABLE "trainers" ("id" serial primary key, "name" character varying NOT NULL, "profile_quote" text NOT NULL, "description" text NOT NULL, "price" integer NOT NULL, "zip" integer NOT NULL, "city" character varying NOT NULL, "state" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "obedience" boolean NOT NULL, "behavior" boolean NOT NULL, "advanced" boolean NOT NULL)[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_advanced" ON "trainers" USING btree ("advanced")[0m
+  [1m[35m (4.0ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_behavior" ON "trainers" USING btree ("behavior")[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_obedience" ON "trainers" USING btree ("obedience")[0m
+  [1m[35m (12.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "profile_img_url" character varying DEFAULT 'http://res.cloudinary.com/rolover/image/upload/v1500672475/gray_logo_rnqfnk.png')[0m
+  [1m[35m (4.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.5ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170721213156)[0m
+  [1m[35m (2.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170718161549),
+(20170719233939),
+(20170720214342),
+(20170719233739),
+(20170719214549),
+(20170718213131);
+
+[0m
+  [1m[35m (11.1ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-21 23:00:33.329432"], ["updated_at", "2017-07-21 23:00:33.329432"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (16.0ms)[0m  [1m[35mCREATE TABLE "images" ("id" serial primary key, "trainer_id" integer NOT NULL, "url" character varying NOT NULL, "type" character varying NOT NULL)[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE  INDEX  "index_images_on_trainer_id" ON "images" USING btree ("trainer_id")[0m
+  [1m[35m (11.9ms)[0m  [1m[35mCREATE TABLE "trainers" ("id" serial primary key, "name" character varying NOT NULL, "profile_quote" text NOT NULL, "description" text NOT NULL, "price" integer NOT NULL, "zip" integer NOT NULL, "city" character varying NOT NULL, "state" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "obedience" boolean NOT NULL, "behavior" boolean NOT NULL, "advanced" boolean NOT NULL)[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_advanced" ON "trainers" USING btree ("advanced")[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_behavior" ON "trainers" USING btree ("behavior")[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_obedience" ON "trainers" USING btree ("obedience")[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "profile_img_url" character varying DEFAULT 'http://res.cloudinary.com/rolover/image/upload/v1500672475/gray_logo_rnqfnk.png')[0m
+  [1m[35m (7.9ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (10.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.7ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170721213156)[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170718161549),
+(20170719233939),
+(20170720214342),
+(20170719233739),
+(20170719214549),
+(20170718213131);
+
+[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-21 23:00:33.508613"], ["updated_at", "2017-07-21 23:00:33.508613"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bob@gmail"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "bob@gmail"], ["password_digest", "$2a$10$BwoTtXMPyRmqGAgDWOewyeg9.gye43xxBEjzfT3RQRS7307gnhqbC"], ["session_token", "7vpXe0FZjLGpG11jG8ik1g"], ["created_at", "2017-07-21 23:00:33.635195"], ["updated_at", "2017-07-21 23:00:33.635195"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "profile_quote", "description", "price", "zip", "city", "state", "created_at", "updated_at", "obedience", "behavior", "advanced") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Kelly"], ["profile_quote", "Y'all good?"], ["description", "Hash Browns"], ["price", 50], ["zip", 94109], ["city", "San Francisco"], ["state", "California"], ["created_at", "2017-07-21 23:00:33.653376"], ["updated_at", "2017-07-21 23:00:33.653376"], ["obedience", "t"], ["behavior", "t"], ["advanced", "t"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "profile_quote", "description", "price", "zip", "city", "state", "created_at", "updated_at", "obedience", "behavior", "advanced") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Hope"], ["profile_quote", "Corgis rock!"], ["description", "Love for Sir Toast<3"], ["price", 45], ["zip", 94109], ["city", "San Francisco"], ["state", "California"], ["created_at", "2017-07-21 23:00:33.659763"], ["updated_at", "2017-07-21 23:00:33.659763"], ["obedience", "t"], ["behavior", "t"], ["advanced", "t"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "profile_quote", "description", "price", "zip", "city", "state", "created_at", "updated_at", "obedience", "behavior", "advanced") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "David"], ["profile_quote", "Capybara David"], ["description", "I will take care of your dogs!!"], ["price", 20], ["zip", 94109], ["city", "San Francisco"], ["state", "California"], ["created_at", "2017-07-21 23:00:33.665624"], ["updated_at", "2017-07-21 23:00:33.665624"], ["obedience", "t"], ["behavior", "f"], ["advanced", "f"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "profile_quote", "description", "price", "zip", "city", "state", "created_at", "updated_at", "obedience", "behavior", "advanced") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Aaron"], ["profile_quote", "Love for dogs"], ["description", "React is awesome"], ["price", 20], ["zip", 94109], ["city", "San Francisco"], ["state", "California"], ["created_at", "2017-07-21 23:00:33.670419"], ["updated_at", "2017-07-21 23:00:33.670419"], ["obedience", "t"], ["behavior", "t"], ["advanced", "f"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (213.4ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Rolover_development"[0m
+  [1m[35m (114.9ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Rolover_test"[0m
+  [1m[35m (263.4ms)[0m  [1m[35mCREATE DATABASE "Rolover_development" ENCODING = 'unicode'[0m
+  [1m[35m (261.0ms)[0m  [1m[35mCREATE DATABASE "Rolover_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (13.6ms)[0m  [1m[35mCREATE TABLE "images" ("id" serial primary key, "trainer_id" integer NOT NULL, "url" character varying NOT NULL, "type" character varying NOT NULL)[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE  INDEX  "index_images_on_trainer_id" ON "images" USING btree ("trainer_id")[0m
+  [1m[35m (9.9ms)[0m  [1m[35mCREATE TABLE "trainers" ("id" serial primary key, "name" character varying NOT NULL, "profile_quote" text NOT NULL, "description" text NOT NULL, "price" integer NOT NULL, "zip" integer NOT NULL, "city" character varying NOT NULL, "state" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "obedience" boolean NOT NULL, "behavior" boolean NOT NULL, "advanced" boolean NOT NULL)[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_advanced" ON "trainers" USING btree ("advanced")[0m
+  [1m[35m (7.4ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_behavior" ON "trainers" USING btree ("behavior")[0m
+  [1m[35m (5.9ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_obedience" ON "trainers" USING btree ("obedience")[0m
+  [1m[35m (9.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "profile_img_url" character varying DEFAULT 'http://res.cloudinary.com/rolover/image/upload/v1500672475/gray_logo_rnqfnk.png')[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (10.3ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170721213156)[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170718161549),
+(20170719233939),
+(20170720214342),
+(20170719233739),
+(20170719214549),
+(20170718213131);
+
+[0m
+  [1m[35m (10.5ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-21 23:00:53.706947"], ["updated_at", "2017-07-21 23:00:53.706947"]]
+  [1m[35m (2.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (11.2ms)[0m  [1m[35mCREATE TABLE "images" ("id" serial primary key, "trainer_id" integer NOT NULL, "url" character varying NOT NULL, "type" character varying NOT NULL)[0m
+  [1m[35m (6.9ms)[0m  [1m[35mCREATE  INDEX  "index_images_on_trainer_id" ON "images" USING btree ("trainer_id")[0m
+  [1m[35m (8.8ms)[0m  [1m[35mCREATE TABLE "trainers" ("id" serial primary key, "name" character varying NOT NULL, "profile_quote" text NOT NULL, "description" text NOT NULL, "price" integer NOT NULL, "zip" integer NOT NULL, "city" character varying NOT NULL, "state" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "obedience" boolean NOT NULL, "behavior" boolean NOT NULL, "advanced" boolean NOT NULL)[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_advanced" ON "trainers" USING btree ("advanced")[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_behavior" ON "trainers" USING btree ("behavior")[0m
+  [1m[35m (5.0ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_obedience" ON "trainers" USING btree ("obedience")[0m
+  [1m[35m (16.7ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "profile_img_url" character varying DEFAULT 'http://res.cloudinary.com/rolover/image/upload/v1500672475/gray_logo_rnqfnk.png')[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170721213156)[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170718161549),
+(20170719233939),
+(20170720214342),
+(20170719233739),
+(20170719214549),
+(20170718213131);
+
+[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-21 23:00:53.858900"], ["updated_at", "2017-07-21 23:00:53.858900"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bob@gmail"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "bob@gmail"], ["password_digest", "$2a$10$h.NBlyyrLoTmhUg.9QEZtOF.2/SFHRpuzTpMZUj3huSlfwB.FQGuq"], ["session_token", "DmXJ-QpIolX8byv3Qkif5Q"], ["created_at", "2017-07-21 23:00:53.980778"], ["updated_at", "2017-07-21 23:00:53.980778"]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "profile_quote", "description", "price", "zip", "city", "state", "created_at", "updated_at", "obedience", "behavior", "advanced") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Kelly"], ["profile_quote", "Y'all good?"], ["description", "Hash Browns"], ["price", 50], ["zip", 94109], ["city", "San Francisco"], ["state", "California"], ["created_at", "2017-07-21 23:00:54.007679"], ["updated_at", "2017-07-21 23:00:54.007679"], ["obedience", "t"], ["behavior", "t"], ["advanced", "t"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "profile_quote", "description", "price", "zip", "city", "state", "created_at", "updated_at", "obedience", "behavior", "advanced") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Hope"], ["profile_quote", "Corgis rock!"], ["description", "Love for Sir Toast<3"], ["price", 45], ["zip", 94109], ["city", "San Francisco"], ["state", "California"], ["created_at", "2017-07-21 23:00:54.011540"], ["updated_at", "2017-07-21 23:00:54.011540"], ["obedience", "t"], ["behavior", "t"], ["advanced", "t"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "profile_quote", "description", "price", "zip", "city", "state", "created_at", "updated_at", "obedience", "behavior", "advanced") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "David"], ["profile_quote", "Capybara David"], ["description", "I will take care of your dogs!!"], ["price", 20], ["zip", 94109], ["city", "San Francisco"], ["state", "California"], ["created_at", "2017-07-21 23:00:54.014774"], ["updated_at", "2017-07-21 23:00:54.014774"], ["obedience", "t"], ["behavior", "f"], ["advanced", "f"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "profile_quote", "description", "price", "zip", "city", "state", "created_at", "updated_at", "obedience", "behavior", "advanced") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Aaron"], ["profile_quote", "Love for dogs"], ["description", "React is awesome"], ["price", 20], ["zip", 94109], ["city", "San Francisco"], ["state", "California"], ["created_at", "2017-07-21 23:00:54.017974"], ["updated_at", "2017-07-21 23:00:54.017974"], ["obedience", "t"], ["behavior", "t"], ["advanced", "f"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_try_advisory_lock(5645024442992354280);[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Migrating to RenameImageColumn (20170721230207)
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mALTER TABLE "images" RENAME COLUMN "url" TO "img_url"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mALTER TABLE "images" RENAME COLUMN "type" TO "img_type"[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "schema_migrations" ("version") VALUES ($1) RETURNING "version"[0m  [["version", "20170721230207"]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.2ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5645024442992354280)[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bob@gmail"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "profile_quote", "description", "price", "zip", "city", "state", "created_at", "updated_at", "obedience", "behavior", "advanced") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Kelly"], ["profile_quote", "Y'all good?"], ["description", "Hash Browns"], ["price", 50], ["zip", 94109], ["city", "San Francisco"], ["state", "California"], ["created_at", "2017-07-21 23:02:49.916292"], ["updated_at", "2017-07-21 23:02:49.916292"], ["obedience", "t"], ["behavior", "t"], ["advanced", "t"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "profile_quote", "description", "price", "zip", "city", "state", "created_at", "updated_at", "obedience", "behavior", "advanced") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Hope"], ["profile_quote", "Corgis rock!"], ["description", "Love for Sir Toast<3"], ["price", 45], ["zip", 94109], ["city", "San Francisco"], ["state", "California"], ["created_at", "2017-07-21 23:02:49.921774"], ["updated_at", "2017-07-21 23:02:49.921774"], ["obedience", "t"], ["behavior", "t"], ["advanced", "t"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "profile_quote", "description", "price", "zip", "city", "state", "created_at", "updated_at", "obedience", "behavior", "advanced") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "David"], ["profile_quote", "Capybara David"], ["description", "I will take care of your dogs!!"], ["price", 20], ["zip", 94109], ["city", "San Francisco"], ["state", "California"], ["created_at", "2017-07-21 23:02:49.926422"], ["updated_at", "2017-07-21 23:02:49.926422"], ["obedience", "t"], ["behavior", "f"], ["advanced", "f"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "profile_quote", "description", "price", "zip", "city", "state", "created_at", "updated_at", "obedience", "behavior", "advanced") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Aaron"], ["profile_quote", "Love for dogs"], ["description", "React is awesome"], ["price", 20], ["zip", 94109], ["city", "San Francisco"], ["state", "California"], ["created_at", "2017-07-21 23:02:49.931143"], ["updated_at", "2017-07-21 23:02:49.931143"], ["obedience", "t"], ["behavior", "t"], ["advanced", "f"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 1], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500615300/rebekah-howell-221666_pxgagf.jpg"], ["img_type", "profile"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 1], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676796/nick-turner-2570_cysug8.jpg"], ["img_type", "main"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 1], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676796/greg-rakozy-234360_lnidhq.jpg"], ["img_type", "main"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 1], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500615297/ross-sokolovski-167993_vmclu0.jpg"], ["img_type", "main"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 1], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500614239/dawid-sobolewski-285655_iauvhs.jpg"], ["img_type", "main"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 2], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500615274/hannah-busing-310503_dyj1vz.jpg"], ["img_type", "profile"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 2], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500615252/pete-bellis-217830_o7hl7o.jpg"], ["img_type", "main"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 2], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676791/alexander-dummer-117495_alnvz6.jpg"], ["img_type", "main"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 2], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676794/crew-56836_uxjhwt.jpg"], ["img_type", "main"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 2], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500615255/nicolas-tessari-218491_hswkzo.jpg"], ["img_type", "main"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 3], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500666134/hJLEzfh-1_p49exx.jpg"], ["img_type", "profile"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 3], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676798/pete-bellis-217145_wryecn.jpg"], ["img_type", "main"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 3], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676792/andrew-pons-9713_uhf06p.jpg"], ["img_type", "main"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 3], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676792/andrew-branch-123375_arltld.jpg"], ["img_type", "main"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrainer Load (0.5ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 3], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 3], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676792/andy-omvik-295479_qi5fxn.jpg"], ["img_type", "main"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrainer Load (0.5ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 4], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500615295/marvin-meyer-188676_wnyexr.jpg"], ["img_type", "profile"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 4], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676798/rachel-omnes-159038_nzxnte.jpg"], ["img_type", "main"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrainer Load (0.5ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 4], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676795/leio-mclaren-299158_caimzl.jpg"], ["img_type", "main"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 4], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676796/kaci-baum-114910_vn1y0k.jpg"], ["img_type", "main"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 4], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 4], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500614250/justin-veenema-156591_kw18s0.jpg"], ["img_type", "main"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m

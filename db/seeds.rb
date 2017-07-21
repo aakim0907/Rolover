@@ -12,25 +12,25 @@ Trainer.create([
   { name: 'Aaron', obedience: true, behavior: true, advanced: false, profile_quote: 'Love for dogs', description: 'React is awesome', price: 20, zip: 94109, city: 'San Francisco', state: 'California' }
   ])
 
-Images.create([
-  { trainer_id: 1, url: 'http://res.cloudinary.com/rolover/image/upload/v1500615300/rebekah-howell-221666_pxgagf.jpg', type: 'profile'},
-  { trainer_id: 1, url: 'http://res.cloudinary.com/rolover/image/upload/v1500676796/nick-turner-2570_cysug8.jpg', type: 'main'},
-  { trainer_id: 1, url: 'http://res.cloudinary.com/rolover/image/upload/v1500676796/greg-rakozy-234360_lnidhq.jpg', type: 'main'},
-  { trainer_id: 1, url: 'http://res.cloudinary.com/rolover/image/upload/v1500615297/ross-sokolovski-167993_vmclu0.jpg', type: 'main'},
-  { trainer_id: 1, url: 'http://res.cloudinary.com/rolover/image/upload/v1500614239/dawid-sobolewski-285655_iauvhs.jpg', type: 'main'},
-  { trainer_id: 2, url: 'http://res.cloudinary.com/rolover/image/upload/v1500615274/hannah-busing-310503_dyj1vz.jpg', type: 'profile'},
-  { trainer_id: 2, url: 'http://res.cloudinary.com/rolover/image/upload/v1500615252/pete-bellis-217830_o7hl7o.jpg', type: 'main'},
-  { trainer_id: 2, url: 'http://res.cloudinary.com/rolover/image/upload/v1500676791/alexander-dummer-117495_alnvz6.jpg', type: 'main'},
-  { trainer_id: 2, url: 'http://res.cloudinary.com/rolover/image/upload/v1500676794/crew-56836_uxjhwt.jpg', type: 'main'},
-  { trainer_id: 2, url: 'http://res.cloudinary.com/rolover/image/upload/v1500615255/nicolas-tessari-218491_hswkzo.jpg', type: 'main'},
-  { trainer_id: 3, url: 'http://res.cloudinary.com/rolover/image/upload/v1500666134/hJLEzfh-1_p49exx.jpg', type: 'profile'},
-  { trainer_id: 3, url: 'http://res.cloudinary.com/rolover/image/upload/v1500676798/pete-bellis-217145_wryecn.jpg', type: 'main'},
-  { trainer_id: 3, url: 'http://res.cloudinary.com/rolover/image/upload/v1500676792/andrew-pons-9713_uhf06p.jpg', type: 'main'},
-  { trainer_id: 3, url: 'http://res.cloudinary.com/rolover/image/upload/v1500676792/andrew-branch-123375_arltld.jpg', type: 'main'},
-  { trainer_id: 3, url: 'http://res.cloudinary.com/rolover/image/upload/v1500676792/andy-omvik-295479_qi5fxn.jpg', type: 'main'},
-  { trainer_id: 4, url: 'http://res.cloudinary.com/rolover/image/upload/v1500615295/marvin-meyer-188676_wnyexr.jpg', type: 'profile'},
-  { trainer_id: 4, url: 'http://res.cloudinary.com/rolover/image/upload/v1500676798/rachel-omnes-159038_nzxnte.jpg', type: 'main'},
-  { trainer_id: 4, url: 'http://res.cloudinary.com/rolover/image/upload/v1500676795/leio-mclaren-299158_caimzl.jpg', type: 'main'},
-  { trainer_id: 4, url: 'http://res.cloudinary.com/rolover/image/upload/v1500676796/kaci-baum-114910_vn1y0k.jpg', type: 'main'},
-  { trainer_id: 4, url: 'http://res.cloudinary.com/rolover/image/upload/v1500614250/justin-veenema-156591_kw18s0.jpg', type: 'main'}
+Image.create([
+  { trainer_id: 1, img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500615300/rebekah-howell-221666_pxgagf.jpg', img_type: 'profile'},
+  { trainer_id: 1, img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500676796/nick-turner-2570_cysug8.jpg', img_type: 'main'},
+  { trainer_id: 1, img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500676796/greg-rakozy-234360_lnidhq.jpg', img_type: 'main'},
+  { trainer_id: 1, img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500615297/ross-sokolovski-167993_vmclu0.jpg', img_type: 'main'},
+  { trainer_id: 1, img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500614239/dawid-sobolewski-285655_iauvhs.jpg', img_type: 'main'},
+  { trainer_id: 2, img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500615274/hannah-busing-310503_dyj1vz.jpg', img_type: 'profile'},
+  { trainer_id: 2, img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500615252/pete-bellis-217830_o7hl7o.jpg', img_type: 'main'},
+  { trainer_id: 2, img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500676791/alexander-dummer-117495_alnvz6.jpg', img_type: 'main'},
+  { trainer_id: 2, img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500676794/crew-56836_uxjhwt.jpg', img_type: 'main'},
+  { trainer_id: 2, img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500615255/nicolas-tessari-218491_hswkzo.jpg', img_type: 'main'},
+  { trainer_id: 3, img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500666134/hJLEzfh-1_p49exx.jpg', img_type: 'profile'},
+  { trainer_id: 3, img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500676798/pete-bellis-217145_wryecn.jpg', img_type: 'main'},
+  { trainer_id: 3, img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500676792/andrew-pons-9713_uhf06p.jpg', img_type: 'main'},
+  { trainer_id: 3, img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500676792/andrew-branch-123375_arltld.jpg', img_type: 'main'},
+  { trainer_id: 3, img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500676792/andy-omvik-295479_qi5fxn.jpg', img_type: 'main'},
+  { trainer_id: 4, img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500615295/marvin-meyer-188676_wnyexr.jpg', img_type: 'profile'},
+  { trainer_id: 4, img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500676798/rachel-omnes-159038_nzxnte.jpg', img_type: 'main'},
+  { trainer_id: 4, img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500676795/leio-mclaren-299158_caimzl.jpg', img_type: 'main'},
+  { trainer_id: 4, img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500676796/kaci-baum-114910_vn1y0k.jpg', img_type: 'main'},
+  { trainer_id: 4, img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500614250/justin-veenema-156591_kw18s0.jpg', img_type: 'main'}
   ])

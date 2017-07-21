@@ -10,15 +10,15 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170721213156) do
+ActiveRecord::Schema.define(version: 20170721230207) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "images", force: :cascade do |t|
     t.integer "trainer_id", null: false
-    t.string  "url",        null: false
-    t.string  "type",       null: false
+    t.string  "img_url",    null: false
+    t.string  "img_type",   null: false
     t.index ["trainer_id"], name: "index_images_on_trainer_id", using: :btree
   end
 
