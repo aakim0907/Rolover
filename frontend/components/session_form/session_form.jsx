@@ -42,34 +42,13 @@ class SessionForm extends React.Component {
         buttonName: 'Sign Up',
         redirectForm: 'singup'
       };
-      // const redirectMsg = "Don't have an account?";
-      // const buttonName = 'Sign Up';
-      // const redirectForm = 'signup';
     } else {
       redirect = {
         redirectMsg: 'Already have an account?',
         buttonName: 'Log In',
-        redirectForm: 'signup'
-      }
-      // const redirectMsg = 'Already have an account?';
-      // const buttonName = 'Log In';
-      // const redirectForm = 'signup';
+        redirectForm: 'login'
+      };
     }
-
-    // const redirectMsg = (
-    //   this.props.formType === 'login' ?
-    //   "Don't have an account?" : "Already have an account?"
-    // );
-    //
-    // const buttonName = (
-    //   this.props.formType === 'login' ?
-    //   "Sign Up" : "Log In"
-    // );
-    //
-    // const redirectFunction = (
-    //   this.props.formType === 'login' ?
-    //   "signup" : 'login'
-    // );
 
     return (
       <div className="other-link">
