@@ -47178,10 +47178,10 @@ var TrainerList = function (_React$Component) {
       } else {
         return _react2.default.createElement(
           'section',
-          { className: 'trainer-index' },
+          { className: 'trainer-container' },
           _react2.default.createElement(
             'ul',
-            null,
+            { className: 'trainer-list' },
             trainerItems
           )
         );
@@ -47226,13 +47226,13 @@ var TrainerIndexItem = function TrainerIndexItem(_ref) {
 
   return _react2.default.createElement(
     'li',
-    null,
+    { className: 'trainer-list-item' },
     _react2.default.createElement(
       _reactRouterDom.Link,
       { to: '/trainers/' + trainer.id },
       _react2.default.createElement(
         'div',
-        null,
+        { className: 'trainer-list-name' },
         _react2.default.createElement(
           'span',
           null,
@@ -47314,15 +47314,7 @@ var mapStateToProps = function mapStateToProps(_ref, _ref2) {
   };
 };
 
-var mapDispatchToProps = function mapDispatchToProps(dispatch) {
-  return {
-    fetchTrainer: function fetchTrainer(id) {
-      return dispatch((0, _trainer_actions.fetchTrainer)(id));
-    }
-  };
-};
-
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_trainer_detail2.default);
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(_trainer_detail2.default);
 
 /***/ }),
 /* 299 */
@@ -47364,11 +47356,6 @@ var TrainerDetail = function (_React$Component) {
   }
 
   _createClass(TrainerDetail, [{
-    key: 'componentDidMount',
-    value: function componentDidMount() {
-      // this.props.fetchTrainer(this.props.trainerID);
-    }
-  }, {
     key: 'render',
     value: function render() {
       console.log(this.props);

@@ -22,27 +22,25 @@
   }
 
   trainers: {
+    1: {
+      id: 1,
+      name: "John Doe",
+      obedience: true,
+      behavior: true,
+      advanced: false,
+      profile_quote: "Awesome Animal Lover",
+      description: "John Doe is a .......",
+      price: 45,
+      zip: 94109,
+      city: "San Francisco",
+      state: "California",
+      profile_image_id: 7
+    },
 
-      1: {
-        id: 1,
-        name: "John Doe",
-        obedience: true,
-        behavior: true,
-        advanced: false,
-        profile_quote: "Awesome Animal Lover",
-        description: "John Doe is a .......",
-        price: 45,
-        zip: 94109,
-        city: "San Francisco",
-        state: "California",
-        profile_image_id: 7
-      },
-
-      2: {
-        id: 2,
-        ...,
-      }
-    
+    2: {
+      id: 2,
+      ...,
+    }
   },
 
   bookings: {

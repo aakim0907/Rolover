@@ -6,13 +6,6 @@ const mapStateToProps = ({ trainers }, { match }) => ({
   trainer: trainers[match.params.id]
 });
 
-const mapDispatchToProps = (dispatch) => {
-  return ({
-    fetchTrainer: id => dispatch(fetchTrainer(id))
-  });
-};
-
 export default connect(
-  mapStateToProps,
-  mapDispatchToProps
+  mapStateToProps
 )(TrainerDetail);

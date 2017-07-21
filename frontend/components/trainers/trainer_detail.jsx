@@ -4,10 +4,6 @@ import { Route, Link } from 'react-router-dom';
 
 // should have review & booking container!!!
 class TrainerDetail extends React.Component {
-  componentDidMount() {
-    // this.props.fetchTrainer(this.props.trainerID);
-  }
-
   render() {
     console.log(this.props);
     return (

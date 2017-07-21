@@ -10,9 +10,9 @@ const TrainerIndexItem = ({ trainer }) => {
   // };
 
   return (
-    <li>
+    <li className="trainer-list-item">
       <Link to={`/trainers/${trainer.id}`}>
-        <div>
+        <div className="trainer-list-name">
           <span>{trainer.name}</span>
         </div>
       </Link>
