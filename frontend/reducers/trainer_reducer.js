@@ -5,26 +5,17 @@ import {
   RECEIVE_TRAINER
 } from '../actions/trainer_actions';
 
-const _defaultState = {
-  currentTrainer: null,
-  byID: {}
-};
-
-const trainersReducer = (state = _defaultState, action) => {
+const trainersReducer = (state = {}, action) => {
   Object.freeze(state);
 
   switch(action.type) {
     case RECEIVE_TRAINERS:
       const trainers = action.trainers;
-      return merge({}, _defaultState, {
-        byID: trainers
-      });
+      return merge({}, trainers);
 
     case RECEIVE_TRAINER:
       const trainer = action.trainer;
-      return merge({}, _defaultState, {
-        currentTrainer: trainer
-      });
+      return merge({}, state, {[trainer.id]: trainer});
 
     default:
       return state;

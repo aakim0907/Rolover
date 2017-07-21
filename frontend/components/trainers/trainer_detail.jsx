@@ -2,18 +2,21 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 // import renderStars from '../helper/star';
 
-const TrainerDetail = ({ trainer }) => {
-  //   const imgStyle = {
-  //   height: "100%",
-  //   width: "100%",
-  //   backgroundImage: `url(${room.main_pic_url})`
-  // };
+// should have review & booking container!!!
+class TrainerDetail extends React.Component {
+  componentDidMount() {
+    // this.props.fetchTrainer(this.props.trainerID);
+  }
 
-  return (
-    <div>
-      <p>hi</p>
-    </div>
-  );
-};
+  render() {
+    console.log(this.props);
+    return (
+      <div>
+          <p>hi {this.props.trainer.name}</p>
+
+      </div>
+    );
+  }
+}
 
 export default TrainerDetail;

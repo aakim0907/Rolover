@@ -42807,13 +42807,10 @@ var _lodash = __webpack_require__(62);
 
 var _trainer_actions = __webpack_require__(107);
 
-var _defaultState = {
-  currentTrainer: null,
-  byID: {}
-};
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
 var trainersReducer = function trainersReducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : _defaultState;
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
   var action = arguments[1];
 
   Object.freeze(state);
@@ -42821,15 +42818,11 @@ var trainersReducer = function trainersReducer() {
   switch (action.type) {
     case _trainer_actions.RECEIVE_TRAINERS:
       var trainers = action.trainers;
-      return (0, _lodash.merge)({}, _defaultState, {
-        byID: trainers
-      });
+      return (0, _lodash.merge)({}, trainers);
 
     case _trainer_actions.RECEIVE_TRAINER:
       var trainer = action.trainer;
-      return (0, _lodash.merge)({}, _defaultState, {
-        currentTrainer: trainer
-      });
+      return (0, _lodash.merge)({}, state, _defineProperty({}, trainer.id, trainer));
 
     default:
       return state;
@@ -45782,6 +45775,10 @@ var _trainer_list_container = __webpack_require__(297);
 
 var _trainer_list_container2 = _interopRequireDefault(_trainer_list_container);
 
+var _trainer_detail_container = __webpack_require__(298);
+
+var _trainer_detail_container2 = _interopRequireDefault(_trainer_detail_container);
+
 var _footer = __webpack_require__(293);
 
 var _footer2 = _interopRequireDefault(_footer);
@@ -45803,7 +45800,8 @@ var App = function App() {
       _react2.default.createElement(
         'switch',
         null,
-        _react2.default.createElement(_reactRouterDom.Route, { path: '/trainers', component: _trainer_list_container2.default }),
+        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/trainers', component: _trainer_list_container2.default }),
+        _react2.default.createElement(_reactRouterDom.Route, { path: '/trainers/:id', component: _trainer_detail_container2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _main_page2.default })
       )
     )
@@ -45891,6 +45889,11 @@ var NavBar = function NavBar() {
           { to: "/" },
           _react2.default.createElement('img', { src: window.images.rolover, alt: 'Rolover Logo' })
         )
+      ),
+      _react2.default.createElement(
+        _reactRouterDom.Link,
+        { to: '/trainers' },
+        'trainers'
       )
     ),
     _react2.default.createElement(
@@ -47109,7 +47112,7 @@ exports.selectAllTrainers = undefined;
 var _lodash = __webpack_require__(62);
 
 var selectAllTrainers = exports.selectAllTrainers = function selectAllTrainers(trainers) {
-  return (0, _lodash.values)(trainers.byID);
+  return (0, _lodash.values)(trainers);
 };
 
 /***/ }),
@@ -47267,8 +47270,6 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 var mapStateToProps = function mapStateToProps(_ref) {
   var trainers = _ref.trainers;
-
-  // console.log(trainers);
   return {
     trainers: (0, _selectors.selectAllTrainers)(trainers)
   };
@@ -47283,6 +47284,111 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
 };
 
 exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_trainer_list2.default);
+
+/***/ }),
+/* 298 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(40);
+
+var _trainer_detail = __webpack_require__(299);
+
+var _trainer_detail2 = _interopRequireDefault(_trainer_detail);
+
+var _trainer_actions = __webpack_require__(107);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(_ref, _ref2) {
+  var trainers = _ref.trainers;
+  var match = _ref2.match;
+  return {
+    trainer: trainers[match.params.id]
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    fetchTrainer: function fetchTrainer(id) {
+      return dispatch((0, _trainer_actions.fetchTrainer)(id));
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_trainer_detail2.default);
+
+/***/ }),
+/* 299 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(4);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(17);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// import renderStars from '../helper/star';
+
+// should have review & booking container!!!
+var TrainerDetail = function (_React$Component) {
+  _inherits(TrainerDetail, _React$Component);
+
+  function TrainerDetail() {
+    _classCallCheck(this, TrainerDetail);
+
+    return _possibleConstructorReturn(this, (TrainerDetail.__proto__ || Object.getPrototypeOf(TrainerDetail)).apply(this, arguments));
+  }
+
+  _createClass(TrainerDetail, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      // this.props.fetchTrainer(this.props.trainerID);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      console.log(this.props);
+      return _react2.default.createElement(
+        'div',
+        null,
+        _react2.default.createElement(
+          'p',
+          null,
+          'hi ',
+          this.props.trainer.name
+        )
+      );
+    }
+  }]);
+
+  return TrainerDetail;
+}(_react2.default.Component);
+
+exports.default = TrainerDetail;
 
 /***/ })
 /******/ ]);

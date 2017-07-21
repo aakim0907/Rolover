@@ -8,6 +8,8 @@ const NavBar = () => (
         <div className="logo">
           <Link to={"/"} ><img src={ window.images.rolover } alt="Rolover Logo"/></Link>
         </div>
+
+        <Link to="/trainers">trainers</Link>
       </div>
 
       <nav className="right-nav">

@@ -22,12 +22,7 @@
   }
 
   trainers: {
-    currentTrainer: {
-      id: 7,
-      ...
-    },
 
-    byID: {
       1: {
         id: 1,
         name: "John Doe",
@@ -47,7 +42,7 @@
         id: 2,
         ...,
       }
-    }
+    
   },
 
   bookings: {
