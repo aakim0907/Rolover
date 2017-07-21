@@ -47220,16 +47220,14 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var TrainerIndexItem = function TrainerIndexItem(_ref) {
   var trainer = _ref.trainer;
 
-  //   const imgStyle = {
-  //   height: "100%",
-  //   width: "100%",
-  //   backgroundImage: `url(${room.main_pic_url})`
-  // };
-
   return _react2.default.createElement(
     'div',
     { className: 'trainer-list-item' },
-    _react2.default.createElement('div', { className: 'trainer-list-profile' }),
+    _react2.default.createElement(
+      'div',
+      { className: 'trainer-list-profile' },
+      _react2.default.createElement('img', { src: 'http://res.cloudinary.com/rolover/image/upload/v1500615252/pete-bellis-217830_o7hl7o.jpg' })
+    ),
     _react2.default.createElement(
       'div',
       { className: 'trainer-list-main' },

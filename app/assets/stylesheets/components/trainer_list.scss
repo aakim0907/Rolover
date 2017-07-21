@@ -25,10 +25,9 @@
 }
 
 .trainer-list-profile {
-  background: url(http://res.cloudinary.com/rolover/image/upload/v1500615274/hannah-busing-310503_dyj1vz.jpg) no-repeat center;
-  background-size: 90% 90%;
   display: flex;
   width: 27%;
+  padding: 12px;
 }
 
 .trainer-list-main {
@@ -48,6 +47,12 @@
   padding-right: 15px;
   justify-content: flex-end;
 }
+
+// .trainer-list-profile-img {
+//   background-size: cover;
+//   background-repeat: no-repeat;
+//   background-position: 50% 50%;
+// }
 
 .trainer-list-name {
   // border: 1px solid $light-green;

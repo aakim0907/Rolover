@@ -3,16 +3,10 @@ import { Link } from 'react-router-dom';
 // import renderStars from '../helper/star';
 
 const TrainerIndexItem = ({ trainer }) => {
-  //   const imgStyle = {
-  //   height: "100%",
-  //   width: "100%",
-  //   backgroundImage: `url(${room.main_pic_url})`
-  // };
-
   return (
     <div className="trainer-list-item">
       <div className="trainer-list-profile">
-
+        <img src="http://res.cloudinary.com/rolover/image/upload/v1500615252/pete-bellis-217830_o7hl7o.jpg"></img>
       </div>
 
       <div className="trainer-list-main">
