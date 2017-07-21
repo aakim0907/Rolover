@@ -23,9 +23,10 @@ img{
 }
 
 a {
-  color: $green;
+  // color: $green;
   text-decoration: none;
   font-size: 14px;
+
   &:hover {
     text-decoration: underline;
   }
@@ -77,6 +78,7 @@ button {
 
     &:hover {
       filter: brightness(85%);
+      color: $white;
     }
   }
 
