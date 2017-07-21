@@ -6,7 +6,7 @@ import SessionFormContainer from './session_form/session_form_container';
 
 const customStyles = {
   overlay : {
-    backgroundColor : 'rgba(0, 0, 0, 0.7)'
+    backgroundColor : 'rgba(0, 0, 0, 0.4)'
   },
   content : {
     top         : '45%',

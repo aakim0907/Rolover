@@ -29608,7 +29608,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 var customStyles = {
   overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.7)'
+    backgroundColor: 'rgba(0, 0, 0, 0.4)'
   },
   content: {
     top: '45%',
