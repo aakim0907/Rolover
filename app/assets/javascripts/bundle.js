@@ -46024,7 +46024,7 @@ var Greeting = function (_React$Component) {
             { className: 'demo', onClick: _this2.handleDemoClick },
             'Demo Account'
           ),
-          _react2.default.createElement(_auth_modal2.default, { redirect: 'false' })
+          _react2.default.createElement(_auth_modal2.default, null)
         );
       };
 
@@ -46160,7 +46160,7 @@ var SessionForm = function (_React$Component) {
         ),
         _react2.default.createElement(
           'button',
-          { onClick: function onClick() {
+          { className: 'session-redirect-btn', onClick: function onClick() {
               return _this3.props.modalFunction(redirect.redirectForm);
             } },
           redirect.buttonName
@@ -47246,7 +47246,7 @@ var TrainerIndexItem = function TrainerIndexItem(_ref) {
         'div',
         { className: 'trainer-list-quote' },
         _react2.default.createElement(
-          'span',
+          'p',
           null,
           '"',
           trainer.profile_quote,
@@ -47257,7 +47257,7 @@ var TrainerIndexItem = function TrainerIndexItem(_ref) {
         'div',
         { className: 'trainer-list-address' },
         _react2.default.createElement(
-          'span',
+          'p',
           null,
           trainer.city,
           ', ',

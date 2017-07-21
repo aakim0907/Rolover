@@ -6,7 +6,9 @@ const NavBar = () => (
     <section className="nav-bar">
       <div className="left-nav">
         <div className="logo">
-          <Link to={"/"} ><img src={ window.images.rolover } alt="Rolover Logo"/></Link>
+          <Link to={"/"} >
+            <img src={ window.images.rolover } alt="Rolover Logo"/>
+          </Link>
         </div>
 
         <Link to="/trainers">trainers</Link>

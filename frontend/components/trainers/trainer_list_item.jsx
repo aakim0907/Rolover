@@ -17,15 +17,15 @@ const TrainerIndexItem = ({ trainer }) => {
 
       <div className="trainer-list-main">
         <div className="trainer-list-name">
-            <h2>{trainer.name}</h2>
+          <h2>{trainer.name}</h2>
         </div>
 
         <div className="trainer-list-quote">
-          <span>&quot;{trainer.profile_quote}&quot;</span>
+          <p>&quot;{trainer.profile_quote}&quot;</p>
         </div>
 
         <div className="trainer-list-address">
-          <span>{trainer.city}, {trainer.state} {trainer.zip}</span>
+          <p>{trainer.city}, {trainer.state} {trainer.zip}</p>
         </div>
 
         <div className="trainer-list-description">

@@ -53,7 +53,7 @@ class SessionForm extends React.Component {
     return (
       <div className="other-link">
         <p>{redirect.redirectMsg}</p>
-        <button onClick={() => this.props.modalFunction(redirect.redirectForm)}>{redirect.buttonName}</button>
+        <button className="session-redirect-btn" onClick={() => this.props.modalFunction(redirect.redirectForm)}>{redirect.buttonName}</button>
       </div>
     );
   }

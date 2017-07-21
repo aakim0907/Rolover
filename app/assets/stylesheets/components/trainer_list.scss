@@ -1,25 +1,26 @@
 .trainer-container {
-  border: 1px solid green;
-  margin-top: 50px;
-  margin-left: 150px;
-  width: 600px;
+  background-color: $white;
+  margin-top: 5%;
+  margin-left: 15%;
+  width: 650px;
   display: flex;
   flex-direction: row;
   flex-wrap: wrap;
-  // text-decoration: none;
+
+  a {
+    text-decoration: none;
+  }
 }
 
 .trainer-list-item {
   border-bottom: 1px solid $gray;
   display: flex;
-  // width: 100%;
-  width: 598px;
-  height: 170px;
+  width: 649px;
+  height: 200px;
 
   &:hover {
     cursor: pointer;
     border-left: 3px solid $orange;
-    // text-decoration: none;
   }
 }
 
@@ -27,15 +28,15 @@
   background: url(http://res.cloudinary.com/rolover/image/upload/v1500615274/hannah-busing-310503_dyj1vz.jpg) no-repeat center;
   background-size: 90% 90%;
   display: flex;
-  width: 25%;
+  width: 27%;
 }
 
 .trainer-list-main {
-  // border: 1px solid $dark-blue;
   display: flex;
   flex-wrap: wrap;
-  width: 65%;
-  padding: 7px;
+  width: 63%;
+  padding-top: 12px;
+  padding-left: 7px;
 }
 
 .trainer-list-price {
@@ -43,8 +44,8 @@
   display: flex;
   width: 10%;
   font-size: 25px;
-  padding-top: 15px;
-  padding-right: 7px;
+  padding-top: 20px;
+  padding-right: 15px;
   justify-content: flex-end;
 }
 
@@ -56,10 +57,11 @@
 
   h2 {
     margin-top: 5px;
-    // margin-left: 10px;
-    // display: flex;
     color: $dark-blue;
-    // font-weight: 500;
+
+    &:hover {
+      text-decoration: underline;
+    }
   }
 }
 
@@ -70,6 +72,7 @@
   height: 15%;
   color: black;
   font-weight: bold;
+
   // padding-left: 10px;
 }
 
@@ -79,8 +82,8 @@
   width: 100%;
   height: 15%;
 
-  span {
-    font-size: 12px;
+  p {
+    font-style: italic;
   }
 }
 

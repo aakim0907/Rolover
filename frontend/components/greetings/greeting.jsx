@@ -23,7 +23,7 @@ class Greeting extends React.Component {
       <div className="login-signup">
         <button className="demo" onClick={this.handleDemoClick}>Demo Account</button>
 
-        <AuthModal redirect='false'/>
+        <AuthModal />
       </div>
     );
 
