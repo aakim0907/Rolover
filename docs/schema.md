@@ -5,6 +5,7 @@ id                | integer   | not null, primary key
 email             | string    | not null, unique
 password_digest   | string    | not null, unique
 session_token     | string    | not null, unique
+profile_img_url   | string    | default = "http://res.cloudinary.com/rolover/image/upload/v1500672475/gray_logo_rnqfnk.png"
 
 ## dogs
 column name       | data type | details
@@ -38,7 +39,6 @@ column name        | data type | details
 -------------------|-----------|-----------------------
 id                 | integer   | not null, primary key
 trainer_id         | integer   | foreign key (references trainers), indexed
-user_id            | integer   | foreign key (references users), indexed
 url                | string    | not null
 type               | string    | not null, inclusion: [profile, main]
 
