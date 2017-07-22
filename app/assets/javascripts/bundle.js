@@ -5106,9 +5106,9 @@ var fetchTrainers = exports.fetchTrainers = function fetchTrainers() {
 };
 // argument filter removed
 
-var fetchTrainer = exports.fetchTrainer = function fetchTrainer(trainer) {
+var fetchTrainer = exports.fetchTrainer = function fetchTrainer(id) {
   return function (dispatch) {
-    return APIUtil.fetchTrainer(trainer).then(function (trainer) {
+    return APIUtil.fetchTrainer(id).then(function (trainer) {
       return dispatch(receiveTrainer(trainer));
     });
   };
@@ -47352,7 +47352,16 @@ var mapStateToProps = function mapStateToProps(_ref, _ref2) {
   };
 };
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps)(_trainer_detail2.default);
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    fetchTrainer: function fetchTrainer(id) {
+      return dispatch((0, _trainer_actions.fetchTrainer)(id));
+    }
+    //loading
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_trainer_detail2.default);
 
 /***/ }),
 /* 298 */
@@ -47384,8 +47393,8 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 // import renderStars from '../helper/star';
 
 // should have review & booking container!!!
-
 //trainer.images.filter(img => img.img_type === 'main')
+
 var TrainerDetail = function (_React$Component) {
   _inherits(TrainerDetail, _React$Component);
 
@@ -47396,8 +47405,23 @@ var TrainerDetail = function (_React$Component) {
   }
 
   _createClass(TrainerDetail, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.props.fetchTrainer(this.props.match.params.id);
+    }
+  }, {
+    key: 'componentWillReceiveProps',
+    value: function componentWillReceiveProps(nextProps) {
+      if (this.props.match.params.id !== nextProps.match.params.id) {
+        this.props.fetchTrainer(this.props.match.params.id);
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
+      if (!this.props.trainer) {
+        return null;
+      }
       return _react2.default.createElement(
         'div',
         { className: 'trainer-detail-container' },

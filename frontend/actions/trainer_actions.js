@@ -22,8 +22,8 @@ export const fetchTrainers = () => dispatch => (
 );
 // argument filter removed
 
-export const fetchTrainer = trainer => dispatch => (
-  APIUtil.fetchTrainer(trainer).then(
+export const fetchTrainer = id => dispatch => (
+  APIUtil.fetchTrainer(id).then(
     trainer => (dispatch(receiveTrainer(trainer)))
   )
 );
