@@ -19,11 +19,20 @@ class TrainerDetail extends React.Component {
   render() {
     if (!this.props.trainer) {
       return null;
-    } 
+    }
     return (
       <div className="trainer-detail-container">
         <div className="trainer-header">
-          <p>hi {this.props.trainer.name}</p>
+          <div className="trainer-header-1" />
+          <div className="trainer-header-2">
+            <div className="trainer-header-2-1">
+              <img src="http://res.cloudinary.com/rolover/image/upload/v1500614239/dawid-sobolewski-285655_iauvhs.jpg"/>
+            </div>
+            <div className="trainer-header-2-2">
+
+            </div>
+          </div>
+          <div className="trainer-header-3" />
         </div>
       </div>
     );
