@@ -9,18 +9,12 @@
 .trainer-header {
   display: flex;
   min-height: 700px;
-  overflow: hidden;
-  // height: 700px;
+  // overflow: hidden;
   position: fixed;
-  height: 700px;
-
-  // height: auto;
   margin-top: 30px;
 
   .trainer-header-1 {
     display: flex;
-    -webkit-flex: 1; /* Safari 6.1+ */
-    -ms-flex: 1; /* IE 10 */
     flex: 1;
     height: auto;
   }
@@ -28,27 +22,67 @@
   .trainer-header-2 {
     display: flex;
     flex-wrap: wrap;
-    -webkit-flex: 3.2; /* Safari 6.1+ */
-    -ms-flex: 3.2; /* IE 10 */
-    flex: 3.2;
+    flex: 3;
     background-color: $white;
     height: auto;
 
     .trainer-header-2-1 {
+      border: 1px solid $green;
       display: flex;
+      min-width: 700px;
       flex: 2;
+      flex-wrap: wrap;
+      padding-top: 100%;
     }
 
     .trainer-header-2-2 {
       display: flex;
+      flex-wrap: wrap;
+      flex-direction: column;
       flex: 1;
+
+      .th-profile {
+        border: 1px solid $blue;
+        display: flex;
+        height: 20%;
+
+        .th-profile-img {
+
+          display: flex;
+          flex-direction: column;
+          width: 38%;
+          padding: 3%;
+
+          img {
+            border-radius: 7px;
+            border: 1px solid $green;
+          }
+
+          .th-profile-name {
+            display: flex;
+            width: 100%
+          }
+
+          .th-profile-address {
+            display: flex;
+          }
+
+        }
+
+        .th-profile-name {
+          display: flex;
+        }
+      }
+
+      // .th-address {
+      //   display: flex;
+      // }
     }
+
   }
 
   .trainer-header-3 {
     display: flex;
-    -webkit-flex: 1; /* Safari 6.1+ */
-    -ms-flex: 1; /* IE 10 */
     flex: 1;
     height: auto;
   }
