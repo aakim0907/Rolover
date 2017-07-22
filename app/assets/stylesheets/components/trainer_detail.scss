@@ -1,44 +1,38 @@
 .trainer-detail-container {
   display: flex;
-  -webkit-box-sizing: border-box;
-  -moz-box-sizing: border-box;
   box-sizing: border-box;
-  // flex-wrap: wrap;
+  flex-wrap: wrap;
 }
 
 .trainer-header {
   display: flex;
-  min-height: 700px;
-  // overflow: hidden;
-  position: fixed;
+  width: 100%;
+  min-height: 480px;
   margin-top: 30px;
+  flex-wrap: wrap;
 
   .trainer-header-1 {
     display: flex;
     flex: 1;
-    height: auto;
   }
 
   .trainer-header-2 {
+    border: 1px solid red;
     display: flex;
     flex-wrap: wrap;
     flex: 3;
     background-color: $white;
-    height: auto;
 
     .trainer-header-2-1 {
       border: 1px solid $green;
       display: flex;
-      min-width: 700px;
-      flex: 2;
+      flex: 2.3;
       flex-wrap: wrap;
-      padding-top: 100%;
     }
 
     .trainer-header-2-2 {
       display: flex;
       flex-wrap: wrap;
-      flex-direction: column;
       flex: 1;
 
       .th-profile {
@@ -47,44 +41,38 @@
         height: 20%;
 
         .th-profile-img {
-
           display: flex;
-          flex-direction: column;
-          width: 38%;
-          padding: 3%;
+          // flex-direction: column;
+          // width: 38%;
+          // padding: 3%;
 
           img {
             border-radius: 7px;
             border: 1px solid $green;
           }
-
-          .th-profile-name {
-            display: flex;
-            width: 100%
-          }
-
-          .th-profile-address {
-            display: flex;
-          }
-
         }
 
         .th-profile-name {
           display: flex;
         }
+
+        .th-profile-address {
+          display: flex;
+        }
       }
-
-      // .th-address {
-      //   display: flex;
-      // }
     }
-
   }
 
   .trainer-header-3 {
     display: flex;
     flex: 1;
-    height: auto;
   }
+}
 
+.trainer-description {
+  display: flex;
+  background-color: $white;
+  width: 100%;
+  margin-top: 40px;
+  justify-content: center;
 }

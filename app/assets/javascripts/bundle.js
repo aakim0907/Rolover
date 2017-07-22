@@ -47431,7 +47431,6 @@ var TrainerDetail = function (_React$Component) {
       });
       // <img src="http://res.cloudinary.com/rolover/image/upload/v1500614239/dawid-sobolewski-285655_iauvhs.jpg"/>
 
-      // <img src={profile.img_url} />
       return _react2.default.createElement(
         'div',
         { className: 'trainer-detail-container' },
@@ -47442,14 +47441,26 @@ var TrainerDetail = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'trainer-header-2' },
-            _react2.default.createElement('div', { className: 'trainer-header-2-1' }),
+            _react2.default.createElement(
+              'div',
+              { className: 'trainer-header-2-1' },
+              _react2.default.createElement(
+                'p',
+                null,
+                'img'
+              )
+            ),
             _react2.default.createElement(
               'div',
               { className: 'trainer-header-2-2' },
               _react2.default.createElement(
                 'div',
                 { className: 'th-profile' },
-                _react2.default.createElement('div', { className: 'th-profile-img' }),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'th-profile-img' },
+                  _react2.default.createElement('img', { src: profile.img_url })
+                ),
                 _react2.default.createElement(
                   'div',
                   { className: 'th-profile-name' },
@@ -47476,6 +47487,16 @@ var TrainerDetail = function (_React$Component) {
             )
           ),
           _react2.default.createElement('div', { className: 'trainer-header-3' })
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'trainer-description' },
+          _react2.default.createElement(
+            'h3',
+            null,
+            'About ',
+            trainer.name
+          )
         )
       );
     }

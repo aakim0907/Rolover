@@ -26,30 +26,33 @@ class TrainerDetail extends React.Component {
     const profile = trainer.images.find(img => img.img_type === 'profile');
     // <img src="http://res.cloudinary.com/rolover/image/upload/v1500614239/dawid-sobolewski-285655_iauvhs.jpg"/>
 
-    // <img src={profile.img_url} />
     return (
       <div className="trainer-detail-container">
         <div className="trainer-header">
-          <div className="trainer-header-1" />
+          <div className="trainer-header-1"></div>
           <div className="trainer-header-2">
             <div className="trainer-header-2-1">
+              <p>img</p>
             </div>
             <div className="trainer-header-2-2">
               <div className="th-profile">
                 <div className="th-profile-img">
+                  <img src={profile.img_url} />
                 </div>
                 <div className="th-profile-name">
                   <h2>{trainer.name}</h2>
                 </div>
                 <div className="th-profile-address">
                   <p>{trainer.city}, {trainer.state} {trainer.zip}</p>
-
                 </div>
               </div>
-
             </div>
           </div>
-          <div className="trainer-header-3" />
+          <div className="trainer-header-3"></div>
+        </div>
+
+        <div className="trainer-description">
+          <h3>About {trainer.name}</h3>
         </div>
       </div>
     );
