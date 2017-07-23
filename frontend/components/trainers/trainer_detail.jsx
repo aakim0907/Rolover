@@ -24,7 +24,6 @@ class TrainerDetail extends React.Component {
     const { trainer } = this.props;
 
     const profile = trainer.images.find(img => img.img_type === 'profile');
-    // <img src="http://res.cloudinary.com/rolover/image/upload/v1500614239/dawid-sobolewski-285655_iauvhs.jpg"/>
 
     return (
       <div className="trainer-detail-container">
@@ -34,7 +33,7 @@ class TrainerDetail extends React.Component {
           <div className="trainer-header-2">
 
             <div className="trainer-header-2-1">
-              <p>img</p>
+              <img src="http://res.cloudinary.com/rolover/image/upload/v1500614239/dawid-sobolewski-285655_iauvhs.jpg"/>
             </div>
 
             <div className="trainer-header-2-2">

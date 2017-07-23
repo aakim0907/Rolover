@@ -50,7 +50,7 @@ header {
     border-bottom: 2px solid transparent;
 
     &.demo {
-      border-bottom-color: pink;
+      border-bottom-color: $green;
     }
 
     &:hover {
@@ -68,7 +68,7 @@ header {
       padding: 0 2px 3px 2px;
       margin: 0 15px;
       font-size: 17px;
-      border-bottom: 2px solid pink;
+      border-bottom: 2px solid $green;
     }
   }
 }

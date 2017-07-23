@@ -5,8 +5,8 @@
 .main-image {
   display: flex;
   background: url(http://res.cloudinary.com/rolover/image/upload/v1500506606/roll_over1_pizv9e.jpg) no-repeat center;
-  width: 100%;
   height: 80%;
-  z-index: -1;
+  width: 100%;
+  z-index: 0;
   position: absolute;
 }

@@ -1,5 +1,5 @@
 import React from 'react';
-import { withRouter } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 class SearchBox extends React.Component {
   constructor(props) {
@@ -21,10 +21,41 @@ class SearchBox extends React.Component {
   }
 
   render() {
+    console.log(this.state);
     return (
-      <div className="search-box-container">
+      <div className='search-box-container'>
+        <div className='search-box-header'>
+          <p>Select types of training you would like</p>
+        </div>
+
         <form onSubmit={this.handleSubmit}>
-          <button className="btn green" onClick={this.handleSubmit}>Search</button>
+          <div className='search-box'>
+
+            <div className='search-training' onClick={this.update('obedience')}>
+              <div className='search-icon'>
+                <img src={window.images.obedience} alt='obedience-icon'/>
+              </div>
+              <div className='search-text'>Obedience</div>
+            </div>
+
+            <div className='search-training' onClick={this.update('behavior')}>
+              <div className='search-icon'>
+                <img src={window.images.behavior} alt='behavior-icon'/>
+              </div>
+              <div className='search-text'>Behavior</div>
+            </div>
+
+            <div className='search-training' onClick={this.update('advanced')}>
+              <div className='search-icon'>
+                <img src={window.images.advanced} alt='advanced-icon'/>
+              </div>
+              <div className='search-text'>Advanced</div>
+            </div>
+
+
+          </div>
+
+          <button className='btn green' onClick={this.handleSubmit}>Search</button>
         </form>
       </div>
     );
@@ -32,17 +63,3 @@ class SearchBox extends React.Component {
 }
 
 export default withRouter(SearchBox);
-
-// <input type="text"
-//   value={this.state.email}
-//   onChange={this.update('email')}
-//   placeholder="&#f003; Enter your email address"
-//   className="session-input"
-//   />
-//
-// <input type="password"
-//   value={this.state.password}
-//   onChange={this.update('password')}
-//   placeholder="&#f023; Password"
-//   className="session-input"
-//   />

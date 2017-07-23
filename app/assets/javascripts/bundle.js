@@ -47065,9 +47065,9 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(13);
 
-var _search_box = __webpack_require__(300);
+var _search_container = __webpack_require__(301);
 
-var _search_box2 = _interopRequireDefault(_search_box);
+var _search_container2 = _interopRequireDefault(_search_container);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
@@ -47078,7 +47078,7 @@ var MainPage = function MainPage() {
     _react2.default.createElement(
       'div',
       { className: 'main-image' },
-      _react2.default.createElement(_search_box2.default, null)
+      _react2.default.createElement(_search_container2.default, null)
     )
   );
 };
@@ -47436,7 +47436,6 @@ var TrainerDetail = function (_React$Component) {
       var profile = trainer.images.find(function (img) {
         return img.img_type === 'profile';
       });
-      // <img src="http://res.cloudinary.com/rolover/image/upload/v1500614239/dawid-sobolewski-285655_iauvhs.jpg"/>
 
       return _react2.default.createElement(
         'div',
@@ -47451,11 +47450,7 @@ var TrainerDetail = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'trainer-header-2-1' },
-              _react2.default.createElement(
-                'p',
-                null,
-                'img'
-              )
+              _react2.default.createElement('img', { src: 'http://res.cloudinary.com/rolover/image/upload/v1500614239/dawid-sobolewski-285655_iauvhs.jpg' })
             ),
             _react2.default.createElement(
               'div',
@@ -47653,12 +47648,68 @@ var SearchBox = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      console.log(this.state);
       return _react2.default.createElement(
         'div',
         { className: 'search-box-container' },
         _react2.default.createElement(
+          'div',
+          { className: 'search-box-header' },
+          _react2.default.createElement(
+            'p',
+            null,
+            'Select types of training you would like'
+          )
+        ),
+        _react2.default.createElement(
           'form',
           { onSubmit: this.handleSubmit },
+          _react2.default.createElement(
+            'div',
+            { className: 'search-box' },
+            _react2.default.createElement(
+              'div',
+              { className: 'search-training', onClick: this.update('obedience') },
+              _react2.default.createElement(
+                'div',
+                { className: 'search-icon' },
+                _react2.default.createElement('img', { src: window.images.obedience, alt: 'obedience-icon' })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'search-text' },
+                'Obedience'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'search-training', onClick: this.update('behavior') },
+              _react2.default.createElement(
+                'div',
+                { className: 'search-icon' },
+                _react2.default.createElement('img', { src: window.images.behavior, alt: 'behavior-icon' })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'search-text' },
+                'Behavior'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'search-training', onClick: this.update('advanced') },
+              _react2.default.createElement(
+                'div',
+                { className: 'search-icon' },
+                _react2.default.createElement('img', { src: window.images.advanced, alt: 'advanced-icon' })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'search-text' },
+                'Advanced'
+              )
+            )
+          ),
           _react2.default.createElement(
             'button',
             { className: 'btn green', onClick: this.handleSubmit },
@@ -47674,19 +47725,36 @@ var SearchBox = function (_React$Component) {
 
 exports.default = (0, _reactRouterDom.withRouter)(SearchBox);
 
-// <input type="text"
-//   value={this.state.email}
-//   onChange={this.update('email')}
-//   placeholder="&#f003; Enter your email address"
-//   className="session-input"
-//   />
-//
-// <input type="password"
-//   value={this.state.password}
-//   onChange={this.update('password')}
-//   placeholder="&#f023; Password"
-//   className="session-input"
-//   />
+/***/ }),
+/* 301 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(25);
+
+var _search_box = __webpack_require__(300);
+
+var _search_box2 = _interopRequireDefault(_search_box);
+
+var _trainer_actions = __webpack_require__(41);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    fetchTrainers: function fetchTrainers(search) {
+      return dispatch((0, _trainer_actions.fetchTrainers)(search));
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapDispatchToProps)(_search_box2.default);
 
 /***/ })
 /******/ ]);
