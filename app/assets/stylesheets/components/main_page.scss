@@ -9,4 +9,37 @@
   width: 100%;
   z-index: 0;
   position: absolute;
+  filter: brightness(70%);
+}
+
+.main-banner {
+  border: 2px solid $white;
+  display: flex;
+  height: 80%;
+  margin: auto;
+  flex-direction: column;
+  z-index: 1;
+  margin-top: 120px;
+}
+
+.main-banner-h1 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  color: $white;
+
+  h1 {
+    font-size: 45px;
+    // font-family: 'Carter One', cursive;
+    font-family: 'Love Ya Like A Sister', cursive;
+    // font-family: 'Oregano', cursive;
+    // font-family: 'Playball', cursive;
+  }
+}
+
+.main-banner-h4 {
+  display: flex;
+  width: 100%;
+  justify-content: center;
+  color: $white;
 }

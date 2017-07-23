@@ -47075,9 +47075,28 @@ var MainPage = function MainPage() {
   return _react2.default.createElement(
     'div',
     { className: 'mainpage-container' },
+    _react2.default.createElement('div', { className: 'main-image' }),
     _react2.default.createElement(
       'div',
-      { className: 'main-image' },
+      { className: 'main-banner' },
+      _react2.default.createElement(
+        'div',
+        { className: 'main-banner-h1' },
+        _react2.default.createElement(
+          'h1',
+          null,
+          'Love your dog. See what more they can do!'
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'main-banner-h4' },
+        _react2.default.createElement(
+          'h4',
+          null,
+          'Find and book dog trainers to your needs'
+        )
+      ),
       _react2.default.createElement(_search_container2.default, null)
     )
   );
@@ -47648,7 +47667,6 @@ var SearchBox = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      console.log(this.state);
       return _react2.default.createElement(
         'div',
         { className: 'search-box-container' },

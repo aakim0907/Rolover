@@ -3,8 +3,6 @@
   background: rgba(255, 255, 255, 0.9);
   min-width: 630px;
   min-height: 300px;
-  margin: auto;
-  margin-top: 400px;
   display: flex;
   flex-direction: column;
   border-radius: 3px;
@@ -29,30 +27,36 @@
   justify-content: space-around;
   width: 100%;
   height: 100%;
+  padding-top: 20px;
+  padding-bottom: 20px;
 }
 
 .search-training {
   display: flex;
   flex-direction: column;
-  border: 1px solid $gray;
-  border-radius: 2px;
+  border: 1px solid $light-gray;
+  border-radius: 4px;
   cursor: pointer;
+  padding: 7px;
+  height: 110px;
+  width: 110px;
 
   &:hover {
     border: 1px solid $black;
-  }
-
-  &:action {
-    border-botton: 2px solid $green;
+    font-color: $black;
   }
 }
 
 .search-icon {
   display: flex;
   width: 100%;
+  padding: 5px;
+  justify-content: center;
 }
 
 .search-text {
   display: flex;
   width: 100%;
+  justify-content: center;
+  color: $light-gray;
 }

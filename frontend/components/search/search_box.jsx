@@ -21,7 +21,6 @@ class SearchBox extends React.Component {
   }
 
   render() {
-    console.log(this.state);
     return (
       <div className='search-box-container'>
         <div className='search-box-header'>
@@ -30,7 +29,6 @@ class SearchBox extends React.Component {
 
         <form onSubmit={this.handleSubmit}>
           <div className='search-box'>
-
             <div className='search-training' onClick={this.update('obedience')}>
               <div className='search-icon'>
                 <img src={window.images.obedience} alt='obedience-icon'/>
