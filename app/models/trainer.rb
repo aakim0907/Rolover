@@ -5,16 +5,12 @@ class Trainer < ApplicationRecord
   # has_many :reviews
 
   def self.search(search_params)
-    self.where("training_type LIKE", "%#{search_params}%")
-  end
-
-  def profile_image
-    images.select{ |img| img.img_type == "profile" }.first.img_url
-  end
-
-  def main_images
-    mains = images.reject { |img| img.img_type == "profile" }
-    mains.map { |main| main.img_url }
+    searched = []
+    search_params.each do |k, v|
+      searched.concat(self.where(k, "= true")) if v
+    end
+    searched.uniq
+    # self.where("obedience =", "%#{search_params}%")
   end
 
   # def rating
