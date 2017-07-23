@@ -1,12 +1,11 @@
 import React from 'react';
-// import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 
 class SearchBox extends React.Component {
   constructor(props) {
     super(props);
     this.state = { obedience: false, behavior: false, advanced: false };
-//     this.handleSubmit = this.handleSubmit.bind(this);
-//     this.handleDemoClick = this.handleDemoClick.bind(this);
+    this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
@@ -32,7 +31,7 @@ class SearchBox extends React.Component {
   }
 }
 
-export default withRouter(SessionForm);
+export default withRouter(SearchBox);
 
 // <input type="text"
 //   value={this.state.email}
