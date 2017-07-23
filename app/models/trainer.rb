@@ -6,8 +6,8 @@ class Trainer < ApplicationRecord
 
   def self.search(search_params)
     searched = []
-    search_params.each do |k, v|
-      searched.concat(self.where(k, "= true")) if v
+    search_params.each do |key, val|
+      searched.concat(self.where(key, "= true")) if val == "true"
     end
     searched.uniq
     # self.where("obedience =", "%#{search_params}%")

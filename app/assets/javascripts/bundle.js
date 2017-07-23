@@ -5097,9 +5097,9 @@ var receiveTrainer = exports.receiveTrainer = function receiveTrainer(trainer) {
 };
 
 // async action
-var fetchTrainers = exports.fetchTrainers = function fetchTrainers() {
+var fetchTrainers = exports.fetchTrainers = function fetchTrainers(search) {
   return function (dispatch) {
-    return APIUtil.fetchTrainers().then(function (trainers) {
+    return APIUtil.fetchTrainers(search).then(function (trainers) {
       return dispatch(receiveTrainers(trainers));
     });
   };
@@ -29936,13 +29936,11 @@ var _root2 = _interopRequireDefault(_root);
 
 var _trainer_actions = __webpack_require__(41);
 
-var _selectors = __webpack_require__(121);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
+// import { fetchTrainers } from './util/trainer_api_util';
 // END TESTING
 
-// START TESTING
 document.addEventListener('DOMContentLoaded', function () {
   var store = void 0;
   if (window.currentUser) {
@@ -29965,9 +29963,10 @@ document.addEventListener('DOMContentLoaded', function () {
   window.dispatch = store.dispatch;
   window.fetchTrainers = _trainer_actions.fetchTrainers;
   window.fetchTrainer = _trainer_actions.fetchTrainer;
-  window.selectAllTrainers = _selectors.selectAllTrainers;
   // END TESTING
 });
+
+// START TESTING
 
 /***/ }),
 /* 123 */
@@ -42845,11 +42844,11 @@ exports.default = trainersReducer;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-var fetchTrainers = exports.fetchTrainers = function fetchTrainers() {
+var fetchTrainers = exports.fetchTrainers = function fetchTrainers(search) {
   return $.ajax({
     method: 'GET',
-    url: '/api/trainers'
-    // data: { search }
+    url: '/api/trainers',
+    data: { search: search }
   });
 };
 

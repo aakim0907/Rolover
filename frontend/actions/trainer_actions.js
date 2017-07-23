@@ -15,8 +15,8 @@ export const receiveTrainer = trainer => ({
 });
 
 // async action
-export const fetchTrainers = () => dispatch => (
-  APIUtil.fetchTrainers().then(
+export const fetchTrainers = search => dispatch => (
+  APIUtil.fetchTrainers(search).then(
     trainers => (dispatch(receiveTrainers(trainers)))
   )
 );
