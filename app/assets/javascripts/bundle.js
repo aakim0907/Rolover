@@ -47469,19 +47469,38 @@ var TrainerDetail = function (_React$Component) {
                     null,
                     trainer.name
                   )
-                ),
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'th-address' },
                 _react2.default.createElement(
-                  'div',
-                  { className: 'th-profile-address' },
-                  _react2.default.createElement(
-                    'p',
-                    null,
-                    trainer.city,
-                    ', ',
-                    trainer.state,
-                    ' ',
-                    trainer.zip
-                  )
+                  'p',
+                  null,
+                  trainer.city,
+                  ', ',
+                  trainer.state,
+                  ' ',
+                  trainer.zip
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'th-ratings' },
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  '4.5 ratings 12 reviews'
+                )
+              ),
+              _react2.default.createElement('div', { className: 'th-placeholder' }),
+              _react2.default.createElement(
+                'div',
+                { className: 'th-booking' },
+                _react2.default.createElement(
+                  'button',
+                  { className: 'btn green' },
+                  'Booking'
                 )
               )
             )
@@ -47492,10 +47511,23 @@ var TrainerDetail = function (_React$Component) {
           'div',
           { className: 'trainer-description' },
           _react2.default.createElement(
-            'h3',
-            null,
-            'About ',
-            trainer.name
+            'div',
+            { className: 'td-about' },
+            _react2.default.createElement(
+              'h3',
+              null,
+              'About ',
+              trainer.name
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'td-description' },
+            _react2.default.createElement(
+              'p',
+              null,
+              trainer.description
+            )
           )
         )
       );

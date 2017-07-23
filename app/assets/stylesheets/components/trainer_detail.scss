@@ -7,66 +7,105 @@
 .trainer-header {
   display: flex;
   width: 100%;
-  min-height: 480px;
+  height: 600px;
   margin-top: 30px;
   flex-wrap: wrap;
 
-  .trainer-header-1 {
-    display: flex;
-    flex: 1;
+}
+
+.trainer-header-1 {
+  display: flex;
+  flex: 1;
+}
+
+.trainer-header-2 {
+  display: flex;
+  flex-wrap: wrap;
+  flex: 2.3;
+  background-color: $white;
+  position: relative;
+}
+
+.trainer-header-2-1 {
+  border: 1px solid $green;
+  display: flex;
+  flex: 2.3;
+}
+
+.trainer-header-2-2 {
+  display: flex;
+  flex: 1;
+  flex-wrap: wrap;
+  padding: 14px;
+}
+
+.th-profile {
+  border: 1px solid $blue;
+  display: flex;
+  height: 20%;
+  width: 100%;
+}
+
+.th-profile-img {
+  display: flex;
+  flex: 1;
+  align-items: center;
+  justify-content: center;
+  padding: 5%;
+
+  img {
+    width: 100%;
+    height: 100%;
+    border-radius: 7px;
   }
+}
 
-  .trainer-header-2 {
-    border: 1px solid red;
-    display: flex;
-    flex-wrap: wrap;
-    flex: 3;
-    background-color: $white;
+.th-profile-name {
+  display: flex;
+  flex: 1.7;
+  align-items: flex-end;
+  color: $dark-blue;
+  padding-bottom: 8px;
+}
 
-    .trainer-header-2-1 {
-      border: 1px solid $green;
-      display: flex;
-      flex: 2.3;
-      flex-wrap: wrap;
-    }
+.th-address {
+  border: 1px solid $light-green;
+  display: flex;
+  width: 100%;
 
-    .trainer-header-2-2 {
-      display: flex;
-      flex-wrap: wrap;
-      flex: 1;
-
-      .th-profile {
-        border: 1px solid $blue;
-        display: flex;
-        height: 20%;
-
-        .th-profile-img {
-          display: flex;
-          // flex-direction: column;
-          // width: 38%;
-          // padding: 3%;
-
-          img {
-            border-radius: 7px;
-            border: 1px solid $green;
-          }
-        }
-
-        .th-profile-name {
-          display: flex;
-        }
-
-        .th-profile-address {
-          display: flex;
-        }
-      }
-    }
+  p {
+    font-size: 13px;
   }
+}
 
-  .trainer-header-3 {
-    display: flex;
-    flex: 1;
+.th-ratings {
+  border: 1px solid $light-green;
+  display: flex;
+  width: 100%;
+}
+
+.th-placeholder {
+  border: 1px solid $light-green;
+  display: flex;
+  width: 100%;
+  height: 50%;
+}
+
+.th-booking {
+  border: 1px solid $green;
+  display: flex;
+  width: 100%;
+  align-items: flex-end;
+  padding-bottom: 20px;
+
+  button {
+    height: 60px;
   }
+}
+
+.trainer-header-3 {
+  display: flex;
+  flex: 1;
 }
 
 .trainer-description {
@@ -74,5 +113,19 @@
   background-color: $white;
   width: 100%;
   margin-top: 40px;
+  flex-wrap: wrap;
+  align-items: center;
+  padding: 20px;
+}
+
+.td-about {
   justify-content: center;
+  display: flex;
+  width: 100%;
+}
+
+.td-description {
+  justify-content: center;
+  display: flex;
+  width: 100%;
 }
