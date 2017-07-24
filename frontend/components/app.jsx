@@ -15,10 +15,10 @@ const App = () => (
       <NavBar/>
     </header>
 
-    <div className="body-content">
+    <div className='body-content'>
       <switch>
-        <Route path="/trainers/:search" component={TrainerListContainer} />
-        <Route path="/trainers/:id" component={TrainerDetailContainer} />
+        <Route path='/trainers/:search' component={TrainerListContainer} />
+        <Route path='/trainers/:id' component={TrainerDetailContainer} />
         <Route exact path="/" component={MainPage} />
       </switch>
     </div>

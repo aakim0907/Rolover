@@ -10,19 +10,20 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170724013922) do
+ActiveRecord::Schema.define(version: 20170724021514) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
 
   create_table "bookings", force: :cascade do |t|
-    t.integer "user_id",                        null: false
-    t.integer "dog_id",                         null: false
-    t.integer "trainer_id",                     null: false
-    t.date    "start_date",                     null: false
-    t.date    "end_date",                       null: false
-    t.string  "status",     default: "PENDING", null: false
-    t.text    "message",                        null: false
+    t.integer "user_id",                           null: false
+    t.integer "dog_id",                            null: false
+    t.integer "trainer_id",                        null: false
+    t.date    "start_date",                        null: false
+    t.date    "end_date",                          null: false
+    t.string  "status",        default: "PENDING", null: false
+    t.text    "message",                           null: false
+    t.string  "training_type"
     t.index ["dog_id"], name: "index_bookings_on_dog_id", using: :btree
     t.index ["trainer_id"], name: "index_bookings_on_trainer_id", using: :btree
     t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
