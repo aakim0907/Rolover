@@ -52,7 +52,7 @@ trainer_id  | integer   | not null, foreign key (references trainers), indexed
 start_date  | date      | not null
 end_date    | date      | not null
 status      | string    | not null, default = "PENDING", inclusion: [PENDING, APPROVED, DENIED]
-message     | text      |
+message     | text      | not null
 
 
 ## reviews

@@ -10,16 +10,49 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170721230207) do
+ActiveRecord::Schema.define(version: 20170724013922) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
+
+  create_table "bookings", force: :cascade do |t|
+    t.integer "user_id",                        null: false
+    t.integer "dog_id",                         null: false
+    t.integer "trainer_id",                     null: false
+    t.date    "start_date",                     null: false
+    t.date    "end_date",                       null: false
+    t.string  "status",     default: "PENDING", null: false
+    t.text    "message",                        null: false
+    t.index ["dog_id"], name: "index_bookings_on_dog_id", using: :btree
+    t.index ["trainer_id"], name: "index_bookings_on_trainer_id", using: :btree
+    t.index ["user_id"], name: "index_bookings_on_user_id", using: :btree
+  end
+
+  create_table "dogs", force: :cascade do |t|
+    t.integer "user_id",   null: false
+    t.string  "name",      null: false
+    t.integer "age_year"
+    t.integer "age_month"
+    t.integer "weight",    null: false
+    t.string  "breed",     null: false
+    t.string  "sex",       null: false
+    t.index ["user_id"], name: "index_dogs_on_user_id", using: :btree
+  end
 
   create_table "images", force: :cascade do |t|
     t.integer "trainer_id", null: false
     t.string  "img_url",    null: false
     t.string  "img_type",   null: false
     t.index ["trainer_id"], name: "index_images_on_trainer_id", using: :btree
+  end
+
+  create_table "reviews", force: :cascade do |t|
+    t.integer "user_id",    null: false
+    t.integer "trainer_id", null: false
+    t.float   "rating",     null: false
+    t.text    "body",       null: false
+    t.index ["trainer_id"], name: "index_reviews_on_trainer_id", using: :btree
+    t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree
   end
 
   create_table "trainers", force: :cascade do |t|
