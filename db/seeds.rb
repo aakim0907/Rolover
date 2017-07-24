@@ -10,6 +10,8 @@ Dog.create([
   { user_id: 1, name: 'Java', age_year: 3, weight: 15, breed: 'Maltize', sex: 'M' }
   ])
 
+
+# Cesar Millan
 Trainer.create([
   { name: 'Kelly', obedience: true, behavior: true, advanced: true, profile_quote: 'Y\'all good?', description: 'Hash Browns', price: 50, zip: 94109, city: 'San Francisco', state: 'California' },
   { name: 'Hope', obedience: true, behavior: true, advanced: true, profile_quote: 'Corgis rock!', description: 'Love for Sir Toast<3', price: 45, zip: 94109, city: 'San Francisco', state: 'California' },

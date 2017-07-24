@@ -4,7 +4,7 @@
 
 .main-image {
   display: flex;
-  // background: url(http://res.cloudinary.com/rolover/image/upload/v1500506606/roll_over1_pizv9e.jpg) no-repeat center;
+  background: url(http://res.cloudinary.com/rolover/image/upload/v1500506606/roll_over1_pizv9e.jpg) no-repeat center;
   height: 80%;
   width: 100%;
   z-index: -1;
@@ -29,11 +29,8 @@
   color: $white;
 
   h1 {
-    font-size: 45px;
-    // font-family: 'Carter One', cursive;
-    font-family: 'Love Ya Like A Sister', cursive;
-    // font-family: 'Oregano', cursive;
-    // font-family: 'Playball', cursive;
+    font-size: 55px;
+    font-family: 'Kaushan Script', cursive;
   }
 }
 
@@ -42,4 +39,9 @@
   width: 100%;
   justify-content: center;
   color: $white;
+
+  h4 {
+    font-size: 25px;
+    font-family: 'Open Sans Condensed', sans-serif;
+  }
 }

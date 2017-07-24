@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link, withRouter } from 'react-router-dom';
+import { withRouter } from 'react-router-dom';
 import { merge } from 'lodash';
 
 class SearchBox extends React.Component {
@@ -28,6 +28,7 @@ class SearchBox extends React.Component {
 
     return (
       <div className='search-box-container'>
+
         <form onSubmit={this.handleSubmit}>
           <div className='search-box-1'>
             <div className='search-box-1-1'>
@@ -62,9 +63,11 @@ class SearchBox extends React.Component {
             <div className='search-box-2-1'>
               <p>Where are you?</p>
             </div>
+
             <div className='search-box-2-2'>
-              <input type='text' placeholder='Enter your zipcode'></input>
+              <input type='text' placeholder='Enter your zipcode (coming soon)'></input>
             </div>
+
             <div className='search-box-2-3'>
               <button className='btn green' onClick={this.handleSubmit}>Search</button>
             </div>
@@ -75,7 +78,4 @@ class SearchBox extends React.Component {
   }
 }
 
-// <Link to={`/trainers/${this.state.search}`}>
-//   <button className='btn green'>Search</button>
-// </Link>
 export default withRouter(SearchBox);
