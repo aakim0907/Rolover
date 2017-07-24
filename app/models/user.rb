@@ -7,7 +7,9 @@ class User < ApplicationRecord
 
   after_initialize :ensure_session_token
 
-  # add associations
+  has_many :dogs
+  has_many :bookings
+  has_many :reviews
 
   def self.find_by_credentials(email, password)
     user = User.find_by_email(email)

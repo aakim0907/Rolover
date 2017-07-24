@@ -2,7 +2,8 @@ class Trainer < ApplicationRecord
   validates :name, :profile_quote, :obedience, :behavior, :advanced, :description, :price, :zip, :city, :state, presence: true
 
   has_many :images
-  # has_many :reviews
+  has_many :bookings
+  has_many :reviews
 
   def self.search(search_params)
     searched = []
