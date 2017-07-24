@@ -3,23 +3,20 @@
   session: {
     currentUser: {
       id: 1,
-      name: "Carrie Underwood"
+      name: "Carrie Underwood",
+      dogs: [{
+        id: 1,
+        user_id: 20,
+        name: "Ruby",
+        age_year: 1,
+        age_month: 3,
+        weight: 15,
+        breed: "Shitzhu",
+        sex: "Female"
+      }]
     },
     errors: []
   },
-
-  dogs: {
-    1: {
-      id: 1,
-      user_id: 20,
-      name: "Ruby",
-      age_year: 1,
-      age_month: 3,
-      weight: 15,
-      breed: "Shitzhu",
-      sex: "Female"
-    }
-  }
 
   trainers: {
     1: {

@@ -28,35 +28,47 @@ class SearchBox extends React.Component {
 
     return (
       <div className='search-box-container'>
-        <div className='search-box-header'>
-          <p>Select types of training you would like</p>
-        </div>
-
         <form onSubmit={this.handleSubmit}>
-          <div className='search-box'>
-            <div className={obedience} onClick={() => this.update('obedience')}>
-              <div className='search-icon'>
-                <img src={window.images.obedience} alt='obedience-icon'/>
-              </div>
-              <div className='search-text'>Obedience</div>
+          <div className='search-box-1'>
+            <div className='search-box-1-1'>
+              <p>Select types of training you would like</p>
             </div>
 
-            <div className={behavior} onClick={() => this.update('behavior')}>
-              <div className='search-icon'>
-                <img src={window.images.behavior} alt='behavior-icon'/>
+            <div className='search-box-1-2'>
+              <div className={obedience} onClick={() => this.update('obedience')}>
+                <div className='search-icon'>
+                  <img src={window.images.obedience} alt='obedience-icon'/>
+                </div>
+                <div className='search-text'>Obedience</div>
               </div>
-              <div className='search-text'>Behavior</div>
-            </div>
 
-            <div className={advanced} onClick={() => this.update('advanced')}>
-              <div className='search-icon'>
-                <img src={window.images.advanced} alt='advanced-icon'/>
+              <div className={behavior} onClick={() => this.update('behavior')}>
+                <div className='search-icon'>
+                  <img src={window.images.behavior} alt='behavior-icon'/>
+                </div>
+                <div className='search-text'>Behavior</div>
               </div>
-              <div className='search-text'>Advanced</div>
+
+              <div className={advanced} onClick={() => this.update('advanced')}>
+                <div className='search-icon'>
+                  <img src={window.images.advanced} alt='advanced-icon'/>
+                </div>
+                <div className='search-text'>Advanced</div>
+              </div>
             </div>
           </div>
 
-          <button className='btn green' onClick={this.handleSubmit}>Search</button>
+          <div className='search-box-2'>
+            <div className='search-box-2-1'>
+              <p>Where are you?</p>
+            </div>
+            <div className='search-box-2-2'>
+              <input type='text' placeholder='Enter your zipcode'></input>
+            </div>
+            <div className='search-box-2-3'>
+              <button className='btn green' onClick={this.handleSubmit}>Search</button>
+            </div>
+          </div>
         </form>
       </div>
     );
