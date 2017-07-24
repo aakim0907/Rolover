@@ -13,7 +13,7 @@ const MainPage = () => (
       <div className='main-banner-h4'>
         <h4>Find and book dog trainers to your needs</h4>
       </div>
-      <SearchContainer />
+      <SearchContainer where='mainpage'/>
     </div>
   </div>
 );

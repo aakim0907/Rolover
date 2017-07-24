@@ -19,6 +19,7 @@ class TrainerList extends React.Component {
     } else {
       return (
         <section className="trainer-container">
+          <SearchContainer where='trainerlist' />
           { trainers.map(trainer => (
             <Link key={trainer.id} to={`/trainers/${trainer.id}`}>
               <TrainerListItem trainer={trainer} />

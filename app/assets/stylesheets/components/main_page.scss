@@ -13,13 +13,11 @@
 }
 
 .main-banner {
-  border: 2px solid $white;
   display: flex;
-  height: 70%;
   margin: auto;
   flex-direction: column;
   z-index: 0;
-  margin-top: 150px;
+  margin-top: 190px;
 }
 
 .main-banner-h1 {
@@ -29,7 +27,7 @@
   color: $white;
 
   h1 {
-    font-size: 55px;
+    font-size: 60px;
     font-family: 'Kaushan Script', cursive;
   }
 }
@@ -39,9 +37,10 @@
   width: 100%;
   justify-content: center;
   color: $white;
+  margin-bottom: 100px;
 
   h4 {
-    font-size: 25px;
+    font-size: 30px;
     font-family: 'Open Sans Condensed', sans-serif;
   }
 }

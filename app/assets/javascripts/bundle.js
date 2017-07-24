@@ -47110,7 +47110,7 @@ var MainPage = function MainPage() {
           'Find and book dog trainers to your needs'
         )
       ),
-      _react2.default.createElement(_search_container2.default, null)
+      _react2.default.createElement(_search_container2.default, { where: 'mainpage' })
     )
   );
 };
@@ -47266,13 +47266,13 @@ var SearchBox = function (_React$Component) {
               _react2.default.createElement(
                 'p',
                 null,
-                'Where are you?'
+                'Where are you? (coming soon!)'
               )
             ),
             _react2.default.createElement(
               'div',
               { className: 'search-box-2-2' },
-              _react2.default.createElement('input', { type: 'text', placeholder: 'Enter your zipcode (coming soon)' })
+              _react2.default.createElement('input', { type: 'text', placeholder: 'Enter your zipcode' })
             ),
             _react2.default.createElement(
               'div',
@@ -47419,6 +47419,7 @@ var TrainerList = function (_React$Component) {
         return _react2.default.createElement(
           'section',
           { className: 'trainer-container' },
+          _react2.default.createElement(_search_container2.default, { where: 'trainerlist' }),
           trainers.map(function (trainer) {
             return _react2.default.createElement(
               _reactRouterDom.Link,
