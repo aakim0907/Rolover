@@ -1,5 +1,5 @@
 .search-box-container {
-  z-index: 1;
+  z-index: 10;
   background: rgba(255, 255, 255, 0.9);
   min-width: 630px;
   min-height: 300px;
@@ -40,6 +40,7 @@
   padding: 7px;
   height: 110px;
   width: 110px;
+  justify-content: center;
 
   &:hover {
     border: 1px solid $black;
@@ -47,12 +48,26 @@
   }
 }
 
+.search-training-selected {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $light-gray;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 7px;
+  height: 110px;
+  width: 110px;
+  justify-content: center;
+  border-bottom: 3px solid $green;
+}
+
 .search-icon {
   display: flex;
-  width: 100%;
+  width: 80%;
   padding: 5px;
-  justify-content: center;
+  // justify-content: center;
 }
+
 
 .search-text {
   display: flex;
