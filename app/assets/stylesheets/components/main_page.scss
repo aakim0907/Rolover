@@ -5,7 +5,7 @@
 .main-image {
   display: flex;
   background: url(http://res.cloudinary.com/rolover/image/upload/v1500506606/roll_over1_pizv9e.jpg) no-repeat center;
-  height: 80%;
+  height: 75%;
   width: 100%;
   z-index: -1;
   position: absolute;
@@ -17,7 +17,7 @@
   margin: auto;
   flex-direction: column;
   z-index: 0;
-  margin-top: 190px;
+  margin-top: 160px;
 }
 
 .main-banner-h1 {
@@ -37,7 +37,7 @@
   width: 100%;
   justify-content: center;
   color: $white;
-  margin-bottom: 100px;
+  margin-bottom: 75px;
 
   h4 {
     font-size: 30px;

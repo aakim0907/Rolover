@@ -47178,8 +47178,8 @@ var SearchBox = function (_React$Component) {
       });
     }
   }, {
-    key: 'render',
-    value: function render() {
+    key: 'inMainPage',
+    value: function inMainPage() {
       var _this3 = this;
 
       var obedience = this.state['obedience'] ? 'search-training-selected' : 'search-training';
@@ -47286,6 +47286,103 @@ var SearchBox = function (_React$Component) {
           )
         )
       );
+    }
+  }, {
+    key: 'inTrainerList',
+    value: function inTrainerList() {
+      var _this4 = this;
+
+      var obedience = this.state['obedience'] ? 'st-selected' : 'st';
+      var behavior = this.state['behavior'] ? 'st-selected' : 'st';
+      var advanced = this.state['advanced'] ? 'st-selected' : 'st';
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'search-bar-container' },
+        _react2.default.createElement(
+          'form',
+          { onSubmit: this.handleSubmit },
+          _react2.default.createElement(
+            'div',
+            { className: 'search-bar-1' },
+            _react2.default.createElement(
+              'div',
+              { className: obedience, onClick: function onClick() {
+                  return _this4.update('obedience');
+                } },
+              _react2.default.createElement(
+                'div',
+                { className: 'search-icon' },
+                _react2.default.createElement('img', { src: window.images.obedience, alt: 'obedience-icon' })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'search-text' },
+                'Obedience'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: behavior, onClick: function onClick() {
+                  return _this4.update('behavior');
+                } },
+              _react2.default.createElement(
+                'div',
+                { className: 'search-icon' },
+                _react2.default.createElement('img', { src: window.images.behavior, alt: 'behavior-icon' })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'search-text' },
+                'Behavior'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: advanced, onClick: function onClick() {
+                  return _this4.update('advanced');
+                } },
+              _react2.default.createElement(
+                'div',
+                { className: 'search-icon' },
+                _react2.default.createElement('img', { src: window.images.advanced, alt: 'advanced-icon' })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'search-text' },
+                'Advanced'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'search-bar-2' },
+            _react2.default.createElement(
+              'div',
+              { className: 'search-bar-2-1' },
+              _react2.default.createElement('input', { type: 'text', placeholder: 'Enter your zipcode' })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'search-bar-2-2' },
+              _react2.default.createElement(
+                'button',
+                { className: 'btn green', onClick: this.handleSubmit },
+                'Search'
+              )
+            )
+          )
+        )
+      );
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      if (this.props.where === 'mainpage') {
+        return this.inMainPage();
+      } else {
+        return this.inTrainerList();
+      }
     }
   }]);
 

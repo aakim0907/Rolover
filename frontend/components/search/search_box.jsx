@@ -21,7 +21,7 @@ class SearchBox extends React.Component {
     this.props.fetchTrainers(search).then(() => this.props.history.push('/trainers'));
   }
 
-  render() {
+  inMainPage() {
     const obedience = ( this.state['obedience'] ? 'search-training-selected' : 'search-training');
     const behavior = ( this.state['behavior'] ? 'search-training-selected' : 'search-training');
     const advanced = ( this.state['advanced'] ? 'search-training-selected' : 'search-training');
@@ -75,6 +75,61 @@ class SearchBox extends React.Component {
         </form>
       </div>
     );
+  }
+
+  inTrainerList() {
+    const obedience = ( this.state['obedience'] ? 'st-selected' : 'st');
+    const behavior = ( this.state['behavior'] ? 'st-selected' : 'st');
+    const advanced = ( this.state['advanced'] ? 'st-selected' : 'st');
+
+    return (
+      <div className='search-bar-container'>
+
+        <form onSubmit={this.handleSubmit}>
+          <div className='search-bar-1'>
+            <div className={obedience} onClick={() => this.update('obedience')}>
+              <div className='search-icon'>
+                <img src={window.images.obedience} alt='obedience-icon'/>
+              </div>
+              <div className='search-text'>Obedience</div>
+            </div>
+
+            <div className={behavior} onClick={() => this.update('behavior')}>
+              <div className='search-icon'>
+                <img src={window.images.behavior} alt='behavior-icon'/>
+              </div>
+              <div className='search-text'>Behavior</div>
+            </div>
+
+            <div className={advanced} onClick={() => this.update('advanced')}>
+              <div className='search-icon'>
+                <img src={window.images.advanced} alt='advanced-icon'/>
+              </div>
+              <div className='search-text'>Advanced</div>
+            </div>
+          </div>
+
+          <div className='search-bar-2'>
+            <div className='search-bar-2-1'>
+              <input type='text' placeholder='Enter your zipcode'></input>
+            </div>
+
+            <div className='search-bar-2-2'>
+              <button className='btn green' onClick={this.handleSubmit}>Search</button>
+            </div>
+          </div>
+        </form>
+      </div>
+    );
+  }
+
+  render() {
+    if (this.props.where === 'mainpage') {
+      return this.inMainPage();
+    } else {
+      return this.inTrainerList();
+    }
+
   }
 }
 

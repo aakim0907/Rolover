@@ -1,11 +1,11 @@
 .search-box-container {
   z-index: 0;
   background: rgba(255, 255, 255, 0.9);
-  width: 80%;
-  height: 220px;
+  width: 90%;
+  height: 230px;
   display: flex;
   border-radius: 3px;
-  padding: 10px;
+  padding: 15px;
   position: relative;
   margin: auto;
 }
@@ -17,7 +17,6 @@ form {
 
 .search-box-1 {
   display: flex;
-  flex-wrap: wrap;
   flex-direction: column;
   padding-top: 13px;
   padding-bottom: 5px;
@@ -68,9 +67,9 @@ form {
   border-radius: 4px;
   cursor: pointer;
   padding: 7px;
-  margin: 5px;
-  height: 107px;
-  width: 95px;
+  margin: 7px;
+  height: 115px;
+  width: 101px;
   justify-content: center;
 
   &:hover div {
@@ -85,9 +84,9 @@ form {
   border-radius: 4px;
   cursor: pointer;
   padding: 7px;
-  margin: 5px;
-  height: 107px;
-  width: 95px;
+  margin: 7px;
+  height: 115px;
+  width: 101px;
   justify-content: center;
   border-bottom: 3px solid $green;
 
@@ -109,5 +108,5 @@ form {
   justify-content: center;
   color: $gray;
   font-family: 'Open Sans Condensed', sans-serif;
-  font-size: 18px;
+  font-size: 19px;
 }

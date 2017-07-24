@@ -1,13 +1,12 @@
 .index-page {
-  border: 1px solid $green;
-  width: 70%;
+  width: 50%;
   margin: auto;
+  padding-top: 20px;
 }
 
 .trainer-container {
   background-color: $white;
   margin-top: 30px;
-  // margin-left: 15%;
   width: 650px;
   display: flex;
   flex-direction: row;
