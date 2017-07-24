@@ -2,6 +2,7 @@ import React from 'react';
 import { Link } from 'react-router-dom';
 
 import TrainerListItem from './trainer_list_item';
+import SearchContainer from '../search/search_container';
 
 class TrainerList extends React.Component {
   componentDidMount() {

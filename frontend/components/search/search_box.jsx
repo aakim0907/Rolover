@@ -12,18 +12,20 @@ class SearchBox extends React.Component {
   update(field) {
     const newSearch = merge({}, this.state);
     newSearch[field] = !this.state[field];
-    this.setState({ search: newSearch });
-    // this.state[field] = !this.state[field];
+    this.setState(newSearch);
   }
 
   handleSubmit(e) {
     e.preventDefault();
-    const search = this.state.search;
+    const search = this.state;
     this.props.fetchTrainers(search).then(() => this.props.history.push('/trainers'));
   }
 
   render() {
-    const buttonClass = 'search-training';
+    const obedience = ( this.state['obedience'] ? 'search-training-selected' : 'search-training');
+    const behavior = ( this.state['behavior'] ? 'search-training-selected' : 'search-training');
+    const advanced = ( this.state['advanced'] ? 'search-training-selected' : 'search-training');
+
     return (
       <div className='search-box-container'>
         <div className='search-box-header'>
@@ -32,21 +34,21 @@ class SearchBox extends React.Component {
 
         <form onSubmit={this.handleSubmit}>
           <div className='search-box'>
-            <div className={buttonClass} onClick={() => this.update('obedience')}>
+            <div className={obedience} onClick={() => this.update('obedience')}>
               <div className='search-icon'>
                 <img src={window.images.obedience} alt='obedience-icon'/>
               </div>
               <div className='search-text'>Obedience</div>
             </div>
 
-            <div className={buttonClass} onClick={() => this.update('behavior')}>
+            <div className={behavior} onClick={() => this.update('behavior')}>
               <div className='search-icon'>
                 <img src={window.images.behavior} alt='behavior-icon'/>
               </div>
               <div className='search-text'>Behavior</div>
             </div>
 
-            <div className={buttonClass} onClick={() => this.update('advanced')}>
+            <div className={advanced} onClick={() => this.update('advanced')}>
               <div className='search-icon'>
                 <img src={window.images.advanced} alt='advanced-icon'/>
               </div>

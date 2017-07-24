@@ -47164,8 +47164,7 @@ var SearchBox = function (_React$Component) {
     value: function update(field) {
       var newSearch = (0, _lodash.merge)({}, this.state);
       newSearch[field] = !this.state[field];
-      this.setState({ search: newSearch });
-      // this.state[field] = !this.state[field];
+      this.setState(newSearch);
     }
   }, {
     key: 'handleSubmit',
@@ -47173,7 +47172,7 @@ var SearchBox = function (_React$Component) {
       var _this2 = this;
 
       e.preventDefault();
-      var search = this.state.search;
+      var search = this.state;
       this.props.fetchTrainers(search).then(function () {
         return _this2.props.history.push('/trainers');
       });
@@ -47183,7 +47182,10 @@ var SearchBox = function (_React$Component) {
     value: function render() {
       var _this3 = this;
 
-      var buttonClass = 'search-training';
+      var obedience = this.state['obedience'] ? 'search-training-selected' : 'search-training';
+      var behavior = this.state['behavior'] ? 'search-training-selected' : 'search-training';
+      var advanced = this.state['advanced'] ? 'search-training-selected' : 'search-training';
+
       return _react2.default.createElement(
         'div',
         { className: 'search-box-container' },
@@ -47204,7 +47206,7 @@ var SearchBox = function (_React$Component) {
             { className: 'search-box' },
             _react2.default.createElement(
               'div',
-              { className: buttonClass, onClick: function onClick() {
+              { className: obedience, onClick: function onClick() {
                   return _this3.update('obedience');
                 } },
               _react2.default.createElement(
@@ -47220,7 +47222,7 @@ var SearchBox = function (_React$Component) {
             ),
             _react2.default.createElement(
               'div',
-              { className: buttonClass, onClick: function onClick() {
+              { className: behavior, onClick: function onClick() {
                   return _this3.update('behavior');
                 } },
               _react2.default.createElement(
@@ -47236,7 +47238,7 @@ var SearchBox = function (_React$Component) {
             ),
             _react2.default.createElement(
               'div',
-              { className: buttonClass, onClick: function onClick() {
+              { className: advanced, onClick: function onClick() {
                   return _this3.update('advanced');
                 } },
               _react2.default.createElement(
@@ -47351,6 +47353,10 @@ var _reactRouterDom = __webpack_require__(12);
 var _trainer_list_item = __webpack_require__(298);
 
 var _trainer_list_item2 = _interopRequireDefault(_trainer_list_item);
+
+var _search_container = __webpack_require__(293);
+
+var _search_container2 = _interopRequireDefault(_search_container);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
