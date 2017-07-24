@@ -42043,3 +42043,235 @@ Migrating to CreateReviews (20170724013922)
   [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.3ms)[0m  [1m[34mSELECT pg_advisory_unlock(5645024442992354280)[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (5019.7ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Rolover_development"[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.4ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.1ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (116.5ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Rolover_development"[0m
+  [1m[35m (113.2ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Rolover_test"[0m
+  [1m[35m (356.2ms)[0m  [1m[35mCREATE DATABASE "Rolover_development" ENCODING = 'unicode'[0m
+  [1m[35m (262.2ms)[0m  [1m[35mCREATE DATABASE "Rolover_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (12.9ms)[0m  [1m[35mCREATE TABLE "bookings" ("id" serial primary key, "user_id" integer NOT NULL, "dog_id" integer NOT NULL, "trainer_id" integer NOT NULL, "start_date" date NOT NULL, "end_date" date NOT NULL, "status" character varying DEFAULT 'PENDING' NOT NULL, "message" text NOT NULL)[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE  INDEX  "index_bookings_on_dog_id" ON "bookings" USING btree ("dog_id")[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE  INDEX  "index_bookings_on_trainer_id" ON "bookings" USING btree ("trainer_id")[0m
+  [1m[35m (5.7ms)[0m  [1m[35mCREATE  INDEX  "index_bookings_on_user_id" ON "bookings" USING btree ("user_id")[0m
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE "dogs" ("id" serial primary key, "user_id" integer NOT NULL, "name" character varying NOT NULL, "age_year" integer, "age_month" integer, "weight" integer NOT NULL, "breed" character varying NOT NULL, "sex" character varying NOT NULL)[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE  INDEX  "index_dogs_on_user_id" ON "dogs" USING btree ("user_id")[0m
+  [1m[35m (12.5ms)[0m  [1m[35mCREATE TABLE "images" ("id" serial primary key, "trainer_id" integer NOT NULL, "img_url" character varying NOT NULL, "img_type" character varying NOT NULL)[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE  INDEX  "index_images_on_trainer_id" ON "images" USING btree ("trainer_id")[0m
+  [1m[35m (15.7ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" serial primary key, "user_id" integer NOT NULL, "trainer_id" integer NOT NULL, "rating" float NOT NULL, "body" text NOT NULL)[0m
+  [1m[35m (5.2ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_trainer_id" ON "reviews" USING btree ("trainer_id")[0m
+  [1m[35m (7.1ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_user_id" ON "reviews" USING btree ("user_id")[0m
+  [1m[35m (16.3ms)[0m  [1m[35mCREATE TABLE "trainers" ("id" serial primary key, "name" character varying NOT NULL, "profile_quote" text NOT NULL, "description" text NOT NULL, "price" integer NOT NULL, "zip" integer NOT NULL, "city" character varying NOT NULL, "state" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "obedience" boolean NOT NULL, "behavior" boolean NOT NULL, "advanced" boolean NOT NULL)[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_advanced" ON "trainers" USING btree ("advanced")[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_behavior" ON "trainers" USING btree ("behavior")[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_obedience" ON "trainers" USING btree ("obedience")[0m
+  [1m[35m (13.0ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "profile_img_url" character varying DEFAULT 'http://res.cloudinary.com/rolover/image/upload/v1500672475/gray_logo_rnqfnk.png')[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (15.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.0ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170724013922)[0m
+  [1m[35m (1.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170718161549),
+(20170719233939),
+(20170720214342),
+(20170724013726),
+(20170719233739),
+(20170719214549),
+(20170721213156),
+(20170718213131),
+(20170724013341),
+(20170721230207);
+
+[0m
+  [1m[35m (12.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.0ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-24 01:54:40.390872"], ["updated_at", "2017-07-24 01:54:40.390872"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.2ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (12.4ms)[0m  [1m[35mCREATE TABLE "bookings" ("id" serial primary key, "user_id" integer NOT NULL, "dog_id" integer NOT NULL, "trainer_id" integer NOT NULL, "start_date" date NOT NULL, "end_date" date NOT NULL, "status" character varying DEFAULT 'PENDING' NOT NULL, "message" text NOT NULL)[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE  INDEX  "index_bookings_on_dog_id" ON "bookings" USING btree ("dog_id")[0m
+  [1m[35m (5.1ms)[0m  [1m[35mCREATE  INDEX  "index_bookings_on_trainer_id" ON "bookings" USING btree ("trainer_id")[0m
+  [1m[35m (4.7ms)[0m  [1m[35mCREATE  INDEX  "index_bookings_on_user_id" ON "bookings" USING btree ("user_id")[0m
+  [1m[35m (11.5ms)[0m  [1m[35mCREATE TABLE "dogs" ("id" serial primary key, "user_id" integer NOT NULL, "name" character varying NOT NULL, "age_year" integer, "age_month" integer, "weight" integer NOT NULL, "breed" character varying NOT NULL, "sex" character varying NOT NULL)[0m
+  [1m[35m (8.2ms)[0m  [1m[35mCREATE  INDEX  "index_dogs_on_user_id" ON "dogs" USING btree ("user_id")[0m
+  [1m[35m (11.8ms)[0m  [1m[35mCREATE TABLE "images" ("id" serial primary key, "trainer_id" integer NOT NULL, "img_url" character varying NOT NULL, "img_type" character varying NOT NULL)[0m
+  [1m[35m (8.0ms)[0m  [1m[35mCREATE  INDEX  "index_images_on_trainer_id" ON "images" USING btree ("trainer_id")[0m
+  [1m[35m (16.1ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" serial primary key, "user_id" integer NOT NULL, "trainer_id" integer NOT NULL, "rating" float NOT NULL, "body" text NOT NULL)[0m
+  [1m[35m (5.6ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_trainer_id" ON "reviews" USING btree ("trainer_id")[0m
+  [1m[35m (9.3ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_user_id" ON "reviews" USING btree ("user_id")[0m
+  [1m[35m (16.9ms)[0m  [1m[35mCREATE TABLE "trainers" ("id" serial primary key, "name" character varying NOT NULL, "profile_quote" text NOT NULL, "description" text NOT NULL, "price" integer NOT NULL, "zip" integer NOT NULL, "city" character varying NOT NULL, "state" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "obedience" boolean NOT NULL, "behavior" boolean NOT NULL, "advanced" boolean NOT NULL)[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_advanced" ON "trainers" USING btree ("advanced")[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_behavior" ON "trainers" USING btree ("behavior")[0m
+  [1m[35m (8.7ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_obedience" ON "trainers" USING btree ("obedience")[0m
+  [1m[35m (14.8ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "profile_img_url" character varying DEFAULT 'http://res.cloudinary.com/rolover/image/upload/v1500672475/gray_logo_rnqfnk.png')[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (14.8ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170724013922)[0m
+  [1m[35m (2.1ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170718161549),
+(20170719233939),
+(20170720214342),
+(20170724013726),
+(20170719233739),
+(20170719214549),
+(20170721213156),
+(20170718213131),
+(20170724013341),
+(20170721230207);
+
+[0m
+  [1m[35m (13.9ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.1ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.1ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-24 01:54:40.706508"], ["updated_at", "2017-07-24 01:54:40.706508"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (1.0ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bob@gmail"], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "bob@gmail"], ["password_digest", "$2a$10$f0zuLkW49GrojQrmYi3kt.SVsLPSGccTTNyX0eP9hDf.EcYmEnOZK"], ["session_token", "hiPa2G1ZxjrOdDfGZkipzw"], ["created_at", "2017-07-24 01:54:40.892421"], ["updated_at", "2017-07-24 01:54:40.892421"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "dogs" ("user_id", "name", "age_year", "age_month", "weight", "breed", "sex") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 1], ["name", "Ruby"], ["age_year", 1], ["age_month", 3], ["weight", 30], ["breed", "Shitzhu"], ["sex", "F"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dogs" ("user_id", "name", "age_year", "weight", "breed", "sex") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["name", "Java"], ["age_year", 3], ["weight", 15], ["breed", "Maltize"], ["sex", "M"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "profile_quote", "description", "price", "zip", "city", "state", "created_at", "updated_at", "obedience", "behavior", "advanced") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Kelly"], ["profile_quote", "Y'all good?"], ["description", "Hash Browns"], ["price", 50], ["zip", 94109], ["city", "San Francisco"], ["state", "California"], ["created_at", "2017-07-24 01:54:40.949761"], ["updated_at", "2017-07-24 01:54:40.949761"], ["obedience", "t"], ["behavior", "t"], ["advanced", "t"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "profile_quote", "description", "price", "zip", "city", "state", "created_at", "updated_at", "obedience", "behavior", "advanced") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Hope"], ["profile_quote", "Corgis rock!"], ["description", "Love for Sir Toast<3"], ["price", 45], ["zip", 94109], ["city", "San Francisco"], ["state", "California"], ["created_at", "2017-07-24 01:54:40.954990"], ["updated_at", "2017-07-24 01:54:40.954990"], ["obedience", "t"], ["behavior", "t"], ["advanced", "t"]]
+  [1m[35m (2.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.3ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[31mROLLBACK[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 1], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500615300/rebekah-howell-221666_pxgagf.jpg"], ["img_type", "profile"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 1], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676796/nick-turner-2570_cysug8.jpg"], ["img_type", "main"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 1], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676796/greg-rakozy-234360_lnidhq.jpg"], ["img_type", "main"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 1], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500615297/ross-sokolovski-167993_vmclu0.jpg"], ["img_type", "main"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 1], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500614239/dawid-sobolewski-285655_iauvhs.jpg"], ["img_type", "main"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 2], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500615274/hannah-busing-310503_dyj1vz.jpg"], ["img_type", "profile"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 2], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500615252/pete-bellis-217830_o7hl7o.jpg"], ["img_type", "main"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 2], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676791/alexander-dummer-117495_alnvz6.jpg"], ["img_type", "main"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 2], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676794/crew-56836_uxjhwt.jpg"], ["img_type", "main"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 2], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500615255/nicolas-tessari-218491_hswkzo.jpg"], ["img_type", "main"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 3], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500666134/hJLEzfh-1_p49exx.jpg"], ["img_type", "profile"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 3], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676798/pete-bellis-217145_wryecn.jpg"], ["img_type", "main"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 3], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676792/andrew-pons-9713_uhf06p.jpg"], ["img_type", "main"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 3], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676792/andrew-branch-123375_arltld.jpg"], ["img_type", "main"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 3], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676792/andy-omvik-295479_qi5fxn.jpg"], ["img_type", "main"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 4], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500615295/marvin-meyer-188676_wnyexr.jpg"], ["img_type", "profile"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 4], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676798/rachel-omnes-159038_nzxnte.jpg"], ["img_type", "main"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 4], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676795/leio-mclaren-299158_caimzl.jpg"], ["img_type", "main"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 4], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676796/kaci-baum-114910_vn1y0k.jpg"], ["img_type", "main"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 4], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500614250/justin-veenema-156591_kw18s0.jpg"], ["img_type", "main"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2017-07-23 18:54:53 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (577.4ms)
+Completed 200 OK in 637ms (Views: 635.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-23 18:54:57 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (29.0ms)
+Completed 200 OK in 120ms (Views: 117.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-23 18:55:00 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (16.6ms)
+Completed 200 OK in 115ms (Views: 111.7ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2017-07-23 18:55:04 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bob@gmail", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bob@gmail"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "bob@gmail"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "bEeQ1pFM5t0VyyidX8RFTA"], ["updated_at", "2017-07-24 01:55:04.684803"], ["id", 1]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (17.9ms)
+  [1m[36mDog Load (0.4ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/show.json.jbuilder (41.7ms)
+Completed 200 OK in 175ms (Views: 39.2ms | ActiveRecord: 15.2ms)
+
+
+Started GET "/api/trainers?search%5Bobedience%5D=false&search%5Bbehavior%5D=false&search%5Badvanced%5D=true" for 127.0.0.1 at 2017-07-23 18:55:59 -0700
+Processing by Api::TrainersController#index as JSON
+  Parameters: {"search"=>{"obedience"=>"false", "behavior"=>"false", "advanced"=>"true"}}
+  [1m[36mTrainer Load (0.6ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers" WHERE (advanced)[0m
+  Rendering api/trainers/index.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (4.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.3ms)
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/index.json.jbuilder (19.5ms)
+Completed 200 OK in 43ms (Views: 18.4ms | ActiveRecord: 9.6ms)
+
+

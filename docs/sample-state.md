@@ -34,7 +34,7 @@
       zip: 94109,
       city: "San Francisco",
       state: "California",
-      profile_image_id: 7
+      images: []
     },
 
     2: {
