@@ -5,24 +5,15 @@ import { merge } from 'lodash';
 class SearchBox extends React.Component {
   constructor(props) {
     super(props);
-    this.state = {
-      search:  { obedience: false, behavior: false, advanced: false },
-      buttonClass: 'search-training'
-    };
+    this.state = { obedience: false, behavior: false, advanced: false };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
   update(field) {
-    // return e => this.setState({
-    //   search: {
-    //     [field]: !this.state[field]
-    //   },
-    //   buttonClass: this.state.buttonClass === 'search-training' ?
-    //     'search-training-selected' : 'search-training'
-    // });
-    const newSearch = merge({}, this.state.search);
-    newSearch[field] = !this.state.search[field];
+    const newSearch = merge({}, this.state);
+    newSearch[field] = !this.state[field];
     this.setState({ search: newSearch });
+    // this.state[field] = !this.state[field];
   }
 
   handleSubmit(e) {
@@ -32,8 +23,7 @@ class SearchBox extends React.Component {
   }
 
   render() {
-    console.log(this.state.search);
-    const { buttonClass } = this.state;
+    const buttonClass = 'search-training';
     return (
       <div className='search-box-container'>
         <div className='search-box-header'>

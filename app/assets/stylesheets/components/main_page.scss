@@ -7,7 +7,7 @@
   background: url(http://res.cloudinary.com/rolover/image/upload/v1500506606/roll_over1_pizv9e.jpg) no-repeat center;
   height: 80%;
   width: 100%;
-  z-index: 0;
+  z-index: -1;
   position: absolute;
   filter: brightness(70%);
 }
@@ -18,7 +18,7 @@
   height: 80%;
   margin: auto;
   flex-direction: column;
-  z-index: 1;
+  z-index: 0;
   margin-top: 120px;
 }
 

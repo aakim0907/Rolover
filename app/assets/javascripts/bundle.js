@@ -47154,10 +47154,7 @@ var SearchBox = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (SearchBox.__proto__ || Object.getPrototypeOf(SearchBox)).call(this, props));
 
-    _this.state = {
-      search: { obedience: false, behavior: false, advanced: false },
-      buttonClass: 'search-training'
-    };
+    _this.state = { obedience: false, behavior: false, advanced: false };
     _this.handleSubmit = _this.handleSubmit.bind(_this);
     return _this;
   }
@@ -47165,16 +47162,10 @@ var SearchBox = function (_React$Component) {
   _createClass(SearchBox, [{
     key: 'update',
     value: function update(field) {
-      // return e => this.setState({
-      //   search: {
-      //     [field]: !this.state[field]
-      //   },
-      //   buttonClass: this.state.buttonClass === 'search-training' ?
-      //     'search-training-selected' : 'search-training'
-      // });
-      var newSearch = (0, _lodash.merge)({}, this.state.search);
-      newSearch[field] = !this.state.search[field];
+      var newSearch = (0, _lodash.merge)({}, this.state);
+      newSearch[field] = !this.state[field];
       this.setState({ search: newSearch });
+      // this.state[field] = !this.state[field];
     }
   }, {
     key: 'handleSubmit',
@@ -47192,9 +47183,7 @@ var SearchBox = function (_React$Component) {
     value: function render() {
       var _this3 = this;
 
-      console.log(this.state.search);
-      var buttonClass = this.state.buttonClass;
-
+      var buttonClass = 'search-training';
       return _react2.default.createElement(
         'div',
         { className: 'search-box-container' },
