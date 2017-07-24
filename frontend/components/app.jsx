@@ -17,7 +17,7 @@ const App = () => (
 
     <div className="body-content">
       <switch>
-        <Route exact path="/trainers" component={TrainerListContainer} />
+        <Route path="/trainers/:search" component={TrainerListContainer} />
         <Route path="/trainers/:id" component={TrainerDetailContainer} />
         <Route exact path="/" component={MainPage} />
       </switch>

@@ -1,5 +1,6 @@
 import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
+import { merge } from 'lodash';
 
 class SearchBox extends React.Component {
   constructor(props) {
@@ -12,13 +13,16 @@ class SearchBox extends React.Component {
   }
 
   update(field) {
-    return e => this.setState({
-      search: {
-        [field]: !this.state[field]
-      },
-      buttonClass: this.state.buttonClass === 'search-training' ?
-        'search-training-selected' : 'search-training'
-    });
+    // return e => this.setState({
+    //   search: {
+    //     [field]: !this.state[field]
+    //   },
+    //   buttonClass: this.state.buttonClass === 'search-training' ?
+    //     'search-training-selected' : 'search-training'
+    // });
+    const newSearch = merge({}, this.state.search);
+    newSearch[field] = !this.state[field];
+    this.setState({ search: newSearch });
   }
 
   handleSubmit(e) {
@@ -28,6 +32,7 @@ class SearchBox extends React.Component {
   }
 
   render() {
+    console.log(this.state.search);
     const { buttonClass } = this.state;
     return (
       <div className='search-box-container'>
@@ -37,28 +42,26 @@ class SearchBox extends React.Component {
 
         <form onSubmit={this.handleSubmit}>
           <div className='search-box'>
-            <div className={buttonClass} onClick={this.update('obedience')}>
+            <div className={buttonClass} onClick={() => this.update('obedience')}>
               <div className='search-icon'>
                 <img src={window.images.obedience} alt='obedience-icon'/>
               </div>
               <div className='search-text'>Obedience</div>
             </div>
 
-            <div className={buttonClass} onClick={this.update('behavior')}>
+            <div className={buttonClass} onClick={() => this.update('behavior')}>
               <div className='search-icon'>
                 <img src={window.images.behavior} alt='behavior-icon'/>
               </div>
               <div className='search-text'>Behavior</div>
             </div>
 
-            <div className={buttonClass} onClick={this.update('advanced')}>
+            <div className={buttonClass} onClick={() => this.update('advanced')}>
               <div className='search-icon'>
                 <img src={window.images.advanced} alt='advanced-icon'/>
               </div>
               <div className='search-text'>Advanced</div>
             </div>
-
-
           </div>
 
           <button className='btn green' onClick={this.handleSubmit}>Search</button>
@@ -68,4 +71,7 @@ class SearchBox extends React.Component {
   }
 }
 
+// <Link to={`/trainers/${this.state.search}`}>
+//   <button className='btn green'>Search</button>
+// </Link>
 export default withRouter(SearchBox);
