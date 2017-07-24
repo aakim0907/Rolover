@@ -47182,7 +47182,7 @@ var SearchBox = function (_React$Component) {
       //     'search-training-selected' : 'search-training'
       // });
       var newSearch = (0, _lodash.merge)({}, this.state.search);
-      newSearch[field] = !this.state[field];
+      newSearch[field] = !this.state.search[field];
       this.setState({ search: newSearch });
     }
   }, {
@@ -47190,6 +47190,7 @@ var SearchBox = function (_React$Component) {
     value: function handleSubmit(e) {
       e.preventDefault();
       var search = this.state.search;
+      console.log(search);
       this.props.fetchTrainers(search);
     }
   }, {

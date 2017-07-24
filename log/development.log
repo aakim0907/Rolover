@@ -42287,3 +42287,221 @@ Migrating to AddColumnToBookings (20170724021514)
   [1m[35m (0.1ms)[0m  [1m[35mCOMMIT[0m
   [1m[35m (0.2ms)[0m  [1m[34mSELECT pg_advisory_unlock(5645024442992354280)[0m
   [1m[36mActiveRecord::SchemaMigration Load (0.2ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Started GET "/" for 127.0.0.1 at 2017-07-24 09:15:18 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bEeQ1pFM5t0VyyidX8RFTA"], ["LIMIT", 1]]
+  [1m[36mDog Load (0.3ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (16.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (34.8ms)
+Completed 200 OK in 58ms (Views: 56.9ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 09:15:27 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bEeQ1pFM5t0VyyidX8RFTA"], ["LIMIT", 1]]
+  [1m[36mDog Load (1.1ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (5.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (18.1ms)
+Completed 200 OK in 62ms (Views: 56.0ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/api/trainers?search%5Bobedience%5D=true&search%5Bbehavior%5D=false&search%5Badvanced%5D=true" for 127.0.0.1 at 2017-07-24 09:15:39 -0700
+Processing by Api::TrainersController#index as JSON
+  Parameters: {"search"=>{"obedience"=>"true", "behavior"=>"false", "advanced"=>"true"}}
+  [1m[36mTrainer Load (0.8ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers" WHERE (obedience)[0m
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers" WHERE (advanced)[0m
+  Rendering api/trainers/index.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (3.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/index.json.jbuilder (18.1ms)
+Completed 200 OK in 41ms (Views: 17.3ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 09:15:53 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bEeQ1pFM5t0VyyidX8RFTA"], ["LIMIT", 1]]
+  [1m[36mDog Load (0.6ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (3.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (20.0ms)
+Completed 200 OK in 46ms (Views: 43.5ms | ActiveRecord: 1.6ms)
+
+
+Started GET "/api/trainers?search%5Bobedience%5D=false&search%5Bbehavior%5D=true&search%5Badvanced%5D=false" for 127.0.0.1 at 2017-07-24 09:15:58 -0700
+Processing by Api::TrainersController#index as JSON
+  Parameters: {"search"=>{"obedience"=>"false", "behavior"=>"true", "advanced"=>"false"}}
+  [1m[36mTrainer Load (1.6ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers" WHERE (behavior)[0m
+  Rendering api/trainers/index.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/index.json.jbuilder (8.8ms)
+Completed 200 OK in 15ms (Views: 9.9ms | ActiveRecord: 2.6ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2017-07-24 09:16:07 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bEeQ1pFM5t0VyyidX8RFTA"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "bob@gmail"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "iuqGk45mCJt1Aae_lAno6A"], ["updated_at", "2017-07-24 16:16:07.312479"], ["id", 1]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (1.9ms)
+  [1m[36mDog Load (0.8ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/show.json.jbuilder (11.6ms)
+Completed 200 OK in 35ms (Views: 20.1ms | ActiveRecord: 7.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 09:22:11 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (15.2ms)
+Completed 200 OK in 44ms (Views: 40.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 09:22:47 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (4.9ms)
+Completed 200 OK in 41ms (Views: 39.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 09:23:04 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (19.7ms)
+Completed 200 OK in 855ms (Views: 854.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 09:23:09 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (21.7ms)
+Completed 200 OK in 398ms (Views: 396.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 09:23:18 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (21.0ms)
+Completed 200 OK in 73ms (Views: 70.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 09:23:47 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (10.9ms)
+Completed 200 OK in 57ms (Views: 55.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 09:23:50 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (21.3ms)
+Completed 200 OK in 590ms (Views: 587.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 09:24:17 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (15.1ms)
+Completed 200 OK in 84ms (Views: 82.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 09:24:20 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (4.6ms)
+Completed 200 OK in 509ms (Views: 507.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 09:24:51 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (6.3ms)
+Completed 200 OK in 555ms (Views: 553.9ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 09:24:55 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (14.2ms)
+Completed 200 OK in 84ms (Views: 81.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 09:25:09 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (5.0ms)
+Completed 200 OK in 574ms (Views: 573.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 09:25:16 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (6.4ms)
+Completed 200 OK in 42ms (Views: 41.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 09:25:22 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (21.9ms)
+Completed 200 OK in 552ms (Views: 549.2ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers?search%5Bobedience%5D=false&search%5Bbehavior%5D=false&search%5Badvanced%5D=false" for 127.0.0.1 at 2017-07-24 09:25:29 -0700
+Processing by Api::TrainersController#index as JSON
+  Parameters: {"search"=>{"obedience"=>"false", "behavior"=>"false", "advanced"=>"false"}}
+  Rendering api/trainers/index.json.jbuilder
+  Rendered api/trainers/index.json.jbuilder (0.5ms)
+Completed 200 OK in 5ms (Views: 3.5ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers?search%5Bobedience%5D=true&search%5Bbehavior%5D=false&search%5Badvanced%5D=false" for 127.0.0.1 at 2017-07-24 09:25:34 -0700
+Processing by Api::TrainersController#index as JSON
+  Parameters: {"search"=>{"obedience"=>"true", "behavior"=>"false", "advanced"=>"false"}}
+  [1m[36mTrainer Load (0.6ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers" WHERE (obedience)[0m
+  Rendering api/trainers/index.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (0.8ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.3ms)
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/index.json.jbuilder (12.4ms)
+Completed 200 OK in 20ms (Views: 14.9ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 09:26:03 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.1ms)
+Completed 200 OK in 42ms (Views: 41.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 09:26:06 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.0ms)
+Completed 200 OK in 495ms (Views: 493.8ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers?search%5Bobedience%5D=true&search%5Bbehavior%5D=false&search%5Badvanced%5D=false" for 127.0.0.1 at 2017-07-24 09:26:11 -0700
+Processing by Api::TrainersController#index as JSON
+  Parameters: {"search"=>{"obedience"=>"true", "behavior"=>"false", "advanced"=>"false"}}
+  [1m[36mTrainer Load (0.5ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers" WHERE (obedience)[0m
+  Rendering api/trainers/index.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (0.5ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/index.json.jbuilder (8.9ms)
+Completed 200 OK in 15ms (Views: 11.2ms | ActiveRecord: 1.2ms)
+
+

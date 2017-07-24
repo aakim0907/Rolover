@@ -21,13 +21,14 @@ class SearchBox extends React.Component {
     //     'search-training-selected' : 'search-training'
     // });
     const newSearch = merge({}, this.state.search);
-    newSearch[field] = !this.state[field];
+    newSearch[field] = !this.state.search[field];
     this.setState({ search: newSearch });
   }
 
   handleSubmit(e) {
     e.preventDefault();
     const search = this.state.search;
+    console.log(search);
     this.props.fetchTrainers(search);
   }
 
