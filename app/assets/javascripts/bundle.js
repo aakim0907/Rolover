@@ -47417,16 +47417,20 @@ var TrainerList = function (_React$Component) {
         );
       } else {
         return _react2.default.createElement(
-          'section',
-          { className: 'trainer-container' },
+          'div',
+          { className: 'index-page' },
           _react2.default.createElement(_search_container2.default, { where: 'trainerlist' }),
-          trainers.map(function (trainer) {
-            return _react2.default.createElement(
-              _reactRouterDom.Link,
-              { key: trainer.id, to: '/trainers/' + trainer.id },
-              _react2.default.createElement(_trainer_list_item2.default, { trainer: trainer })
-            );
-          })
+          _react2.default.createElement(
+            'section',
+            { className: 'trainer-container' },
+            trainers.map(function (trainer) {
+              return _react2.default.createElement(
+                _reactRouterDom.Link,
+                { key: trainer.id, to: '/trainers/' + trainer.id },
+                _react2.default.createElement(_trainer_list_item2.default, { trainer: trainer })
+              );
+            })
+          )
         );
       }
     }

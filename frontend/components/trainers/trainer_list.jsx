@@ -18,14 +18,16 @@ class TrainerList extends React.Component {
       return (<div>No Results</div>);
     } else {
       return (
-        <section className="trainer-container">
+        <div className='index-page'>
           <SearchContainer where='trainerlist' />
-          { trainers.map(trainer => (
-            <Link key={trainer.id} to={`/trainers/${trainer.id}`}>
-              <TrainerListItem trainer={trainer} />
-            </Link>
-          ))}
-        </section>
+          <section className='trainer-container'>
+            { trainers.map(trainer => (
+              <Link key={trainer.id} to={`/trainers/${trainer.id}`}>
+                <TrainerListItem trainer={trainer} />
+              </Link>
+            ))}
+          </section>
+        </div>
       );
     }
   }
