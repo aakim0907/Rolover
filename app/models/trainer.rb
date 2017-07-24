@@ -1,5 +1,6 @@
 class Trainer < ApplicationRecord
-  validates :name, :profile_quote, :obedience, :behavior, :advanced, :description, :price, :zip, :city, :state, presence: true
+  validates :name, :profile_quote, :description, :price, :zip, :city, :state, presence: true
+  validates :obedience, :behavior, :advanced, inclusion: [true, false]
 
   has_many :images
   has_many :bookings

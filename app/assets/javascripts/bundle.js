@@ -45785,7 +45785,7 @@ var App = function App() {
       _react2.default.createElement(
         'switch',
         null,
-        _react2.default.createElement(_reactRouterDom.Route, { path: '/trainers/:search', component: _trainer_list_container2.default }),
+        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/trainers', component: _trainer_list_container2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/trainers/:id', component: _trainer_detail_container2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _main_page2.default })
       )
@@ -47099,8 +47099,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var _reactRedux = __webpack_require__(20);
 
-var _selectors = __webpack_require__(296);
-
 var _search_box = __webpack_require__(294);
 
 var _search_box2 = _interopRequireDefault(_search_box);
@@ -47108,13 +47106,6 @@ var _search_box2 = _interopRequireDefault(_search_box);
 var _trainer_actions = __webpack_require__(30);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var mapStateToProps = function mapStateToProps(_ref) {
-  var trainers = _ref.trainers;
-  return {
-    trainers: (0, _selectors.selectAllTrainers)(trainers)
-  };
-};
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
@@ -47124,7 +47115,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_search_box2.default);
+exports.default = (0, _reactRedux.connect)(null, mapDispatchToProps)(_search_box2.default);
 
 /***/ }),
 /* 294 */
@@ -47188,15 +47179,18 @@ var SearchBox = function (_React$Component) {
   }, {
     key: 'handleSubmit',
     value: function handleSubmit(e) {
+      var _this2 = this;
+
       e.preventDefault();
       var search = this.state.search;
-      console.log(search);
-      this.props.fetchTrainers(search);
+      this.props.fetchTrainers(search).then(function () {
+        return _this2.props.history.push('/trainers');
+      });
     }
   }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       console.log(this.state.search);
       var buttonClass = this.state.buttonClass;
@@ -47222,7 +47216,7 @@ var SearchBox = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: buttonClass, onClick: function onClick() {
-                  return _this2.update('obedience');
+                  return _this3.update('obedience');
                 } },
               _react2.default.createElement(
                 'div',
@@ -47238,7 +47232,7 @@ var SearchBox = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: buttonClass, onClick: function onClick() {
-                  return _this2.update('behavior');
+                  return _this3.update('behavior');
                 } },
               _react2.default.createElement(
                 'div',
@@ -47254,7 +47248,7 @@ var SearchBox = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: buttonClass, onClick: function onClick() {
-                  return _this2.update('advanced');
+                  return _this3.update('advanced');
                 } },
               _react2.default.createElement(
                 'div',
@@ -47317,15 +47311,6 @@ var mapStateToProps = function mapStateToProps(_ref) {
     trainers: (0, _selectors.selectAllTrainers)(trainers)
   };
 };
-
-// const mapStateToProps = ({ trainers }, { match }) => {
-//   console.log(match);
-//   return {
-//   search: match.params.search,
-//   trainers: selectAllTrainers(trainers)
-// };
-// };
-
 
 var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
@@ -47398,7 +47383,9 @@ var TrainerList = function (_React$Component) {
   _createClass(TrainerList, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.props.fetchTrainers();
+      if (this.props.trainers.length === 0) {
+        this.props.fetchTrainers();
+      }
     }
   }, {
     key: 'render',

@@ -5,7 +5,9 @@ import TrainerListItem from './trainer_list_item';
 
 class TrainerList extends React.Component {
   componentDidMount() {
-    this.props.fetchTrainers();
+    if (this.props.trainers.length === 0) {
+      this.props.fetchTrainers();
+    }
   }
 
   render() {

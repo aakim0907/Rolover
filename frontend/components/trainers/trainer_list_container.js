@@ -8,15 +8,6 @@ const mapStateToProps = ({ trainers }) => ({
   trainers: selectAllTrainers(trainers)
 });
 
-// const mapStateToProps = ({ trainers }, { match }) => {
-//   console.log(match);
-//   return {
-//   search: match.params.search,
-//   trainers: selectAllTrainers(trainers)
-// };
-// };
-
-
 const mapDispatchToProps = dispatch => ({
   fetchTrainers: () => dispatch(fetchTrainers())
 });

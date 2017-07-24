@@ -28,8 +28,7 @@ class SearchBox extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const search = this.state.search;
-    console.log(search);
-    this.props.fetchTrainers(search);
+    this.props.fetchTrainers(search).then(() => this.props.history.push('/trainers'));
   }
 
   render() {
