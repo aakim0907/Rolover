@@ -10,7 +10,7 @@
 #
 # It's strongly recommended that you check this file into your version control system.
 
-ActiveRecord::Schema.define(version: 20170724021514) do
+ActiveRecord::Schema.define(version: 20170724233827) do
 
   # These are extensions that must be enabled in order to support this database
   enable_extension "plpgsql"
@@ -50,7 +50,7 @@ ActiveRecord::Schema.define(version: 20170724021514) do
   create_table "reviews", force: :cascade do |t|
     t.integer "user_id",    null: false
     t.integer "trainer_id", null: false
-    t.float   "rating",     null: false
+    t.integer "rating",     null: false
     t.text    "body",       null: false
     t.index ["trainer_id"], name: "index_reviews_on_trainer_id", using: :btree
     t.index ["user_id"], name: "index_reviews_on_user_id", using: :btree

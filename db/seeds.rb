@@ -1,21 +1,9 @@
 #   movies = Movie.create([{ name: 'Star Wars' }, { name: 'Lord of the Rings' }])
 #   Character.create(name: 'Luke', movie: movies.first)
 
-User.create([
-  { email: 'guest@rolover.dog', password: 'woofbark' }
-  ])
-
 Dog.create([
   { user_id: 1, name: 'Ruby', age_year: 1, age_month: 3, weight: 30, breed: 'Shitzhu', sex: 'F' },
   { user_id: 1, name: 'Java', age_year: 3, weight: 15, breed: 'Maltize', sex: 'M' }
-  ])
-
-# Cesar Millan
-Trainer.create([
-  { name: 'Kelly', obedience: true, behavior: true, advanced: true, profile_quote: 'Y\'all good?', description: 'Hash Browns', price: 50, zip: 94109, city: 'San Francisco', state: 'California' },
-  { name: 'Hope', obedience: true, behavior: true, advanced: true, profile_quote: 'Corgis rock!', description: 'Love for Sir Toast<3', price: 45, zip: 94109, city: 'San Francisco', state: 'California' },
-  { name: 'David', obedience: true, behavior: false, advanced: false, profile_quote: 'Capybara David', description: 'I will take care of your dogs!!', price: 20, zip: 94109, city: 'San Francisco', state: 'California' },
-  { name: 'Aaron', obedience: true, behavior: true, advanced: false, profile_quote: 'Love for dogs', description: 'React is awesome', price: 20, zip: 94109, city: 'San Francisco', state: 'California' }
   ])
 
 Image.create([
@@ -40,3 +28,24 @@ Image.create([
   { trainer_id: 4, img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500676796/kaci-baum-114910_vn1y0k.jpg', img_type: 'main'},
   { trainer_id: 4, img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500614250/justin-veenema-156591_kw18s0.jpg', img_type: 'main'}
   ])
+
+  Review.create([
+    { user_id: 1, trainer_id: 1, rating: 5, body: "Kelly loves Hash Browns so much!!!"},
+    { user_id: 1, trainer_id: 2, rating: 5, body: "Hope loves Corgis so much!!!"},
+    { user_id: 1, trainer_id: 3, rating: 5, body: "David loves snacks so much!!!"},
+    { user_id: 1, trainer_id: 4, rating: 5, body: "Aaron loves dogs so much!!!"},
+    { user_id: 1, trainer_id: 1, rating: 4, body: "Looking forward to next training session!"},
+    { user_id: 1, trainer_id: 2, rating: 4, body: "My dog can roll over now. Thanks Hope:)"}    
+    ])
+
+  # Cesar Millan
+  Trainer.create([
+    { name: 'Kelly', obedience: true, behavior: true, advanced: true, profile_quote: 'Y\'all good?', description: 'Hash Browns', price: 50, zip: 94109, city: 'San Francisco', state: 'California' },
+    { name: 'Hope', obedience: true, behavior: true, advanced: true, profile_quote: 'Corgis rock!', description: 'Love for Sir Toast<3', price: 45, zip: 94109, city: 'San Francisco', state: 'California' },
+    { name: 'David', obedience: true, behavior: false, advanced: false, profile_quote: 'Capybara David', description: 'I will take care of your dogs!!', price: 20, zip: 94109, city: 'San Francisco', state: 'California' },
+    { name: 'Aaron', obedience: true, behavior: true, advanced: false, profile_quote: 'Love for dogs', description: 'React is awesome', price: 20, zip: 94109, city: 'San Francisco', state: 'California' }
+    ])
+
+  User.create([
+    { email: 'guest@rolover.dog', password: 'woofbark' }
+    ])
