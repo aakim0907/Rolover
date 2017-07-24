@@ -2,14 +2,13 @@
 #   Character.create(name: 'Luke', movie: movies.first)
 
 User.create([
-  { email: 'bob@gmail', password: '123456' }
+  { email: 'guest@rolover.dog', password: 'woofbark' }
   ])
 
 Dog.create([
   { user_id: 1, name: 'Ruby', age_year: 1, age_month: 3, weight: 30, breed: 'Shitzhu', sex: 'F' },
   { user_id: 1, name: 'Java', age_year: 3, weight: 15, breed: 'Maltize', sex: 'M' }
   ])
-
 
 # Cesar Millan
 Trainer.create([

@@ -47322,3 +47322,395 @@ Processing by Api::TrainersController#index as JSON
 Completed 200 OK in 41ms (Views: 30.7ms | ActiveRecord: 3.5ms)
 
 
+Started GET "/api/trainers/1" for 127.0.0.1 at 2017-07-24 16:31:30 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  Rendered api/trainers/show.json.jbuilder (5.9ms)
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.8ms)
+
+
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.9ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.3ms)[0m  [1m[34mSELECT "ar_internal_metadata"."value" FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1[0m  [["key", "environment"]]
+  [1m[35m (114.0ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Rolover_development"[0m
+  [1m[35m (113.1ms)[0m  [1m[35mDROP DATABASE IF EXISTS "Rolover_test"[0m
+  [1m[35m (364.4ms)[0m  [1m[35mCREATE DATABASE "Rolover_development" ENCODING = 'unicode'[0m
+  [1m[35m (272.0ms)[0m  [1m[35mCREATE DATABASE "Rolover_test" ENCODING = 'unicode'[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (93.7ms)[0m  [1m[35mCREATE TABLE "bookings" ("id" serial primary key, "user_id" integer NOT NULL, "dog_id" integer NOT NULL, "trainer_id" integer NOT NULL, "start_date" date NOT NULL, "end_date" date NOT NULL, "status" character varying DEFAULT 'PENDING' NOT NULL, "message" text NOT NULL, "training_type" character varying)[0m
+  [1m[35m (8.3ms)[0m  [1m[35mCREATE  INDEX  "index_bookings_on_dog_id" ON "bookings" USING btree ("dog_id")[0m
+  [1m[35m (41.3ms)[0m  [1m[35mCREATE  INDEX  "index_bookings_on_trainer_id" ON "bookings" USING btree ("trainer_id")[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE  INDEX  "index_bookings_on_user_id" ON "bookings" USING btree ("user_id")[0m
+  [1m[35m (56.8ms)[0m  [1m[35mCREATE TABLE "dogs" ("id" serial primary key, "user_id" integer NOT NULL, "name" character varying NOT NULL, "age_year" integer, "age_month" integer, "weight" integer NOT NULL, "breed" character varying NOT NULL, "sex" character varying NOT NULL)[0m
+  [1m[35m (43.8ms)[0m  [1m[35mCREATE  INDEX  "index_dogs_on_user_id" ON "dogs" USING btree ("user_id")[0m
+  [1m[35m (57.6ms)[0m  [1m[35mCREATE TABLE "images" ("id" serial primary key, "trainer_id" integer NOT NULL, "img_url" character varying NOT NULL, "img_type" character varying NOT NULL)[0m
+  [1m[35m (7.6ms)[0m  [1m[35mCREATE  INDEX  "index_images_on_trainer_id" ON "images" USING btree ("trainer_id")[0m
+  [1m[35m (50.8ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" serial primary key, "user_id" integer NOT NULL, "trainer_id" integer NOT NULL, "rating" float NOT NULL, "body" text NOT NULL)[0m
+  [1m[35m (8.1ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_trainer_id" ON "reviews" USING btree ("trainer_id")[0m
+  [1m[35m (49.7ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_user_id" ON "reviews" USING btree ("user_id")[0m
+  [1m[35m (57.9ms)[0m  [1m[35mCREATE TABLE "trainers" ("id" serial primary key, "name" character varying NOT NULL, "profile_quote" text NOT NULL, "description" text NOT NULL, "price" integer NOT NULL, "zip" integer NOT NULL, "city" character varying NOT NULL, "state" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "obedience" boolean NOT NULL, "behavior" boolean NOT NULL, "advanced" boolean NOT NULL)[0m
+  [1m[35m (5.8ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_advanced" ON "trainers" USING btree ("advanced")[0m
+  [1m[35m (47.6ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_behavior" ON "trainers" USING btree ("behavior")[0m
+  [1m[35m (7.8ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_obedience" ON "trainers" USING btree ("obedience")[0m
+  [1m[35m (54.4ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "profile_img_url" character varying DEFAULT 'http://res.cloudinary.com/rolover/image/upload/v1500672475/gray_logo_rnqfnk.png')[0m
+  [1m[35m (48.2ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (54.2ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.4ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (1.7ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170724021514)[0m
+  [1m[35m (1.5ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170718161549),
+(20170724013922),
+(20170719233939),
+(20170720214342),
+(20170724013726),
+(20170719233739),
+(20170719214549),
+(20170721213156),
+(20170718213131),
+(20170724013341),
+(20170721230207);
+
+[0m
+  [1m[35m (53.2ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (1.4ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.6ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (1.3ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-24 23:32:58.127867"], ["updated_at", "2017-07-24 23:32:58.127867"]]
+  [1m[35m (2.8ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.7ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[35mCREATE EXTENSION IF NOT EXISTS "plpgsql"[0m
+  [1m[35m (120.0ms)[0m  [1m[35mCREATE TABLE "bookings" ("id" serial primary key, "user_id" integer NOT NULL, "dog_id" integer NOT NULL, "trainer_id" integer NOT NULL, "start_date" date NOT NULL, "end_date" date NOT NULL, "status" character varying DEFAULT 'PENDING' NOT NULL, "message" text NOT NULL, "training_type" character varying)[0m
+  [1m[35m (7.2ms)[0m  [1m[35mCREATE  INDEX  "index_bookings_on_dog_id" ON "bookings" USING btree ("dog_id")[0m
+  [1m[35m (7.7ms)[0m  [1m[35mCREATE  INDEX  "index_bookings_on_trainer_id" ON "bookings" USING btree ("trainer_id")[0m
+  [1m[35m (9.1ms)[0m  [1m[35mCREATE  INDEX  "index_bookings_on_user_id" ON "bookings" USING btree ("user_id")[0m
+  [1m[35m (17.5ms)[0m  [1m[35mCREATE TABLE "dogs" ("id" serial primary key, "user_id" integer NOT NULL, "name" character varying NOT NULL, "age_year" integer, "age_month" integer, "weight" integer NOT NULL, "breed" character varying NOT NULL, "sex" character varying NOT NULL)[0m
+  [1m[35m (4.4ms)[0m  [1m[35mCREATE  INDEX  "index_dogs_on_user_id" ON "dogs" USING btree ("user_id")[0m
+  [1m[35m (12.7ms)[0m  [1m[35mCREATE TABLE "images" ("id" serial primary key, "trainer_id" integer NOT NULL, "img_url" character varying NOT NULL, "img_type" character varying NOT NULL)[0m
+  [1m[35m (5.4ms)[0m  [1m[35mCREATE  INDEX  "index_images_on_trainer_id" ON "images" USING btree ("trainer_id")[0m
+  [1m[35m (14.9ms)[0m  [1m[35mCREATE TABLE "reviews" ("id" serial primary key, "user_id" integer NOT NULL, "trainer_id" integer NOT NULL, "rating" float NOT NULL, "body" text NOT NULL)[0m
+  [1m[35m (7.5ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_trainer_id" ON "reviews" USING btree ("trainer_id")[0m
+  [1m[35m (6.3ms)[0m  [1m[35mCREATE  INDEX  "index_reviews_on_user_id" ON "reviews" USING btree ("user_id")[0m
+  [1m[35m (15.1ms)[0m  [1m[35mCREATE TABLE "trainers" ("id" serial primary key, "name" character varying NOT NULL, "profile_quote" text NOT NULL, "description" text NOT NULL, "price" integer NOT NULL, "zip" integer NOT NULL, "city" character varying NOT NULL, "state" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "obedience" boolean NOT NULL, "behavior" boolean NOT NULL, "advanced" boolean NOT NULL)[0m
+  [1m[35m (7.3ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_advanced" ON "trainers" USING btree ("advanced")[0m
+  [1m[35m (5.3ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_behavior" ON "trainers" USING btree ("behavior")[0m
+  [1m[35m (4.8ms)[0m  [1m[35mCREATE  INDEX  "index_trainers_on_obedience" ON "trainers" USING btree ("obedience")[0m
+  [1m[35m (12.5ms)[0m  [1m[35mCREATE TABLE "users" ("id" serial primary key, "email" character varying NOT NULL, "password_digest" character varying NOT NULL, "session_token" character varying NOT NULL, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL, "profile_img_url" character varying DEFAULT 'http://res.cloudinary.com/rolover/image/upload/v1500672475/gray_logo_rnqfnk.png')[0m
+  [1m[35m (6.4ms)[0m  [1m[35mCREATE UNIQUE INDEX  "index_users_on_email" ON "users" USING btree ("email")[0m
+  [1m[35m (8.9ms)[0m  [1m[35mCREATE TABLE "schema_migrations" ("version" character varying PRIMARY KEY)[0m
+  [1m[35m (0.6ms)[0m  [1m[34mSELECT version FROM "schema_migrations"[0m
+  [1m[35m (2.8ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES (20170724021514)[0m
+  [1m[35m (2.4ms)[0m  [1m[32mINSERT INTO "schema_migrations" (version) VALUES
+(20170718161549),
+(20170724013922),
+(20170719233939),
+(20170720214342),
+(20170724013726),
+(20170719233739),
+(20170719214549),
+(20170721213156),
+(20170718213131),
+(20170724013341),
+(20170721230207);
+
+[0m
+  [1m[35m (10.7ms)[0m  [1m[35mCREATE TABLE "ar_internal_metadata" ("key" character varying PRIMARY KEY, "value" character varying, "created_at" timestamp NOT NULL, "updated_at" timestamp NOT NULL)[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.5ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.5ms)[0m  [1m[32mINSERT INTO "ar_internal_metadata" ("key", "value", "created_at", "updated_at") VALUES ($1, $2, $3, $4) RETURNING "key"[0m  [["key", "environment"], ["value", "development"], ["created_at", "2017-07-24 23:32:58.536365"], ["updated_at", "2017-07-24 23:32:58.536365"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::InternalMetadata Load (0.3ms)[0m  [1m[34mSELECT  "ar_internal_metadata".* FROM "ar_internal_metadata" WHERE "ar_internal_metadata"."key" = $1 LIMIT $2[0m  [["key", "environment"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35m (0.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[36mActiveRecord::SchemaMigration Load (0.3ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.6ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@rolover.dog"], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "users" ("email", "password_digest", "session_token", "created_at", "updated_at") VALUES ($1, $2, $3, $4, $5) RETURNING "id"[0m  [["email", "guest@rolover.dog"], ["password_digest", "$2a$10$iW7HOcbh31JdzP.sDe8J.ekx2puC.SWdQ2pjAX047q0EFYJJc3PWS"], ["session_token", "JNK5TipfRrFDrIDeRGHbHQ"], ["created_at", "2017-07-24 23:32:58.658687"], ["updated_at", "2017-07-24 23:32:58.658687"]]
+  [1m[35m (1.2ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "dogs" ("user_id", "name", "age_year", "age_month", "weight", "breed", "sex") VALUES ($1, $2, $3, $4, $5, $6, $7) RETURNING "id"[0m  [["user_id", 1], ["name", "Ruby"], ["age_year", 1], ["age_month", 3], ["weight", 30], ["breed", "Shitzhu"], ["sex", "F"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "dogs" ("user_id", "name", "age_year", "weight", "breed", "sex") VALUES ($1, $2, $3, $4, $5, $6) RETURNING "id"[0m  [["user_id", 1], ["name", "Java"], ["age_year", 3], ["weight", 15], ["breed", "Maltize"], ["sex", "M"]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "profile_quote", "description", "price", "zip", "city", "state", "created_at", "updated_at", "obedience", "behavior", "advanced") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Kelly"], ["profile_quote", "Y'all good?"], ["description", "Hash Browns"], ["price", 50], ["zip", 94109], ["city", "San Francisco"], ["state", "California"], ["created_at", "2017-07-24 23:32:58.694210"], ["updated_at", "2017-07-24 23:32:58.694210"], ["obedience", "t"], ["behavior", "t"], ["advanced", "t"]]
+  [1m[35m (1.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "profile_quote", "description", "price", "zip", "city", "state", "created_at", "updated_at", "obedience", "behavior", "advanced") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Hope"], ["profile_quote", "Corgis rock!"], ["description", "Love for Sir Toast<3"], ["price", 45], ["zip", 94109], ["city", "San Francisco"], ["state", "California"], ["created_at", "2017-07-24 23:32:58.698493"], ["updated_at", "2017-07-24 23:32:58.698493"], ["obedience", "t"], ["behavior", "t"], ["advanced", "t"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "profile_quote", "description", "price", "zip", "city", "state", "created_at", "updated_at", "obedience", "behavior", "advanced") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "David"], ["profile_quote", "Capybara David"], ["description", "I will take care of your dogs!!"], ["price", 20], ["zip", 94109], ["city", "San Francisco"], ["state", "California"], ["created_at", "2017-07-24 23:32:58.703130"], ["updated_at", "2017-07-24 23:32:58.703130"], ["obedience", "t"], ["behavior", "f"], ["advanced", "f"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.4ms)[0m  [1m[32mINSERT INTO "trainers" ("name", "profile_quote", "description", "price", "zip", "city", "state", "created_at", "updated_at", "obedience", "behavior", "advanced") VALUES ($1, $2, $3, $4, $5, $6, $7, $8, $9, $10, $11, $12) RETURNING "id"[0m  [["name", "Aaron"], ["profile_quote", "Love for dogs"], ["description", "React is awesome"], ["price", 20], ["zip", 94109], ["city", "San Francisco"], ["state", "California"], ["created_at", "2017-07-24 23:32:58.707687"], ["updated_at", "2017-07-24 23:32:58.707687"], ["obedience", "t"], ["behavior", "t"], ["advanced", "f"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.6ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 1], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500615300/rebekah-howell-221666_pxgagf.jpg"], ["img_type", "profile"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 1], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676796/nick-turner-2570_cysug8.jpg"], ["img_type", "main"]]
+  [1m[35m (2.3ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.3ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 1], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676796/greg-rakozy-234360_lnidhq.jpg"], ["img_type", "main"]]
+  [1m[35m (2.4ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 1], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500615297/ross-sokolovski-167993_vmclu0.jpg"], ["img_type", "main"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 1], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500614239/dawid-sobolewski-285655_iauvhs.jpg"], ["img_type", "main"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 2], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500615274/hannah-busing-310503_dyj1vz.jpg"], ["img_type", "profile"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 2], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500615252/pete-bellis-217830_o7hl7o.jpg"], ["img_type", "main"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 2], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676791/alexander-dummer-117495_alnvz6.jpg"], ["img_type", "main"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 2], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676794/crew-56836_uxjhwt.jpg"], ["img_type", "main"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 2], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500615255/nicolas-tessari-218491_hswkzo.jpg"], ["img_type", "main"]]
+  [1m[35m (1.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 3], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500666134/hJLEzfh-1_p49exx.jpg"], ["img_type", "profile"]]
+  [1m[35m (1.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 3], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676798/pete-bellis-217145_wryecn.jpg"], ["img_type", "main"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 3], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676792/andrew-pons-9713_uhf06p.jpg"], ["img_type", "main"]]
+  [1m[35m (1.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 3], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676792/andrew-branch-123375_arltld.jpg"], ["img_type", "main"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 3], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676792/andy-omvik-295479_qi5fxn.jpg"], ["img_type", "main"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 4], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500615295/marvin-meyer-188676_wnyexr.jpg"], ["img_type", "profile"]]
+  [1m[35m (2.7ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 4], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676798/rachel-omnes-159038_nzxnte.jpg"], ["img_type", "main"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 4], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676795/leio-mclaren-299158_caimzl.jpg"], ["img_type", "main"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.7ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 4], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500676796/kaci-baum-114910_vn1y0k.jpg"], ["img_type", "main"]]
+  [1m[35m (2.6ms)[0m  [1m[35mCOMMIT[0m
+  [1m[35m (0.4ms)[0m  [1m[35mBEGIN[0m
+  [1m[35mSQL (0.8ms)[0m  [1m[32mINSERT INTO "images" ("trainer_id", "img_url", "img_type") VALUES ($1, $2, $3) RETURNING "id"[0m  [["trainer_id", 4], ["img_url", "http://res.cloudinary.com/rolover/image/upload/v1500614250/justin-veenema-156591_kw18s0.jpg"], ["img_type", "main"]]
+  [1m[35m (2.5ms)[0m  [1m[35mCOMMIT[0m
+Started GET "/" for 127.0.0.1 at 2017-07-24 16:33:06 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.5ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (998.8ms)
+Completed 200 OK in 1300ms (Views: 1299.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 16:33:17 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (23.0ms)
+Completed 200 OK in 80ms (Views: 75.4ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2017-07-24 16:33:22 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bob@gmail", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bob@gmail"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 14ms (Views: 0.2ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2017-07-24 16:33:23 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bob@gmail", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bob@gmail"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 8ms (Views: 0.9ms | ActiveRecord: 1.8ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2017-07-24 16:33:33 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"bob@gmail", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "bob@gmail"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 5ms (Views: 0.7ms | ActiveRecord: 1.0ms)
+
+
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT "users".* FROM "users"[0m
+Started GET "/" for 127.0.0.1 at 2017-07-24 16:34:38 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (11.7ms)
+Completed 200 OK in 514ms (Views: 512.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 16:34:42 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (19.4ms)
+Completed 200 OK in 95ms (Views: 91.3ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2017-07-24 16:34:46 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"guest@rolover.dog", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@rolover.dog"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 90ms (Views: 0.2ms | ActiveRecord: 4.0ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2017-07-24 16:34:57 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"guest@rolover.dog", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (4.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@rolover.dog"], ["LIMIT", 1]]
+Completed 401 Unauthorized in 132ms (Views: 0.2ms | ActiveRecord: 4.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 16:35:27 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (5.8ms)
+Completed 200 OK in 523ms (Views: 522.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 16:35:31 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (19.6ms)
+Completed 200 OK in 82ms (Views: 79.8ms | ActiveRecord: 0.0ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2017-07-24 16:35:34 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"guest@rolover.dog", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@rolover.dog"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "guest@rolover.dog"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "bvNVTSv9qzZ6Fs1uAYDBUw"], ["updated_at", "2017-07-24 23:35:34.555470"], ["id", 1]]
+  [1m[35m (4.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (12.5ms)
+  [1m[36mDog Load (0.4ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/show.json.jbuilder (35.0ms)
+Completed 200 OK in 148ms (Views: 33.1ms | ActiveRecord: 10.8ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2017-07-24 16:35:38 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "bvNVTSv9qzZ6Fs1uAYDBUw"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.8ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "guest@rolover.dog"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "Kn-weNZ9EYDR-WsS-GETzg"], ["updated_at", "2017-07-24 23:35:38.173728"], ["id", 1]]
+  [1m[35m (5.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  [1m[36mDog Load (0.5ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/show.json.jbuilder (4.8ms)
+Completed 200 OK in 30ms (Views: 6.7ms | ActiveRecord: 9.1ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2017-07-24 16:35:40 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"guest@rolover.dog", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@rolover.dog"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.5ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "guest@rolover.dog"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.5ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "91oQ094Qn9f7xWK9mbDe-A"], ["updated_at", "2017-07-24 23:35:40.350603"], ["id", 1]]
+  [1m[35m (5.4ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.6ms)
+  [1m[36mDog Load (0.4ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/show.json.jbuilder (4.7ms)
+Completed 200 OK in 152ms (Views: 6.3ms | ActiveRecord: 8.3ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2017-07-24 16:35:41 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "91oQ094Qn9f7xWK9mbDe-A"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.7ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "guest@rolover.dog"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.7ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "RqKmKgSETW4LQ_xTdGpZJw"], ["updated_at", "2017-07-24 23:35:41.653249"], ["id", 1]]
+  [1m[35m (5.5ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  [1m[36mDog Load (0.4ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/show.json.jbuilder (4.2ms)
+Completed 200 OK in 27ms (Views: 6.2ms | ActiveRecord: 8.3ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2017-07-24 16:35:43 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"guest@rolover.dog", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@rolover.dog"], ["LIMIT", 1]]
+  [1m[35m (0.3ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "guest@rolover.dog"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "eng1znkhT4oWaXGLFD2O2w"], ["updated_at", "2017-07-24 23:35:43.467951"], ["id", 1]]
+  [1m[35m (5.1ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.5ms)
+  [1m[36mDog Load (0.3ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/show.json.jbuilder (3.5ms)
+Completed 200 OK in 134ms (Views: 4.9ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 16:35:46 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (5.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eng1znkhT4oWaXGLFD2O2w"], ["LIMIT", 1]]
+  [1m[36mDog Load (2.3ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (8.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (31.7ms)
+Completed 200 OK in 79ms (Views: 67.1ms | ActiveRecord: 8.1ms)
+
+
+Started GET "/api/trainers" for 127.0.0.1 at 2017-07-24 16:35:49 -0700
+Processing by Api::TrainersController#index as JSON
+  Rendering api/trainers/index.json.jbuilder
+  [1m[36mTrainer Load (0.7ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers"[0m
+  Rendered api/trainers/_trainer.json.jbuilder (5.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 3]]
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 4]]
+  Rendered api/trainers/index.json.jbuilder (46.0ms)
+Completed 200 OK in 54ms (Views: 39.8ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/api/trainers?search%5Bobedience%5D=false&search%5Bbehavior%5D=false&search%5Badvanced%5D=true" for 127.0.0.1 at 2017-07-24 16:35:51 -0700
+Processing by Api::TrainersController#index as JSON
+  Parameters: {"search"=>{"obedience"=>"false", "behavior"=>"false", "advanced"=>"true"}}
+  [1m[36mTrainer Load (0.9ms)[0m  [1m[34mSELECT "trainers".* FROM "trainers" WHERE (advanced)[0m
+  Rendering api/trainers/index.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  Rendered api/trainers/_trainer.json.jbuilder (0.2ms)
+  [1m[36mImage Load (1.0ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/index.json.jbuilder (11.0ms)
+Completed 200 OK in 17ms (Views: 12.0ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/api/trainers/1" for 127.0.0.1 at 2017-07-24 16:35:53 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrainer Load (0.7ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  [1m[36mImage Load (0.8ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  Rendered api/trainers/show.json.jbuilder (9.0ms)
+Completed 200 OK in 16ms (Views: 11.1ms | ActiveRecord: 1.5ms)
+
+

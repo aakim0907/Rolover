@@ -46015,7 +46015,7 @@ var Greeting = function (_React$Component) {
     key: 'handleDemoClick',
     value: function handleDemoClick(e) {
       e.preventDefault();
-      this.props.login({ email: "bob@gmail", password: "123456" });
+      this.props.login({ email: "guest@rolover.dog", password: "woofbark" });
     }
   }, {
     key: 'render',
@@ -46140,7 +46140,7 @@ var SessionForm = function (_React$Component) {
     key: 'handleDemoClick',
     value: function handleDemoClick(e) {
       e.preventDefault();
-      this.props.login({ email: 'bob@gmail', password: '123456' });
+      this.props.login({ email: 'guest@rolover.dog', password: 'woofbark' });
     }
   }, {
     key: 'renderRedirect',

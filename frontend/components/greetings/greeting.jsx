@@ -13,7 +13,7 @@ class Greeting extends React.Component {
 
   handleDemoClick(e) {
     e.preventDefault();
-    this.props.login({email: "bob@gmail", password: "123456"});
+    this.props.login({email: "guest@rolover.dog", password: "woofbark"});
   }
 
   render() {
