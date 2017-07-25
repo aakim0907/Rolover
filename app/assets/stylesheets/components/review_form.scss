@@ -1,12 +1,17 @@
 .review-form-container {
   border: 1px solid $light-green;
   display: flex;
-  // width: 70%;
   width: 680px;
   padding: 10px;
 
   form {
     display: flex;
+  }
+
+  p {
+    color: $gray;
+    margin-top: 10px;
+    padding-left: 7px;
   }
 }
 

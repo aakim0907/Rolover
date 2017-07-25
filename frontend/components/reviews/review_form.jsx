@@ -49,40 +49,48 @@ class ReviewForm extends React.Component {
 
   render() {
 
-    return (
-      <div className='review-form-container'>
-        <form onSubmit={this.handleSubmit}>
-          <div className='review-form-container-1'>
-            <div className='review-form-rating'>
-              <label>Rating
-                <input type='radio' id='rate1' onChange={this.update('rating')} value='1' />
-                <input type='radio' id='rate2' onChange={this.update('rating')} value='2' />
-                <input type='radio' id='rate3' onChange={this.update('rating')} value='3' />
-                <input type='radio' id='rate4' onChange={this.update('rating')} value='4' />
-                <input type='radio' id='rate5' onChange={this.update('rating')} value='5' />
-              </label>
+    if ( this.props.currentUser ) {
+      return (
+        <div className='review-form-container'>
+          <form onSubmit={this.handleSubmit}>
+            <div className='review-form-container-1'>
+              <div className='review-form-rating'>
+                <label>Rating
+                  <input type='radio' id='rate1' onChange={this.update('rating')} value='1' />
+                  <input type='radio' id='rate2' onChange={this.update('rating')} value='2' />
+                  <input type='radio' id='rate3' onChange={this.update('rating')} value='3' />
+                  <input type='radio' id='rate4' onChange={this.update('rating')} value='4' />
+                  <input type='radio' id='rate5' onChange={this.update('rating')} value='5' />
+                </label>
+              </div>
+
+              <div className='review-form-body'>
+                <label>Review
+                  <br/>
+                  <textarea
+                    rows='2'
+                    cols='55'
+                    value={this.state.body}
+                    onChange={this.update('body')}
+                    className='review-input'
+                    ></textarea>
+                </label>
+              </div>
             </div>
 
-            <div className='review-form-body'>
-              <label>Review
-                <br/>
-                <textarea
-                  rows='2'
-                  cols='55'
-                  value={this.state.body}
-                  onChange={this.update('body')}
-                  className='review-input'
-                  ></textarea>
-              </label>
+            <div className='review-form-container-2'>
+              <input type='submit' className='btn green' value='Submit' />
             </div>
-          </div>
-
-          <div className='review-form-container-2'>
-            <input type='submit' className='btn green' value='Submit' />
-          </div>
-        </form>
-      </div>
-    );
+          </form>
+        </div>
+      );
+    } else {
+      return (
+        <div className='review-form-container'>
+          <p>( Log in to leave a review )</p>
+        </div>
+      );
+    }
   }
 }
 
