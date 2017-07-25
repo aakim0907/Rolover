@@ -47921,7 +47921,9 @@ var TrainerDetail = function (_React$Component) {
                   'p',
                   null,
                   trainer.rating,
-                  ' ratings, 12 reviews'
+                  ' ratings, ',
+                  trainer.review_count,
+                  ' reviews'
                 )
               ),
               _react2.default.createElement(

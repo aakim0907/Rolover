@@ -19,4 +19,8 @@ class Trainer < ApplicationRecord
     reviews.each { |review| reviewTotal += review.rating }
     reviewTotal.to_f / reviews.count
   end
+
+  def review_count
+    reviews.count
+  end
 end
