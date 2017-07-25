@@ -10,8 +10,6 @@ const NavBar = () => (
             <img src={ window.images.rolover } alt="Rolover Logo"/>
           </Link>
         </div>
-
-        <Link to="/trainers">trainers</Link>
       </div>
 
       <nav className="right-nav">
