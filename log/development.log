@@ -58962,3 +58962,198 @@ Processing by Api::ReviewsController#create as JSON
 Completed 422 Unprocessable Entity in 13ms (Views: 0.2ms | ActiveRecord: 1.1ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-07-25 11:29:14 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "c684wamGbE6MV0UTubwN8w"], ["LIMIT", 1]]
+  [1m[36mDog Load (0.4ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (17.1ms)
+  Rendered static_pages/root.html.erb within layouts/application (43.4ms)
+Completed 200 OK in 224ms (Views: 215.1ms | ActiveRecord: 7.5ms)
+
+
+Started GET "/api/trainers/2" for 127.0.0.1 at 2017-07-25 11:29:16 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (7.1ms)
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/show.json.jbuilder (22.3ms)
+Completed 200 OK in 54ms (Views: 24.7ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/trainers/2/reviews" for 127.0.0.1 at 2017-07-25 11:29:16 -0700
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"trainer_id"=>"2"}
+  [1m[36mTrainer Load (4.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (18.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (3.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (2.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (2.0ms)
+  Rendered api/reviews/index.json.jbuilder (47.8ms)
+Completed 200 OK in 69ms (Views: 50.0ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-25 11:29:24 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.8ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "c684wamGbE6MV0UTubwN8w"], ["LIMIT", 1]]
+  [1m[36mDog Load (2.4ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (8.7ms)
+  Rendered static_pages/root.html.erb within layouts/application (27.9ms)
+Completed 200 OK in 230ms (Views: 220.5ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/api/trainers/2" for 127.0.0.1 at 2017-07-25 11:29:25 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (1.1ms)
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/show.json.jbuilder (5.3ms)
+Completed 200 OK in 10ms (Views: 7.6ms | ActiveRecord: 0.5ms)
+
+
+Started GET "/api/trainers/2/reviews" for 127.0.0.1 at 2017-07-25 11:29:26 -0700
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"trainer_id"=>"2"}
+  [1m[36mTrainer Load (0.5ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  [1m[36mUser Load (1.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (3.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (1.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (1.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (1.8ms)
+  Rendered api/reviews/index.json.jbuilder (18.2ms)
+Completed 200 OK in 24ms (Views: 19.5ms | ActiveRecord: 2.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-25 11:29:50 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "c684wamGbE6MV0UTubwN8w"], ["LIMIT", 1]]
+  [1m[36mDog Load (0.6ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (6.3ms)
+  Rendered static_pages/root.html.erb within layouts/application (22.4ms)
+Completed 200 OK in 197ms (Views: 192.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/trainers/2" for 127.0.0.1 at 2017-07-25 11:29:51 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrainer Load (0.5ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (0.9ms)
+  [1m[36mImage Load (1.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/show.json.jbuilder (8.9ms)
+Completed 200 OK in 14ms (Views: 10.7ms | ActiveRecord: 1.7ms)
+
+
+Started GET "/api/trainers/2/reviews" for 127.0.0.1 at 2017-07-25 11:29:52 -0700
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"trainer_id"=>"2"}
+  [1m[36mTrainer Load (0.5ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (1.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (2.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (1.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (3.2ms)
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (3.3ms)
+  Rendered api/reviews/index.json.jbuilder (22.8ms)
+Completed 200 OK in 30ms (Views: 24.0ms | ActiveRecord: 2.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-25 11:29:57 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "c684wamGbE6MV0UTubwN8w"], ["LIMIT", 1]]
+  [1m[36mDog Load (1.0ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (12.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (43.0ms)
+Completed 200 OK in 265ms (Views: 259.2ms | ActiveRecord: 2.1ms)
+
+
+Started GET "/api/trainers/2" for 127.0.0.1 at 2017-07-25 11:29:57 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/show.json.jbuilder (10.8ms)
+Completed 200 OK in 20ms (Views: 17.0ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/trainers/2/reviews" for 127.0.0.1 at 2017-07-25 11:29:57 -0700
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"trainer_id"=>"2"}
+  [1m[36mTrainer Load (0.5ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (4.6ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (4.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (2.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (2.7ms)
+  Rendered api/reviews/index.json.jbuilder (24.5ms)
+Completed 200 OK in 30ms (Views: 26.1ms | ActiveRecord: 1.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-25 11:30:03 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "c684wamGbE6MV0UTubwN8w"], ["LIMIT", 1]]
+  [1m[36mDog Load (0.9ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (12.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (42.1ms)
+Completed 200 OK in 222ms (Views: 216.8ms | ActiveRecord: 2.0ms)
+
+
+Started GET "/api/trainers/2" for 127.0.0.1 at 2017-07-25 11:30:04 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (1.5ms)
+  [1m[36mImage Load (2.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/show.json.jbuilder (8.9ms)
+Completed 200 OK in 14ms (Views: 9.2ms | ActiveRecord: 2.7ms)
+
+
+Started GET "/api/trainers/2/reviews" for 127.0.0.1 at 2017-07-25 11:30:04 -0700
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"trainer_id"=>"2"}
+  [1m[36mTrainer Load (0.7ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  [1m[36mUser Load (4.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (10.4ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (2.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (2.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (6.5ms)
+  Rendered api/reviews/index.json.jbuilder (31.5ms)
+Completed 200 OK in 39ms (Views: 30.6ms | ActiveRecord: 5.6ms)
+
+

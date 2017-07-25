@@ -28,7 +28,6 @@ class TrainerDetail extends React.Component {
     return (
       <div className='trainer-detail-container'>
         <div className='trainer-header'>
-          <div className='trainer-header-1'></div>
 
           <div className='trainer-header-2'>
 
@@ -69,7 +68,6 @@ class TrainerDetail extends React.Component {
             </div>
           </div>
 
-          <div className='trainer-header-3'></div>
         </div>
 
         <div className='trainer-detail-body'>

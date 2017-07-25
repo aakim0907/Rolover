@@ -12,15 +12,12 @@
   flex-wrap: wrap;
 }
 
-.trainer-header-1, .trainer-header-3 {
-  display: flex;
-  flex: 1;
-}
-
 .trainer-header-2 {
   display: flex;
   flex-wrap: wrap;
-  flex: 2;
+  margin: auto;
+  width: 900px;
+  height: 100%;
   background-color: $white;
 }
 
