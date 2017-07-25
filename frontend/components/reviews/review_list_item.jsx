@@ -19,6 +19,10 @@ const ReviewListItem = ({ review }) => {
       </div>
 
       <div className='review-item-2'>
+        <p>{review.rating}</p>
+      </div>
+
+      <div className='review-item-3'>
         <p>{review.body}</p>
       </div>
     </div>

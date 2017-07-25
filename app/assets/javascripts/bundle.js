@@ -48168,6 +48168,15 @@ var ReviewListItem = function ReviewListItem(_ref) {
       _react2.default.createElement(
         'p',
         null,
+        review.rating
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'review-item-3' },
+      _react2.default.createElement(
+        'p',
+        null,
         review.body
       )
     )
