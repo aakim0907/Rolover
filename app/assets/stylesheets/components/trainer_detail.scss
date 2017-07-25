@@ -9,24 +9,23 @@
   width: 100%;
   height: 600px;
   margin-top: 35px;
-  flex-wrap: wrap;
 }
 
-.trainer-header-2 {
+.trainer-header-box {
   display: flex;
   flex-wrap: wrap;
   margin: auto;
-  width: 900px;
+  width: 890px;
   height: 100%;
   background-color: $white;
 }
 
-.trainer-header-2-1 {
+.trainer-header-box-1 {
   display: flex;
   flex: 2.3;
 }
 
-.trainer-header-2-2 {
+.trainer-header-box-2 {
   display: flex;
   flex: 1;
   flex-wrap: wrap;

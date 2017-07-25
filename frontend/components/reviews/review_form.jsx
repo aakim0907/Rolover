@@ -73,7 +73,7 @@ class ReviewForm extends React.Component {
               <label>Review
                 <br/>
                 <textarea
-                  rows='3'
+                  rows='2'
                   cols='55'
                   value={this.state.body}
                   onChange={this.update('body')}

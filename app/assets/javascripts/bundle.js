@@ -47868,18 +47868,17 @@ var TrainerDetail = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'trainer-header' },
-          _react2.default.createElement('div', { className: 'trainer-header-1' }),
           _react2.default.createElement(
             'div',
-            { className: 'trainer-header-2' },
+            { className: 'trainer-header-box' },
             _react2.default.createElement(
               'div',
-              { className: 'trainer-header-2-1' },
+              { className: 'trainer-header-box-1' },
               _react2.default.createElement('img', { src: 'http://res.cloudinary.com/rolover/image/upload/v1500614239/dawid-sobolewski-285655_iauvhs.jpg' })
             ),
             _react2.default.createElement(
               'div',
-              { className: 'trainer-header-2-2' },
+              { className: 'trainer-header-box-2' },
               _react2.default.createElement(
                 'div',
                 { className: 'th-profile' },
@@ -47954,8 +47953,7 @@ var TrainerDetail = function (_React$Component) {
                 )
               )
             )
-          ),
-          _react2.default.createElement('div', { className: 'trainer-header-3' })
+          )
         ),
         _react2.default.createElement(
           'div',
@@ -48388,7 +48386,7 @@ var ReviewForm = function (_React$Component) {
                 'Review',
                 _react2.default.createElement('br', null),
                 _react2.default.createElement('textarea', {
-                  rows: '3',
+                  rows: '2',
                   cols: '55',
                   value: this.state.body,
                   onChange: this.update('body'),

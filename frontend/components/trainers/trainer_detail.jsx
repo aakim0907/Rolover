@@ -28,14 +28,13 @@ class TrainerDetail extends React.Component {
     return (
       <div className='trainer-detail-container'>
         <div className='trainer-header'>
+          <div className='trainer-header-box'>
 
-          <div className='trainer-header-2'>
-
-            <div className='trainer-header-2-1'>
+            <div className='trainer-header-box-1'>
               <img src='http://res.cloudinary.com/rolover/image/upload/v1500614239/dawid-sobolewski-285655_iauvhs.jpg'/>
             </div>
 
-            <div className='trainer-header-2-2'>
+            <div className='trainer-header-box-2'>
               <div className='th-profile'>
                 <div className='th-profile-img'>
                   <img src={profile.img_url} />
