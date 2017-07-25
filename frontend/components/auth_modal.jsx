@@ -40,6 +40,7 @@ class AuthModal extends React.Component {
   }
 
   closeModal() {
+    this.props.clearErrors();
     this.setState({ modalIsOpen: false });
   }
 

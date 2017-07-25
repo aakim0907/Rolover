@@ -6,7 +6,7 @@ const ReviewListItem = ({ review }) => {
     <div className='review-list-item'>
       <div className='review-item-1'>
         <div className='review-item-1-1'>
-          <img src={review.user.profile_img_url} className='review-profile'/>
+          <img src={review.user.profile} className='review-profile'/>
         </div>
         <div className='review-item-1-2'>
           <div className='review-item-1-2-name'>

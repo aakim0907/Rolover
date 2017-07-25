@@ -29706,6 +29706,7 @@ var AuthModal = function (_React$Component) {
   }, {
     key: 'closeModal',
     value: function closeModal() {
+      this.props.clearErrors();
       this.setState({ modalIsOpen: false });
     }
   }, {
@@ -46095,6 +46096,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     login: function login(user) {
       return dispatch((0, _session_actions.login)(user));
+    },
+    clearErrors: function clearErrors() {
+      return dispatch((0, _session_actions.clearErrors)());
     }
   };
 };
@@ -46173,7 +46177,7 @@ var Greeting = function (_React$Component) {
             { className: 'demo', onClick: _this2.handleDemoClick },
             'Demo Account'
           ),
-          _react2.default.createElement(_auth_modal2.default, null)
+          _react2.default.createElement(_auth_modal2.default, { clearErrors: _this2.props.clearErrors })
         );
       };
 
@@ -48131,7 +48135,7 @@ var ReviewListItem = function ReviewListItem(_ref) {
       _react2.default.createElement(
         'div',
         { className: 'review-item-1-1' },
-        _react2.default.createElement('img', { src: review.user.profile_img_url, className: 'review-profile' })
+        _react2.default.createElement('img', { src: review.user.profile, className: 'review-profile' })
       ),
       _react2.default.createElement(
         'div',
