@@ -47444,12 +47444,16 @@ exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.selectAllTrainers = undefined;
+exports.selectAllReviews = exports.selectAllTrainers = undefined;
 
 var _lodash = __webpack_require__(42);
 
 var selectAllTrainers = exports.selectAllTrainers = function selectAllTrainers(trainers) {
   return (0, _lodash.values)(trainers);
+};
+
+var selectAllReviews = exports.selectAllReviews = function selectAllReviews(reviews) {
+  return (0, _lodash.values)(reviews);
 };
 
 /***/ }),
@@ -47727,6 +47731,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(12);
 
+var _review_container = __webpack_require__(305);
+
+var _review_container2 = _interopRequireDefault(_review_container);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -47737,9 +47745,7 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 
 // import renderStars from '../helper/star';
 
-// should have review & booking container!!!
 //trainer.images.filter(img => img.img_type === 'main')
-
 var TrainerDetail = function (_React$Component) {
   _inherits(TrainerDetail, _React$Component);
 
@@ -47869,7 +47875,8 @@ var TrainerDetail = function (_React$Component) {
               trainer.description
             )
           )
-        )
+        ),
+        _react2.default.createElement(_review_container2.default, { currentTrainer: trainer.id })
       );
     }
   }]);
@@ -48041,6 +48048,127 @@ var createReview = exports.createReview = function createReview(review) {
     data: { review: review }
   });
 };
+
+/***/ }),
+/* 305 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(20);
+
+var _selectors = __webpack_require__(296);
+
+var _review_actions = __webpack_require__(303);
+
+var _review_list = __webpack_require__(306);
+
+var _review_list2 = _interopRequireDefault(_review_list);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(_ref) {
+  var reviews = _ref.reviews;
+  return {
+    reviews: (0, _selectors.selectAllReviews)(reviews)
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    fetchReviews: function fetchReviews(id) {
+      return dispatch((0, _review_actions.fetchReviews)(id));
+    },
+    createReview: function createReview(review) {
+      return dispatch((0, _review_actions.createReview)(review));
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_review_list2.default);
+
+/***/ }),
+/* 306 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(12);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ReviewList = function (_React$Component) {
+  _inherits(ReviewList, _React$Component);
+
+  function ReviewList() {
+    _classCallCheck(this, ReviewList);
+
+    return _possibleConstructorReturn(this, (ReviewList.__proto__ || Object.getPrototypeOf(ReviewList)).apply(this, arguments));
+  }
+
+  _createClass(ReviewList, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.props.fetchReviews(this.props.currentTrainer);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var reviews = this.props.reviews;
+
+
+      if (reviews.length === 0) {
+        return _react2.default.createElement(
+          'div',
+          null,
+          'No Reviews yet'
+        );
+      } else {
+        return _react2.default.createElement(
+          'div',
+          { className: 'review-container' },
+          reviews.map(function (review) {
+            return _react2.default.createElement(
+              'div',
+              { key: review.id },
+              review.body
+            );
+          })
+        );
+      }
+    }
+  }]);
+
+  return ReviewList;
+}(_react2.default.Component);
+
+exports.default = ReviewList;
+
+// { reviews.map(review => (
+//   <ReviewListItem review={review} />
+// ))}
 
 /***/ })
 /******/ ]);

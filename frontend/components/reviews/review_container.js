@@ -1,18 +1,19 @@
 import { connect } from 'react-redux';
 
-import { selectAllTrainers } from '../../reducers/selectors';
-import { fetchTrainers } from '../../actions/trainer_actions';
-import TrainerList from './trainer_list';
+import { selectAllReviews } from '../../reducers/selectors';
+import { fetchReviews, createReview } from '../../actions/review_actions';
+import ReviewList from './review_list';
 
-const mapStateToProps = ({ trainers }) => ({
-  trainers: selectAllTrainers(trainers)
+const mapStateToProps = ({ reviews }) => ({
+  reviews: selectAllReviews(reviews)
 });
 
 const mapDispatchToProps = dispatch => ({
-  fetchTrainers: () => dispatch(fetchTrainers())
+  fetchReviews: id => dispatch(fetchReviews(id)),
+  createReview: review => dispatch(createReview(review))
 });
 
 export default connect(
   mapStateToProps,
   mapDispatchToProps
-)(TrainerList);
+)(ReviewList);

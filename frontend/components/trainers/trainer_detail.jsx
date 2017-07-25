@@ -1,10 +1,10 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
+
+import ReviewContainer from '../reviews/review_container';
 // import renderStars from '../helper/star';
 
-// should have review & booking container!!!
 //trainer.images.filter(img => img.img_type === 'main')
-
 class TrainerDetail extends React.Component {
   componentDidMount() {
     this.props.fetchTrainer(this.props.match.params.id);
@@ -73,6 +73,8 @@ class TrainerDetail extends React.Component {
             <p>{trainer.description}</p>
           </div>
         </div>
+
+        <ReviewContainer currentTrainer={trainer.id}/>
       </div>
     );
   }
