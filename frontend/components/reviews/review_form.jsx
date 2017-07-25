@@ -8,7 +8,6 @@ class ReviewForm extends React.Component {
     super(props);
 
     const { currentUser } = this.props;
-    console.log(currentUser);
     if ( currentUser ) {
       this.state = { user_id: currentUser.id, trainer_id: this.props.currentTrainerId, rating: '', body: '' };
     } else {
@@ -48,11 +47,6 @@ class ReviewForm extends React.Component {
   //   );
   // }
 
-  // <input type='text'
-  //   value={this.state.rating}
-  //   onChange={this.update('rating')}
-  //   className='review-input'
-  //   />
   render() {
 
     return (

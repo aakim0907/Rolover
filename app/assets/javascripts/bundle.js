@@ -48298,7 +48298,6 @@ var ReviewForm = function (_React$Component) {
 
     var currentUser = _this.props.currentUser;
 
-    console.log(currentUser);
     if (currentUser) {
       _this.state = { user_id: currentUser.id, trainer_id: _this.props.currentTrainerId, rating: '', body: '' };
     } else {
@@ -48343,12 +48342,6 @@ var ReviewForm = function (_React$Component) {
     //     </ul>
     //   );
     // }
-
-    // <input type='text'
-    //   value={this.state.rating}
-    //   onChange={this.update('rating')}
-    //   className='review-input'
-    //   />
 
   }, {
     key: 'render',
