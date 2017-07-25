@@ -5,17 +5,10 @@ export const fetchReviews = trainerId => (
   })
 );
 
-export const fetchReview = (trainerId, reviewId) => (
-  $.ajax({
-    method: 'GET',
-    url: `/api/trainers/${trainerId}/reviews/${reviewId}`,
-  })
-);
-
-export const createReview = (trainerId, review) => (
+export const createReview = review => (
   $.ajax({
     method: 'POST',
-    url: `api/trainers/${trainerId}/reviews`,
+    url: `api/trainers/${review.trainer_id}/reviews`,
     data: { review }
   })
 );

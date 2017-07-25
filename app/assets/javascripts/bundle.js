@@ -47975,7 +47975,7 @@ exports.default = reviewReducer;
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.createReview = exports.fetchReview = exports.fetchReviews = exports.receiveReview = exports.receiveReviews = exports.RECEIVE_REVIEW = exports.RECEIVE_REVIEWS = undefined;
+exports.createReview = exports.fetchReviews = exports.receiveReview = exports.receiveReviews = exports.RECEIVE_REVIEW = exports.RECEIVE_REVIEWS = undefined;
 
 var _review_api_util = __webpack_require__(304);
 
@@ -48010,17 +48010,9 @@ var fetchReviews = exports.fetchReviews = function fetchReviews(trainerId) {
   };
 };
 
-var fetchReview = exports.fetchReview = function fetchReview(trainerId, reviewId) {
+var createReview = exports.createReview = function createReview(review) {
   return function (dispatch) {
-    return APIUtil.fetchReview(trainerId, reviewId).then(function (review) {
-      return dispatch(receiveReview(review));
-    });
-  };
-};
-
-var createReview = exports.createReview = function createReview(trainerId, review) {
-  return function (dispatch) {
-    return APIUtil.createReview(trainerId, review).then(function (newReview) {
+    return APIUtil.createReview(review).then(function (newReview) {
       return dispatch(receiveReview(newReview));
     });
   };
@@ -48043,17 +48035,10 @@ var fetchReviews = exports.fetchReviews = function fetchReviews(trainerId) {
   });
 };
 
-var fetchReview = exports.fetchReview = function fetchReview(trainerId, reviewId) {
-  return $.ajax({
-    method: 'GET',
-    url: '/api/trainers/' + trainerId + '/reviews/' + reviewId
-  });
-};
-
-var createReview = exports.createReview = function createReview(trainerId, review) {
+var createReview = exports.createReview = function createReview(review) {
   return $.ajax({
     method: 'POST',
-    url: 'api/trainers/' + trainerId + '/reviews',
+    url: 'api/trainers/' + review.trainer_id + '/reviews',
     data: { review: review }
   });
 };

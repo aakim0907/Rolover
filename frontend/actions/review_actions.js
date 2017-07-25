@@ -22,14 +22,8 @@ export const fetchReviews = trainerId => dispatch => (
   )
 );
 
-export const fetchReview = (trainerId, reviewId) => dispatch => (
-  APIUtil.fetchReview(trainerId, reviewId).then(
-    review => (dispatch(receiveReview(review)))
-  )
-);
-
-export const createReview = (trainerId, review) => dispatch => (
-  APIUtil.createReview(trainerId, review).then(
+export const createReview = review => dispatch => (
+  APIUtil.createReview(review).then(
     newReview => (dispatch(receiveReview(newReview)))
   )
 );

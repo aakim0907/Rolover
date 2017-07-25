@@ -47958,3 +47958,106 @@ Processing by Api::TrainersController#show as JSON
 Completed 200 OK in 15ms (Views: 7.5ms | ActiveRecord: 4.3ms)
 
 
+Started GET "/" for 127.0.0.1 at 2017-07-24 17:12:04 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (3.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eng1znkhT4oWaXGLFD2O2w"], ["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 535ms (Views: 528.4ms | ActiveRecord: 3.4ms)
+
+
+Started GET "/api/trainers/1" for 127.0.0.1 at 2017-07-24 17:12:06 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  Rendered api/trainers/show.json.jbuilder (8.0ms)
+Completed 200 OK in 15ms (Views: 12.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 17:12:11 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "eng1znkhT4oWaXGLFD2O2w"], ["LIMIT", 1]]
+  Rendered static_pages/root.html.erb within layouts/application (12.5ms)
+Completed 200 OK in 35ms (Views: 30.7ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/trainers/1" for 127.0.0.1 at 2017-07-24 17:12:12 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (0.6ms)
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  Rendered api/trainers/show.json.jbuilder (4.2ms)
+Completed 200 OK in 9ms (Views: 6.1ms | ActiveRecord: 0.7ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2017-07-24 17:18:56 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"guest@rolover.dog", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@rolover.dog"], ["LIMIT", 1]]
+  [1m[35m (0.2ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "guest@rolover.dog"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "kfsy3FMv3YMIB6dAd3Oz4g"], ["updated_at", "2017-07-25 00:18:56.114326"], ["id", 1]]
+  [1m[35m (4.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (12.8ms)
+  [1m[36mDog Load (0.3ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/show.json.jbuilder (29.9ms)
+Completed 200 OK in 146ms (Views: 29.9ms | ActiveRecord: 10.2ms)
+
+
+Started DELETE "/api/session" for 127.0.0.1 at 2017-07-24 17:18:58 -0700
+Processing by Api::SessionsController#destroy as JSON
+  [1m[36mUser Load (0.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "kfsy3FMv3YMIB6dAd3Oz4g"], ["LIMIT", 1]]
+  [1m[35m (0.5ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.9ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "guest@rolover.dog"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.6ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "cTeA4cGi3EOcel8p6PLIiA"], ["updated_at", "2017-07-25 00:18:58.789537"], ["id", 1]]
+  [1m[35m (5.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (1.0ms)
+  [1m[36mDog Load (0.4ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/show.json.jbuilder (5.6ms)
+Completed 200 OK in 34ms (Views: 8.5ms | ActiveRecord: 8.1ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2017-07-24 17:19:00 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"guest@rolover.dog", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@rolover.dog"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.4ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "guest@rolover.dog"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.4ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "HsObibq2JYX6nYcFfjogfA"], ["updated_at", "2017-07-25 00:19:00.829839"], ["id", 1]]
+  [1m[35m (4.0ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (0.7ms)
+  [1m[36mDog Load (0.2ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/show.json.jbuilder (3.7ms)
+Completed 200 OK in 111ms (Views: 5.8ms | ActiveRecord: 5.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-24 17:23:20 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (2.7ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "HsObibq2JYX6nYcFfjogfA"], ["LIMIT", 1]]
+  [1m[36mDog Load (0.9ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (10.4ms)
+  Rendered static_pages/root.html.erb within layouts/application (35.4ms)
+Completed 200 OK in 560ms (Views: 554.1ms | ActiveRecord: 3.6ms)
+
+
+Started GET "/api/trainers/1" for 127.0.0.1 at 2017-07-24 17:23:23 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"1"}
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (1.0ms)
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 1]]
+  Rendered api/trainers/show.json.jbuilder (6.6ms)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.8ms)
+
+
