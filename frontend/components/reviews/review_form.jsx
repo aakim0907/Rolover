@@ -62,11 +62,14 @@ class ReviewForm extends React.Component {
 
             <div className='review-form-body'>
               <label>Review
-                <input type='textarea'
+                <br/>
+                <textarea
+                  rows='3'
+                  cols='55'
                   value={this.state.body}
                   onChange={this.update('body')}
                   className='review-input'
-                  />
+                  ></textarea>
               </label>
             </div>
           </div>

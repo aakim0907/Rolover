@@ -48376,7 +48376,10 @@ var ReviewForm = function (_React$Component) {
                 'label',
                 null,
                 'Review',
-                _react2.default.createElement('input', { type: 'textarea',
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('textarea', {
+                  rows: '3',
+                  cols: '55',
                   value: this.state.body,
                   onChange: this.update('body'),
                   className: 'review-input'
