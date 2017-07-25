@@ -48297,7 +48297,7 @@ var ReviewForm = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (ReviewForm.__proto__ || Object.getPrototypeOf(ReviewForm)).call(this, props));
 
-    _this.state = { rating: 0, body: '', trainer_id: _this.props.currentTrainerId };
+    _this.state = { rating: '', body: '', trainer_id: _this.props.currentTrainerId };
     _this.handleSubmit = _this.handleSubmit.bind(_this);
     return _this;
   }
@@ -48337,6 +48337,12 @@ var ReviewForm = function (_React$Component) {
     //   );
     // }
 
+    // <input type='text'
+    //   value={this.state.rating}
+    //   onChange={this.update('rating')}
+    //   className='review-input'
+    //   />
+
   }, {
     key: 'render',
     value: function render() {
@@ -48350,11 +48356,11 @@ var ReviewForm = function (_React$Component) {
             'label',
             null,
             'Rating',
-            _react2.default.createElement('input', { type: 'text',
-              value: this.state.rating,
-              onChange: this.update('rating'),
-              className: 'review-input'
-            })
+            _react2.default.createElement('input', { type: 'radio', id: 'rate1', name: 'rating', value: '1' }),
+            _react2.default.createElement('input', { type: 'radio', id: 'rate2', name: 'rating', value: '2' }),
+            _react2.default.createElement('input', { type: 'radio', id: 'rate3', name: 'rating', value: '3' }),
+            _react2.default.createElement('input', { type: 'radio', id: 'rate4', name: 'rating', value: '4' }),
+            _react2.default.createElement('input', { type: 'radio', id: 'rate5', name: 'rating', value: '5' })
           ),
           _react2.default.createElement(
             'label',

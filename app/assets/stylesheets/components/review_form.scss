@@ -7,3 +7,15 @@
     display: flex;
   }
 }
+
+input[type='radio'] {
+    -webkit-appearance: none;
+    width: 27px;
+    height: 27px;
+    background-image: url(http://res.cloudinary.com/rolover/image/upload/v1501004870/stars_jaoe7c.png);
+    vertical-align: bottom;
+}
+
+input[type='radio']:checked {
+  background-position: 30px 30px;
+}

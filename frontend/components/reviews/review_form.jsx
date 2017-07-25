@@ -6,7 +6,7 @@ import AuthModal from '../auth_modal';
 class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { rating: 0, body: '', trainer_id: this.props.currentTrainerId };
+    this.state = { rating: '', body: '', trainer_id: this.props.currentTrainerId };
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -40,16 +40,21 @@ class ReviewForm extends React.Component {
   //   );
   // }
 
+  // <input type='text'
+  //   value={this.state.rating}
+  //   onChange={this.update('rating')}
+  //   className='review-input'
+  //   />
   render() {
     return (
       <div className='review-form-container'>
         <form onSubmit={this.handleSubmit}>
           <label>Rating
-            <input type='text'
-              value={this.state.rating}
-              onChange={this.update('rating')}
-              className='review-input'
-              />
+            <input type='radio' id='rate1' name='rating' value='1' />
+            <input type='radio' id='rate2' name='rating' value='2' />
+            <input type='radio' id='rate3' name='rating' value='3' />
+            <input type='radio' id='rate4' name='rating' value='4' />
+            <input type='radio' id='rate5' name='rating' value='5' />
           </label>
 
           <label>Review
