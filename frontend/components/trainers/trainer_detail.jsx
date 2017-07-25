@@ -30,7 +30,7 @@ class TrainerDetail extends React.Component {
           <div className='trainer-header-box'>
 
             <div className='trainer-header-box-1'>
-              <img src='http://res.cloudinary.com/rolover/image/upload/v1500614239/dawid-sobolewski-285655_iauvhs.jpg'/>
+              <img src='http://res.cloudinary.com/rolover/image/upload/v1500676791/alexander-dummer-117495_alnvz6.jpg'/>
             </div>
 
             <div className='trainer-header-box-2'>
@@ -52,7 +52,7 @@ class TrainerDetail extends React.Component {
               </div>
 
               <div className='th-reviews'>
-                <span className='review md'>( {`${trainer.review_count} ` + (trainer.review_count === 1 ? 'review' : 'reviews')} )</span>
+                <span className='review sm'>( {`${trainer.review_count} ` + (trainer.review_count === 1 ? 'review' : 'reviews')} )</span>
               </div>
 
               <div className='th-description'>

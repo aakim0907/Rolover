@@ -47895,7 +47895,7 @@ var TrainerDetail = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'trainer-header-box-1' },
-              _react2.default.createElement('img', { src: 'http://res.cloudinary.com/rolover/image/upload/v1500614239/dawid-sobolewski-285655_iauvhs.jpg' })
+              _react2.default.createElement('img', { src: 'http://res.cloudinary.com/rolover/image/upload/v1500676791/alexander-dummer-117495_alnvz6.jpg' })
             ),
             _react2.default.createElement(
               'div',
@@ -47945,7 +47945,7 @@ var TrainerDetail = function (_React$Component) {
                 { className: 'th-reviews' },
                 _react2.default.createElement(
                   'span',
-                  { className: 'review md' },
+                  { className: 'review sm' },
                   '( ',
                   trainer.review_count + ' ' + (trainer.review_count === 1 ? 'review' : 'reviews'),
                   ' )'
