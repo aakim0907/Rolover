@@ -42713,11 +42713,16 @@ var _trainer_reducer = __webpack_require__(242);
 
 var _trainer_reducer2 = _interopRequireDefault(_trainer_reducer);
 
+var _review_reducer = __webpack_require__(302);
+
+var _review_reducer2 = _interopRequireDefault(_review_reducer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var rootReducer = (0, _redux.combineReducers)({
   session: _session_reducer2.default,
-  trainers: _trainer_reducer2.default
+  trainers: _trainer_reducer2.default,
+  reviews: _review_reducer2.default
 });
 
 exports.default = rootReducer;
@@ -47920,6 +47925,138 @@ var Footer = function Footer() {
 };
 
 exports.default = Footer;
+
+/***/ }),
+/* 302 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _lodash = __webpack_require__(42);
+
+var _review_actions = __webpack_require__(303);
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var reviewReducer = function reviewReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments[1];
+
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _review_actions.RECEIVE_REVIEWS:
+      var reviews = action.reviews;
+      return (0, _lodash.merge)({}, reviews);
+
+    case _review_actions.RECEIVE_REVIEW:
+      var review = action.review;
+      return (0, _lodash.merge)({}, state, _defineProperty({}, review.id, review));
+
+    default:
+      return state;
+  }
+};
+
+exports.default = reviewReducer;
+
+/***/ }),
+/* 303 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.createReview = exports.fetchReview = exports.fetchReviews = exports.receiveReview = exports.receiveReviews = exports.RECEIVE_REVIEW = exports.RECEIVE_REVIEWS = undefined;
+
+var _review_api_util = __webpack_require__(304);
+
+var APIUtil = _interopRequireWildcard(_review_api_util);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var RECEIVE_REVIEWS = exports.RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
+var RECEIVE_REVIEW = exports.RECEIVE_REVIEW = 'RECEIVE_REVIEW';
+
+// sync action
+var receiveReviews = exports.receiveReviews = function receiveReviews(reviews) {
+  return {
+    type: RECEIVE_REVIEWS,
+    reviews: reviews
+  };
+};
+
+var receiveReview = exports.receiveReview = function receiveReview(review) {
+  return {
+    type: RECEIVE_REVIEW,
+    review: review
+  };
+};
+
+// async action
+var fetchReviews = exports.fetchReviews = function fetchReviews(trainerId) {
+  return function (dispatch) {
+    return APIUtil.fetchReviews(trainerId).then(function (reviews) {
+      return dispatch(receiveReviews(reviews));
+    });
+  };
+};
+
+var fetchReview = exports.fetchReview = function fetchReview(trainerId, reviewId) {
+  return function (dispatch) {
+    return APIUtil.fetchReview(trainerId, reviewId).then(function (review) {
+      return dispatch(receiveReview(review));
+    });
+  };
+};
+
+var createReview = exports.createReview = function createReview(trainerId, review) {
+  return function (dispatch) {
+    return APIUtil.createReview(trainerId, review).then(function (newReview) {
+      return dispatch(receiveReview(newReview));
+    });
+  };
+};
+
+/***/ }),
+/* 304 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var fetchReviews = exports.fetchReviews = function fetchReviews(trainerId) {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/trainers/' + trainerId + '/reviews'
+  });
+};
+
+var fetchReview = exports.fetchReview = function fetchReview(trainerId, reviewId) {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/trainers/' + trainerId + '/reviews/' + reviewId
+  });
+};
+
+var createReview = exports.createReview = function createReview(trainerId, review) {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/trainers/' + trainerId + '/reviews',
+    data: { review: review }
+  });
+};
 
 /***/ })
 /******/ ]);
