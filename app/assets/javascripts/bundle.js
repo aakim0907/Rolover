@@ -48037,7 +48037,7 @@ var fetchReviews = exports.fetchReviews = function fetchReviews(trainerId) {
 var createReview = exports.createReview = function createReview(review) {
   return $.ajax({
     method: 'POST',
-    url: 'api/trainers/' + review.trainer_id + '/reviews',
+    url: 'api/reviews',
     data: { review: review }
   });
 };

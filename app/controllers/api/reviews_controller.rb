@@ -1,5 +1,5 @@
 class Api::ReviewsController < ApplicationController
-  # skip_before_action :verify_authenticity_token
+  skip_before_action :verify_authenticity_token
 
   def index
     @reviews = Trainer.find(params[:trainer_id]).reviews
@@ -10,7 +10,7 @@ class Api::ReviewsController < ApplicationController
     @review.user_id = current_user.id
 
     if @review.save
-      render 'api/reviews/show'
+      render :show
     else
       render json: @review.errors.full_messages, status: 422
     end
@@ -23,6 +23,6 @@ class Api::ReviewsController < ApplicationController
   private
 
   def review_params
-    params.require(:review).permit(:rating, :body)
+    params.require(:review).permit(:rating, :body, :trainer_id)
   end
 end
