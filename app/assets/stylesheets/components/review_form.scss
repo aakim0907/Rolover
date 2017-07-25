@@ -9,13 +9,26 @@
 }
 
 input[type='radio'] {
-    -webkit-appearance: none;
-    width: 27px;
-    height: 27px;
-    background-image: url(http://res.cloudinary.com/rolover/image/upload/v1501004870/stars_jaoe7c.png);
-    vertical-align: bottom;
+  -webkit-appearance: none;
+  width: 27px;
+  height: 27px;
+  background-image: url(http://res.cloudinary.com/rolover/image/upload/v1501004870/stars_jaoe7c.png);
+  vertical-align: bottom;
 }
 
 input[type='radio']:checked {
   background-position: 30px 30px;
+}
+
+.review-form-container-1 {
+  display: flex;
+  flex-direction: column;
+}
+
+.review-form-container-2 {
+  display: flex;
+}
+
+.review-form-rating, .review-form-body, .review-form-submit {
+  display: flex;
 }

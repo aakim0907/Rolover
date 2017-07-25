@@ -49,23 +49,31 @@ class ReviewForm extends React.Component {
     return (
       <div className='review-form-container'>
         <form onSubmit={this.handleSubmit}>
-          <label>Rating
-            <input type='radio' id='rate1' name='rating' value='1' />
-            <input type='radio' id='rate2' name='rating' value='2' />
-            <input type='radio' id='rate3' name='rating' value='3' />
-            <input type='radio' id='rate4' name='rating' value='4' />
-            <input type='radio' id='rate5' name='rating' value='5' />
-          </label>
+          <div className='review-form-container-1'>
+            <div className='review-form-rating'>
+              <label>Rating
+                <input type='radio' id='rate1' name='rating' value='1' />
+                <input type='radio' id='rate2' name='rating' value='2' />
+                <input type='radio' id='rate3' name='rating' value='3' />
+                <input type='radio' id='rate4' name='rating' value='4' />
+                <input type='radio' id='rate5' name='rating' value='5' />
+              </label>
+            </div>
 
-          <label>Review
-            <input type='textarea'
-              value={this.state.body}
-              onChange={this.update('body')}
-              className='review-input'
-              />
+            <div className='review-form-body'>
+              <label>Review
+                <input type='textarea'
+                  value={this.state.body}
+                  onChange={this.update('body')}
+                  className='review-input'
+                  />
+              </label>
+            </div>
+          </div>
 
-          </label>
-          <input type='submit' className='btn green' value='Submit Review' />
+          <div className='review-form-container-2'>
+            <input type='submit' className='btn green' value='Submit Review' />
+          </div>
         </form>
       </div>
     );

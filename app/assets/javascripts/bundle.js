@@ -48353,26 +48353,42 @@ var ReviewForm = function (_React$Component) {
           'form',
           { onSubmit: this.handleSubmit },
           _react2.default.createElement(
-            'label',
-            null,
-            'Rating',
-            _react2.default.createElement('input', { type: 'radio', id: 'rate1', name: 'rating', value: '1' }),
-            _react2.default.createElement('input', { type: 'radio', id: 'rate2', name: 'rating', value: '2' }),
-            _react2.default.createElement('input', { type: 'radio', id: 'rate3', name: 'rating', value: '3' }),
-            _react2.default.createElement('input', { type: 'radio', id: 'rate4', name: 'rating', value: '4' }),
-            _react2.default.createElement('input', { type: 'radio', id: 'rate5', name: 'rating', value: '5' })
+            'div',
+            { className: 'review-form-container-1' },
+            _react2.default.createElement(
+              'div',
+              { className: 'review-form-rating' },
+              _react2.default.createElement(
+                'label',
+                null,
+                'Rating',
+                _react2.default.createElement('input', { type: 'radio', id: 'rate1', name: 'rating', value: '1' }),
+                _react2.default.createElement('input', { type: 'radio', id: 'rate2', name: 'rating', value: '2' }),
+                _react2.default.createElement('input', { type: 'radio', id: 'rate3', name: 'rating', value: '3' }),
+                _react2.default.createElement('input', { type: 'radio', id: 'rate4', name: 'rating', value: '4' }),
+                _react2.default.createElement('input', { type: 'radio', id: 'rate5', name: 'rating', value: '5' })
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'review-form-body' },
+              _react2.default.createElement(
+                'label',
+                null,
+                'Review',
+                _react2.default.createElement('input', { type: 'textarea',
+                  value: this.state.body,
+                  onChange: this.update('body'),
+                  className: 'review-input'
+                })
+              )
+            )
           ),
           _react2.default.createElement(
-            'label',
-            null,
-            'Review',
-            _react2.default.createElement('input', { type: 'textarea',
-              value: this.state.body,
-              onChange: this.update('body'),
-              className: 'review-input'
-            })
-          ),
-          _react2.default.createElement('input', { type: 'submit', className: 'btn green', value: 'Submit Review' })
+            'div',
+            { className: 'review-form-container-2' },
+            _react2.default.createElement('input', { type: 'submit', className: 'btn green', value: 'Submit Review' })
+          )
         )
       );
     }
