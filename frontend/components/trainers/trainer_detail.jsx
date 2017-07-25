@@ -2,7 +2,7 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 
 import ReviewContainer from '../reviews/review_container';
-// import renderStars from '../helper/star';
+import renderStars from '../helper/star';
 
 //trainer.images.filter(img => img.img_type === 'main')
 class TrainerDetail extends React.Component {
@@ -48,7 +48,11 @@ class TrainerDetail extends React.Component {
               </div>
 
               <div className='th-ratings'>
-                <p>{trainer.rating} ratings, {trainer.review_count} reviews</p>
+                <p>{renderStars(trainer.rating)}</p>
+              </div>
+
+              <div className='th-reviews'>
+                <p>( {trainer.review_count} reviews )</p>
               </div>
 
               <div className='th-description'>

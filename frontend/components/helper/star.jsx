@@ -10,7 +10,7 @@ const renderStars = rating => {
   for (var i = emptyStars; i < 5; i++) {
     stars.push(<i key={i} className='fa fa-star-o' aria-hidden='true'></i>);
   }
-  
+
   return stars;
 };
 

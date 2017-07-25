@@ -1,6 +1,6 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
-// import renderStars from '../helper/star';
+import renderStars from '../helper/star';
 
 const TrainerIndexItem = ({ trainer }) => {
   const profile = trainer.images.find(img => img.img_type === 'profile');
@@ -21,6 +21,10 @@ const TrainerIndexItem = ({ trainer }) => {
 
         <div className="trainer-list-address">
           <p>{trainer.city}, {trainer.state} {trainer.zip}</p>
+        </div>
+
+        <div className='trainer-list-rating'>
+          <p>{renderStars(trainer.rating)} | {trainer.review_count} reviews</p>
         </div>
 
         <div className="trainer-list-description">
