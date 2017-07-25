@@ -47920,7 +47920,8 @@ var TrainerDetail = function (_React$Component) {
                 _react2.default.createElement(
                   'p',
                   null,
-                  '4.5 ratings 12 reviews'
+                  trainer.rating,
+                  ' ratings, 12 reviews'
                 )
               ),
               _react2.default.createElement(

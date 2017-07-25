@@ -49,7 +49,7 @@ class TrainerDetail extends React.Component {
               </div>
 
               <div className='th-ratings'>
-                <p>4.5 ratings 12 reviews</p>
+                <p>{trainer.rating} ratings, 12 reviews</p>
               </div>
 
               <div className='th-description'>

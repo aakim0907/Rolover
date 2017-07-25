@@ -12,15 +12,11 @@ class Trainer < ApplicationRecord
       searched.concat(self.where(key, "= true")) if val == "true"
     end
     searched.uniq
-    # self.where("obedience =", "%#{search_params}%")
   end
 
-  # def rating
-  #   reviewTotal = 0
-  #
-  #   reviews.each do |review|
-  #     reviewTotal += review.rating
-  #   end
-  #   reviewTotal.to_f / reviews.count
-  # end
+  def rating
+    reviewTotal = 0
+    reviews.each { |review| reviewTotal += review.rating }
+    reviewTotal.to_f / reviews.count
+  end
 end
