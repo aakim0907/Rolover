@@ -22,7 +22,6 @@ class TrainerDetail extends React.Component {
     }
 
     const { trainer } = this.props;
-
     const profile = trainer.images.find(img => img.img_type === 'profile');
 
     return (

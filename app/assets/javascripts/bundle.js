@@ -47778,11 +47778,11 @@ var _trainer_actions = __webpack_require__(42);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var mapStateToProps = function mapStateToProps(_ref, _ref2) {
-  var trainers = _ref.trainers;
-  var match = _ref2.match;
+var mapStateToProps = function mapStateToProps(state, _ref) {
+  var match = _ref.match;
   return {
-    trainer: trainers[match.params.id]
+    trainer: state.trainers[match.params.id],
+    currentUser: state.session.currentUser
   };
 };
 
@@ -47860,7 +47860,6 @@ var TrainerDetail = function (_React$Component) {
       }
 
       var trainer = this.props.trainer;
-
 
       var profile = trainer.images.find(function (img) {
         return img.img_type === 'profile';
