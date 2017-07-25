@@ -29946,11 +29946,10 @@ var _root = __webpack_require__(244);
 
 var _root2 = _interopRequireDefault(_root);
 
-var _trainer_actions = __webpack_require__(30);
+var _review_actions = __webpack_require__(303);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-// import { fetchTrainers } from './util/trainer_api_util';
 // END TESTING
 
 document.addEventListener('DOMContentLoaded', function () {
@@ -29973,8 +29972,8 @@ document.addEventListener('DOMContentLoaded', function () {
   // START TESTING
   window.getState = store.getState;
   window.dispatch = store.dispatch;
-  window.fetchTrainers = _trainer_actions.fetchTrainers;
-  window.fetchTrainer = _trainer_actions.fetchTrainer;
+  window.fetchReviews = _review_actions.fetchReviews;
+  window.createReview = _review_actions.createReview;
   // END TESTING
 });
 

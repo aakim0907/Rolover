@@ -2,6 +2,7 @@ class Api::ReviewsController < ApplicationController
   # skip_before_action :verify_authenticity_token
 
   def index
+    @reviews = Trainer.find(params[:trainer_id]).reviews
   end
 
   def create
