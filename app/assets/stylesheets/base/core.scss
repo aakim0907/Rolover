@@ -24,10 +24,6 @@ img{
 a {
   text-decoration: none;
   font-size: 14px;
-
-  // &:hover {
-  //   text-decoration: underline;
-  // }
 }
 
 p, li {
@@ -43,13 +39,11 @@ p {
 h1, h2, h3, h4 {
   font-family: $font-stack;
   font-weight: 400;
-  // font-weight: lighter;
 }
 
 button, input {
   font-family: $font-stack;
   font-weight: 400;
-  // font-weight: lighter;
 }
 
 button {
@@ -108,7 +102,7 @@ button {
 }
 
 .star {
-  color: $green;
+  color: gold;
 
   &.sm {
     font-size: 14px;

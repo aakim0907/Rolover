@@ -48387,7 +48387,6 @@ var ReviewForm = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-
       if (this.props.currentUser) {
         return _react2.default.createElement(
           'div',
@@ -48405,11 +48404,11 @@ var ReviewForm = function (_React$Component) {
                   'label',
                   null,
                   'Rating',
-                  _react2.default.createElement('input', { type: 'radio', id: 'rate1', onChange: this.update('rating'), value: '1' }),
-                  _react2.default.createElement('input', { type: 'radio', id: 'rate2', onChange: this.update('rating'), value: '2' }),
-                  _react2.default.createElement('input', { type: 'radio', id: 'rate3', onChange: this.update('rating'), value: '3' }),
-                  _react2.default.createElement('input', { type: 'radio', id: 'rate4', onChange: this.update('rating'), value: '4' }),
-                  _react2.default.createElement('input', { type: 'radio', id: 'rate5', onChange: this.update('rating'), value: '5' })
+                  _react2.default.createElement('input', { type: 'radio', id: 'rate1', onClick: this.update('rating'), checked: parseInt(this.state.rating) >= 1, value: '1' }),
+                  _react2.default.createElement('input', { type: 'radio', id: 'rate2', onClick: this.update('rating'), checked: parseInt(this.state.rating) >= 2, value: '2' }),
+                  _react2.default.createElement('input', { type: 'radio', id: 'rate3', onClick: this.update('rating'), checked: parseInt(this.state.rating) >= 3, value: '3' }),
+                  _react2.default.createElement('input', { type: 'radio', id: 'rate4', onClick: this.update('rating'), checked: parseInt(this.state.rating) >= 4, value: '4' }),
+                  _react2.default.createElement('input', { type: 'radio', id: 'rate5', onClick: this.update('rating'), checked: parseInt(this.state.rating) >= 5, value: '5' })
                 )
               ),
               _react2.default.createElement(
@@ -48422,7 +48421,7 @@ var ReviewForm = function (_React$Component) {
                   _react2.default.createElement('br', null),
                   _react2.default.createElement('textarea', {
                     rows: '2',
-                    cols: '55',
+                    cols: '60',
                     value: this.state.body,
                     onChange: this.update('body'),
                     className: 'review-input'

@@ -48,7 +48,6 @@ class ReviewForm extends React.Component {
   // }
 
   render() {
-
     if ( this.props.currentUser ) {
       return (
         <div className='review-form-container'>
@@ -56,11 +55,11 @@ class ReviewForm extends React.Component {
             <div className='review-form-container-1'>
               <div className='review-form-rating'>
                 <label>Rating
-                  <input type='radio' id='rate1' onChange={this.update('rating')} value='1' />
-                  <input type='radio' id='rate2' onChange={this.update('rating')} value='2' />
-                  <input type='radio' id='rate3' onChange={this.update('rating')} value='3' />
-                  <input type='radio' id='rate4' onChange={this.update('rating')} value='4' />
-                  <input type='radio' id='rate5' onChange={this.update('rating')} value='5' />
+                  <input type='radio' id='rate1' onClick={this.update('rating')} checked={parseInt(this.state.rating) >= 1} value='1' />
+                  <input type='radio' id='rate2' onClick={this.update('rating')} checked={parseInt(this.state.rating) >= 2} value='2' />
+                  <input type='radio' id='rate3' onClick={this.update('rating')} checked={parseInt(this.state.rating) >= 3} value='3' />
+                  <input type='radio' id='rate4' onClick={this.update('rating')} checked={parseInt(this.state.rating) >= 4} value='4' />
+                  <input type='radio' id='rate5' onClick={this.update('rating')} checked={parseInt(this.state.rating) >= 5} value='5' />
                 </label>
               </div>
 
@@ -69,7 +68,7 @@ class ReviewForm extends React.Component {
                   <br/>
                   <textarea
                     rows='2'
-                    cols='55'
+                    cols='60'
                     value={this.state.body}
                     onChange={this.update('body')}
                     className='review-input'
