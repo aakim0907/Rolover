@@ -48372,6 +48372,7 @@ var ReviewForm = function (_React$Component) {
       e.preventDefault();
       var review = this.state;
       this.props.createReview(review);
+      this.setState({ rating: '', body: '' });
     }
 
     // renderErrors() {

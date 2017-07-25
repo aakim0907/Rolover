@@ -33,6 +33,7 @@ class ReviewForm extends React.Component {
     e.preventDefault();
     const review = this.state;
     this.props.createReview(review);
+    this.setState({ rating: '', body: '' });
   }
 
   // renderErrors() {
