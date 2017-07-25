@@ -20,7 +20,6 @@ export const fetchTrainers = search => dispatch => (
     trainers => (dispatch(receiveTrainers(trainers)))
   )
 );
-// argument filter removed
 
 export const fetchTrainer = id => dispatch => (
   APIUtil.fetchTrainer(id).then(

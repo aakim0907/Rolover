@@ -3764,7 +3764,6 @@ var fetchTrainers = exports.fetchTrainers = function fetchTrainers(search) {
     });
   };
 };
-// argument filter removed
 
 var fetchTrainer = exports.fetchTrainer = function fetchTrainer(id) {
   return function (dispatch) {
