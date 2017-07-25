@@ -19,7 +19,7 @@ input[type='radio'] {
 }
 
 input[type='radio']:checked {
-  background-position: 27px 27px;
+  background-position: 30px 30px;
 }
 
 .review-form-container-1 {
@@ -29,6 +29,8 @@ input[type='radio']:checked {
 
 .review-form-container-2 {
   display: flex;
+  // height: 50px;
+
 }
 
 .review-form-rating, .review-form-body, .review-form-submit {

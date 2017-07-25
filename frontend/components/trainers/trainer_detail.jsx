@@ -73,7 +73,7 @@ class TrainerDetail extends React.Component {
         </div>
 
         <div className='trainer-detail-body'>
-          <ReviewContainer currentTrainer={trainer.id}/>
+          <ReviewContainer currentTrainerId={trainer.id}/>
         </div>
       </div>
     );

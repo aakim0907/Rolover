@@ -46,17 +46,20 @@ class ReviewForm extends React.Component {
   //   className='review-input'
   //   />
   render() {
+    console.log(this.props);
+    console.log(this.state);
+
     return (
       <div className='review-form-container'>
         <form onSubmit={this.handleSubmit}>
           <div className='review-form-container-1'>
             <div className='review-form-rating'>
               <label>Rating
-                <input type='radio' id='rate1' name='rating' value='1' />
-                <input type='radio' id='rate2' name='rating' value='2' />
-                <input type='radio' id='rate3' name='rating' value='3' />
-                <input type='radio' id='rate4' name='rating' value='4' />
-                <input type='radio' id='rate5' name='rating' value='5' />
+                <input type='radio' id='rate1' onChange={this.update('rating')} value='1' />
+                <input type='radio' id='rate2' onChange={this.update('rating')} value='2' />
+                <input type='radio' id='rate3' onChange={this.update('rating')} value='3' />
+                <input type='radio' id='rate4' onChange={this.update('rating')} value='4' />
+                <input type='radio' id='rate5' onChange={this.update('rating')} value='5' />
               </label>
             </div>
 
@@ -75,7 +78,7 @@ class ReviewForm extends React.Component {
           </div>
 
           <div className='review-form-container-2'>
-            <input type='submit' className='btn green' value='Submit Review' />
+            <input type='submit' className='btn green' value='Submit' />
           </div>
         </form>
       </div>

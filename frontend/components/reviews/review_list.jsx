@@ -6,7 +6,7 @@ import ReviewFormContainer from './review_form_container';
 
 class ReviewList extends React.Component {
   componentDidMount() {
-    this.props.fetchReviews(this.props.currentTrainer);
+    this.props.fetchReviews(this.props.currentTrainerId);
   }
 
   render() {
@@ -21,8 +21,8 @@ class ReviewList extends React.Component {
             <h3>Reviews</h3>
           </div>
 
-          <ReviewFormContainer currentTrainerId={this.props.currentTrainer.id}/>
-          
+          <ReviewFormContainer currentTrainerId={this.props.currentTrainerId}/>
+
           { reviews.reverse().map(review => (
             <ReviewListItem key={review.id} review={review} />
           ))}

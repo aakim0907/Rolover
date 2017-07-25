@@ -47960,7 +47960,7 @@ var TrainerDetail = function (_React$Component) {
         _react2.default.createElement(
           'div',
           { className: 'trainer-detail-body' },
-          _react2.default.createElement(_review_container2.default, { currentTrainer: trainer.id })
+          _react2.default.createElement(_review_container2.default, { currentTrainerId: trainer.id })
         )
       );
     }
@@ -48061,7 +48061,7 @@ var ReviewList = function (_React$Component) {
   _createClass(ReviewList, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
-      this.props.fetchReviews(this.props.currentTrainer);
+      this.props.fetchReviews(this.props.currentTrainerId);
     }
   }, {
     key: 'render',
@@ -48088,7 +48088,7 @@ var ReviewList = function (_React$Component) {
               'Reviews'
             )
           ),
-          _react2.default.createElement(_review_form_container2.default, { currentTrainerId: this.props.currentTrainer.id }),
+          _react2.default.createElement(_review_form_container2.default, { currentTrainerId: this.props.currentTrainerId }),
           reviews.reverse().map(function (review) {
             return _react2.default.createElement(_review_list_item2.default, { key: review.id, review: review });
           })
@@ -48346,6 +48346,9 @@ var ReviewForm = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
+      console.log(this.props);
+      console.log(this.state);
+
       return _react2.default.createElement(
         'div',
         { className: 'review-form-container' },
@@ -48362,11 +48365,11 @@ var ReviewForm = function (_React$Component) {
                 'label',
                 null,
                 'Rating',
-                _react2.default.createElement('input', { type: 'radio', id: 'rate1', name: 'rating', value: '1' }),
-                _react2.default.createElement('input', { type: 'radio', id: 'rate2', name: 'rating', value: '2' }),
-                _react2.default.createElement('input', { type: 'radio', id: 'rate3', name: 'rating', value: '3' }),
-                _react2.default.createElement('input', { type: 'radio', id: 'rate4', name: 'rating', value: '4' }),
-                _react2.default.createElement('input', { type: 'radio', id: 'rate5', name: 'rating', value: '5' })
+                _react2.default.createElement('input', { type: 'radio', id: 'rate1', onChange: this.update('rating'), value: '1' }),
+                _react2.default.createElement('input', { type: 'radio', id: 'rate2', onChange: this.update('rating'), value: '2' }),
+                _react2.default.createElement('input', { type: 'radio', id: 'rate3', onChange: this.update('rating'), value: '3' }),
+                _react2.default.createElement('input', { type: 'radio', id: 'rate4', onChange: this.update('rating'), value: '4' }),
+                _react2.default.createElement('input', { type: 'radio', id: 'rate5', onChange: this.update('rating'), value: '5' })
               )
             ),
             _react2.default.createElement(
@@ -48390,7 +48393,7 @@ var ReviewForm = function (_React$Component) {
           _react2.default.createElement(
             'div',
             { className: 'review-form-container-2' },
-            _react2.default.createElement('input', { type: 'submit', className: 'btn green', value: 'Submit Review' })
+            _react2.default.createElement('input', { type: 'submit', className: 'btn green', value: 'Submit' })
           )
         )
       );
