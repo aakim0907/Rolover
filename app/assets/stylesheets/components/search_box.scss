@@ -2,7 +2,7 @@
   z-index: 0;
   background: rgba(255, 255, 255, 0.9);
   width: 90%;
-  height: 230px;
+  height: 210px;
   display: flex;
   border-radius: 3px;
   padding: 15px;
@@ -18,7 +18,7 @@ form {
 .search-box-1 {
   display: flex;
   flex-direction: column;
-  padding-top: 13px;
+  padding-top: 7px;
   padding-bottom: 5px;
 }
 
@@ -29,6 +29,7 @@ form {
 
   p {
     margin: 0;
+    padding-left: 8px;
     font-size: 19px;
     font-family: 'Open Sans Condensed', sans-serif;
   }
@@ -44,7 +45,7 @@ form {
   display: flex;
   flex-direction: column;
   padding: 7px;
-  justify-content: space-around;
+  justify-content: space-between;
 }
 
 .search-box-2-1 {
@@ -73,7 +74,7 @@ form {
   justify-content: center;
 
   &:hover div {
-    color: $dark-green;
+    color: $green;
   }
 }
 
