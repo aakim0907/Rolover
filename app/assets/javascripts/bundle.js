@@ -47927,10 +47927,11 @@ var TrainerDetail = function (_React$Component) {
                   'div',
                   { className: 'td-about' },
                   _react2.default.createElement(
-                    'h3',
+                    'h4',
                     null,
-                    'About ',
-                    trainer.name
+                    'More about ',
+                    trainer.name,
+                    ':'
                   )
                 ),
                 _react2.default.createElement(
@@ -47956,7 +47957,11 @@ var TrainerDetail = function (_React$Component) {
           ),
           _react2.default.createElement('div', { className: 'trainer-header-3' })
         ),
-        _react2.default.createElement(_review_container2.default, { currentTrainer: trainer.id })
+        _react2.default.createElement(
+          'div',
+          { className: 'trainer-detail-body' },
+          _react2.default.createElement(_review_container2.default, { currentTrainer: trainer.id })
+        )
       );
     }
   }]);
@@ -48070,6 +48075,15 @@ var ReviewList = function (_React$Component) {
         return _react2.default.createElement(
           'div',
           { className: 'review-container' },
+          _react2.default.createElement(
+            'div',
+            { className: 'review-header' },
+            _react2.default.createElement(
+              'h4',
+              null,
+              'Reviews'
+            )
+          ),
           reviews.map(function (review) {
             return _react2.default.createElement(_review_list_item2.default, { key: review.id, review: review });
           })

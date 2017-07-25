@@ -16,6 +16,9 @@ class ReviewList extends React.Component {
     } else {
       return (
         <div className='review-container'>
+          <div className='review-header'>
+            <h4>Reviews</h4>
+          </div>
           { reviews.map(review => (
             <ReviewListItem key={review.id} review={review} />
           ))}
