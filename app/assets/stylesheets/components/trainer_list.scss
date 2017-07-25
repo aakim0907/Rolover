@@ -1,5 +1,5 @@
 .index-page {
-  width: 50%;
+  width: 890px;
   margin: auto;
   padding-top: 20px;
 }
@@ -19,9 +19,10 @@
 
 .trainer-list-item {
   border-bottom: 1px solid $gray;
+  border-left: 3px solid rgba(0,0,0,0);
   display: flex;
   width: 649px;
-  height: 200px;
+  height: 170px;
 
   &:hover {
     cursor: pointer;
@@ -31,7 +32,7 @@
 
 .trainer-list-profile {
   display: flex;
-  width: 27%;
+  width: 25%;
   padding: 12px;
 }
 
