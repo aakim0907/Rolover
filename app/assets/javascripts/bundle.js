@@ -48079,12 +48079,12 @@ var ReviewList = function (_React$Component) {
             'div',
             { className: 'review-header' },
             _react2.default.createElement(
-              'h4',
+              'h3',
               null,
               'Reviews'
             )
           ),
-          reviews.map(function (review) {
+          reviews.reverse().map(function (review) {
             return _react2.default.createElement(_review_list_item2.default, { key: review.id, review: review });
           })
         );
@@ -48120,12 +48120,47 @@ var ReviewListItem = function ReviewListItem(_ref) {
   var review = _ref.review;
 
   return _react2.default.createElement(
-    "div",
-    { className: "review-list-item" },
+    'div',
+    { className: 'review-list-item' },
     _react2.default.createElement(
-      "span",
-      null,
-      review.body
+      'div',
+      { className: 'review-item-1' },
+      _react2.default.createElement(
+        'div',
+        { className: 'review-item-1-1' },
+        _react2.default.createElement('img', { src: review.user.profile_img_url, className: 'review-profile' })
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'review-item-1-2' },
+        _react2.default.createElement(
+          'div',
+          { className: 'review-item-1-2-name' },
+          _react2.default.createElement(
+            'p',
+            null,
+            review.user.email
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'review-item-1-2-date' },
+          _react2.default.createElement(
+            'p',
+            null,
+            'July, 2017'
+          )
+        )
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'review-item-2' },
+      _react2.default.createElement(
+        'p',
+        null,
+        review.body
+      )
     )
   );
 };

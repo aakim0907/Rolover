@@ -17,9 +17,9 @@ class ReviewList extends React.Component {
       return (
         <div className='review-container'>
           <div className='review-header'>
-            <h4>Reviews</h4>
+            <h3>Reviews</h3>
           </div>
-          { reviews.map(review => (
+          { reviews.reverse().map(review => (
             <ReviewListItem key={review.id} review={review} />
           ))}
         </div>

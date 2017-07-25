@@ -3,8 +3,24 @@ import React from 'react';
 
 const ReviewListItem = ({ review }) => {
   return (
-    <div className="review-list-item">
-      <span>{review.body}</span>
+    <div className='review-list-item'>
+      <div className='review-item-1'>
+        <div className='review-item-1-1'>
+          <img src={review.user.profile_img_url} className='review-profile'/>
+        </div>
+        <div className='review-item-1-2'>
+          <div className='review-item-1-2-name'>
+            <p>{review.user.email}</p>
+          </div>
+          <div className='review-item-1-2-date'>
+            <p>July, 2017</p>
+          </div>
+        </div>
+      </div>
+
+      <div className='review-item-2'>
+        <p>{review.body}</p>
+      </div>
     </div>
   );
 };

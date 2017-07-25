@@ -1,5 +1,4 @@
 .review-container {
-  border: 1px solid $green;
   display: flex;
   flex-direction: column;
   width: 50%;
@@ -11,8 +10,44 @@
   display: flex;
   width: 100%;
 
-  h4 {
+  h3 {
     margin-top: 0;
     color: $green;
+  }
+}
+
+.review-list-item {
+  border: 1px solid $light-green;
+  display: flex;
+  flex-direction: column;
+  padding: 10px;
+}
+
+.review-item-1, .review-item-2 {
+  border: 1px solid $light-gray;
+  display: flex;
+  width: 100%;
+  padding: 10px;
+  align-items: center;
+}
+
+.review-profile {
+  border-radius: 50%;
+  width: 40px;
+  height: 40px;
+}
+
+.review-item-1-2 {
+  margin-left: 10px;
+  display: flex;
+  flex-direction: column;
+}
+
+.review-item-1-2-name, .review-item-1-2-date {
+  display: flex;
+
+  p {
+    font-size: 14px;
+    margin: 0;
   }
 }
