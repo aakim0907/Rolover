@@ -1,6 +1,8 @@
 import React from 'react';
 import { Link } from 'react-router-dom';
 
+import ReviewListItem from './review_list_item';
+
 class ReviewList extends React.Component {
   componentDidMount() {
     this.props.fetchReviews(this.props.currentTrainer);
@@ -15,7 +17,7 @@ class ReviewList extends React.Component {
       return (
         <div className='review-container'>
           { reviews.map(review => (
-            <div key={review.id}>{review.body}</div>
+            <ReviewListItem key={review.id} review={review} />
           ))}
         </div>
       );
@@ -24,7 +26,3 @@ class ReviewList extends React.Component {
 }
 
 export default ReviewList;
-
-// { reviews.map(review => (
-//   <ReviewListItem review={review} />
-// ))}

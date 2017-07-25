@@ -47641,37 +47641,6 @@ var TrainerIndexItem = function TrainerIndexItem(_ref) {
 
 exports.default = TrainerIndexItem;
 
-// <Link to ={`trainers/${trainer.id}`}>
-//   <div className="container">
-//     <div className="col-3">
-//
-//     </div>
-//
-//     <div className="col-7">
-//       <div className="row">
-//         <Link to={`/trainers/${trainer.id}`}>
-//           <span>{trainer.name}</span>
-//         </Link>
-//       </div>
-//
-//       <div className="row">
-//         <div className="col-2">
-//           <span>&quot;{trainer.profile_quote}&quot;</span>
-//         </div>
-//
-//         <div className="col-2">
-//           <span>{trainer.price}&#36;</span>
-//         </div>
-//
-//         <div className="col-2">
-//           <span>{trainer.city}, {trainer.state} {trainer.zip}</span>
-//         </div>
-//       </div>
-//     </div>
-//
-//   </div>
-// </Link>
-
 /***/ }),
 /* 299 */
 /***/ (function(module, exports, __webpack_require__) {
@@ -48111,6 +48080,10 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(12);
 
+var _review_list_item = __webpack_require__(307);
+
+var _review_list_item2 = _interopRequireDefault(_review_list_item);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -48150,11 +48123,7 @@ var ReviewList = function (_React$Component) {
           'div',
           { className: 'review-container' },
           reviews.map(function (review) {
-            return _react2.default.createElement(
-              'div',
-              { key: review.id },
-              review.body
-            );
+            return _react2.default.createElement(_review_list_item2.default, { key: review.id, review: review });
           })
         );
       }
@@ -48166,9 +48135,40 @@ var ReviewList = function (_React$Component) {
 
 exports.default = ReviewList;
 
-// { reviews.map(review => (
-//   <ReviewListItem review={review} />
-// ))}
+/***/ }),
+/* 307 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+// import renderStars from '../helper/star';
+
+var ReviewListItem = function ReviewListItem(_ref) {
+  var review = _ref.review;
+
+  return _react2.default.createElement(
+    "div",
+    { className: "review-list-item" },
+    _react2.default.createElement(
+      "span",
+      null,
+      review.body
+    )
+  );
+};
+
+exports.default = ReviewListItem;
 
 /***/ })
 /******/ ]);
