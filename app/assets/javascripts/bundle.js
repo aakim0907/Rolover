@@ -48121,9 +48121,11 @@ var _react = __webpack_require__(3);
 
 var _react2 = _interopRequireDefault(_react);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _star = __webpack_require__(310);
 
-// import renderStars from '../helper/star';
+var _star2 = _interopRequireDefault(_star);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var ReviewListItem = function ReviewListItem(_ref) {
   var review = _ref.review;
@@ -48168,7 +48170,7 @@ var ReviewListItem = function ReviewListItem(_ref) {
       _react2.default.createElement(
         'p',
         null,
-        review.rating
+        (0, _star2.default)(review.rating)
       )
     ),
     _react2.default.createElement(
@@ -48429,6 +48431,39 @@ var ReviewForm = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = (0, _reactRouterDom.withRouter)(ReviewForm);
+
+/***/ }),
+/* 310 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var renderStars = function renderStars(rating) {
+  var stars = [];
+  for (var i = 0; i < rating; i++) {
+    stars.push(_react2.default.createElement('i', { key: i, className: 'fa fa-star', 'aria-hidden': 'true' }));
+  }
+
+  var emptyStars = stars.length;
+  for (var i = emptyStars; i < 5; i++) {
+    stars.push(_react2.default.createElement('i', { key: i, className: 'fa fa-star-o', 'aria-hidden': 'true' }));
+  }
+
+  return stars;
+};
+
+exports.default = renderStars;
 
 /***/ })
 /******/ ]);

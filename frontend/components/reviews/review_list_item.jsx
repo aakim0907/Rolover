@@ -1,5 +1,5 @@
 import React from 'react';
-// import renderStars from '../helper/star';
+import renderStars from '../helper/star';
 
 const ReviewListItem = ({ review }) => {
   return (
@@ -19,7 +19,7 @@ const ReviewListItem = ({ review }) => {
       </div>
 
       <div className='review-item-2'>
-        <p>{review.rating}</p>
+        <p>{renderStars(review.rating)}</p>
       </div>
 
       <div className='review-item-3'>
