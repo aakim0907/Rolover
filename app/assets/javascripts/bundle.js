@@ -48037,6 +48037,10 @@ var _review_list_item = __webpack_require__(306);
 
 var _review_list_item2 = _interopRequireDefault(_review_list_item);
 
+var _review_form_container = __webpack_require__(308);
+
+var _review_form_container2 = _interopRequireDefault(_review_form_container);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -48084,6 +48088,7 @@ var ReviewList = function (_React$Component) {
               'Reviews'
             )
           ),
+          _react2.default.createElement(_review_form_container2.default, { currentTrainerId: this.props.currentTrainer.id }),
           reviews.reverse().map(function (review) {
             return _react2.default.createElement(_review_list_item2.default, { key: review.id, review: review });
           })
@@ -48212,6 +48217,165 @@ var Footer = function Footer() {
 };
 
 exports.default = Footer;
+
+/***/ }),
+/* 308 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(18);
+
+var _review_actions = __webpack_require__(65);
+
+var _review_form = __webpack_require__(309);
+
+var _review_form2 = _interopRequireDefault(_review_form);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(_ref) {
+  var session = _ref.session;
+  return {
+    loggedIn: Boolean(session.currentUser)
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    createReview: function createReview(review) {
+      return dispatch((0, _review_actions.createReview)(review));
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_review_form2.default);
+
+/***/ }),
+/* 309 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(10);
+
+var _auth_modal = __webpack_require__(117);
+
+var _auth_modal2 = _interopRequireDefault(_auth_modal);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var ReviewForm = function (_React$Component) {
+  _inherits(ReviewForm, _React$Component);
+
+  function ReviewForm(props) {
+    _classCallCheck(this, ReviewForm);
+
+    var _this = _possibleConstructorReturn(this, (ReviewForm.__proto__ || Object.getPrototypeOf(ReviewForm)).call(this, props));
+
+    _this.state = { rating: 0, body: '', trainer_id: _this.props.currentTrainerId };
+    _this.handleSubmit = _this.handleSubmit.bind(_this);
+    return _this;
+  }
+
+  // componentWillReceiveProps(nextProps) {
+  //   if (this.props.formType !== nextProps.formType) {
+  //     this.props.clearErrors();
+  //   }
+  // }
+
+  _createClass(ReviewForm, [{
+    key: 'update',
+    value: function update(field) {
+      var _this2 = this;
+
+      return function (e) {
+        return _this2.setState(_defineProperty({}, field, e.currentTarget.value));
+      };
+    }
+  }, {
+    key: 'handleSubmit',
+    value: function handleSubmit(e) {
+      e.preventDefault();
+      var review = this.state;
+      this.props.createReview(review);
+    }
+
+    // renderErrors() {
+    //   return(
+    //     <ul className='errors'>
+    //       {this.props.errors.map( (error, i) => (
+    //         <li key={`error-${i}`}>
+    //           {error}
+    //         </li>
+    //       ))}
+    //     </ul>
+    //   );
+    // }
+
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'review-form-container' },
+        _react2.default.createElement(
+          'form',
+          { onSubmit: this.handleSubmit },
+          _react2.default.createElement(
+            'label',
+            null,
+            'Rating',
+            _react2.default.createElement('input', { type: 'text',
+              value: this.state.rating,
+              onChange: this.update('rating'),
+              className: 'review-input'
+            })
+          ),
+          _react2.default.createElement(
+            'label',
+            null,
+            'Review',
+            _react2.default.createElement('input', { type: 'textarea',
+              value: this.state.body,
+              onChange: this.update('body'),
+              className: 'review-input'
+            })
+          ),
+          _react2.default.createElement('input', { type: 'submit', className: 'btn green', value: 'Submit Review' })
+        )
+      );
+    }
+  }]);
+
+  return ReviewForm;
+}(_react2.default.Component);
+
+exports.default = (0, _reactRouterDom.withRouter)(ReviewForm);
 
 /***/ })
 /******/ ]);

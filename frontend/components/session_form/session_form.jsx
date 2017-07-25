@@ -51,16 +51,16 @@ class SessionForm extends React.Component {
     }
 
     return (
-      <div className="other-link">
+      <div className='other-link'>
         <p>{redirect.redirectMsg}</p>
-        <button className="session-redirect-btn" onClick={() => this.props.modalFunction(redirect.redirectForm)}>{redirect.buttonName}</button>
+        <button className='session-redirect-btn' onClick={() => this.props.modalFunction(redirect.redirectForm)}>{redirect.buttonName}</button>
       </div>
     );
   }
 
   renderErrors() {
     return(
-      <ul className="errors">
+      <ul className='errors'>
         {this.props.errors.map( (error, i) => (
           <li key={`error-${i}`}>
             {error}
@@ -76,33 +76,33 @@ class SessionForm extends React.Component {
     );
 
     return (
-      <div className="session-form-container">
+      <div className='session-form-container'>
 
         <h3>{renderMessage}</h3>
 
           <form onSubmit={this.handleSubmit}>
-            <div className="session-form-box">
+            <div className='session-form-box'>
             <br/>
-              <input type="text"
+              <input type='text'
                 value={this.state.email}
                 onChange={this.update('email')}
-                placeholder="&#f003; Enter your email address"
-                className="session-input"
+                placeholder='&#f003; Enter your email address'
+                className='session-input'
                 />
             <br/>
 
-              <input type="password"
+              <input type='password'
                 value={this.state.password}
                 onChange={this.update('password')}
-                placeholder="&#f023; Password"
-                className="session-input"
+                placeholder='&#f023; Password'
+                className='session-input'
                 />
             <br/>
 
             {this.renderErrors()}
 
-            <input type="submit" className="btn green" value={this.props.formType === 'login' ? 'Log In' : 'Sign Up'}/>
-            <button className="btn demo-btn" onClick={this.handleDemoClick}>Demo Account</button>
+            <input type='submit' className='btn green' value={this.props.formType === 'login' ? 'Log In' : 'Sign Up'}/>
+            <button className='btn demo-btn' onClick={this.handleDemoClick}>Demo Account</button>
           </div>
         </form>
 

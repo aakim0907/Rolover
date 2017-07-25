@@ -3,7 +3,7 @@
   flex-direction: column;
   width: 50%;
   margin: auto;
-  padding: 30px;
+  padding-top: 35px;
 }
 
 .review-header {
@@ -17,14 +17,14 @@
 }
 
 .review-list-item {
-  border: 1px solid $light-green;
+  border-bottom: 1px solid $light-gray;
   display: flex;
   flex-direction: column;
   padding: 10px;
 }
 
 .review-item-1, .review-item-2 {
-  border: 1px solid $light-gray;
+  // border: 1px solid $light-gray;
   display: flex;
   width: 100%;
   padding: 10px;
