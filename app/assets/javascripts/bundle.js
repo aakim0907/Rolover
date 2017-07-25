@@ -47920,7 +47920,29 @@ var TrainerDetail = function (_React$Component) {
                   '4.5 ratings 12 reviews'
                 )
               ),
-              _react2.default.createElement('div', { className: 'th-placeholder' }),
+              _react2.default.createElement(
+                'div',
+                { className: 'th-description' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'td-about' },
+                  _react2.default.createElement(
+                    'h3',
+                    null,
+                    'About ',
+                    trainer.name
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'td-description' },
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    trainer.description
+                  )
+                )
+              ),
               _react2.default.createElement(
                 'div',
                 { className: 'th-booking' },
@@ -47933,29 +47955,6 @@ var TrainerDetail = function (_React$Component) {
             )
           ),
           _react2.default.createElement('div', { className: 'trainer-header-3' })
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'trainer-description' },
-          _react2.default.createElement(
-            'div',
-            { className: 'td-about' },
-            _react2.default.createElement(
-              'h3',
-              null,
-              'About ',
-              trainer.name
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'td-description' },
-            _react2.default.createElement(
-              'p',
-              null,
-              trainer.description
-            )
-          )
         ),
         _react2.default.createElement(_review_container2.default, { currentTrainer: trainer.id })
       );

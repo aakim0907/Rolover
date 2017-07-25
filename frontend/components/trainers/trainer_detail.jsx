@@ -54,7 +54,14 @@ class TrainerDetail extends React.Component {
                 <p>4.5 ratings 12 reviews</p>
               </div>
 
-              <div className="th-placeholder"></div>
+              <div className="th-description">
+                <div className="td-about">
+                  <h3>About {trainer.name}</h3>
+                </div>
+                <div className="td-description">
+                  <p>{trainer.description}</p>
+                </div>
+              </div>
 
               <div className="th-booking">
                 <button className="btn green">Booking</button>
@@ -63,15 +70,6 @@ class TrainerDetail extends React.Component {
           </div>
 
           <div className="trainer-header-3"></div>
-        </div>
-
-        <div className="trainer-description">
-          <div className="td-about">
-            <h3>About {trainer.name}</h3>
-          </div>
-          <div className="td-description">
-            <p>{trainer.description}</p>
-          </div>
         </div>
 
         <ReviewContainer currentTrainer={trainer.id}/>
