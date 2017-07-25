@@ -24,7 +24,8 @@ const TrainerIndexItem = ({ trainer }) => {
         </div>
 
         <div className='trainer-list-rating'>
-          <p>{renderStars(trainer.rating)} | {trainer.review_count} reviews</p>
+          <span className='review sm'>{`${trainer.review_count} ` + (trainer.review_count === 1 ? 'review' : 'reviews')}</span>
+          <span className='star m'>{renderStars(trainer.rating)}</span>
         </div>
 
         <div className="trainer-list-description">

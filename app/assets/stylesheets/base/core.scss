@@ -102,43 +102,43 @@ button {
 }
 
 .star {
-  color: gold;
+  color: $star;
 
   &.sm {
     font-size: 14px;
   }
 
-  &.md {
-    font-size: 16px;
-  }
+  // &.md {
+  //   font-size: 16px;
+  // }
 
   &.lg {
     font-size: 18px;
   }
-
-  &.xlg {
-    font-size: 20px;
-  }
-
-  &.sm-marg i {
-    margin: 0 2px;
-  }
-
-  &.md-marg i {
-    margin: 0 3px;
-  }
-
-  &.lg-marg i {
-    margin: 0 5px;
-  }
+  //
+  // &.xlg {
+  //   font-size: 20px;
+  // }
+  //
+  // &.sm-marg i {
+  //   margin: 0 2px;
+  // }
+  //
+  // &.md-marg i {
+  //   margin: 0 3px;
+  // }
+  //
+  // &.lg-marg i {
+  //   margin: 0 5px;
+  // }
 }
 
 .review {
   color: $dark-gray;
 
-  &.xsm {
-    font-size: 12px;
-  }
+  // &.xsm {
+  //   font-size: 12px;
+  // }
 
   &.sm {
     font-size: 14px;
@@ -147,10 +147,10 @@ button {
   &.md {
     font-size: 16px;
   }
-
-  &.lg {
-    font-size: 18px;
-  }
+  //
+  // &.lg {
+  //   font-size: 18px;
+  // }
 }
 
 // .hallow-button {

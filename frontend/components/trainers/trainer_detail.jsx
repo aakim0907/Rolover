@@ -48,11 +48,11 @@ class TrainerDetail extends React.Component {
               </div>
 
               <div className='th-ratings'>
-                <p>{renderStars(trainer.rating)}</p>
+                <span className='star lg'>{renderStars(trainer.rating)}</span>
               </div>
 
               <div className='th-reviews'>
-                <p>( {trainer.review_count} reviews )</p>
+                <span className='review md'>( {`${trainer.review_count} ` + (trainer.review_count === 1 ? 'review' : 'reviews')} )</span>
               </div>
 
               <div className='th-description'>

@@ -47738,12 +47738,14 @@ var TrainerIndexItem = function TrainerIndexItem(_ref) {
         'div',
         { className: 'trainer-list-rating' },
         _react2.default.createElement(
-          'p',
-          null,
-          (0, _star2.default)(trainer.rating),
-          ' | ',
-          trainer.review_count,
-          ' reviews'
+          'span',
+          { className: 'review sm' },
+          trainer.review_count + ' ' + (trainer.review_count === 1 ? 'review' : 'reviews')
+        ),
+        _react2.default.createElement(
+          'span',
+          { className: 'star m' },
+          (0, _star2.default)(trainer.rating)
         )
       ),
       _react2.default.createElement(
@@ -47933,8 +47935,8 @@ var TrainerDetail = function (_React$Component) {
                 'div',
                 { className: 'th-ratings' },
                 _react2.default.createElement(
-                  'p',
-                  null,
+                  'span',
+                  { className: 'star lg' },
                   (0, _star2.default)(trainer.rating)
                 )
               ),
@@ -47942,11 +47944,11 @@ var TrainerDetail = function (_React$Component) {
                 'div',
                 { className: 'th-reviews' },
                 _react2.default.createElement(
-                  'p',
-                  null,
+                  'span',
+                  { className: 'review md' },
                   '( ',
-                  trainer.review_count,
-                  ' reviews )'
+                  trainer.review_count + ' ' + (trainer.review_count === 1 ? 'review' : 'reviews'),
+                  ' )'
                 )
               ),
               _react2.default.createElement(
@@ -48192,8 +48194,8 @@ var ReviewListItem = function ReviewListItem(_ref) {
       'div',
       { className: 'review-item-2' },
       _react2.default.createElement(
-        'p',
-        null,
+        'span',
+        { className: 'star sm' },
         (0, _star2.default)(review.rating)
       )
     ),

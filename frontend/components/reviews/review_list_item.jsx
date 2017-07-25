@@ -19,7 +19,7 @@ const ReviewListItem = ({ review }) => {
       </div>
 
       <div className='review-item-2'>
-        <p>{renderStars(review.rating)}</p>
+        <span className='star sm'>{renderStars(review.rating)}</span>
       </div>
 
       <div className='review-item-3'>
