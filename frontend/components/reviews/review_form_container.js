@@ -4,7 +4,8 @@ import { createReview } from '../../actions/review_actions';
 import ReviewForm from './review_form';
 
 const mapStateToProps = ({ session }) => ({
-  loggedIn: Boolean(session.currentUser)
+  // loggedIn: Boolean(session.currentUser)
+  currentUser: session.currentUser
 });
 
 const mapDispatchToProps = dispatch => ({

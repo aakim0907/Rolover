@@ -58045,3 +58045,857 @@ NoMethodError - undefined method `id' for nil:NilClass:
   puma (3.9.1) lib/puma/server.rb:299:in `block in run'
   puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
 
+Started GET "/" for 127.0.0.1 at 2017-07-25 11:14:19 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (10.0ms)
+Completed 200 OK in 543ms (Views: 541.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers/2" for 127.0.0.1 at 2017-07-25 11:14:21 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (0.8ms)
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/show.json.jbuilder (5.3ms)
+Completed 200 OK in 9ms (Views: 7.2ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/trainers/2/reviews" for 127.0.0.1 at 2017-07-25 11:14:21 -0700
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"trainer_id"=>"2"}
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (11.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (2.8ms)
+  Rendered api/reviews/index.json.jbuilder (20.4ms)
+Completed 200 OK in 25ms (Views: 22.1ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-25 11:14:23 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (5.7ms)
+Completed 200 OK in 41ms (Views: 40.1ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers/2" for 127.0.0.1 at 2017-07-25 11:14:25 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (0.4ms)
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/show.json.jbuilder (3.6ms)
+Completed 200 OK in 8ms (Views: 6.2ms | ActiveRecord: 0.4ms)
+
+
+Started GET "/api/trainers/2/reviews" for 127.0.0.1 at 2017-07-25 11:14:25 -0700
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"trainer_id"=>"2"}
+  [1m[36mTrainer Load (0.5ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (1.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (3.6ms)
+  [1m[36mCACHE (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (2.5ms)
+  Rendered api/reviews/index.json.jbuilder (16.5ms)
+Completed 200 OK in 21ms (Views: 16.4ms | ActiveRecord: 3.2ms)
+
+
+Started POST "/api/reviews" for 127.0.0.1 at 2017-07-25 11:14:33 -0700
+Processing by Api::ReviewsController#create as JSON
+  Parameters: {"rating"=>"4", "body"=>"asdfa", "trainer_id"=>"2"}
+Completed 400 Bad Request in 4ms (ActiveRecord: 0.0ms)
+
+
+
+ActionController::ParameterMissing - param is missing or the value is empty: review:
+  actionpack (5.0.4) lib/action_controller/metal/strong_parameters.rb:455:in `require'
+  app/controllers/api/reviews_controller.rb:26:in `review_params'
+  app/controllers/api/reviews_controller.rb:9:in `create'
+  actionpack (5.0.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.0.4) lib/abstract_controller/base.rb:188:in `process_action'
+  actionpack (5.0.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.0.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:126:in `call'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:455:in `call'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:90:in `run_callbacks'
+  actionpack (5.0.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.0.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.0.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.0.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (5.0.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.0.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (5.0.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.0.4) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+  activerecord (5.0.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (5.0.4) lib/abstract_controller/base.rb:126:in `process'
+  actionview (5.0.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.0.4) lib/action_controller/metal.rb:190:in `dispatch'
+  actionpack (5.0.4) lib/action_controller/metal.rb:262:in `dispatch'
+  actionpack (5.0.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+  actionpack (5.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+  actionpack (5.0.4) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+  actionpack (5.0.4) lib/action_dispatch/journey/router.rb:26:in `serve'
+  actionpack (5.0.4) lib/action_dispatch/routing/route_set.rb:725:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.0.4) lib/active_record/migration.rb:553:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:90:in `run_callbacks'
+  actionpack (5.0.4) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.0.4) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.0.4) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.0.4) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/static.rb:136:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.0.4) lib/rails/engine.rb:522:in `call'
+  puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+  puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+  puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+  puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+  puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started GET "/" for 127.0.0.1 at 2017-07-25 11:17:36 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (7.5ms)
+Completed 200 OK in 55ms (Views: 54.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers/2" for 127.0.0.1 at 2017-07-25 11:17:38 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrainer Load (0.8ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (0.9ms)
+  [1m[36mImage Load (1.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/show.json.jbuilder (9.1ms)
+Completed 200 OK in 16ms (Views: 11.2ms | ActiveRecord: 2.2ms)
+
+
+Started GET "/api/trainers/2/reviews" for 127.0.0.1 at 2017-07-25 11:17:38 -0700
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"trainer_id"=>"2"}
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (0.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  [1m[36mUser Load (2.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (4.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (1.7ms)
+  Rendered api/reviews/index.json.jbuilder (20.1ms)
+Completed 200 OK in 25ms (Views: 19.3ms | ActiveRecord: 3.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-25 11:17:40 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (14.5ms)
+Completed 200 OK in 63ms (Views: 60.4ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers/2" for 127.0.0.1 at 2017-07-25 11:17:41 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (1.2ms)
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/show.json.jbuilder (6.7ms)
+Completed 200 OK in 12ms (Views: 8.7ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/trainers/2/reviews" for 127.0.0.1 at 2017-07-25 11:17:42 -0700
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"trainer_id"=>"2"}
+  [1m[36mTrainer Load (0.5ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (0.4ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  [1m[36mUser Load (4.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (6.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (3.2ms)
+  Rendered api/reviews/index.json.jbuilder (15.6ms)
+Completed 200 OK in 20ms (Views: 13.1ms | ActiveRecord: 5.2ms)
+
+
+Started POST "/api/reviews" for 127.0.0.1 at 2017-07-25 11:17:47 -0700
+Processing by Api::ReviewsController#create as JSON
+  Parameters: {"review"=>{"rating"=>"3", "body"=>"asdf", "trainer_id"=>"2"}}
+Completed 500 Internal Server Error in 5ms (ActiveRecord: 0.0ms)
+
+
+
+NoMethodError - undefined method `id' for nil:NilClass:
+  app/controllers/api/reviews_controller.rb:10:in `create'
+  actionpack (5.0.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.0.4) lib/abstract_controller/base.rb:188:in `process_action'
+  actionpack (5.0.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.0.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:126:in `call'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:455:in `call'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:90:in `run_callbacks'
+  actionpack (5.0.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.0.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.0.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.0.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (5.0.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.0.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (5.0.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.0.4) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+  activerecord (5.0.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (5.0.4) lib/abstract_controller/base.rb:126:in `process'
+  actionview (5.0.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.0.4) lib/action_controller/metal.rb:190:in `dispatch'
+  actionpack (5.0.4) lib/action_controller/metal.rb:262:in `dispatch'
+  actionpack (5.0.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+  actionpack (5.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+  actionpack (5.0.4) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+  actionpack (5.0.4) lib/action_dispatch/journey/router.rb:26:in `serve'
+  actionpack (5.0.4) lib/action_dispatch/routing/route_set.rb:725:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.0.4) lib/active_record/migration.rb:553:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:90:in `run_callbacks'
+  actionpack (5.0.4) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.0.4) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.0.4) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.0.4) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/static.rb:136:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.0.4) lib/rails/engine.rb:522:in `call'
+  puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+  puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+  puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+  puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+  puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started GET "/" for 127.0.0.1 at 2017-07-25 11:18:18 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (11.0ms)
+Completed 200 OK in 74ms (Views: 72.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers/2" for 127.0.0.1 at 2017-07-25 11:18:21 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (10.4ms)
+  [1m[36mImage Load (0.2ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/show.json.jbuilder (33.1ms)
+Completed 200 OK in 69ms (Views: 31.8ms | ActiveRecord: 8.4ms)
+
+
+Started GET "/api/trainers/2/reviews" for 127.0.0.1 at 2017-07-25 11:18:21 -0700
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"trainer_id"=>"2"}
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (0.2ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  [1m[36mUser Load (0.2ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (36.3ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (2.2ms)
+  Rendered api/reviews/index.json.jbuilder (76.1ms)
+Completed 200 OK in 86ms (Views: 59.7ms | ActiveRecord: 19.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-25 11:18:22 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (10.8ms)
+Completed 200 OK in 47ms (Views: 46.3ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers/2" for 127.0.0.1 at 2017-07-25 11:18:24 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/show.json.jbuilder (5.6ms)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/trainers/2/reviews" for 127.0.0.1 at 2017-07-25 11:18:24 -0700
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"trainer_id"=>"2"}
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (3.5ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (1.7ms)
+  Rendered api/reviews/index.json.jbuilder (17.3ms)
+Completed 200 OK in 23ms (Views: 18.7ms | ActiveRecord: 2.3ms)
+
+
+Started POST "/api/reviews" for 127.0.0.1 at 2017-07-25 11:18:27 -0700
+Processing by Api::ReviewsController#create as JSON
+  Parameters: {"review"=>{"rating"=>"3", "body"=>"hi", "trainer_id"=>"2"}}
+Completed 500 Internal Server Error in 31006ms (ActiveRecord: 0.0ms)
+
+
+
+SystemExit - exit:
+  (byebug):1:in `create'
+  byebug (9.0.6) lib/byebug/helpers/eval.rb:59:in `safe_eval'
+  byebug (9.0.6) lib/byebug/helpers/eval.rb:53:in `warning_eval'
+  byebug (9.0.6) lib/byebug/helpers/eval.rb:29:in `block in multiple_thread_eval'
+  byebug (9.0.6) lib/byebug/helpers/eval.rb:92:in `allowing_other_threads'
+  byebug (9.0.6) lib/byebug/helpers/eval.rb:29:in `multiple_thread_eval'
+  byebug (9.0.6) lib/byebug/processors/command_processor.rb:164:in `block in run_cmd'
+  byebug (9.0.6) lib/byebug/processors/command_processor.rb:169:in `safely'
+  byebug (9.0.6) lib/byebug/processors/command_processor.rb:160:in `run_cmd'
+  byebug (9.0.6) lib/byebug/processors/command_processor.rb:134:in `repl'
+  byebug (9.0.6) lib/byebug/processors/command_processor.rb:98:in `process_commands'
+  byebug (9.0.6) lib/byebug/processors/command_processor.rb:56:in `at_line'
+  byebug (9.0.6) lib/byebug/context.rb:96:in `at_line'
+  app/controllers/api/reviews_controller.rb:11:in `create'
+  actionpack (5.0.4) lib/action_controller/metal/basic_implicit_render.rb:4:in `send_action'
+  actionpack (5.0.4) lib/abstract_controller/base.rb:188:in `process_action'
+  actionpack (5.0.4) lib/action_controller/metal/rendering.rb:30:in `process_action'
+  actionpack (5.0.4) lib/abstract_controller/callbacks.rb:20:in `block in process_action'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:126:in `call'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:506:in `block (2 levels) in compile'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:455:in `call'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:101:in `__run_callbacks__'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:750:in `_run_process_action_callbacks'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:90:in `run_callbacks'
+  actionpack (5.0.4) lib/abstract_controller/callbacks.rb:19:in `process_action'
+  actionpack (5.0.4) lib/action_controller/metal/rescue.rb:20:in `process_action'
+  actionpack (5.0.4) lib/action_controller/metal/instrumentation.rb:32:in `block in process_action'
+  activesupport (5.0.4) lib/active_support/notifications.rb:164:in `block in instrument'
+  activesupport (5.0.4) lib/active_support/notifications/instrumenter.rb:21:in `instrument'
+  activesupport (5.0.4) lib/active_support/notifications.rb:164:in `instrument'
+  actionpack (5.0.4) lib/action_controller/metal/instrumentation.rb:30:in `process_action'
+  actionpack (5.0.4) lib/action_controller/metal/params_wrapper.rb:248:in `process_action'
+  activerecord (5.0.4) lib/active_record/railties/controller_runtime.rb:18:in `process_action'
+  actionpack (5.0.4) lib/abstract_controller/base.rb:126:in `process'
+  actionview (5.0.4) lib/action_view/rendering.rb:30:in `process'
+  actionpack (5.0.4) lib/action_controller/metal.rb:190:in `dispatch'
+  actionpack (5.0.4) lib/action_controller/metal.rb:262:in `dispatch'
+  actionpack (5.0.4) lib/action_dispatch/routing/route_set.rb:50:in `dispatch'
+  actionpack (5.0.4) lib/action_dispatch/routing/route_set.rb:32:in `serve'
+  actionpack (5.0.4) lib/action_dispatch/journey/router.rb:39:in `block in serve'
+  actionpack (5.0.4) lib/action_dispatch/journey/router.rb:26:in `serve'
+  actionpack (5.0.4) lib/action_dispatch/routing/route_set.rb:725:in `call'
+  rack (2.0.3) lib/rack/etag.rb:25:in `call'
+  rack (2.0.3) lib/rack/conditional_get.rb:38:in `call'
+  rack (2.0.3) lib/rack/head.rb:12:in `call'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:232:in `context'
+  rack (2.0.3) lib/rack/session/abstract/id.rb:226:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/cookies.rb:613:in `call'
+  activerecord (5.0.4) lib/active_record/migration.rb:553:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/callbacks.rb:38:in `block in call'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:97:in `__run_callbacks__'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:750:in `_run_call_callbacks'
+  activesupport (5.0.4) lib/active_support/callbacks.rb:90:in `run_callbacks'
+  actionpack (5.0.4) lib/action_dispatch/middleware/callbacks.rb:36:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/remote_ip.rb:79:in `call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:84:in `protected_app_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:79:in `better_errors_call'
+  better_errors (2.1.1) lib/better_errors/middleware.rb:57:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/debug_exceptions.rb:49:in `call'
+  web-console (3.5.1) lib/web_console/middleware.rb:135:in `call_app'
+  web-console (3.5.1) lib/web_console/middleware.rb:28:in `block in call'
+  web-console (3.5.1) lib/web_console/middleware.rb:18:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/show_exceptions.rb:31:in `call'
+  railties (5.0.4) lib/rails/rack/logger.rb:36:in `call_app'
+  railties (5.0.4) lib/rails/rack/logger.rb:24:in `block in call'
+  activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `block in tagged'
+  activesupport (5.0.4) lib/active_support/tagged_logging.rb:26:in `tagged'
+  activesupport (5.0.4) lib/active_support/tagged_logging.rb:69:in `tagged'
+  railties (5.0.4) lib/rails/rack/logger.rb:24:in `call'
+  sprockets-rails (3.2.0) lib/sprockets/rails/quiet_assets.rb:13:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/request_id.rb:24:in `call'
+  rack (2.0.3) lib/rack/method_override.rb:22:in `call'
+  rack (2.0.3) lib/rack/runtime.rb:22:in `call'
+  activesupport (5.0.4) lib/active_support/cache/strategy/local_cache_middleware.rb:28:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/executor.rb:12:in `call'
+  actionpack (5.0.4) lib/action_dispatch/middleware/static.rb:136:in `call'
+  rack (2.0.3) lib/rack/sendfile.rb:111:in `call'
+  railties (5.0.4) lib/rails/engine.rb:522:in `call'
+  puma (3.9.1) lib/puma/configuration.rb:224:in `call'
+  puma (3.9.1) lib/puma/server.rb:602:in `handle_request'
+  puma (3.9.1) lib/puma/server.rb:435:in `process_client'
+  puma (3.9.1) lib/puma/server.rb:299:in `block in run'
+  puma (3.9.1) lib/puma/thread_pool.rb:120:in `block in spawn_thread'
+
+Started GET "/" for 127.0.0.1 at 2017-07-25 11:20:00 -0700
+  [1m[36mActiveRecord::SchemaMigration Load (0.6ms)[0m  [1m[34mSELECT "schema_migrations".* FROM "schema_migrations"[0m
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (1451.8ms)
+Completed 200 OK in 1724ms (Views: 1722.7ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers/2" for 127.0.0.1 at 2017-07-25 11:20:04 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrainer Load (1.0ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (30.2ms)
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/show.json.jbuilder (55.7ms)
+Completed 200 OK in 103ms (Views: 55.0ms | ActiveRecord: 11.6ms)
+
+
+Started GET "/api/trainers/2/reviews" for 127.0.0.1 at 2017-07-25 11:20:04 -0700
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"trainer_id"=>"2"}
+  [1m[36mTrainer Load (0.6ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (32.1ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (1.7ms)
+  Rendered api/reviews/index.json.jbuilder (81.0ms)
+Completed 200 OK in 96ms (Views: 57.1ms | ActiveRecord: 28.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-25 11:24:43 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (4.8ms)
+Completed 200 OK in 507ms (Views: 505.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers/2" for 127.0.0.1 at 2017-07-25 11:24:45 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrainer Load (1.0ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (6.1ms)
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/show.json.jbuilder (58.7ms)
+Completed 200 OK in 97ms (Views: 57.8ms | ActiveRecord: 13.0ms)
+
+
+Started GET "/api/trainers/2/reviews" for 127.0.0.1 at 2017-07-25 11:24:45 -0700
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"trainer_id"=>"2"}
+  [1m[36mTrainer Load (0.6ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (1.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (27.8ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (1.8ms)
+  Rendered api/reviews/index.json.jbuilder (56.3ms)
+Completed 200 OK in 70ms (Views: 48.6ms | ActiveRecord: 12.9ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-25 11:24:48 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (25.0ms)
+Completed 200 OK in 80ms (Views: 77.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers/2" for 127.0.0.1 at 2017-07-25 11:24:49 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrainer Load (0.7ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (0.9ms)
+  [1m[36mImage Load (0.6ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/show.json.jbuilder (5.6ms)
+Completed 200 OK in 11ms (Views: 7.2ms | ActiveRecord: 1.3ms)
+
+
+Started GET "/api/trainers/2/reviews" for 127.0.0.1 at 2017-07-25 11:24:49 -0700
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"trainer_id"=>"2"}
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (4.7ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (2.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (1.7ms)
+  Rendered api/reviews/index.json.jbuilder (14.2ms)
+Completed 200 OK in 18ms (Views: 11.3ms | ActiveRecord: 5.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-25 11:24:52 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (12.2ms)
+Completed 200 OK in 51ms (Views: 49.6ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers/2" for 127.0.0.1 at 2017-07-25 11:24:53 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  [1m[36mImage Load (0.5ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/show.json.jbuilder (5.9ms)
+Completed 200 OK in 12ms (Views: 9.0ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/trainers/2/reviews" for 127.0.0.1 at 2017-07-25 11:24:53 -0700
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"trainer_id"=>"2"}
+  [1m[36mTrainer Load (1.8ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (3.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (1.8ms)
+  Rendered api/reviews/index.json.jbuilder (10.0ms)
+Completed 200 OK in 16ms (Views: 11.4ms | ActiveRecord: 2.8ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-25 11:25:24 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (12.8ms)
+Completed 200 OK in 531ms (Views: 530.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers/2" for 127.0.0.1 at 2017-07-25 11:25:26 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (0.8ms)
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/show.json.jbuilder (5.3ms)
+Completed 200 OK in 11ms (Views: 8.2ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/trainers/2/reviews" for 127.0.0.1 at 2017-07-25 11:25:26 -0700
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"trainer_id"=>"2"}
+  [1m[36mTrainer Load (3.7ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (0.8ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (3.9ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (2.1ms)
+  Rendered api/reviews/index.json.jbuilder (13.9ms)
+Completed 200 OK in 24ms (Views: 15.4ms | ActiveRecord: 5.0ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-25 11:25:28 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  Rendered static_pages/root.html.erb within layouts/application (8.3ms)
+Completed 200 OK in 37ms (Views: 36.0ms | ActiveRecord: 0.0ms)
+
+
+Started GET "/api/trainers/2" for 127.0.0.1 at 2017-07-25 11:25:30 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (0.8ms)
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/show.json.jbuilder (7.6ms)
+Completed 200 OK in 16ms (Views: 11.8ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/trainers/2/reviews" for 127.0.0.1 at 2017-07-25 11:25:30 -0700
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"trainer_id"=>"2"}
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (0.3ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (3.2ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (2.3ms)
+  Rendered api/reviews/index.json.jbuilder (11.4ms)
+Completed 200 OK in 24ms (Views: 21.1ms | ActiveRecord: 1.1ms)
+
+
+Started POST "/api/session" for 127.0.0.1 at 2017-07-25 11:25:36 -0700
+Processing by Api::SessionsController#create as JSON
+  Parameters: {"user"=>{"email"=>"guest@rolover.dog", "password"=>"[FILTERED]"}}
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."email" = $1 LIMIT $2[0m  [["email", "guest@rolover.dog"], ["LIMIT", 1]]
+  [1m[35m (0.1ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Exists (0.3ms)[0m  [1m[34mSELECT  1 AS one FROM "users" WHERE "users"."email" = $1 AND ("users"."id" != $2) LIMIT $3[0m  [["email", "guest@rolover.dog"], ["id", 1], ["LIMIT", 1]]
+  [1m[35mSQL (0.3ms)[0m  [1m[33mUPDATE "users" SET "session_token" = $1, "updated_at" = $2 WHERE "users"."id" = $3[0m  [["session_token", "c684wamGbE6MV0UTubwN8w"], ["updated_at", "2017-07-25 18:25:36.706044"], ["id", 1]]
+  [1m[35m (1.3ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/users/show.json.jbuilder
+  Rendered api/users/_user.json.jbuilder (6.7ms)
+  [1m[36mDog Load (0.3ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/show.json.jbuilder (22.2ms)
+Completed 200 OK in 131ms (Views: 22.0ms | ActiveRecord: 5.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-25 11:25:49 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "c684wamGbE6MV0UTubwN8w"], ["LIMIT", 1]]
+  [1m[36mDog Load (0.5ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (4.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (26.1ms)
+Completed 200 OK in 82ms (Views: 79.4ms | ActiveRecord: 1.0ms)
+
+
+Started GET "/api/trainers/2" for 127.0.0.1 at 2017-07-25 11:25:51 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (0.8ms)
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/show.json.jbuilder (4.6ms)
+Completed 200 OK in 9ms (Views: 6.9ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/trainers/2/reviews" for 127.0.0.1 at 2017-07-25 11:25:51 -0700
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"trainer_id"=>"2"}
+  [1m[36mTrainer Load (2.6ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (0.6ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (4.3ms)
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (2.6ms)
+  Rendered api/reviews/index.json.jbuilder (14.7ms)
+Completed 200 OK in 23ms (Views: 16.2ms | ActiveRecord: 4.3ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-25 11:25:59 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "c684wamGbE6MV0UTubwN8w"], ["LIMIT", 1]]
+  [1m[36mDog Load (0.5ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (7.5ms)
+  Rendered static_pages/root.html.erb within layouts/application (30.1ms)
+Completed 200 OK in 906ms (Views: 903.8ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/trainers/2" for 127.0.0.1 at 2017-07-25 11:26:01 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  [1m[36mImage Load (0.4ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/show.json.jbuilder (6.2ms)
+Completed 200 OK in 13ms (Views: 9.5ms | ActiveRecord: 0.8ms)
+
+
+Started GET "/api/trainers/2/reviews" for 127.0.0.1 at 2017-07-25 11:26:01 -0700
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"trainer_id"=>"2"}
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (1.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  [1m[36mUser Load (0.3ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (2.7ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (2.1ms)
+  Rendered api/reviews/index.json.jbuilder (12.4ms)
+Completed 200 OK in 18ms (Views: 13.6ms | ActiveRecord: 2.5ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-25 11:26:03 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "c684wamGbE6MV0UTubwN8w"], ["LIMIT", 1]]
+  [1m[36mDog Load (0.3ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (3.6ms)
+  Rendered static_pages/root.html.erb within layouts/application (13.1ms)
+Completed 200 OK in 507ms (Views: 505.3ms | ActiveRecord: 0.7ms)
+
+
+Started GET "/api/trainers/2" for 127.0.0.1 at 2017-07-25 11:26:05 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (0.7ms)
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/show.json.jbuilder (6.1ms)
+Completed 200 OK in 11ms (Views: 8.8ms | ActiveRecord: 0.6ms)
+
+
+Started GET "/api/trainers/2/reviews" for 127.0.0.1 at 2017-07-25 11:26:05 -0700
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"trainer_id"=>"2"}
+  [1m[36mTrainer Load (1.2ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (0.9ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  [1m[36mUser Load (1.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (4.0ms)
+  [1m[36mCACHE (0.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (2.0ms)
+  Rendered api/reviews/index.json.jbuilder (12.4ms)
+Completed 200 OK in 18ms (Views: 12.7ms | ActiveRecord: 3.6ms)
+
+
+Started POST "/api/reviews" for 127.0.0.1 at 2017-07-25 11:26:10 -0700
+Processing by Api::ReviewsController#create as JSON
+  Parameters: {"review"=>{"user_id"=>"1", "trainer_id"=>"2", "rating"=>"4", "body"=>"asdf"}}
+Unpermitted parameter: user_id
+  [1m[35m (1.9ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mTrainer Load (0.8ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35m (0.4ms)[0m  [1m[31mROLLBACK[0m
+Completed 422 Unprocessable Entity in 41ms (Views: 0.5ms | ActiveRecord: 3.1ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-25 11:26:31 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (0.5ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "c684wamGbE6MV0UTubwN8w"], ["LIMIT", 1]]
+  [1m[36mDog Load (0.6ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (31.2ms)
+  Rendered static_pages/root.html.erb within layouts/application (62.3ms)
+Completed 200 OK in 102ms (Views: 95.5ms | ActiveRecord: 5.3ms)
+
+
+Started GET "/api/trainers/2" for 127.0.0.1 at 2017-07-25 11:26:33 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrainer Load (0.3ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (8.4ms)
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/show.json.jbuilder (33.5ms)
+Completed 200 OK in 109ms (Views: 54.8ms | ActiveRecord: 12.0ms)
+
+
+Started GET "/api/trainers/2/reviews" for 127.0.0.1 at 2017-07-25 11:26:33 -0700
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"trainer_id"=>"2"}
+  [1m[36mTrainer Load (0.4ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (0.5ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  [1m[36mUser Load (0.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (9.3ms)
+  [1m[36mCACHE (0.1ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (4.0ms)
+  Rendered api/reviews/index.json.jbuilder (45.7ms)
+Completed 200 OK in 66ms (Views: 45.2ms | ActiveRecord: 5.2ms)
+
+
+Started GET "/" for 127.0.0.1 at 2017-07-25 11:26:35 -0700
+Processing by StaticPagesController#root as HTML
+  Rendering static_pages/root.html.erb within layouts/application
+  [1m[36mUser Load (1.9ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."session_token" = $1 LIMIT $2[0m  [["session_token", "c684wamGbE6MV0UTubwN8w"], ["LIMIT", 1]]
+  [1m[36mDog Load (1.5ms)[0m  [1m[34mSELECT "dogs".* FROM "dogs" WHERE "dogs"."user_id" = $1[0m  [["user_id", 1]]
+  Rendered api/users/_user.json.jbuilder (17.0ms)
+  Rendered static_pages/root.html.erb within layouts/application (61.9ms)
+Completed 200 OK in 133ms (Views: 124.8ms | ActiveRecord: 3.5ms)
+
+
+Started GET "/api/trainers/2" for 127.0.0.1 at 2017-07-25 11:26:36 -0700
+Processing by Api::TrainersController#show as JSON
+  Parameters: {"id"=>"2"}
+  [1m[36mTrainer Load (0.6ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/trainers/show.json.jbuilder
+  Rendered api/trainers/_trainer.json.jbuilder (1.0ms)
+  [1m[36mImage Load (0.3ms)[0m  [1m[34mSELECT "images".* FROM "images" WHERE "images"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  Rendered api/trainers/show.json.jbuilder (5.8ms)
+Completed 200 OK in 11ms (Views: 7.9ms | ActiveRecord: 0.9ms)
+
+
+Started GET "/api/trainers/2/reviews" for 127.0.0.1 at 2017-07-25 11:26:36 -0700
+Processing by Api::ReviewsController#index as JSON
+  Parameters: {"trainer_id"=>"2"}
+  [1m[36mTrainer Load (0.2ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  Rendering api/reviews/index.json.jbuilder
+  [1m[36mReview Load (1.0ms)[0m  [1m[34mSELECT "reviews".* FROM "reviews" WHERE "reviews"."trainer_id" = $1[0m  [["trainer_id", 2]]
+  [1m[36mUser Load (1.0ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (3.7ms)
+  [1m[36mCACHE (6.4ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  Rendered api/reviews/_review.json.jbuilder (8.8ms)
+  Rendered api/reviews/index.json.jbuilder (19.4ms)
+Completed 200 OK in 24ms (Views: 13.3ms | ActiveRecord: 8.6ms)
+
+
+Started POST "/api/reviews" for 127.0.0.1 at 2017-07-25 11:26:43 -0700
+Processing by Api::ReviewsController#create as JSON
+  Parameters: {"review"=>{"user_id"=>"1", "trainer_id"=>"2", "rating"=>"2", "body"=>"asdfasdf"}}
+  [1m[35m (0.8ms)[0m  [1m[35mBEGIN[0m
+  [1m[36mUser Load (1.6ms)[0m  [1m[34mSELECT  "users".* FROM "users" WHERE "users"."id" = $1 LIMIT $2[0m  [["id", 1], ["LIMIT", 1]]
+  [1m[36mTrainer Load (1.2ms)[0m  [1m[34mSELECT  "trainers".* FROM "trainers" WHERE "trainers"."id" = $1 LIMIT $2[0m  [["id", 2], ["LIMIT", 1]]
+  [1m[35mSQL (5.0ms)[0m  [1m[32mINSERT INTO "reviews" ("user_id", "trainer_id", "rating", "body") VALUES ($1, $2, $3, $4) RETURNING "id"[0m  [["user_id", 1], ["trainer_id", 2], ["rating", 2], ["body", "asdfasdf"]]
+  [1m[35m (2.9ms)[0m  [1m[35mCOMMIT[0m
+  Rendering api/reviews/show.json.jbuilder
+  Rendered api/reviews/_review.json.jbuilder (1.7ms)
+  Rendered api/reviews/show.json.jbuilder (7.8ms)
+Completed 200 OK in 65ms (Views: 19.4ms | ActiveRecord: 11.5ms)
+
+

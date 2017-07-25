@@ -6,7 +6,15 @@ import AuthModal from '../auth_modal';
 class ReviewForm extends React.Component {
   constructor(props) {
     super(props);
-    this.state = { rating: '', body: '', trainer_id: this.props.currentTrainerId };
+
+    const { currentUser } = this.props;
+    console.log(currentUser);
+    if ( currentUser ) {
+      this.state = { user_id: currentUser.id, trainer_id: this.props.currentTrainerId, rating: '', body: '' };
+    } else {
+      this.state = { user_id: null, trainer_id: this.props.currentTrainerId, rating: '', body: '' };
+    }
+
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -46,8 +54,6 @@ class ReviewForm extends React.Component {
   //   className='review-input'
   //   />
   render() {
-    console.log(this.props);
-    console.log(this.state);
 
     return (
       <div className='review-form-container'>

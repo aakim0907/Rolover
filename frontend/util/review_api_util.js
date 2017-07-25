@@ -8,7 +8,7 @@ export const fetchReviews = trainerId => (
 export const createReview = review => (
   $.ajax({
     method: 'POST',
-    url: `api/reviews`,
+    url: 'api/reviews',
     data: { review }
   })
 );

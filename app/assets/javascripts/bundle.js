@@ -48242,7 +48242,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var mapStateToProps = function mapStateToProps(_ref) {
   var session = _ref.session;
   return {
-    loggedIn: Boolean(session.currentUser)
+    // loggedIn: Boolean(session.currentUser)
+    currentUser: session.currentUser
   };
 };
 
@@ -48297,7 +48298,15 @@ var ReviewForm = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (ReviewForm.__proto__ || Object.getPrototypeOf(ReviewForm)).call(this, props));
 
-    _this.state = { rating: '', body: '', trainer_id: _this.props.currentTrainerId };
+    var currentUser = _this.props.currentUser;
+
+    console.log(currentUser);
+    if (currentUser) {
+      _this.state = { user_id: currentUser.id, trainer_id: _this.props.currentTrainerId, rating: '', body: '' };
+    } else {
+      _this.state = { user_id: null, trainer_id: _this.props.currentTrainerId, rating: '', body: '' };
+    }
+
     _this.handleSubmit = _this.handleSubmit.bind(_this);
     return _this;
   }
@@ -48346,8 +48355,6 @@ var ReviewForm = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      console.log(this.props);
-      console.log(this.state);
 
       return _react2.default.createElement(
         'div',
