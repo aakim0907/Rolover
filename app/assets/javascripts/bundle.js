@@ -45943,6 +45943,10 @@ var _trainer_detail_container = __webpack_require__(302);
 
 var _trainer_detail_container2 = _interopRequireDefault(_trainer_detail_container);
 
+var _booking_form_container = __webpack_require__(320);
+
+var _booking_form_container2 = _interopRequireDefault(_booking_form_container);
+
 var _footer = __webpack_require__(307);
 
 var _footer2 = _interopRequireDefault(_footer);
@@ -45966,6 +45970,7 @@ var App = function App() {
         null,
         _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/trainers', component: _trainer_list_container2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/trainers/:id', component: _trainer_detail_container2.default }),
+        _react2.default.createElement(_reactRouterDom.Route, { path: '/bookings', component: _booking_form_container2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _main_page2.default })
       )
     )
@@ -50561,6 +50566,161 @@ var createBooking = exports.createBooking = function createBooking(booking) {
     data: { booking: booking }
   });
 };
+
+/***/ }),
+/* 320 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(18);
+
+var _booking_actions = __webpack_require__(318);
+
+var _booking_form = __webpack_require__(321);
+
+var _booking_form2 = _interopRequireDefault(_booking_form);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state, _ref) {
+  var match = _ref.match;
+  return {
+    currentUserId: state.session.currentUser.id
+    // currentTrainer: state.trainers[match.params.id]
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    createBooking: function createBooking(booking) {
+      return dispatch((0, _booking_actions.createBooking)(booking));
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_booking_form2.default);
+
+/***/ }),
+/* 321 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(10);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var BookingForm = function (_React$Component) {
+  _inherits(BookingForm, _React$Component);
+
+  function BookingForm(props) {
+    _classCallCheck(this, BookingForm);
+
+    var _this = _possibleConstructorReturn(this, (BookingForm.__proto__ || Object.getPrototypeOf(BookingForm)).call(this, props));
+
+    var _this$props = _this.props,
+        currentUserId = _this$props.currentUserId,
+        currentTrainer = _this$props.currentTrainer;
+
+    _this.state = { training_type: '', start_date: '', end_date: '', dog_id: '', message: '', trainer_id: currentTrainer, user_id: currentUserId };
+    _this.handleSubmit = _this.handleSubmit.bind(_this);
+    return _this;
+  }
+
+  _createClass(BookingForm, [{
+    key: 'update',
+    value: function update(field) {
+      var _this2 = this;
+
+      return function (e) {
+        return _this2.setState(_defineProperty({}, field, e.currentTarget.value));
+      };
+    }
+  }, {
+    key: 'handleSubmit',
+    value: function handleSubmit(e) {
+      e.preventDefault();
+      var booking = this.state;
+      this.props.createBooking(booking);
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var currentTrainer = this.props.currentTrainer;
+
+
+      console.log(this.state);
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'booking-form-container' },
+        _react2.default.createElement(
+          'h3',
+          null,
+          'Contact this trainer'
+        ),
+        _react2.default.createElement(
+          'form',
+          { onSubmit: this.handleSubmit },
+          _react2.default.createElement('div', { className: 'booking-form-training' }),
+          _react2.default.createElement('div', { className: 'booking-form-date' }),
+          _react2.default.createElement('div', { className: 'booking-form-dog' }),
+          _react2.default.createElement(
+            'div',
+            { className: 'booking-form-msg' },
+            _react2.default.createElement(
+              'label',
+              null,
+              'Message',
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('textarea', {
+                rows: '5',
+                cols: '70',
+                value: this.state.message,
+                onChange: this.update('message'),
+                className: 'booking-input'
+              })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'booking-form-button' },
+            _react2.default.createElement('input', { type: 'submit', className: 'btn green', value: 'Send Request' })
+          )
+        )
+      );
+    }
+  }]);
+
+  return BookingForm;
+}(_react2.default.Component);
+
+exports.default = BookingForm;
 
 /***/ })
 /******/ ]);

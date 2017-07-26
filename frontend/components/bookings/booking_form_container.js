@@ -1,17 +1,18 @@
 import { connect } from 'react-redux';
 
-// import { login, signup, clearErrors } from '../../actions/session_actions';
-// import BookingForm from './session_form';
-//
-// const mapStateToProps = ({ booking }) => (
-    
-// );
-//
-// const mapDispatchToProps = (dispatch) => {
+import { createBooking } from '../../actions/booking_actions';
+import BookingForm from './booking_form';
 
-// };
-//
-// export default connect(
-//   mapStateToProps,
-//   mapDispatchToProps
-// )(BookingForm);
+const mapStateToProps = (state, { match }) => ({
+  currentUserId: state.session.currentUser.id
+  // currentTrainer: state.trainers[match.params.id]
+});
+
+const mapDispatchToProps = dispatch => ({
+  createBooking: booking => dispatch(createBooking(booking))
+});
+
+export default connect(
+  mapStateToProps,
+  mapDispatchToProps
+)(BookingForm);

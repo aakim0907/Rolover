@@ -7,6 +7,7 @@ import NavBar from './nav_bar';
 import MainPage from './main_page';
 import TrainerListContainer from './trainers/trainer_list_container';
 import TrainerDetailContainer from './trainers/trainer_detail_container';
+import BookingFormContainer from './bookings/booking_form_container';
 import Footer from './footer';
 
 const App = () => (
@@ -19,6 +20,7 @@ const App = () => (
       <switch>
         <Route exact path='/trainers' component={TrainerListContainer} />
         <Route path='/trainers/:id' component={TrainerDetailContainer} />
+        <Route path='/bookings' component={BookingFormContainer} />
         <Route exact path="/" component={MainPage} />
       </switch>
     </div>

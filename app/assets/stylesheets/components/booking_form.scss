@@ -1,0 +1,25 @@
+.booking-form-container {
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  width: 890px;
+  margin: auto;
+  margin-top: 25px;
+  padding-left: 20px;
+  padding-bottom: 20px;
+
+  form {
+    display: flex;
+    width: 100%;
+    flex-direction: column;
+  }
+}
+
+.booking-form-training {
+  // border: 1px solid $light-green;
+  width: 100%;
+}
+
+.booking-form-button {
+  width: 100%;
+}
