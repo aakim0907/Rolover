@@ -1,0 +1,57 @@
+.user-profile-container {
+  // border: 1px solid $light-green;
+  display: flex;
+  flex-wrap: wrap;
+  margin: auto;
+  width: 890px;
+  height: 100%;
+  // box-shadow: 3px 3px 3px #ddd;
+}
+
+.up-header {
+  color: $green;
+  margin-left: 7px;
+}
+
+.up-1 {
+  display: flex;
+  flex-direction: column;
+  width: 350px;
+  padding: 10px;
+}
+
+.up-2 {
+  display: flex;
+  flex-direction: column;
+  width: 540px;
+  padding: 10px;
+}
+
+.up-1-1, .up-1-2 {
+  background-color: $white;
+  border-radius: 3px;
+  margin-right: 15px;
+  padding: 15px;
+  width: 100%;
+  box-shadow: 2px 2px 3px #ddd;
+}
+
+.up-profile-img {
+  border-radius: 50%;
+  width: 45px;
+  height: 45px;
+  margin-right: 10px;
+}
+
+.up-1-1 {
+  display: flex;
+  margin-bottom: 15px;
+}
+
+.up-2-1 {
+  background-color: $white;
+  border-radius: 3px;
+  padding: 15px;
+  width: 100%;
+  box-shadow: 2px 2px 3px #ddd;
+}
