@@ -29712,7 +29712,7 @@ var AuthModal = function (_React$Component) {
   }, {
     key: 'displayModal',
     value: function displayModal(formType) {
-      var modalName = formType === 'login' ? "Log In" : "Sign Up";
+      var modalName = formType === 'login' ? 'Log In' : 'Sign Up';
 
       return _react2.default.createElement(
         'div',
@@ -47641,15 +47641,28 @@ var TrainerList = function (_React$Component) {
           { className: 'index-page' },
           _react2.default.createElement(_search_container2.default, { where: 'trainerlist' }),
           _react2.default.createElement(
-            'section',
+            'div',
             { className: 'trainer-container' },
-            trainers.map(function (trainer) {
-              return _react2.default.createElement(
-                _reactRouterDom.Link,
-                { key: trainer.id, to: '/trainers/' + trainer.id },
-                _react2.default.createElement(_trainer_list_item2.default, { trainer: trainer })
-              );
-            })
+            _react2.default.createElement(
+              'div',
+              { className: 'trainer-list' },
+              trainers.map(function (trainer) {
+                return _react2.default.createElement(
+                  _reactRouterDom.Link,
+                  { key: trainer.id, to: '/trainers/' + trainer.id },
+                  _react2.default.createElement(_trainer_list_item2.default, { trainer: trainer })
+                );
+              })
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'trainer-list-map' },
+              _react2.default.createElement(
+                'p',
+                null,
+                'Map coming soon'
+              )
+            )
           )
         );
       }
@@ -47703,11 +47716,54 @@ var TrainerIndexItem = function TrainerIndexItem(_ref) {
       { className: 'trainer-list-main' },
       _react2.default.createElement(
         'div',
-        { className: 'trainer-list-name' },
+        { className: 'trainer-list-head' },
         _react2.default.createElement(
-          'h2',
+          'div',
+          { className: 'trainer-list-name' },
+          _react2.default.createElement(
+            'h3',
+            null,
+            trainer.name
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'trainer-list-price' },
+          _react2.default.createElement(
+            'span',
+            null,
+            '$',
+            trainer.price
+          )
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'trainer-list-rating' },
+        _react2.default.createElement(
+          'span',
+          { className: 'star m' },
+          (0, _star2.default)(trainer.rating)
+        ),
+        _react2.default.createElement(
+          'span',
+          { className: 'review sm' },
+          ' (',
+          trainer.review_count + ' ' + (trainer.review_count === 1 ? 'review' : 'reviews'),
+          ')'
+        )
+      ),
+      _react2.default.createElement(
+        'div',
+        { className: 'trainer-list-address' },
+        _react2.default.createElement(
+          'p',
           null,
-          trainer.name
+          trainer.city,
+          ', ',
+          trainer.state,
+          ', ',
+          trainer.zip
         )
       ),
       _react2.default.createElement(
@@ -47720,52 +47776,6 @@ var TrainerIndexItem = function TrainerIndexItem(_ref) {
           trainer.profile_quote,
           '"'
         )
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'trainer-list-address' },
-        _react2.default.createElement(
-          'p',
-          null,
-          trainer.city,
-          ', ',
-          trainer.state,
-          ' ',
-          trainer.zip
-        )
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'trainer-list-rating' },
-        _react2.default.createElement(
-          'span',
-          { className: 'review sm' },
-          trainer.review_count + ' ' + (trainer.review_count === 1 ? 'review' : 'reviews')
-        ),
-        _react2.default.createElement(
-          'span',
-          { className: 'star m' },
-          (0, _star2.default)(trainer.rating)
-        )
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'trainer-list-description' },
-        _react2.default.createElement(
-          'p',
-          null,
-          trainer.description
-        )
-      )
-    ),
-    _react2.default.createElement(
-      'div',
-      { className: 'trainer-list-price' },
-      _react2.default.createElement(
-        'span',
-        null,
-        '$',
-        trainer.price
       )
     )
   );

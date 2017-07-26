@@ -11,30 +11,28 @@ const TrainerIndexItem = ({ trainer }) => {
       </div>
 
       <div className="trainer-list-main">
-        <div className="trainer-list-name">
-          <h2>{trainer.name}</h2>
+        <div className='trainer-list-head'>
+          <div className="trainer-list-name">
+            <h3>{trainer.name}</h3>
+          </div>
+
+          <div className="trainer-list-price">
+            <span>&#36;{trainer.price}</span>
+          </div>
+        </div>
+
+        <div className='trainer-list-rating'>
+          <span className='star m'>{renderStars(trainer.rating)}</span>
+          <span className='review sm'> ({`${trainer.review_count} ` + (trainer.review_count === 1 ? 'review' : 'reviews')})</span>
+        </div>
+
+        <div className="trainer-list-address">
+          <p>{trainer.city}, {trainer.state}, {trainer.zip}</p>
         </div>
 
         <div className="trainer-list-quote">
           <p>&quot;{trainer.profile_quote}&quot;</p>
         </div>
-
-        <div className="trainer-list-address">
-          <p>{trainer.city}, {trainer.state} {trainer.zip}</p>
-        </div>
-
-        <div className='trainer-list-rating'>
-          <span className='review sm'>{`${trainer.review_count} ` + (trainer.review_count === 1 ? 'review' : 'reviews')}</span>
-          <span className='star m'>{renderStars(trainer.rating)}</span>
-        </div>
-
-        <div className="trainer-list-description">
-          <p>{trainer.description}</p>
-        </div>
-      </div>
-
-      <div className="trainer-list-price">
-        <span>&#36;{trainer.price}</span>
       </div>
 
     </div>

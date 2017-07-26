@@ -20,13 +20,18 @@ class TrainerList extends React.Component {
       return (
         <div className='index-page'>
           <SearchContainer where='trainerlist' />
-          <section className='trainer-container'>
-            { trainers.map(trainer => (
-              <Link key={trainer.id} to={`/trainers/${trainer.id}`}>
-                <TrainerListItem trainer={trainer} />
-              </Link>
-            ))}
-          </section>
+          <div className='trainer-container'>
+            <div className='trainer-list'>
+              { trainers.map(trainer => (
+                <Link key={trainer.id} to={`/trainers/${trainer.id}`}>
+                  <TrainerListItem trainer={trainer} />
+                </Link>
+              ))}
+            </div>
+            <div className='trainer-list-map'>
+              <p>Map coming soon</p>
+            </div>
+          </div>
         </div>
       );
     }

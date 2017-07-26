@@ -46,18 +46,18 @@ class AuthModal extends React.Component {
 
   displayModal(formType) {
     const modalName = (
-      formType === 'login' ? "Log In" : "Sign Up"
+      formType === 'login' ? 'Log In' : 'Sign Up'
     );
 
     return (
       <div>
-        <button className="login" onClick={this.openModal.bind(this, 'login')}>Log In</button>
-        <button className="signup" onClick={this.openModal.bind(this, 'signup')}>Sign Up</button>
+        <button className='login' onClick={this.openModal.bind(this, 'login')}>Log In</button>
+        <button className='signup' onClick={this.openModal.bind(this, 'signup')}>Sign Up</button>
         <Modal
           isOpen={this.state.modalIsOpen}
           onRequestClose={this.closeModal}
           style={customStyles}
-          contentLabel="modal">
+          contentLabel='modal'>
           <SessionFormContainer formType={formType} modalFunction={this.openModal.bind(this)}/>
         </Modal>
       </div>

@@ -2,14 +2,23 @@
   width: 890px;
   margin: auto;
   padding-top: 20px;
+  display: flex;
+  flex-wrap: wrap;
 }
 
 .trainer-container {
-  background-color: $white;
-  margin-top: 30px;
-  width: 650px;
+  // border: 1px solid $green;
   display: flex;
-  flex-direction: row;
+  flex-direction: column;
+  width: 890px;
+  margin-top: 30px;
+}
+
+.trainer-list {
+  // border: 1px solid $green;
+  background-color: $white;
+  width: 583px;
+  display: flex;
   flex-wrap: wrap;
 
   a {
@@ -17,11 +26,16 @@
   }
 }
 
+.trainer-list-map {
+  border: 1px solid $green;
+  width: 300px;
+}
+
 .trainer-list-item {
   border-bottom: 1px solid $gray;
   border-left: 3px solid rgba(0,0,0,0);
   display: flex;
-  width: 649px;
+  width: 583px;
   height: 170px;
 
   &:hover {
@@ -38,35 +52,22 @@
 
 .trainer-list-main {
   display: flex;
-  flex-wrap: wrap;
-  width: 63%;
+  flex-direction: column;
+  width: 75%;
   padding-top: 12px;
   padding-left: 7px;
 }
 
-.trainer-list-price {
-  // border: 1px solid $green;
-  display: flex;
-  width: 10%;
-  font-size: 25px;
-  padding-top: 20px;
-  padding-right: 15px;
-  justify-content: flex-end;
-}
-
-// .trainer-list-profile-img {
-//   background-size: cover;
-//   background-repeat: no-repeat;
-//   background-position: 50% 50%;
-// }
-
-.trainer-list-name {
-  // border: 1px solid $light-green;
+.trainer-list-head {
   display: flex;
   width: 100%;
+}
+
+.trainer-list-name {
+  width: 85%;
   height: 25%;
 
-  h2 {
+  h3 {
     margin-top: 5px;
     color: $dark-blue;
 
@@ -76,33 +77,24 @@
   }
 }
 
-.trainer-list-quote {
-  // border: 1px solid $light-green;
-  display: flex;
-  width: 100%;
-  height: 15%;
-  color: black;
-  font-weight: bold;
+.trainer-list-price {
+  width: 15%;
+  font-size: 25px;
+  justify-content: flex-end;
+}
 
-  // padding-left: 10px;
+.trainer-list-quote {
+  width: 100%;
+  color: black;
+  font-style: italic;
+  padding-top: 10px;
 }
 
 .trainer-list-address {
-  // border: 1px solid $light-green;
-  display: flex;
   width: 100%;
   height: 15%;
-
-  p {
-    font-style: italic;
-  }
 }
 
-.trainer-list-description {
-  // border: 1px solid $light-green;
-  display: flex;
+.trainer-list-rating {
   width: 100%;
-  height: 45%;
-  padding-top: 10px;
-  padding-left: 10px;
 }
