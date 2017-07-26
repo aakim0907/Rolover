@@ -4,7 +4,7 @@ Rails.application.routes.draw do
     resources :trainers, only: [:index, :show] do
       resources :reviews, only: [:index]
     end
-    resource :user, only: [:create] do
+    resources :users, only: [:show, :create] do
       resources :bookings, only: [:index]
     end
     resources :reviews, only: [:create]
