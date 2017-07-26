@@ -50984,8 +50984,8 @@ var UserProfile = function (_React$Component) {
       if (currentUser.dogs.length === 0) {
         return _react2.default.createElement(
           'span',
-          null,
-          'You don\'t have any dogs saved!'
+          { className: 'empty-span' },
+          '( You don\'t have any dogs saved )'
         );
       } else {
         return _react2.default.createElement(
@@ -51013,8 +51013,8 @@ var UserProfile = function (_React$Component) {
       if (bookings.length === 0) {
         return _react2.default.createElement(
           'span',
-          null,
-          'You don\'t have any booking records!'
+          { className: 'empty-span' },
+          '( You don\'t have any booking records )'
         );
       } else {
         return _react2.default.createElement(

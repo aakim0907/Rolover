@@ -10,7 +10,7 @@ class UserProfile extends React.Component {
     const { currentUser } = this.props;
     if (currentUser.dogs.length === 0) {
       return (
-        <span>You don't have any dogs saved!</span>
+        <span className='empty-span'>( You don't have any dogs saved )</span>
       );
     } else {
       return (
@@ -28,7 +28,7 @@ class UserProfile extends React.Component {
     const { bookings } = this.props;
     if (bookings.length === 0) {
       return (
-        <span>You don't have any booking records!</span>
+        <span className='empty-span'>( You don't have any booking records )</span>
       );
     } else {
       return (
