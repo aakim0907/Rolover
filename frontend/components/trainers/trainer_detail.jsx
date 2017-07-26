@@ -1,6 +1,7 @@
 import React from 'react';
 import { Route, Link } from 'react-router-dom';
 
+import TrainerCarousel from './trainer_carousel';
 import ReviewContainer from '../reviews/review_container';
 import renderStars from '../helper/star';
 
@@ -25,6 +26,7 @@ class TrainerDetail extends React.Component {
     const images = trainer.images.filter(img => img.img_type === 'main');
     // console.log(images[0]);
 
+    // <TrainerCarousel images={images} />
     return (
       <div className='trainer-detail-container'>
         <div className='trainer-header'>
