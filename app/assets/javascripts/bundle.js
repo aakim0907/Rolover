@@ -42792,12 +42792,17 @@ var _review_reducer = __webpack_require__(246);
 
 var _review_reducer2 = _interopRequireDefault(_review_reducer);
 
+var _booking_reducer = __webpack_require__(317);
+
+var _booking_reducer2 = _interopRequireDefault(_booking_reducer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var rootReducer = (0, _redux.combineReducers)({
   session: _session_reducer2.default,
   trainers: _trainer_reducer2.default,
-  reviews: _review_reducer2.default
+  reviews: _review_reducer2.default,
+  bookings: _booking_reducer2.default
 });
 
 exports.default = rootReducer;
@@ -50438,6 +50443,124 @@ var DefaultDecorators = [{
 
 exports['default'] = DefaultDecorators;
 module.exports = exports['default'];
+
+/***/ }),
+/* 316 */,
+/* 317 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _lodash = __webpack_require__(30);
+
+var _booking_actions = __webpack_require__(318);
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var bookingReducer = function bookingReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var action = arguments[1];
+
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _booking_actions.RECEIVE_BOOKINGS:
+      var bookings = action.bookings;
+      return (0, _lodash.merge)({}, bookings);
+
+    case _booking_actions.RECEIVE_BOOKING:
+      var booking = action.booking;
+      return (0, _lodash.merge)({}, state, _defineProperty({}, booking.id, booking));
+
+    default:
+      return state;
+  }
+};
+
+exports.default = bookingReducer;
+
+/***/ }),
+/* 318 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.createBooking = exports.fetchBookings = exports.receiveBooking = exports.receiveBookings = exports.RECEIVE_BOOKING = exports.RECEIVE_BOOKINGS = undefined;
+
+var _booking_api_util = __webpack_require__(319);
+
+var APIUtil = _interopRequireWildcard(_booking_api_util);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var RECEIVE_BOOKINGS = exports.RECEIVE_BOOKINGS = 'RECEIVE_BOOKINGS';
+var RECEIVE_BOOKING = exports.RECEIVE_BOOKING = 'RECEIVE_BOOKING';
+
+// sync action
+var receiveBookings = exports.receiveBookings = function receiveBookings(bookings) {
+  return {
+    type: RECEIVE_BOOKINGS,
+    bookings: bookings
+  };
+};
+
+var receiveBooking = exports.receiveBooking = function receiveBooking(booking) {
+  return {
+    type: RECEIVE_BOOKING,
+    booking: booking
+  };
+};
+
+// async action
+var fetchBookings = exports.fetchBookings = function fetchBookings(userId) {
+  return function (dispatch) {
+    return APIUtil.fetchBookings(userId).then(function (bookings) {
+      return dispatch(receiveBookings(bookings));
+    });
+  };
+};
+
+var createBooking = exports.createBooking = function createBooking(booking) {
+  return function (dispatch) {
+    return APIUtil.createBooking(booking).then(function (newBooking) {
+      return dispatch(receiveBooking(newBooking));
+    });
+  };
+};
+
+/***/ }),
+/* 319 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var fetchBookings = exports.fetchBookings = function fetchBookings(userId) {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/users/' + userId + '/bookings'
+  });
+};
+
+var createBooking = exports.createBooking = function createBooking(booking) {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/bookings',
+    data: { booking: booking }
+  });
+};
 
 /***/ })
 /******/ ]);
