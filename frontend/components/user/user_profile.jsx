@@ -36,18 +36,10 @@ class UserProfile extends React.Component {
           { bookings.map(booking => (
             <div className='booking-list-item' key={booking.id}>
               <div className='bl-1'>
-                <div className='bl-1-1'>
-                  <p>profile</p>
-                </div>
-                <div className='bl-1-2'>
-                  <h4>Trainer name</h4>
-                </div>
-                <div className='bl-1-3'>
-                  {booking.status}
-                </div>
+                <p>{booking.training_type.toUpperCase()} training with 'trainer'</p>
               </div>
               <div className='bl-2'>
-                <p>{booking.training_type} training</p>
+                <p>{booking.status}</p>
               </div>
             </div>
           ))}

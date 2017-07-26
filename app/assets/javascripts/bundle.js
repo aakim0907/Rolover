@@ -51028,27 +51028,10 @@ var UserProfile = function (_React$Component) {
                 'div',
                 { className: 'bl-1' },
                 _react2.default.createElement(
-                  'div',
-                  { className: 'bl-1-1' },
-                  _react2.default.createElement(
-                    'p',
-                    null,
-                    'profile'
-                  )
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'bl-1-2' },
-                  _react2.default.createElement(
-                    'h4',
-                    null,
-                    'Trainer name'
-                  )
-                ),
-                _react2.default.createElement(
-                  'div',
-                  { className: 'bl-1-3' },
-                  booking.status
+                  'p',
+                  null,
+                  booking.training_type.toUpperCase(),
+                  ' training with \'trainer\''
                 )
               ),
               _react2.default.createElement(
@@ -51057,8 +51040,7 @@ var UserProfile = function (_React$Component) {
                 _react2.default.createElement(
                   'p',
                   null,
-                  booking.training_type,
-                  ' training'
+                  booking.status
                 )
               )
             );
