@@ -47858,7 +47858,6 @@ function _possibleConstructorReturn(self, call) { if (!self) { throw new Referen
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
 
-//trainer.images.filter(img => img.img_type === 'main')
 var TrainerDetail = function (_React$Component) {
   _inherits(TrainerDetail, _React$Component);
 
@@ -47892,6 +47891,10 @@ var TrainerDetail = function (_React$Component) {
       var profile = trainer.images.find(function (img) {
         return img.img_type === 'profile';
       });
+      var images = trainer.images.filter(function (img) {
+        return img.img_type === 'main';
+      });
+      // console.log(images[0]);
 
       return _react2.default.createElement(
         'div',
@@ -47905,7 +47908,7 @@ var TrainerDetail = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'trainer-header-box-1' },
-              _react2.default.createElement('img', { src: 'http://res.cloudinary.com/rolover/image/upload/v1500676791/alexander-dummer-117495_alnvz6.jpg' })
+              _react2.default.createElement('img', { src: images[0].img_url })
             ),
             _react2.default.createElement(
               'div',

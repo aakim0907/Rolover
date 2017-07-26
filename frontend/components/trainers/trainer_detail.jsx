@@ -4,7 +4,6 @@ import { Route, Link } from 'react-router-dom';
 import ReviewContainer from '../reviews/review_container';
 import renderStars from '../helper/star';
 
-//trainer.images.filter(img => img.img_type === 'main')
 class TrainerDetail extends React.Component {
   componentDidMount() {
     this.props.fetchTrainer(this.props.match.params.id);
@@ -23,6 +22,8 @@ class TrainerDetail extends React.Component {
 
     const { trainer } = this.props;
     const profile = trainer.images.find(img => img.img_type === 'profile');
+    const images = trainer.images.filter(img => img.img_type === 'main');
+    // console.log(images[0]);
 
     return (
       <div className='trainer-detail-container'>
@@ -30,7 +31,7 @@ class TrainerDetail extends React.Component {
           <div className='trainer-header-box'>
 
             <div className='trainer-header-box-1'>
-              <img src='http://res.cloudinary.com/rolover/image/upload/v1500676791/alexander-dummer-117495_alnvz6.jpg'/>
+              <img src={images[0].img_url}/>
             </div>
 
             <div className='trainer-header-box-2'>

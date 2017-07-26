@@ -18,12 +18,16 @@
   width: 890px;
   height: 100%;
   background-color: $white;
-  box-shadow: 0 3px 0 #ddd;
+  box-shadow: 3px 3px 3px #ddd;
 }
 
 .trainer-header-box-1 {
   display: flex;
   flex: 2.3;
+
+  img {
+    width: 100%;
+  }
 }
 
 .trainer-header-box-2 {
