@@ -46143,7 +46143,7 @@ var _booking_form_container = __webpack_require__(318);
 
 var _booking_form_container2 = _interopRequireDefault(_booking_form_container);
 
-var _user_profile_container = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./user/user_profile_container\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+var _user_profile_container = __webpack_require__(321);
 
 var _user_profile_container2 = _interopRequireDefault(_user_profile_container);
 
@@ -46397,9 +46397,13 @@ var Greeting = function (_React$Component) {
           'div',
           { className: 'login-signup' },
           _react2.default.createElement(
-            'span',
-            { className: 'header-name' },
-            currentUser.email
+            _reactRouterDom.Link,
+            { to: '/profile' },
+            _react2.default.createElement(
+              'span',
+              { className: 'header-name' },
+              currentUser.email
+            )
           ),
           _react2.default.createElement(
             'button',
@@ -50928,6 +50932,85 @@ var Footer = function Footer() {
 };
 
 exports.default = Footer;
+
+/***/ }),
+/* 321 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(16);
+
+var _user_profile = __webpack_require__(322);
+
+var _user_profile2 = _interopRequireDefault(_user_profile);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(_ref) {
+  var session = _ref.session;
+  return {
+    currentUser: session.currentUser
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps)(_user_profile2.default);
+
+/***/ }),
+/* 322 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(3);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactRouterDom = __webpack_require__(9);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var UserProfile = function (_React$Component) {
+  _inherits(UserProfile, _React$Component);
+
+  function UserProfile() {
+    _classCallCheck(this, UserProfile);
+
+    return _possibleConstructorReturn(this, (UserProfile.__proto__ || Object.getPrototypeOf(UserProfile)).apply(this, arguments));
+  }
+
+  _createClass(UserProfile, [{
+    key: 'render',
+    value: function render() {
+      var currentUser = this.props.currentUser;
+
+
+      return _react2.default.createElement('div', { className: 'user-profile-container' });
+    }
+  }]);
+
+  return UserProfile;
+}(_react2.default.Component);
+
+exports.default = (0, _reactRouterDom.withRouter)(UserProfile);
 
 /***/ })
 /******/ ]);

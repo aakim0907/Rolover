@@ -79,6 +79,10 @@ header {
 
   .header-name {
     font-size: 18px;
-    padding: 0px;
+    color: $dark-blue;
+  }
+
+  a {
+    text-decoration: none;
   }
 }
