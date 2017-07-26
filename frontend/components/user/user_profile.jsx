@@ -2,6 +2,10 @@ import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
 
 class UserProfile extends React.Component {
+  componentDidMount() {
+    this.props.fetchBookings(this.props.currentUser.id);
+  }
+
   renderDogs() {
     const { currentUser } = this.props;
     if (currentUser.dogs.length === 0) {
@@ -21,7 +25,35 @@ class UserProfile extends React.Component {
   }
 
   renderBookings() {
-
+    const { bookings } = this.props;
+    if (bookings.length === 0) {
+      return (
+        <span>You don't have any booking records!</span>
+      );
+    } else {
+      return (
+        <div className='booking-list'>
+          { bookings.map(booking => (
+            <div className='booking-list-item' key={booking.id}>
+              <div className='bl-1'>
+                <div className='bl-1-1'>
+                  <p>profile</p>
+                </div>
+                <div className='bl-1-2'>
+                  <h4>Trainer name</h4>
+                </div>
+                <div className='bl-1-3'>
+                  {booking.status}
+                </div>
+              </div>
+              <div className='bl-2'>
+                <p>{booking.training_type} training</p>
+              </div>
+            </div>
+          ))}
+        </div>
+      );
+    }
   }
 
   render() {
@@ -46,6 +78,7 @@ class UserProfile extends React.Component {
         <div className='up-2'>
           <div className='up-2-1'>
             <h4 className='up-header'>Your Bookings</h4>
+            {this.renderBookings()}
           </div>
         </div>
       </div>

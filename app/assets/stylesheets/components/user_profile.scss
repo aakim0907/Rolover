@@ -1,11 +1,10 @@
 .user-profile-container {
-  // border: 1px solid $light-green;
   display: flex;
   flex-wrap: wrap;
   margin: auto;
+  margin-top: 25px;
   width: 890px;
   height: 100%;
-  // box-shadow: 3px 3px 3px #ddd;
 }
 
 .up-header {
@@ -45,7 +44,7 @@
 
 .up-1-1 {
   display: flex;
-  margin-bottom: 15px;
+  margin-bottom: 17px;
 }
 
 .up-2-1 {
@@ -54,4 +53,22 @@
   padding: 15px;
   width: 100%;
   box-shadow: 2px 2px 3px #ddd;
+}
+
+.booking-list-item {
+  border: 1px solid $light-green;
+  display: flex;
+  flex-direction: column;
+}
+
+.bl-1 {
+  border: 1px solid $light-green;
+  display: flex;
+  width: 100%;
+}
+
+.bl-2 {
+  border: 1px solid $light-green;
+  display: flex;
+  width: 100%;
 }

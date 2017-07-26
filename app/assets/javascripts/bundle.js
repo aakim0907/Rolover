@@ -30119,7 +30119,7 @@ exports.default = (0, _reactRedux.connect)(null, mapDispatchToProps)(_search_box
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.selectAllReviews = exports.selectAllTrainers = undefined;
+exports.selectAllBookings = exports.selectAllReviews = exports.selectAllTrainers = undefined;
 
 var _lodash = __webpack_require__(26);
 
@@ -30129,6 +30129,10 @@ var selectAllTrainers = exports.selectAllTrainers = function selectAllTrainers(t
 
 var selectAllReviews = exports.selectAllReviews = function selectAllReviews(reviews) {
   return (0, _lodash.values)(reviews);
+};
+
+var selectAllBookings = exports.selectAllBookings = function selectAllBookings(bookings) {
+  return (0, _lodash.values)(bookings);
 };
 
 /***/ }),
@@ -50904,16 +50908,28 @@ var _user_profile = __webpack_require__(321);
 
 var _user_profile2 = _interopRequireDefault(_user_profile);
 
+var _booking_actions = __webpack_require__(110);
+
+var _selectors = __webpack_require__(126);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var mapStateToProps = function mapStateToProps(_ref) {
-  var session = _ref.session;
+var mapStateToProps = function mapStateToProps(state) {
   return {
-    currentUser: session.currentUser
+    currentUser: state.session.currentUser,
+    bookings: (0, _selectors.selectAllBookings)(state.bookings)
   };
 };
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps)(_user_profile2.default);
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    fetchBookings: function fetchBookings(id) {
+      return dispatch((0, _booking_actions.fetchBookings)(id));
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_user_profile2.default);
 
 /***/ }),
 /* 321 */
@@ -50952,6 +50968,11 @@ var UserProfile = function (_React$Component) {
   }
 
   _createClass(UserProfile, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.props.fetchBookings(this.props.currentUser.id);
+    }
+  }, {
     key: 'renderDogs',
     value: function renderDogs() {
       var currentUser = this.props.currentUser;
@@ -50975,6 +50996,67 @@ var UserProfile = function (_React$Component) {
               dog.sex,
               ') - ',
               dog.breed
+            );
+          })
+        );
+      }
+    }
+  }, {
+    key: 'renderBookings',
+    value: function renderBookings() {
+      var bookings = this.props.bookings;
+
+      if (bookings.length === 0) {
+        return _react2.default.createElement(
+          'span',
+          null,
+          'You don\'t have any booking records!'
+        );
+      } else {
+        return _react2.default.createElement(
+          'div',
+          { className: 'booking-list' },
+          bookings.map(function (booking) {
+            return _react2.default.createElement(
+              'div',
+              { className: 'booking-list-item', key: booking.id },
+              _react2.default.createElement(
+                'div',
+                { className: 'bl-1' },
+                _react2.default.createElement(
+                  'div',
+                  { className: 'bl-1-1' },
+                  _react2.default.createElement(
+                    'p',
+                    null,
+                    'profile'
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'bl-1-2' },
+                  _react2.default.createElement(
+                    'h4',
+                    null,
+                    'Trainer name'
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'bl-1-3' },
+                  booking.status
+                )
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'bl-2' },
+                _react2.default.createElement(
+                  'p',
+                  null,
+                  booking.training_type,
+                  ' training'
+                )
+              )
             );
           })
         );
@@ -51030,7 +51112,8 @@ var UserProfile = function (_React$Component) {
               'h4',
               { className: 'up-header' },
               'Your Bookings'
-            )
+            ),
+            this.renderBookings()
           )
         )
       );
