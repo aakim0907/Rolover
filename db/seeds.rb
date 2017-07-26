@@ -1,3 +1,11 @@
+d1 = DateTime.new(2017,7,27)
+d2 = DateTime.new(2017,7,31)
+
+Booking.create([
+  { user_id: 1, dog_id: 1, trainer_id: 3, start_date: d1, end_date: d2, status: 'APPROVED', message: 'Requesting a training session for my one-year-old. We just got her and would like to receive basic obedience training.', training_type: 'obedience' },
+  { user_id: 1, dog_id: 2, trainer_id: 6, start_date: d1, end_date: d2, status: 'PENDING', message: 'Would love to sign up for a training session!', training_type: 'behavior' }
+  ])
+
 Dog.create([
   { user_id: 1, name: 'Ruby', age_year: 1, age_month: 3, weight: 30, breed: 'Shitzhu', sex: 'F' },
   { user_id: 1, name: 'Java', age_year: 3, weight: 15, breed: 'Maltize', sex: 'M' }
@@ -117,7 +125,7 @@ Image.create([
     ])
 
   User.create([
-    { email: 'guest@rolover.dog', password: 'woofbark' },
+    { email: 'guest@rolover.dog', password: 'woofbark', profile_img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500676799/patrick-hendry-221863_wumywk.jpg'},
     { email: 'ying@gmail.com', password: 'ying@gmail', profile_img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500676799/yingchou-han-1120404_narkbn.jpg' },
     { email: 'alex@gmail.com', password: 'alex@gmail', profile_img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500614251/user_profile/alex-klopcic-302332_epi8zb.jpg' },
     { email: 'hannah@gmail.com', password: 'hannah@gmail', profile_img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500615274/user_profile/hannah-busing-310503_dyj1vz.jpg'},
