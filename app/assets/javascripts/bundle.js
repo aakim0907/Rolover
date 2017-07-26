@@ -46143,6 +46143,10 @@ var _booking_form_container = __webpack_require__(318);
 
 var _booking_form_container2 = _interopRequireDefault(_booking_form_container);
 
+var _user_profile_container = __webpack_require__(!(function webpackMissingModule() { var e = new Error("Cannot find module \"./user/user_profile_container\""); e.code = 'MODULE_NOT_FOUND'; throw e; }()));
+
+var _user_profile_container2 = _interopRequireDefault(_user_profile_container);
+
 var _footer = __webpack_require__(320);
 
 var _footer2 = _interopRequireDefault(_footer);
@@ -46167,6 +46171,7 @@ var App = function App() {
         _react2.default.createElement(_reactRouterDom.Route, { path: '/trainers/:id/bookings/new', component: _booking_form_container2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/trainers/:id', component: _trainer_detail_container2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/trainers', component: _trainer_list_container2.default }),
+        _react2.default.createElement(_reactRouterDom.Route, { path: '/profile', component: _user_profile_container2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _main_page2.default })
       )
     )

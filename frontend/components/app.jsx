@@ -8,6 +8,7 @@ import MainPage from './main_page';
 import TrainerListContainer from './trainers/trainer_list_container';
 import TrainerDetailContainer from './trainers/trainer_detail_container';
 import BookingFormContainer from './bookings/booking_form_container';
+import UserProfileContainer from './user/user_profile_container';
 import Footer from './footer';
 
 const App = () => (
@@ -21,6 +22,7 @@ const App = () => (
         <Route path='/trainers/:id/bookings/new' component={BookingFormContainer} />
         <Route path='/trainers/:id' component={TrainerDetailContainer} />
         <Route path='/trainers' component={TrainerListContainer} />
+        <Route path='/profile' component={UserProfileContainer} />
         <Route exact path="/" component={MainPage} />
       </Switch>
     </div>
