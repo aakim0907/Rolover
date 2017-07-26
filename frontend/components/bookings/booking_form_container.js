@@ -5,7 +5,7 @@ import BookingForm from './booking_form';
 
 const mapStateToProps = (state, { match }) => ({
   currentUserId: state.session.currentUser.id,
-  currentTrainer: state.trainers[match.params.id]
+  currentTrainerId: parseInt(match.params.id)
 });
 
 const mapDispatchToProps = dispatch => ({

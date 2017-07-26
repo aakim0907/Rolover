@@ -5,10 +5,11 @@ class BookingForm extends React.Component {
   constructor(props) {
     super(props);
 
-    const { currentUserId, currentTrainer } = this.props;
-    this.state = { training_type: '', start_date: '', end_date: '', dog_id: '', message: '', trainer_id: currentTrainer, user_id: currentUserId };
+    const { currentUserId, currentTrainerId } = this.props;
+    this.state = { training_type: '', start_date: '', end_date: '', dog_id: 1, message: '', trainer_id: currentTrainerId, user_id: currentUserId };
 
     this.currentDate = (new Date()).toJSON().slice(0, 10);
+    this.toggleTraining = this.toggleTraining.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -22,6 +23,12 @@ class BookingForm extends React.Component {
     e.preventDefault();
     const booking = this.state;
     this.props.createBooking(booking);
+  }
+
+  toggleTraining(type) {
+    this.setState({
+      ['training_type']: type
+    });
   }
 
   renderDogForm() {
@@ -83,35 +90,32 @@ class BookingForm extends React.Component {
   }
 
   render() {
-    const { currentTrainer } = this.props;
-    // const obedience = ( this.state['obedience'] ? 'booking-training-selected' : 'booking-training');
-    // const behavior = ( this.state['behavior'] ? 'booking-training-selected' : 'booking-training');
-    // const advanced = ( this.state['advanced'] ? 'booking-training-selected' : 'booking-training');
+    console.log(this.state);
 
     return (
       <div className='booking-form-container'>
-        <h3>Contact this trainer</h3>
+        <h3>Contact Trainer</h3>
         <form onSubmit={this.handleSubmit}>
           <div className='booking-form-question'>
             <p>Which training type would you like? (Select one)</p>
           </div>
 
           <div className='booking-form-training'>
-            <div className='booking-training' onClick={() => this.update('obedience')}>
+            <div className={this.state['training_type'] === 'obedience' ? 'booking-training-selected' : 'booking-training' } onClick={() => this.toggleTraining('obedience')}>
               <div className='booking-icon'>
                 <img src={window.images.obedience} alt='obedience-icon'/>
               </div>
               <div className='search-text'>Obedience</div>
             </div>
 
-            <div className='booking-training' onClick={() => this.update('behavior')}>
+            <div className={this.state['training_type'] === 'behavior' ? 'booking-training-selected' : 'booking-training' } onClick={() => this.toggleTraining('behavior')}>
               <div className='booking-icon'>
                 <img src={window.images.behavior} alt='behavior-icon'/>
               </div>
               <div className='search-text'>Behavior</div>
             </div>
 
-            <div className='booking-training' onClick={() => this.update('advanced')}>
+            <div className={this.state['training_type'] === 'advanced' ? 'booking-training-selected' : 'booking-training' } onClick={() => this.toggleTraining('advanced')}>
               <div className='booking-icon'>
                 <img src={window.images.advanced} alt='advanced-icon'/>
               </div>

@@ -50545,7 +50545,7 @@ var mapStateToProps = function mapStateToProps(state, _ref) {
   var match = _ref.match;
   return {
     currentUserId: state.session.currentUser.id,
-    currentTrainer: state.trainers[match.params.id]
+    currentTrainerId: parseInt(match.params.id)
   };
 };
 
@@ -50598,11 +50598,12 @@ var BookingForm = function (_React$Component) {
 
     var _this$props = _this.props,
         currentUserId = _this$props.currentUserId,
-        currentTrainer = _this$props.currentTrainer;
+        currentTrainerId = _this$props.currentTrainerId;
 
-    _this.state = { training_type: '', start_date: '', end_date: '', dog_id: '', message: '', trainer_id: currentTrainer, user_id: currentUserId };
+    _this.state = { training_type: '', start_date: '', end_date: '', dog_id: 1, message: '', trainer_id: currentTrainerId, user_id: currentUserId };
 
     _this.currentDate = new Date().toJSON().slice(0, 10);
+    _this.toggleTraining = _this.toggleTraining.bind(_this);
     _this.handleSubmit = _this.handleSubmit.bind(_this);
     return _this;
   }
@@ -50622,6 +50623,11 @@ var BookingForm = function (_React$Component) {
       e.preventDefault();
       var booking = this.state;
       this.props.createBooking(booking);
+    }
+  }, {
+    key: 'toggleTraining',
+    value: function toggleTraining(type) {
+      this.setState(_defineProperty({}, 'training_type', type));
     }
   }, {
     key: 'renderDogForm',
@@ -50721,10 +50727,7 @@ var BookingForm = function (_React$Component) {
     value: function render() {
       var _this3 = this;
 
-      var currentTrainer = this.props.currentTrainer;
-      // const obedience = ( this.state['obedience'] ? 'booking-training-selected' : 'booking-training');
-      // const behavior = ( this.state['behavior'] ? 'booking-training-selected' : 'booking-training');
-      // const advanced = ( this.state['advanced'] ? 'booking-training-selected' : 'booking-training');
+      console.log(this.state);
 
       return _react2.default.createElement(
         'div',
@@ -50732,7 +50735,7 @@ var BookingForm = function (_React$Component) {
         _react2.default.createElement(
           'h3',
           null,
-          'Contact this trainer'
+          'Contact Trainer'
         ),
         _react2.default.createElement(
           'form',
@@ -50751,8 +50754,8 @@ var BookingForm = function (_React$Component) {
             { className: 'booking-form-training' },
             _react2.default.createElement(
               'div',
-              { className: 'booking-training', onClick: function onClick() {
-                  return _this3.update('obedience');
+              { className: this.state['training_type'] === 'obedience' ? 'booking-training-selected' : 'booking-training', onClick: function onClick() {
+                  return _this3.toggleTraining('obedience');
                 } },
               _react2.default.createElement(
                 'div',
@@ -50767,8 +50770,8 @@ var BookingForm = function (_React$Component) {
             ),
             _react2.default.createElement(
               'div',
-              { className: 'booking-training', onClick: function onClick() {
-                  return _this3.update('behavior');
+              { className: this.state['training_type'] === 'behavior' ? 'booking-training-selected' : 'booking-training', onClick: function onClick() {
+                  return _this3.toggleTraining('behavior');
                 } },
               _react2.default.createElement(
                 'div',
@@ -50783,8 +50786,8 @@ var BookingForm = function (_React$Component) {
             ),
             _react2.default.createElement(
               'div',
-              { className: 'booking-training', onClick: function onClick() {
-                  return _this3.update('advanced');
+              { className: this.state['training_type'] === 'advanced' ? 'booking-training-selected' : 'booking-training', onClick: function onClick() {
+                  return _this3.toggleTraining('advanced');
                 } },
               _react2.default.createElement(
                 'div',
