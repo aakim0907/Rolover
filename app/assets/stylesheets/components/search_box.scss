@@ -19,7 +19,6 @@ form {
   display: flex;
   flex-direction: column;
   padding-top: 7px;
-  padding-bottom: 5px;
 }
 
 .search-box-1-1 {
@@ -38,7 +37,7 @@ form {
 .search-box-1-2 {
   display: flex;
   width: 100%;
-  padding-top: 20px;
+  padding-top: 10px;
 }
 
 .search-box-2 {
@@ -57,8 +56,19 @@ form {
   }
 }
 
-.search-2-2 {
+.search-box-2-2 {
   display: flex;
+
+  input {
+    width: 210px;
+    height: 35px
+  }
+}
+
+.search-box-2-3 {
+  button {
+    height: 48px;
+  }
 }
 
 .search-training {
