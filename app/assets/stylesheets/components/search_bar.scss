@@ -3,7 +3,7 @@
   background: $white;
   width: 100%;
   min-width: 650px;
-  height: 150px;
+  height: 142px;
   display: flex;
   border-radius: 3px;
   padding: 15px;
@@ -13,20 +13,27 @@
 
 .search-bar-1 {
   display: flex;
+  width: 575px;
 }
 
-.search-box-2 {
+.search-bar-2 {
   display: flex;
   flex-direction: column;
-  padding: 7px;
+  padding: 8px;
+  width: 280px;
   justify-content: space-around;
 }
 
-.search-box-2-1 {
+.search-bar-2-1 {
   display: flex;
+
+  input {
+    width: 263px;
+    height: 33px;
+  }
 }
 
-.search-box-2-2 {
+.search-bar-2-2 {
   display: flex;
 }
 
@@ -38,8 +45,8 @@
   cursor: pointer;
   padding: 7px;
   margin: 7px;
-  height: 115px;
-  width: 101px;
+  height: 101px;
+  width: 178px;
   justify-content: center;
 
   &:hover div {
@@ -55,8 +62,8 @@
   cursor: pointer;
   padding: 7px;
   margin: 7px;
-  height: 115px;
-  width: 101px;
+  height: 101px;
+  width: 178px;
   justify-content: center;
   border-bottom: 3px solid $green;
 

@@ -47501,7 +47501,7 @@ var SearchBox = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'search-bar-2-1' },
-              _react2.default.createElement('input', { type: 'text', placeholder: 'Enter your zipcode' })
+              _react2.default.createElement('input', { type: 'text', placeholder: ' Enter your zipcode' })
             ),
             _react2.default.createElement(
               'div',
