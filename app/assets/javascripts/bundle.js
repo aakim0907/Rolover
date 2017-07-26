@@ -47898,7 +47898,6 @@ var TrainerDetail = function (_React$Component) {
       var images = trainer.images.filter(function (img) {
         return img.img_type === 'main';
       });
-      // console.log(images[0]);
 
       // <TrainerCarousel images={images} />
       return _react2.default.createElement(
@@ -48535,10 +48534,6 @@ var _nukaCarousel = __webpack_require__(312);
 
 var _nukaCarousel2 = _interopRequireDefault(_nukaCarousel);
 
-var _decorators = __webpack_require__(316);
-
-var _decorators2 = _interopRequireDefault(_decorators);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -48546,6 +48541,8 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// import Decorators from './decorators';
 
 var TrainerCarousel = function (_React$Component) {
   _inherits(TrainerCarousel, _React$Component);
@@ -48557,19 +48554,19 @@ var TrainerCarousel = function (_React$Component) {
   }
 
   _createClass(TrainerCarousel, [{
-    key: "render",
+    key: 'render',
     value: function render() {
       var images = this.props.images;
 
 
       return _react2.default.createElement(
         _nukaCarousel2.default,
-        { wrapAround: true, autoplay: true, autoplayInterval: 10000, decorators: _decorators2.default },
+        { wrapAround: true, autoplay: true, autoplayInterval: 10000, initialSlideHeight: 590, initialSlideWidth: 880 },
         images.map(function (image) {
           return _react2.default.createElement(
-            "div",
-            { className: "trainer-carousel-slide" },
-            _react2.default.createElement("img", { src: image.img_url })
+            'div',
+            { className: 'trainer-carousel-slide' },
+            _react2.default.createElement('img', { key: image.id, src: image.img_url })
           );
         })
       );
@@ -48581,7 +48578,7 @@ var TrainerCarousel = function (_React$Component) {
 
 exports.default = TrainerCarousel;
 
-// <div className="project-carousel-slide">
+// <div className='project-carousel-slide'>
 //   <img src="http://res.cloudinary.com/ds1qfel8a/image/upload/c_scale,w_1080/v1495216601/Stock/Splash_emwijn.jpg" />
 // </div>
 
@@ -50441,142 +50438,6 @@ var DefaultDecorators = [{
 
 exports['default'] = DefaultDecorators;
 module.exports = exports['default'];
-
-/***/ }),
-/* 316 */
-/***/ (function(module, exports, __webpack_require__) {
-
-"use strict";
-
-
-Object.defineProperty(exports, "__esModule", {
-  value: true
-});
-
-var _react = __webpack_require__(3);
-
-var _react2 = _interopRequireDefault(_react);
-
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-var Decorators = [{
-  component: _react2.default.createClass({
-    displayName: "component",
-    render: function render() {
-      return _react2.default.createElement(
-        "button",
-        {
-          style: this.getButtonStyles(this.props.currentSlide === 0 && !this.props.wrapAround) },
-        _react2.default.createElement("img", { src: "http://res.cloudinary.com/ds1qfel8a/image/upload/v1497369678/left_qdsoo8.png",
-          id: "leftButton", onClick: this.handleClick })
-      );
-    },
-    handleClick: function handleClick(e) {
-      e.preventDefault();
-      this.props.previousSlide();
-    },
-    getButtonStyles: function getButtonStyles(disabled) {
-      return {
-        border: 0,
-        background: 'rgba(0,0,0,0)',
-        color: 'white',
-        padding: 10,
-        outline: 0,
-        opacity: disabled ? 0.3 : 1
-      };
-    }
-  }),
-  position: 'CenterLeft'
-}, {
-  component: _react2.default.createClass({
-    displayName: "component",
-    render: function render() {
-      return _react2.default.createElement(
-        "button",
-        {
-          style: this.getButtonStyles(this.props.currentSlide + this.props.slidesToScroll >= this.props.slideCount && !this.props.wrapAround) },
-        _react2.default.createElement("img", { src: "http://res.cloudinary.com/ds1qfel8a/image/upload/v1497369678/right_kamca8.png",
-          id: "rightButton", onClick: this.handleClick })
-      );
-    },
-    handleClick: function handleClick(e) {
-      e.preventDefault();
-      this.props.nextSlide();
-    },
-    getButtonStyles: function getButtonStyles(disabled) {
-      return {
-        border: 0,
-        background: 'rgba(0,0,0,0)',
-        color: 'white',
-        padding: 10,
-        outline: 0,
-        opacity: disabled ? 0.3 : 1
-      };
-    }
-  }),
-  position: 'CenterRight'
-}, {
-  component: _react2.default.createClass({
-    displayName: "component",
-    render: function render() {
-      var self = this;
-      var indexes = this.getIndexes(self.props.slideCount, self.props.slidesToScroll);
-      return _react2.default.createElement(
-        "ul",
-        { style: self.getListStyles() },
-        indexes.map(function (index) {
-          return _react2.default.createElement(
-            "li",
-            { style: self.getListItemStyles(), key: index },
-            _react2.default.createElement(
-              "button",
-              {
-                style: self.getButtonStyles(self.props.currentSlide === index),
-                onClick: self.props.goToSlide.bind(null, index) },
-              "\u2022"
-            )
-          );
-        })
-      );
-    },
-    getIndexes: function getIndexes(count, inc) {
-      var arr = [];
-      for (var i = 0; i < count; i += inc) {
-        arr.push(i);
-      }
-      return arr;
-    },
-    getListStyles: function getListStyles() {
-      return {
-        position: 'relative',
-        margin: 0,
-        top: -10,
-        padding: 0
-      };
-    },
-    getListItemStyles: function getListItemStyles() {
-      return {
-        listStyleType: 'none',
-        display: 'inline-block'
-      };
-    },
-    getButtonStyles: function getButtonStyles(active) {
-      return {
-        border: 0,
-        background: 'transparent',
-        color: 'black',
-        cursor: 'pointer',
-        padding: 10,
-        outline: 0,
-        fontSize: 24,
-        opacity: active ? 1 : 0.5
-      };
-    }
-  }),
-  position: 'BottomCenter'
-}];
-
-exports.default = Decorators;
 
 /***/ })
 /******/ ]);

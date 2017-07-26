@@ -2,7 +2,7 @@ import React from "react";
 
 const Decorators = [
   {
-    component: React.createClass({
+    component: class LeftArrow {
       render() {
         return (
           <button
@@ -11,11 +11,11 @@ const Decorators = [
               id="leftButton" onClick={this.handleClick} />
           </button>
         );
-      },
+      }
       handleClick(e) {
         e.preventDefault();
         this.props.previousSlide();
-      },
+      }
       getButtonStyles(disabled) {
         return {
           border: 0,
@@ -26,11 +26,11 @@ const Decorators = [
           opacity: disabled ? 0.3 : 1,
         };
       }
-    }),
+    },
     position: 'CenterLeft'
   },
   {
-    component: React.createClass({
+    component: class RightArrow {
       render() {
         return (
           <button
@@ -39,11 +39,11 @@ const Decorators = [
               id="rightButton" onClick={this.handleClick} />
           </button>
         );
-      },
+      }
       handleClick(e) {
         e.preventDefault();
         this.props.nextSlide();
-      },
+      }
       getButtonStyles(disabled) {
         return {
           border: 0,
@@ -54,68 +54,68 @@ const Decorators = [
           opacity: disabled ? 0.3 : 1,
         };
       }
-    }),
+    },
     position: 'CenterRight'
-  },
-  {
-    component: React.createClass({
-      render() {
-        var self = this;
-        var indexes = this.getIndexes(self.props.slideCount, self.props.slidesToScroll);
-        return (
-          <ul style={self.getListStyles()}>
-            {
-              indexes.map(function(index) {
-                return (
-                  <li style={self.getListItemStyles()} key={index}>
-                    <button
-                      style={self.getButtonStyles(self.props.currentSlide === index)}
-                      onClick={self.props.goToSlide.bind(null, index)}>
-                      &bull;
-                    </button>
-                  </li>
-                );
-              })
-            }
-          </ul>
-        );
-      },
-      getIndexes(count, inc) {
-        var arr = [];
-        for (var i = 0; i < count; i += inc) {
-          arr.push(i);
-        }
-        return arr;
-      },
-      getListStyles() {
-        return {
-          position: 'relative',
-          margin: 0,
-          top: -10,
-          padding: 0
-        };
-      },
-      getListItemStyles() {
-        return ({
-          listStyleType: 'none',
-          display: 'inline-block'
-        });
-      },
-      getButtonStyles(active) {
-        return {
-          border: 0,
-          background: 'transparent',
-          color: 'black',
-          cursor: 'pointer',
-          padding: 10,
-          outline: 0,
-          fontSize: 24,
-          opacity: active ? 1 : 0.5
-        };
-      }
-    }),
-    position: 'BottomCenter'
   }
+  // {
+  //   component: class Index {
+  //     render() {
+  //       var self = this;
+  //       var indexes = this.getIndexes(self.props.slideCount, self.props.slidesToScroll);
+  //       return (
+  //         <ul style={self.getListStyles()}>
+  //           {
+  //             indexes.map(function(index) {
+  //               return (
+  //                 <li style={self.getListItemStyles()} key={index}>
+  //                   <button
+  //                     style={self.getButtonStyles(self.props.currentSlide === index)}
+  //                     onClick={self.props.goToSlide.bind(null, index)}>
+  //                     &bull;
+  //                   </button>
+  //                 </li>
+  //               );
+  //             })
+  //           }
+  //         </ul>
+  //       );
+  //     }
+  //     getIndexes(count, inc) {
+  //       var arr = [];
+  //       for (var i = 0; i < count; i += inc) {
+  //         arr.push(i);
+  //       }
+  //       return arr;
+  //     }
+  //     getListStyles() {
+  //       return {
+  //         position: 'absolute',
+  //         margin: 0,
+  //         top: -10,
+  //         padding: 0
+  //       };
+  //     }
+  //     getListItemStyles() {
+  //       return ({
+  //         listStyleType: 'none',
+  //         display: 'flex'
+  //       });
+  //     }
+  //     getButtonStyles(active) {
+  //       return {
+  //         border: 0,
+  //         background: 'transparent',
+  //         color: 'black',
+  //         cursor: 'pointer',
+  //         padding: 10,
+  //         outline: 0,
+  //         fontSize: 24,
+  //         opacity: active ? 1 : 0.5
+  //       };
+  //     }
+  //   },
+  //   position: 'CenterCenter'
+  // }
 ];
 
 export default Decorators;

@@ -24,7 +24,6 @@ class TrainerDetail extends React.Component {
     const { trainer } = this.props;
     const profile = trainer.images.find(img => img.img_type === 'profile');
     const images = trainer.images.filter(img => img.img_type === 'main');
-    // console.log(images[0]);
 
     // <TrainerCarousel images={images} />
     return (
