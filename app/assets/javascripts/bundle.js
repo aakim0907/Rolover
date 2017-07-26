@@ -45966,11 +45966,11 @@ var App = function App() {
       'div',
       { className: 'body-content' },
       _react2.default.createElement(
-        'switch',
+        _reactRouterDom.Switch,
         null,
-        _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/trainers', component: _trainer_list_container2.default }),
+        _react2.default.createElement(_reactRouterDom.Route, { path: '/trainers/:id/bookings/new', component: _booking_form_container2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/trainers/:id', component: _trainer_detail_container2.default }),
-        _react2.default.createElement(_reactRouterDom.Route, { path: '/bookings', component: _booking_form_container2.default }),
+        _react2.default.createElement(_reactRouterDom.Route, { path: '/trainers', component: _trainer_list_container2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _main_page2.default })
       )
     )
@@ -48006,8 +48006,8 @@ var TrainerDetail = function (_React$Component) {
                 'div',
                 { className: 'th-booking' },
                 _react2.default.createElement(
-                  'button',
-                  { className: 'btn green' },
+                  _reactRouterDom.Link,
+                  { to: '/trainers/' + trainer.id + '/bookings/new', className: 'btn green' },
                   'Booking'
                 )
               )
@@ -50591,8 +50591,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var mapStateToProps = function mapStateToProps(state, _ref) {
   var match = _ref.match;
   return {
-    currentUserId: state.session.currentUser.id
-    // currentTrainer: state.trainers[match.params.id]
+    currentUserId: state.session.currentUser.id,
+    currentTrainer: state.trainers[match.params.id]
   };
 };
 
@@ -50669,12 +50669,58 @@ var BookingForm = function (_React$Component) {
       this.props.createBooking(booking);
     }
   }, {
+    key: 'renderDogForm',
+    value: function renderDogForm() {
+      // if (this.props.currentUser.dogs.length !== 0) {
+      return _react2.default.createElement(
+        'div',
+        { className: 'booking-form-dog' },
+        _react2.default.createElement(
+          'div',
+          { className: 'dog-form-1' },
+          _react2.default.createElement(
+            'div',
+            { className: 'df-1-1' },
+            _react2.default.createElement(
+              'label',
+              null,
+              'Name',
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('input', { type: 'text' })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'df-1-2' },
+            _react2.default.createElement(
+              'label',
+              null,
+              'Weight (lbs.)',
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('input', { type: 'text' })
+            )
+          )
+        ),
+        _react2.default.createElement('div', { className: 'dog-form-2' }),
+        _react2.default.createElement('div', { className: 'dog-form-3' })
+      );
+      // } else {
+      //   return (
+      //     <div className='booking-form-dog'>
+      //
+      //     </div>
+      //   );
+      // }
+    }
+  }, {
     key: 'render',
     value: function render() {
+      var _this3 = this;
+
       var currentTrainer = this.props.currentTrainer;
-
-
-      console.log(this.state);
+      // const obedience = ( this.state['obedience'] ? 'booking-training-selected' : 'booking-training');
+      // const behavior = ( this.state['behavior'] ? 'booking-training-selected' : 'booking-training');
+      // const advanced = ( this.state['advanced'] ? 'booking-training-selected' : 'booking-training');
 
       return _react2.default.createElement(
         'div',
@@ -50687,25 +50733,119 @@ var BookingForm = function (_React$Component) {
         _react2.default.createElement(
           'form',
           { onSubmit: this.handleSubmit },
-          _react2.default.createElement('div', { className: 'booking-form-training' }),
-          _react2.default.createElement('div', { className: 'booking-form-date' }),
-          _react2.default.createElement('div', { className: 'booking-form-dog' }),
+          _react2.default.createElement(
+            'div',
+            { className: 'booking-form-question' },
+            _react2.default.createElement(
+              'p',
+              null,
+              'Which training type would you like? (Select one)'
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'booking-form-training' },
+            _react2.default.createElement(
+              'div',
+              { className: 'booking-training', onClick: function onClick() {
+                  return _this3.update('obedience');
+                } },
+              _react2.default.createElement(
+                'div',
+                { className: 'booking-icon' },
+                _react2.default.createElement('img', { src: window.images.obedience, alt: 'obedience-icon' })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'search-text' },
+                'Obedience'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'booking-training', onClick: function onClick() {
+                  return _this3.update('behavior');
+                } },
+              _react2.default.createElement(
+                'div',
+                { className: 'booking-icon' },
+                _react2.default.createElement('img', { src: window.images.behavior, alt: 'behavior-icon' })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'search-text' },
+                'Behavior'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'booking-training', onClick: function onClick() {
+                  return _this3.update('advanced');
+                } },
+              _react2.default.createElement(
+                'div',
+                { className: 'booking-icon' },
+                _react2.default.createElement('img', { src: window.images.advanced, alt: 'advanced-icon' })
+              ),
+              _react2.default.createElement(
+                'div',
+                { className: 'search-text' },
+                'Advanced'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'booking-form-question' },
+            _react2.default.createElement(
+              'p',
+              null,
+              'Select preferred date range for the training session'
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'booking-form-date' },
+            _react2.default.createElement(
+              'p',
+              null,
+              'Start'
+            ),
+            _react2.default.createElement(
+              'p',
+              null,
+              'End'
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'booking-form-question' },
+            _react2.default.createElement(
+              'h4',
+              null,
+              'Dogs'
+            )
+          ),
+          this.renderDogForm(),
+          _react2.default.createElement(
+            'div',
+            { className: 'booking-form-question' },
+            _react2.default.createElement(
+              'h4',
+              null,
+              'Message'
+            )
+          ),
           _react2.default.createElement(
             'div',
             { className: 'booking-form-msg' },
-            _react2.default.createElement(
-              'label',
-              null,
-              'Message',
-              _react2.default.createElement('br', null),
-              _react2.default.createElement('textarea', {
-                rows: '5',
-                cols: '70',
-                value: this.state.message,
-                onChange: this.update('message'),
-                className: 'booking-input'
-              })
-            )
+            _react2.default.createElement('textarea', {
+              rows: '5',
+              cols: '70',
+              value: this.state.message,
+              onChange: this.update('message'),
+              className: 'booking-input'
+            })
           ),
           _react2.default.createElement(
             'div',

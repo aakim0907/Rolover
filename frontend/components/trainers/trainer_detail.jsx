@@ -67,7 +67,7 @@ class TrainerDetail extends React.Component {
               </div>
 
               <div className='th-booking'>
-                <button className='btn green'>Booking</button>
+                <Link to={`/trainers/${trainer.id}/bookings/new`} className='btn green'>Booking</Link>
               </div>
             </div>
           </div>

@@ -17,12 +17,12 @@ const App = () => (
     </header>
 
     <div className='body-content'>
-      <switch>
-        <Route exact path='/trainers' component={TrainerListContainer} />
+      <Switch>
+        <Route path='/trainers/:id/bookings/new' component={BookingFormContainer} />
         <Route path='/trainers/:id' component={TrainerDetailContainer} />
-        <Route path='/bookings' component={BookingFormContainer} />
+        <Route path='/trainers' component={TrainerListContainer} />
         <Route exact path="/" component={MainPage} />
-      </switch>
+      </Switch>
     </div>
 
   </div>

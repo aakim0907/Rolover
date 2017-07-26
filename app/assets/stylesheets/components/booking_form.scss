@@ -5,8 +5,14 @@
   width: 890px;
   margin: auto;
   margin-top: 25px;
-  padding-left: 20px;
-  padding-bottom: 20px;
+  padding: 40px;
+  box-shadow: 5px 5px 5px #ddd;
+
+  h3 {
+    margin-top: 0;
+    margin-bottom: 20px;
+    color: $green;
+  }
 
   form {
     display: flex;
@@ -15,11 +21,89 @@
   }
 }
 
-.booking-form-training {
-  // border: 1px solid $light-green;
+.booking-form-question {
   width: 100%;
+  height: 28px;
+  margin-top: 20px;
+  margin-bottom: 7px;
+
+  p {
+    font-weight: bold;
+  }
+
+  h4 {
+    color: $green;
+  }
+}
+
+
+.booking-form-training {
+  width: 100%;
+  display: flex;
 }
 
 .booking-form-button {
+  width: 50%;
+}
+
+.booking-training {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $light-gray;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 7px;
+  margin: 7px;
+  height: 105px;
+  width: 130px;
+  justify-content: center;
+
+  &:hover div {
+    color: $green;
+  }
+}
+
+.booking-training-selected {
+  display: flex;
+  flex-direction: column;
+  border: 1px solid $light-gray;
+  border-radius: 4px;
+  cursor: pointer;
+  padding: 7px;
+  margin: 7px;
+  height: 105px;
+  width: 130px;
+  justify-content: center;
+  border-bottom: 3px solid $green;
+
+  div {
+    color: $dark-green;
+  }
+}
+
+.booking-icon {
+  display: flex;
+  width: 55px;
+  height: 55px;
+  margin: auto;
+}
+
+.booking-form-dog {
+  background-color: $background;
+  display: flex;
+  flex-direction: column;
+  width: 70%;
+}
+
+.dog-form-1, .dog-form-2, .dog-form-3 {
   width: 100%;
+  display: flex;
+}
+
+.df-1-1 {
+  width: 70%;
+}
+
+.df-1-2 {
+  width: 30%;
 }
