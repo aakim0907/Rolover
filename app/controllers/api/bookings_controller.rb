@@ -18,6 +18,6 @@ class Api::BookingsController < ApplicationController
   private
 
   def booking_params
-    params.require(:booking).permit(:trainer_id, :user_id, :dog_id, :start_date, :end_date, :message, :status)
+    params.require(:booking).permit(:trainer_id, :user_id, :dog_id, :start_date, :end_date, :message, :training_type)
   end
 end

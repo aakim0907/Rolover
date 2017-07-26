@@ -50633,9 +50633,13 @@ var BookingForm = function (_React$Component) {
   }, {
     key: 'handleSubmit',
     value: function handleSubmit(e) {
+      var _this3 = this;
+
       e.preventDefault();
       var booking = this.state;
-      this.props.createBooking(booking);
+      this.props.createBooking(booking).then(function () {
+        return _this3.props.history.push('/profile');
+      });
     }
   }, {
     key: 'toggleTraining',
@@ -50738,7 +50742,7 @@ var BookingForm = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
       console.log(this.state);
 
@@ -50768,7 +50772,7 @@ var BookingForm = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: this.state['training_type'] === 'obedience' ? 'booking-training-selected' : 'booking-training', onClick: function onClick() {
-                  return _this3.toggleTraining('obedience');
+                  return _this4.toggleTraining('obedience');
                 } },
               _react2.default.createElement(
                 'div',
@@ -50784,7 +50788,7 @@ var BookingForm = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: this.state['training_type'] === 'behavior' ? 'booking-training-selected' : 'booking-training', onClick: function onClick() {
-                  return _this3.toggleTraining('behavior');
+                  return _this4.toggleTraining('behavior');
                 } },
               _react2.default.createElement(
                 'div',
@@ -50800,7 +50804,7 @@ var BookingForm = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: this.state['training_type'] === 'advanced' ? 'booking-training-selected' : 'booking-training', onClick: function onClick() {
-                  return _this3.toggleTraining('advanced');
+                  return _this4.toggleTraining('advanced');
                 } },
               _react2.default.createElement(
                 'div',

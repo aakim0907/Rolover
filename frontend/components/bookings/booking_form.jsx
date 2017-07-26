@@ -22,7 +22,8 @@ class BookingForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const booking = this.state;
-    this.props.createBooking(booking);
+    this.props.createBooking(booking).then(() =>
+      this.props.history.push('/profile'));
   }
 
   toggleTraining(type) {
