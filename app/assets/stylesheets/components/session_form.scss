@@ -6,15 +6,6 @@
   padding: 0px 10px;
   background-color: $white;
 
-  // .side-icon {
-  //   float: right;
-  //   margin-right: 15px;
-  //   margin-top: -40px;
-  //   position: relative;
-  //   z-index: 3;
-  //   color: $gray;
-  // }
-
   h3 {
     margin-top: 20px;
     padding-left: 15px;
@@ -33,15 +24,15 @@
     background-color: #faffbd;
     border-radius: 3px;
 
-    font-family: "FontAwesome", $font-stack;
+    font-family: $font-stack, FontAwesome;
     font-style: normal;
     font-weight: normal;
     text-decoration: inherit;
 
-     &:focus {
-       box-shadow: 0 0 5px $gray;
-       border: 1px solid rgba(81, 203, 238, 1);
-     }
+    &:focus {
+      box-shadow: 0 0 5px $gray;
+      border: 1px solid rgba(81, 203, 238, 1);
+    }
   }
 
   .session-redirect-btn {
