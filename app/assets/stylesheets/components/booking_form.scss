@@ -92,6 +92,18 @@
   margin: auto;
 }
 
+.booking-form-date {
+  display: flex;
+
+  input[type='date'] {
+    height: 30px;
+  }
+}
+
+.bfd-1 {
+  width: 30%;
+}
+
 .booking-form-dog {
   background-color: $background;
   display: flex;
