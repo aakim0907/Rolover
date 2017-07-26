@@ -48439,11 +48439,11 @@ var ReviewForm = function (_React$Component) {
                   'label',
                   null,
                   'Rating',
-                  _react2.default.createElement('input', { type: 'radio', id: 'rate1', onClick: this.update('rating'), checked: parseInt(this.state.rating) >= 1, value: '1' }),
-                  _react2.default.createElement('input', { type: 'radio', id: 'rate2', onClick: this.update('rating'), checked: parseInt(this.state.rating) >= 2, value: '2' }),
-                  _react2.default.createElement('input', { type: 'radio', id: 'rate3', onClick: this.update('rating'), checked: parseInt(this.state.rating) >= 3, value: '3' }),
-                  _react2.default.createElement('input', { type: 'radio', id: 'rate4', onClick: this.update('rating'), checked: parseInt(this.state.rating) >= 4, value: '4' }),
-                  _react2.default.createElement('input', { type: 'radio', id: 'rate5', onClick: this.update('rating'), checked: parseInt(this.state.rating) >= 5, value: '5' })
+                  _react2.default.createElement('input', { type: 'radio', className: 'radio-star', onClick: this.update('rating'), checked: parseInt(this.state.rating) >= 1, value: '1' }),
+                  _react2.default.createElement('input', { type: 'radio', className: 'radio-star', onClick: this.update('rating'), checked: parseInt(this.state.rating) >= 2, value: '2' }),
+                  _react2.default.createElement('input', { type: 'radio', className: 'radio-star', onClick: this.update('rating'), checked: parseInt(this.state.rating) >= 3, value: '3' }),
+                  _react2.default.createElement('input', { type: 'radio', className: 'radio-star', onClick: this.update('rating'), checked: parseInt(this.state.rating) >= 4, value: '4' }),
+                  _react2.default.createElement('input', { type: 'radio', className: 'radio-star', onClick: this.update('rating'), checked: parseInt(this.state.rating) >= 5, value: '5' })
                 )
               ),
               _react2.default.createElement(
@@ -50686,7 +50686,7 @@ var BookingForm = function (_React$Component) {
               null,
               'Name',
               _react2.default.createElement('br', null),
-              _react2.default.createElement('input', { type: 'text' })
+              _react2.default.createElement('input', { type: 'text', className: 'booking-input' })
             )
           ),
           _react2.default.createElement(
@@ -50697,12 +50697,61 @@ var BookingForm = function (_React$Component) {
               null,
               'Weight (lbs.)',
               _react2.default.createElement('br', null),
-              _react2.default.createElement('input', { type: 'text' })
+              _react2.default.createElement('input', { type: 'text', className: 'booking-input' })
             )
           )
         ),
-        _react2.default.createElement('div', { className: 'dog-form-2' }),
-        _react2.default.createElement('div', { className: 'dog-form-3' })
+        _react2.default.createElement(
+          'div',
+          { className: 'dog-form-2' },
+          _react2.default.createElement(
+            'label',
+            null,
+            'Breeds',
+            _react2.default.createElement('br', null),
+            _react2.default.createElement('input', { type: 'text', className: 'booking-input' })
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'dog-form-3' },
+          _react2.default.createElement(
+            'div',
+            { className: 'df-3-1' },
+            _react2.default.createElement(
+              'label',
+              null,
+              'Age (years)',
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('input', { type: 'text', className: 'booking-input' })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'df-3-2' },
+            _react2.default.createElement(
+              'label',
+              null,
+              'Age (months)',
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('input', { type: 'text', className: 'booking-input' })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'df-3-3' },
+            _react2.default.createElement(
+              'label',
+              null,
+              'Sex',
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('input', { type: 'radio', value: 'Male' }),
+              'Male',
+              _react2.default.createElement('input', { type: 'radio', value: 'Female' }),
+              'Female'
+            )
+          )
+        )
       );
       // } else {
       //   return (
@@ -50803,20 +50852,7 @@ var BookingForm = function (_React$Component) {
               'Select preferred date range for the training session'
             )
           ),
-          _react2.default.createElement(
-            'div',
-            { className: 'booking-form-date' },
-            _react2.default.createElement(
-              'p',
-              null,
-              'Start'
-            ),
-            _react2.default.createElement(
-              'p',
-              null,
-              'End'
-            )
-          ),
+          _react2.default.createElement('div', { className: 'booking-form-date' }),
           _react2.default.createElement(
             'div',
             { className: 'booking-form-question' },
@@ -50840,11 +50876,10 @@ var BookingForm = function (_React$Component) {
             'div',
             { className: 'booking-form-msg' },
             _react2.default.createElement('textarea', {
-              rows: '5',
+              rows: '4',
               cols: '70',
               value: this.state.message,
-              onChange: this.update('message'),
-              className: 'booking-input'
+              onChange: this.update('message')
             })
           ),
           _react2.default.createElement(

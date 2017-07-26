@@ -42,6 +42,10 @@
   display: flex;
 }
 
+.booking-form-msg {
+  height: 90px;
+}
+
 .booking-form-button {
   width: 50%;
 }
@@ -92,18 +96,51 @@
   background-color: $background;
   display: flex;
   flex-direction: column;
-  width: 70%;
+  width: 72%;
+  padding: 15px;
 }
 
 .dog-form-1, .dog-form-2, .dog-form-3 {
   width: 100%;
   display: flex;
+  margin: 5px;
 }
 
 .df-1-1 {
-  width: 70%;
+  width: 65%;
+
+  input {
+    width: 320px;
+  }
 }
 
 .df-1-2 {
   width: 30%;
+}
+
+.dog-form-2 {
+
+  input {
+    width: 538px;
+  }
+}
+
+.booking-input {
+  height: 35px;
+}
+
+.df-3-1, .df-3-2, .df-3-3 {
+  width: 30%;
+
+  input[type='text'] {
+    width: 150px;
+  }
+}
+
+.df-3-3 {
+  padding: 4px;
+
+  input {
+    margin: 2px;
+  }
 }

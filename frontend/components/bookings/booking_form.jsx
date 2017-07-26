@@ -30,23 +30,44 @@ class BookingForm extends React.Component {
             <div className='df-1-1'>
               <label>Name
                 <br/>
-                <input type='text'></input>
+                <input type='text' className='booking-input'></input>
               </label>
             </div>
             <div className='df-1-2'>
               <label>Weight (lbs.)
                 <br/>
-                <input type='text'></input>
+                <input type='text' className='booking-input'></input>
               </label>
             </div>
           </div>
 
           <div className='dog-form-2'>
-
+            <label>Breeds
+              <br/>
+              <input type='text' className='booking-input'></input>
+            </label>
           </div>
 
           <div className='dog-form-3'>
-
+            <div className='df-3-1'>
+              <label>Age (years)
+                <br/>
+                <input type='text' className='booking-input'></input>
+              </label>
+            </div>
+            <div className='df-3-2'>
+              <label>Age (months)
+                <br/>
+                <input type='text' className='booking-input'></input>
+              </label>
+            </div>
+            <div className='df-3-3'>
+              <label>Sex
+                <br/>
+                <input type='radio' value='Male'/>Male
+                <input type='radio' value='Female'/>Female
+              </label>
+            </div>
           </div>
         </div>
       );
@@ -101,8 +122,7 @@ class BookingForm extends React.Component {
           </div>
 
           <div className='booking-form-date'>
-            <p>Start</p>
-            <p>End</p>
+            
           </div>
 
           <div className='booking-form-question'>
@@ -117,11 +137,10 @@ class BookingForm extends React.Component {
 
           <div className='booking-form-msg'>
             <textarea
-              rows='5'
+              rows='4'
               cols='70'
               value={this.state.message}
               onChange={this.update('message')}
-              className='booking-input'
             ></textarea>
           </div>
 

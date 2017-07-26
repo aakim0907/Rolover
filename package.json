@@ -31,6 +31,7 @@
     "lodash": "^4.17.4",
     "nuka-carousel": "^2.0.4",
     "react": "^15.6.1",
+    "react-datepicker": "^0.52.0",
     "react-dom": "^15.6.1",
     "react-modal": "^2.2.2",
     "react-redux": "^5.0.5",

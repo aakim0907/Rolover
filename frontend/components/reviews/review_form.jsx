@@ -56,11 +56,11 @@ class ReviewForm extends React.Component {
             <div className='review-form-container-1'>
               <div className='review-form-rating'>
                 <label>Rating
-                  <input type='radio' id='rate1' onClick={this.update('rating')} checked={parseInt(this.state.rating) >= 1} value='1' />
-                  <input type='radio' id='rate2' onClick={this.update('rating')} checked={parseInt(this.state.rating) >= 2} value='2' />
-                  <input type='radio' id='rate3' onClick={this.update('rating')} checked={parseInt(this.state.rating) >= 3} value='3' />
-                  <input type='radio' id='rate4' onClick={this.update('rating')} checked={parseInt(this.state.rating) >= 4} value='4' />
-                  <input type='radio' id='rate5' onClick={this.update('rating')} checked={parseInt(this.state.rating) >= 5} value='5' />
+                  <input type='radio' className='radio-star'  onClick={this.update('rating')} checked={parseInt(this.state.rating) >= 1} value='1' />
+                  <input type='radio' className='radio-star'  onClick={this.update('rating')} checked={parseInt(this.state.rating) >= 2} value='2' />
+                  <input type='radio' className='radio-star'  onClick={this.update('rating')} checked={parseInt(this.state.rating) >= 3} value='3' />
+                  <input type='radio' className='radio-star'  onClick={this.update('rating')} checked={parseInt(this.state.rating) >= 4} value='4' />
+                  <input type='radio' className='radio-star'  onClick={this.update('rating')} checked={parseInt(this.state.rating) >= 5} value='5' />
                 </label>
               </div>
 
