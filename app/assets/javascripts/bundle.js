@@ -42990,8 +42990,7 @@ var sessionReducer = function sessionReducer() {
       });
 
     case _session_actions.CLEAR_ERRORS:
-      // return merge({}, state, { errors: [] });
-      var newState = (0, _lodash.merge)({}, state, { errors: [] });
+      var newState = (0, _lodash.merge)({}, state);
       newState.errors = [];
       return newState;
 
@@ -43116,20 +43115,33 @@ var _review_actions = __webpack_require__(44);
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+var defaultState = {
+  entities: {},
+  errors: []
+};
+
 var reviewReducer = function reviewReducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultState;
   var action = arguments[1];
 
   Object.freeze(state);
 
   switch (action.type) {
     case _review_actions.RECEIVE_REVIEWS:
-      var reviews = action.reviews;
-      return (0, _lodash.merge)({}, reviews);
+      return (0, _lodash.merge)({}, state, { entities: action.reviews });
 
     case _review_actions.RECEIVE_REVIEW:
       var review = action.review;
-      return (0, _lodash.merge)({}, state, _defineProperty({}, review.id, review));
+      return (0, _lodash.merge)({}, state, { entities: _defineProperty({}, review.id, review) });
+
+    case _review_actions.RECEIVE_REVIEW_ERRORS:
+      var errors = action.errors;
+      return (0, _lodash.merge)({}, state, { errors: errors });
+
+    case _review_actions.CLEAR_REVIEW_ERRORS:
+      var newState = (0, _lodash.merge)({}, state);
+      newState.errors = [];
+      return newState;
 
     default:
       return state;
