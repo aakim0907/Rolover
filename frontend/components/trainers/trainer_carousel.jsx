@@ -1,6 +1,6 @@
 import React from 'react';
 import Carousel from 'nuka-carousel';
-// import Decorators from './decorators';
+import Decorators from '../helper/carousel_decorators';
 
 class TrainerCarousel extends React.Component {
   render() {

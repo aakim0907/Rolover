@@ -48272,6 +48272,10 @@ var _nukaCarousel = __webpack_require__(309);
 
 var _nukaCarousel2 = _interopRequireDefault(_nukaCarousel);
 
+var _carousel_decorators = __webpack_require__(326);
+
+var _carousel_decorators2 = _interopRequireDefault(_carousel_decorators);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -48279,8 +48283,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-// import Decorators from './decorators';
 
 var TrainerCarousel = function (_React$Component) {
   _inherits(TrainerCarousel, _React$Component);
@@ -51338,6 +51340,171 @@ var Map = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = (0, _reactRouterDom.withRouter)(Map);
+
+/***/ }),
+/* 325 */,
+/* 326 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+var Decorators = [{
+  component: function () {
+    function LeftArrow() {
+      _classCallCheck(this, LeftArrow);
+    }
+
+    _createClass(LeftArrow, [{
+      key: "render",
+      value: function render() {
+        return _react2.default.createElement(
+          "button",
+          {
+            style: this.getButtonStyles(this.props.currentSlide === 0 && !this.props.wrapAround) },
+          _react2.default.createElement("img", { src: "http://res.cloudinary.com/ds1qfel8a/image/upload/v1497369678/left_qdsoo8.png",
+            id: "leftButton", onClick: this.handleClick })
+        );
+      }
+    }, {
+      key: "handleClick",
+      value: function handleClick(e) {
+        e.preventDefault();
+        this.props.previousSlide();
+      }
+    }, {
+      key: "getButtonStyles",
+      value: function getButtonStyles(disabled) {
+        return {
+          border: 0,
+          background: 'rgba(0,0,0,0)',
+          color: 'white',
+          padding: 10,
+          outline: 0,
+          opacity: disabled ? 0.3 : 1
+        };
+      }
+    }]);
+
+    return LeftArrow;
+  }(),
+  position: 'CenterLeft'
+}, {
+  component: function () {
+    function RightArrow() {
+      _classCallCheck(this, RightArrow);
+    }
+
+    _createClass(RightArrow, [{
+      key: "render",
+      value: function render() {
+        return _react2.default.createElement(
+          "button",
+          {
+            style: this.getButtonStyles(this.props.currentSlide + this.props.slidesToScroll >= this.props.slideCount && !this.props.wrapAround) },
+          _react2.default.createElement("img", { src: "http://res.cloudinary.com/ds1qfel8a/image/upload/v1497369678/right_kamca8.png",
+            id: "rightButton", onClick: this.handleClick })
+        );
+      }
+    }, {
+      key: "handleClick",
+      value: function handleClick(e) {
+        e.preventDefault();
+        this.props.nextSlide();
+      }
+    }, {
+      key: "getButtonStyles",
+      value: function getButtonStyles(disabled) {
+        return {
+          border: 0,
+          background: 'rgba(0,0,0,0)',
+          color: 'white',
+          padding: 10,
+          outline: 0,
+          opacity: disabled ? 0.3 : 1
+        };
+      }
+    }]);
+
+    return RightArrow;
+  }(),
+  position: 'CenterRight'
+  // {
+  //   component: class Index {
+  //     render() {
+  //       var self = this;
+  //       var indexes = this.getIndexes(self.props.slideCount, self.props.slidesToScroll);
+  //       return (
+  //         <ul style={self.getListStyles()}>
+  //           {
+  //             indexes.map(function(index) {
+  //               return (
+  //                 <li style={self.getListItemStyles()} key={index}>
+  //                   <button
+  //                     style={self.getButtonStyles(self.props.currentSlide === index)}
+  //                     onClick={self.props.goToSlide.bind(null, index)}>
+  //                     &bull;
+  //                   </button>
+  //                 </li>
+  //               );
+  //             })
+  //           }
+  //         </ul>
+  //       );
+  //     }
+  //     getIndexes(count, inc) {
+  //       var arr = [];
+  //       for (var i = 0; i < count; i += inc) {
+  //         arr.push(i);
+  //       }
+  //       return arr;
+  //     }
+  //     getListStyles() {
+  //       return {
+  //         position: 'absolute',
+  //         margin: 0,
+  //         top: -10,
+  //         padding: 0
+  //       };
+  //     }
+  //     getListItemStyles() {
+  //       return ({
+  //         listStyleType: 'none',
+  //         display: 'flex'
+  //       });
+  //     }
+  //     getButtonStyles(active) {
+  //       return {
+  //         border: 0,
+  //         background: 'transparent',
+  //         color: 'black',
+  //         cursor: 'pointer',
+  //         padding: 10,
+  //         outline: 0,
+  //         fontSize: 24,
+  //         opacity: active ? 1 : 0.5
+  //       };
+  //     }
+  //   },
+  //   position: 'CenterCenter'
+  // }
+}];
+
+exports.default = Decorators;
 
 /***/ })
 /******/ ]);
