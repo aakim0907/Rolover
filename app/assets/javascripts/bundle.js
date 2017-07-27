@@ -51050,8 +51050,28 @@ var UserProfile = function (_React$Component) {
       }
     }
   }, {
+    key: 'renderStatus',
+    value: function renderStatus(status) {
+      var className = void 0;
+      if (status === 'APPROVED') {
+        className = 'approved';
+      } else if (status === 'PENDING') {
+        className = 'pending';
+      } else {
+        className = 'denied';
+      }
+
+      return _react2.default.createElement(
+        'p',
+        { className: className },
+        status
+      );
+    }
+  }, {
     key: 'renderBookings',
     value: function renderBookings() {
+      var _this2 = this;
+
       var bookings = this.props.bookings;
 
       if (bookings.length === 0) {
@@ -51081,11 +51101,7 @@ var UserProfile = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'bl-2' },
-                _react2.default.createElement(
-                  'p',
-                  null,
-                  booking.status
-                )
+                _this2.renderStatus(booking.status)
               )
             );
           })

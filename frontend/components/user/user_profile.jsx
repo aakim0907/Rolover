@@ -24,6 +24,21 @@ class UserProfile extends React.Component {
     }
   }
 
+  renderStatus(status) {
+    let className;
+    if (status === 'APPROVED') {
+      className = 'approved';
+    } else if (status === 'PENDING') {
+      className = 'pending';
+    } else {
+      className = 'denied';
+    }
+
+    return (
+      <p className={className}>{status}</p>
+    );
+  }
+
   renderBookings() {
     const { bookings } = this.props;
     if (bookings.length === 0) {
@@ -39,7 +54,7 @@ class UserProfile extends React.Component {
                 <p>{booking.training_type.toUpperCase()} training with 'trainer'</p>
               </div>
               <div className='bl-2'>
-                <p>{booking.status}</p>
+                {this.renderStatus(booking.status)}
               </div>
             </div>
           ))}
