@@ -22225,7 +22225,7 @@ var fetchTrainer = exports.fetchTrainer = function fetchTrainer(id) {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.createReview = exports.fetchReviews = exports.receiveReview = exports.receiveReviews = exports.RECEIVE_REVIEW = exports.RECEIVE_REVIEWS = undefined;
+exports.createReview = exports.fetchReviews = exports.clearReviewErrors = exports.receiveReviewErrors = exports.receiveReview = exports.receiveReviews = exports.CLEAR_REVIEW_ERRORS = exports.RECEIVE_REVIEW_ERRORS = exports.RECEIVE_REVIEW = exports.RECEIVE_REVIEWS = undefined;
 
 var _review_api_util = __webpack_require__(250);
 
@@ -22235,6 +22235,8 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 var RECEIVE_REVIEWS = exports.RECEIVE_REVIEWS = 'RECEIVE_REVIEWS';
 var RECEIVE_REVIEW = exports.RECEIVE_REVIEW = 'RECEIVE_REVIEW';
+var RECEIVE_REVIEW_ERRORS = exports.RECEIVE_REVIEW_ERRORS = 'RECEIVE_REVIEW_ERRORS';
+var CLEAR_REVIEW_ERRORS = exports.CLEAR_REVIEW_ERRORS = 'CLEAR_REVIEW_ERRORS';
 
 // sync action
 var receiveReviews = exports.receiveReviews = function receiveReviews(reviews) {
@@ -22251,11 +22253,26 @@ var receiveReview = exports.receiveReview = function receiveReview(review) {
   };
 };
 
+var receiveReviewErrors = exports.receiveReviewErrors = function receiveReviewErrors(errors) {
+  return {
+    type: RECEIVE_REVIEW_ERRORS,
+    errors: errors
+  };
+};
+
+var clearReviewErrors = exports.clearReviewErrors = function clearReviewErrors() {
+  return {
+    type: CLEAR_REVIEW_ERRORS
+  };
+};
+
 // async action
 var fetchReviews = exports.fetchReviews = function fetchReviews(trainerId) {
   return function (dispatch) {
     return APIUtil.fetchReviews(trainerId).then(function (reviews) {
-      return dispatch(receiveReviews(reviews));
+      return dispatch(receiveReviews(reviews)), function (err) {
+        return dispatch(receiveReviewErrors(err.responseJSON));
+      };
     });
   };
 };
