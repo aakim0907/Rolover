@@ -29,13 +29,13 @@ export const clearReviewErrors = () => ({
 // async action
 export const fetchReviews = trainerId => dispatch => (
   APIUtil.fetchReviews(trainerId).then(
-    reviews => (dispatch(receiveReviews(reviews)),
-    err => dispatch(receiveReviewErrors(err.responseJSON)))
+    reviews => (dispatch(receiveReviews(reviews)))
   )
 );
 
 export const createReview = review => dispatch => (
   APIUtil.createReview(review).then(
-    newReview => (dispatch(receiveReview(newReview)))
+    newReview => (dispatch(receiveReview(newReview)),
+    err => dispatch(receiveReviewErrors(err.responseJSON)))
   )
 );

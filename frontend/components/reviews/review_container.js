@@ -1,7 +1,7 @@
 import { connect } from 'react-redux';
 
 import { selectAllReviews } from '../../reducers/selectors';
-import { fetchReviews, createReview } from '../../actions/review_actions';
+import { fetchReviews, createReview, } from '../../actions/review_actions';
 import ReviewList from './review_list';
 
 const mapStateToProps = ({ reviews }) => ({

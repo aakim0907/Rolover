@@ -22270,9 +22270,7 @@ var clearReviewErrors = exports.clearReviewErrors = function clearReviewErrors()
 var fetchReviews = exports.fetchReviews = function fetchReviews(trainerId) {
   return function (dispatch) {
     return APIUtil.fetchReviews(trainerId).then(function (reviews) {
-      return dispatch(receiveReviews(reviews)), function (err) {
-        return dispatch(receiveReviewErrors(err.responseJSON));
-      };
+      return dispatch(receiveReviews(reviews));
     });
   };
 };
@@ -22280,7 +22278,9 @@ var fetchReviews = exports.fetchReviews = function fetchReviews(trainerId) {
 var createReview = exports.createReview = function createReview(review) {
   return function (dispatch) {
     return APIUtil.createReview(review).then(function (newReview) {
-      return dispatch(receiveReview(newReview));
+      return dispatch(receiveReview(newReview)), function (err) {
+        return dispatch(receiveReviewErrors(err.responseJSON));
+      };
     });
   };
 };
