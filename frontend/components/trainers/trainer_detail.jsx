@@ -115,7 +115,7 @@ class TrainerDetail extends React.Component {
           onRequestClose={this.closeModal}
           style={customStyles}
           contentLabel='modal'>
-          <SessionFormContainer formType={'login'} modalFunction={this.openModal.bind(this)}/>
+          <SessionFormContainer formType={'login'} openModal={this.openModal.bind(this)} closeModal={this.closeModal.bind(this)}/>
         </Modal>
 
       </div>

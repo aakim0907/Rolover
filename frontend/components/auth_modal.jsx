@@ -43,7 +43,7 @@ class AuthModal extends React.Component {
           onRequestClose={this.closeModal}
           style={customStyles}
           contentLabel='modal'>
-          <SessionFormContainer formType={formType} modalFunction={this.openModal.bind(this)}/>
+          <SessionFormContainer formType={formType} openModal={this.openModal.bind(this)} closeModal={this.closeModal.bind(this)}/>
         </Modal>
       </div>
     );

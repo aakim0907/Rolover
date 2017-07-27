@@ -51,7 +51,7 @@ class UserProfile extends React.Component {
           { bookings.map(booking => (
             <div className='booking-list-item' key={booking.id}>
               <div className='bl-1'>
-                <p>{booking.training_type.toUpperCase()} training with 'trainer'</p>
+                <p>{booking.training_type.toUpperCase()} training with {booking.trainer_name}</p>
               </div>
               <div className='bl-2'>
                 {this.renderStatus(booking.status)}

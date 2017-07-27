@@ -26,12 +26,16 @@ class SessionForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const user = this.state;
-    this.props.processForm(user);
+    this.props.processForm(user).then(
+      () => this.props.closeModal()
+    );
   }
 
   handleDemoClick(e) {
     e.preventDefault();
-    this.props.login({ email: 'guest@rolover.dog', password: 'woofbark' });
+    this.props.login({ email: 'guest@rolover.dog', password: 'woofbark' }).then(
+      () => this.props.closeModal()
+    );
   }
 
   renderRedirect() {

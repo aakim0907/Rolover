@@ -24862,7 +24862,7 @@ var AuthModal = function (_React$Component) {
             onRequestClose: this.closeModal,
             style: _auth_modal_style.customStyles,
             contentLabel: 'modal' },
-          _react2.default.createElement(_session_form_container2.default, { formType: formType, modalFunction: this.openModal.bind(this) })
+          _react2.default.createElement(_session_form_container2.default, { formType: formType, openModal: this.openModal.bind(this), closeModal: this.closeModal.bind(this) })
         )
       );
     }
@@ -46510,20 +46510,28 @@ var SessionForm = function (_React$Component) {
   }, {
     key: 'handleSubmit',
     value: function handleSubmit(e) {
+      var _this3 = this;
+
       e.preventDefault();
       var user = this.state;
-      this.props.processForm(user);
+      this.props.processForm(user).then(function () {
+        return _this3.props.closeModal();
+      });
     }
   }, {
     key: 'handleDemoClick',
     value: function handleDemoClick(e) {
+      var _this4 = this;
+
       e.preventDefault();
-      this.props.login({ email: 'guest@rolover.dog', password: 'woofbark' });
+      this.props.login({ email: 'guest@rolover.dog', password: 'woofbark' }).then(function () {
+        return _this4.props.closeModal();
+      });
     }
   }, {
     key: 'renderRedirect',
     value: function renderRedirect() {
-      var _this3 = this;
+      var _this5 = this;
 
       var redirect = void 0;
       if (this.props.formType === 'login') {
@@ -46551,7 +46559,7 @@ var SessionForm = function (_React$Component) {
         _react2.default.createElement(
           'button',
           { className: 'session-redirect-btn', onClick: function onClick() {
-              return _this3.props.modalFunction(redirect.redirectForm);
+              return _this5.props.modalFunction(redirect.redirectForm);
             } },
           redirect.buttonName
         )
@@ -48269,7 +48277,7 @@ var TrainerDetail = function (_React$Component) {
             onRequestClose: this.closeModal,
             style: _auth_modal_style.customStyles,
             contentLabel: 'modal' },
-          _react2.default.createElement(_session_form_container2.default, { formType: 'login', modalFunction: this.openModal.bind(this) })
+          _react2.default.createElement(_session_form_container2.default, { formType: 'login', openModal: this.openModal.bind(this), closeModal: this.closeModal.bind(this) })
         )
       );
     }
@@ -51146,7 +51154,8 @@ var UserProfile = function (_React$Component) {
                   'p',
                   null,
                   booking.training_type.toUpperCase(),
-                  ' training with \'trainer\''
+                  ' training with ',
+                  booking.trainer_name
                 )
               ),
               _react2.default.createElement(
