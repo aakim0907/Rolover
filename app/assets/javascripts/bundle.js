@@ -47799,8 +47799,25 @@ var TrainerList = function (_React$Component) {
       if (trainers.length === 0) {
         return _react2.default.createElement(
           'div',
-          null,
-          'No Results'
+          { className: 'redirect-page' },
+          _react2.default.createElement(
+            'div',
+            { className: 'redirect-1' },
+            _react2.default.createElement(
+              _reactRouterDom.Link,
+              { to: '/' },
+              _react2.default.createElement('img', { src: 'http://res.cloudinary.com/rolover/image/upload/v1501127206/sim-dog2_aq1qcv.png', className: 'img-redirect' })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'redirect-2' },
+            _react2.default.createElement(
+              'p',
+              null,
+              'No Matching Results! Try again? Click on the dog!'
+            )
+          )
         );
       } else {
         return _react2.default.createElement(

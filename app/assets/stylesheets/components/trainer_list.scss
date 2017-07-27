@@ -98,3 +98,27 @@
 .trainer-list-rating {
   width: 100%;
 }
+
+// no results page
+.redirect-page {
+  display: flex;
+  flex-direction: column;
+  margin-top: -7px;
+  width: 250px;
+  margin: auto;
+}
+
+.redirect-1, .redirect-2 {
+  width: 100%;
+  margin: auto;
+
+  p {
+    font-size: 17px;
+    color: $dark-green;
+  }
+}
+
+.img-redirect {
+  transform: rotate(180deg);
+  width: 100px;
+}

@@ -16,7 +16,18 @@ class TrainerList extends React.Component {
     const { trainers } = this.props;
 
     if (trainers.length === 0) {
-      return (<div>No Results</div>);
+      return (
+        <div className='redirect-page'>
+          <div className='redirect-1'>
+            <Link to={'/'}>
+              <img src='http://res.cloudinary.com/rolover/image/upload/v1501127206/sim-dog2_aq1qcv.png' className='img-redirect'></img>
+            </Link>
+          </div>
+          <div className='redirect-2'>
+            <p>No Matching Results! Try again? Click on the dog!</p>
+          </div>
+        </div>
+      );
     } else {
       return (
         <div className='index-page'>
