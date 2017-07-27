@@ -27,7 +27,11 @@ class SessionForm extends React.Component {
     e.preventDefault();
     const user = this.state;
     this.props.processForm(user).then(
-      () => this.props.closeModal()
+      () => {
+        if (this.props.errors.length === 0) {
+          this.props.closeModal();
+        }
+      }
     );
   }
 

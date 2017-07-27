@@ -46545,7 +46545,9 @@ var SessionForm = function (_React$Component) {
       e.preventDefault();
       var user = this.state;
       this.props.processForm(user).then(function () {
-        return _this3.props.closeModal();
+        if (_this3.props.errors.length === 0) {
+          _this3.props.closeModal();
+        }
       });
     }
   }, {
