@@ -19,4 +19,3 @@ const NavBar = () => (
 );
 
 export default NavBar;
-// <Link to={"/about"}>About</Link>

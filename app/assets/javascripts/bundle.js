@@ -46264,7 +46264,6 @@ var NavBar = function NavBar() {
 };
 
 exports.default = NavBar;
-// <Link to={"/about"}>About</Link>
 
 /***/ }),
 /* 292 */
