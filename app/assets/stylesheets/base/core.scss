@@ -27,7 +27,7 @@ a {
 }
 
 p, li {
-  font-size: 16px;
+  font-size: 15px;
   font-weight: 100;
   font-family: $font-stack;
 }
@@ -61,10 +61,6 @@ button {
 .container {
   max-width: 1080px;
   margin: 0 auto;
-
-  &.con-pad {
-    padding: 0 15px;
-  }
 }
 
 .btn {

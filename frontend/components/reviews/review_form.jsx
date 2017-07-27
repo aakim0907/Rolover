@@ -50,20 +50,24 @@ class ReviewForm extends React.Component {
     if ( this.props.currentUser ) {
       return (
         <div className='review-form-container'>
-          {this.renderErrors()}
           <form onSubmit={this.handleSubmit}>
             <div className='review-form-container-1'>
-              <div className='review-form-rating'>
-                <label>Rating
-                  <input type='radio' className='radio-star'  onClick={this.update('rating')} checked={parseInt(this.state.rating) >= 1} value='1' />
-                  <input type='radio' className='radio-star'  onClick={this.update('rating')} checked={parseInt(this.state.rating) >= 2} value='2' />
-                  <input type='radio' className='radio-star'  onClick={this.update('rating')} checked={parseInt(this.state.rating) >= 3} value='3' />
-                  <input type='radio' className='radio-star'  onClick={this.update('rating')} checked={parseInt(this.state.rating) >= 4} value='4' />
-                  <input type='radio' className='radio-star'  onClick={this.update('rating')} checked={parseInt(this.state.rating) >= 5} value='5' />
-                </label>
+              <div className='review-form-container-1-1'>
+                <div className='review-form-rating'>
+                  <label>Rating
+                    <input type='radio' className='radio-star'  onClick={this.update('rating')} checked={parseInt(this.state.rating) >= 1} value='1' />
+                    <input type='radio' className='radio-star'  onClick={this.update('rating')} checked={parseInt(this.state.rating) >= 2} value='2' />
+                    <input type='radio' className='radio-star'  onClick={this.update('rating')} checked={parseInt(this.state.rating) >= 3} value='3' />
+                    <input type='radio' className='radio-star'  onClick={this.update('rating')} checked={parseInt(this.state.rating) >= 4} value='4' />
+                    <input type='radio' className='radio-star'  onClick={this.update('rating')} checked={parseInt(this.state.rating) >= 5} value='5' />
+                  </label>
+                </div>
+                <div className='review-form-error'>
+                  {this.renderErrors()}
+                </div>
               </div>
 
-              <div className='review-form-body'>
+              <div className='review-form-1-2'>
                 <label>Review
                   <br/>
                   <textarea

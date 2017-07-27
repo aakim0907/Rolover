@@ -50571,7 +50571,6 @@ var ReviewForm = function (_React$Component) {
         return _react2.default.createElement(
           'div',
           { className: 'review-form-container' },
-          this.renderErrors(),
           _react2.default.createElement(
             'form',
             { onSubmit: this.handleSubmit },
@@ -50580,21 +50579,30 @@ var ReviewForm = function (_React$Component) {
               { className: 'review-form-container-1' },
               _react2.default.createElement(
                 'div',
-                { className: 'review-form-rating' },
+                { className: 'review-form-container-1-1' },
                 _react2.default.createElement(
-                  'label',
-                  null,
-                  'Rating',
-                  _react2.default.createElement('input', { type: 'radio', className: 'radio-star', onClick: this.update('rating'), checked: parseInt(this.state.rating) >= 1, value: '1' }),
-                  _react2.default.createElement('input', { type: 'radio', className: 'radio-star', onClick: this.update('rating'), checked: parseInt(this.state.rating) >= 2, value: '2' }),
-                  _react2.default.createElement('input', { type: 'radio', className: 'radio-star', onClick: this.update('rating'), checked: parseInt(this.state.rating) >= 3, value: '3' }),
-                  _react2.default.createElement('input', { type: 'radio', className: 'radio-star', onClick: this.update('rating'), checked: parseInt(this.state.rating) >= 4, value: '4' }),
-                  _react2.default.createElement('input', { type: 'radio', className: 'radio-star', onClick: this.update('rating'), checked: parseInt(this.state.rating) >= 5, value: '5' })
+                  'div',
+                  { className: 'review-form-rating' },
+                  _react2.default.createElement(
+                    'label',
+                    null,
+                    'Rating',
+                    _react2.default.createElement('input', { type: 'radio', className: 'radio-star', onClick: this.update('rating'), checked: parseInt(this.state.rating) >= 1, value: '1' }),
+                    _react2.default.createElement('input', { type: 'radio', className: 'radio-star', onClick: this.update('rating'), checked: parseInt(this.state.rating) >= 2, value: '2' }),
+                    _react2.default.createElement('input', { type: 'radio', className: 'radio-star', onClick: this.update('rating'), checked: parseInt(this.state.rating) >= 3, value: '3' }),
+                    _react2.default.createElement('input', { type: 'radio', className: 'radio-star', onClick: this.update('rating'), checked: parseInt(this.state.rating) >= 4, value: '4' }),
+                    _react2.default.createElement('input', { type: 'radio', className: 'radio-star', onClick: this.update('rating'), checked: parseInt(this.state.rating) >= 5, value: '5' })
+                  )
+                ),
+                _react2.default.createElement(
+                  'div',
+                  { className: 'review-form-error' },
+                  this.renderErrors()
                 )
               ),
               _react2.default.createElement(
                 'div',
-                { className: 'review-form-body' },
+                { className: 'review-form-1-2' },
                 _react2.default.createElement(
                   'label',
                   null,

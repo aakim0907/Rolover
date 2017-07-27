@@ -43,6 +43,17 @@ input[type='radio'] {
   flex-direction: column;
 }
 
+.review-form-container-1-1 {
+  display: flex;
+}
+
+.review-form-error {
+  ul {
+    padding-top: 0;
+    padding-left: 30px;
+  }
+}
+
 .review-form-container-2 {
   display: flex;
   flex: 1;
