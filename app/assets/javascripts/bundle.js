@@ -47762,6 +47762,10 @@ var _search_container = __webpack_require__(125);
 
 var _search_container2 = _interopRequireDefault(_search_container);
 
+var _map = __webpack_require__(324);
+
+var _map2 = _interopRequireDefault(_map);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
@@ -47817,15 +47821,7 @@ var TrainerList = function (_React$Component) {
                 );
               })
             ),
-            _react2.default.createElement(
-              'div',
-              { className: 'trainer-list-map' },
-              _react2.default.createElement(
-                'p',
-                null,
-                'Map coming soon'
-              )
-            )
+            _react2.default.createElement(_map2.default, null)
           )
         );
       }
@@ -51230,6 +51226,132 @@ var customStyles = exports.customStyles = {
     border: '1px solid $green'
   }
 };
+
+/***/ }),
+/* 324 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _reactDom = __webpack_require__(35);
+
+var _reactDom2 = _interopRequireDefault(_reactDom);
+
+var _reactRouterDom = __webpack_require__(9);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+// import MarkerManager from '../../util/marker_manager';
+
+var getCoordsObj = function getCoordsObj(latLng) {
+  return {
+    lat: latLng.lat(),
+    lng: latLng.lng()
+  };
+};
+
+var mapOptions = {
+  center: {
+    lat: 37.773972,
+    lng: -122.431297
+  }, // San Francisco coords
+  zoom: 13
+};
+
+var Map = function (_React$Component) {
+  _inherits(Map, _React$Component);
+
+  function Map() {
+    _classCallCheck(this, Map);
+
+    return _possibleConstructorReturn(this, (Map.__proto__ || Object.getPrototypeOf(Map)).apply(this, arguments));
+  }
+
+  _createClass(Map, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.map = new google.maps.Map(this.mapNode, mapOptions);
+      // this.MarkerManager = new MarkerManager(this.map, this.handleMarkerClick.bind(this));
+      // if (this.props.singleBench) {
+      //   this.props.fetchBench(this.props.benchId);
+      // } else {
+      //   this.registerListeners();
+      //   this.MarkerManager.updateMarkers(this.props.benches);
+      // }
+    }
+  }, {
+    key: 'componentDidUpdate',
+    value: function componentDidUpdate() {}
+    // if (this.props.singleBench) {
+    //   const targetBenchKey = Object.keys(this.props.benches)[0];
+    //   const targetBench = this.props.benches[targetBenchKey];
+    //   this.MarkerManager.updateMarkers([targetBench]); //grabs only that one bench
+    // } else {
+    //   this.MarkerManager.updateMarkers(this.props.benches);
+    // }
+
+
+    // registerListeners() {
+    //   google.maps.event.addListener(this.map, 'idle', () => {
+    //     const { north, south, east, west } = this.map.getBounds().toJSON();
+    //     const bounds = {
+    //       northEast: { lat:north, lng: east },
+    //       southWest: { lat: south, lng: west } };
+    //     this.props.updateFilter('bounds', bounds);
+    //   });
+    //   google.maps.event.addListener(this.map, 'click', (event) => {
+    //     const coords = getCoordsObj(event.latLng);
+    //     this.handleClick(coords);
+    //   });
+    // }
+
+    // handleMarkerClick(bench) {
+    //   this.props.history.push(`benches/${bench.id}`);
+    // }
+    //
+    // handleClick(coords) {
+    //   this.props.history.push({
+    //     pathname: 'benches/new',
+    //     search: `lat=${coords.lat}&lng=${coords.lng}`
+    //   });
+    // }
+
+  }, {
+    key: 'render',
+    value: function render() {
+      var _this2 = this;
+
+      return _react2.default.createElement(
+        'div',
+        { className: 'google-map', ref: function ref(map) {
+            return _this2.mapNode = map;
+          } },
+        'Map'
+      );
+    }
+  }]);
+
+  return Map;
+}(_react2.default.Component);
+
+exports.default = (0, _reactRouterDom.withRouter)(Map);
 
 /***/ })
 /******/ ]);

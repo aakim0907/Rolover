@@ -2,24 +2,31 @@
 <html>
   <head>
     <title>Rolover</title>
+
+    <!-- Import favicon -->
     <link rel='icon' href='<%=image_path('rolover_favicon.ico') %>'>
-    <%= csrf_meta_tags %>
+    <!-- End of Import favicon -->
 
     <!-- Latest compiled and minified CSS -->
     <link rel='stylesheet' href='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/css/bootstrap.min.css'>
+    <!-- End of Latest comiled and minified CSS -->
 
+    <%= javascript_include_tag "https://maps.googleapis.com/maps/api/js?key=AIzaSyD01UXT0nRfEiTtZpXe7z43svTduvTi-AM" %>
     <%= stylesheet_link_tag    'application', media: 'all' %>
+    <%= csrf_meta_tags %>
     <%= javascript_include_tag 'application' %>
     <%= javascript_include_tag "https://use.fontawesome.com/a8f196bec2.js" %>
 
     <!-- jQuery library -->
     <script src='https://ajax.googleapis.com/ajax/libs/jquery/3.2.1/jquery.min.js'></script>
+    <!-- End of jQuery library -->
 
     <!-- Latest compiled JavaScript -->
-    <!-- <script src="https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js"></script> -->
+    <!-- <script src='https://maxcdn.bootstrapcdn.com/bootstrap/3.3.7/js/bootstrap.min.js'></script> -->
   </head>
 
   <body>
+    
     <%= yield %>
 
   </body>

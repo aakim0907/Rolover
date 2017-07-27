@@ -23,9 +23,11 @@
   }
 }
 
-.trainer-list-map {
-  border: 1px solid $green;
+.google-map {
   width: 300px;
+  height: 700px;
+  position: fixed;
+  // margin-left: 590px;
 }
 
 .trainer-list-item {

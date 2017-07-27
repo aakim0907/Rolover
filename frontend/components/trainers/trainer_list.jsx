@@ -3,6 +3,7 @@ import { Link } from 'react-router-dom';
 
 import TrainerListItem from './trainer_list_item';
 import SearchContainer from '../search/search_container';
+import Map from '../map';
 
 class TrainerList extends React.Component {
   componentDidMount() {
@@ -28,9 +29,7 @@ class TrainerList extends React.Component {
                 </Link>
               ))}
             </div>
-            <div className='trainer-list-map'>
-              <p>Map coming soon</p>
-            </div>
+            <Map />
           </div>
         </div>
       );
