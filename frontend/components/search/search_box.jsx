@@ -61,11 +61,11 @@ class SearchBox extends React.Component {
 
           <div className='search-box-2'>
             <div className='search-box-2-1'>
-              <p>Where are you? (coming soon!)</p>
+              <p>Where are you?</p>
             </div>
 
             <div className='search-box-2-2'>
-              <input type='text' placeholder='Enter your zipcode'></input>
+              <input type='text' placeholder=' Enter zipcode (e.g. 94109)'></input>
             </div>
 
             <div className='search-box-2-3'>

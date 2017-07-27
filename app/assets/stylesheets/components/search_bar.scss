@@ -43,7 +43,7 @@
   border: 1px solid $light-gray;
   border-radius: 4px;
   cursor: pointer;
-  padding: 7px;
+  padding: 3px 3px 3px 5px;
   margin: 7px;
   height: 101px;
   width: 178px;
@@ -57,15 +57,14 @@
 .st-selected {
   display: flex;
   flex-direction: column;
-  border: 1px solid $light-gray;
+  border: 3px solid $green;
   border-radius: 4px;
   cursor: pointer;
-  padding: 7px;
+  padding-bottom: 2px;
   margin: 7px;
   height: 101px;
   width: 178px;
   justify-content: center;
-  border-bottom: 3px solid $green;
 
   div {
     color: $dark-green;

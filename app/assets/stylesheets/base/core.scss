@@ -73,6 +73,11 @@ button {
   color: $white;
   cursor: pointer;
 
+  &:focus {
+    color: $white;
+    outline: none;
+  }
+
   &.green {
     background-color: $green;
 
