@@ -57,7 +57,6 @@ class TrainerDetail extends React.Component {
     const profile = trainer.images.find(img => img.img_type === 'profile');
     const images = trainer.images.filter(img => img.img_type === 'main');
 
-    // <img src={images[0].img_url}/>
     return (
       <div className='trainer-detail-container'>
         <div className='trainer-header'>

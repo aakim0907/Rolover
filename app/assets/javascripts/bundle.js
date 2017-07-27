@@ -48192,7 +48192,6 @@ var TrainerDetail = function (_React$Component) {
         return img.img_type === 'main';
       });
 
-      // <img src={images[0].img_url}/>
       return _react2.default.createElement(
         'div',
         { className: 'trainer-detail-container' },
@@ -48370,13 +48369,12 @@ var TrainerCarousel = function (_React$Component) {
 
       return _react2.default.createElement(
         _nukaCarousel2.default,
-        { wrapAround: true, autoplay: true, autoplayInterval: 10000, width: 595, initialHeight: 396 },
+        { wrapAround: true, autoplay: true, autoplayInterval: 10000, width: 595, initialHeight: 600 },
         images.map(function (image) {
-          return (
-            // <div  className='trainer-carousel-slide'>
-            _react2.default.createElement('img', { className: 'carousel-img', key: image.id, src: image.img_url })
-            // </div>
-
+          return _react2.default.createElement(
+            'div',
+            { key: image.id, className: 'trainer-carousel-slide' },
+            _react2.default.createElement('img', { className: 'carousel-img', src: image.img_url })
           );
         })
       );
@@ -48387,10 +48385,6 @@ var TrainerCarousel = function (_React$Component) {
 }(_react2.default.Component);
 
 exports.default = TrainerCarousel;
-
-// <div className='project-carousel-slide'>
-//   <img src="http://res.cloudinary.com/ds1qfel8a/image/upload/c_scale,w_1080/v1495216601/Stock/Splash_emwijn.jpg" />
-// </div>
 
 /***/ }),
 /* 309 */
@@ -51487,161 +51481,73 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
-
-function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var Decorators = [{
-  component: function (_React$Component) {
-    _inherits(LeftArrow, _React$Component);
-
+exports.default = [{
+  component: function () {
     function LeftArrow() {
       _classCallCheck(this, LeftArrow);
-
-      return _possibleConstructorReturn(this, (LeftArrow.__proto__ || Object.getPrototypeOf(LeftArrow)).apply(this, arguments));
     }
 
     _createClass(LeftArrow, [{
       key: 'render',
       value: function render() {
-        return _react2.default.createElement('button', {
-          style: this.getButtonStyles(this.props.currentSlide === 0 && !this.props.wrapAround),
-          className: 'fa fa-angle-left',
-          'aria-hidden': 'true',
-          id: 'leftButton',
-          onClick: this.handleClick });
+        console.log('rendering arrow left');
+        return _react2.default.createElement(
+          'div',
+          {
+            style: this.styleArrow(this.props.currentSlide === 0),
+            onClick: this.props.previousSlide },
+          _react2.default.createElement('i', { className: 'icon-chevron-left' })
+        );
       }
     }, {
-      key: 'handleClick',
-      value: function handleClick(e) {
-        e.preventDefault();
-        this.props.previousSlide();
+      key: 'shouldComponentUpdate',
+      value: function shouldComponentUpdate() {
+        return this.props.currentSlide === 0;
       }
     }, {
-      key: 'getButtonStyles',
-      value: function getButtonStyles(disabled) {
-        return {
-          border: 0,
-          background: 'rgba(0,0,0,0)',
-          color: 'white',
-          padding: 10,
-          outline: 0,
-          opacity: disabled ? 0.3 : 1
-        };
+      key: 'styleArrow',
+      value: function styleArrow(disabled) {
+        return { opacity: disabled ? 0 : 1 };
       }
     }]);
 
     return LeftArrow;
-  }(_react2.default.Component),
+  }(),
   position: 'CenterLeft'
 }, {
-  component: function (_React$Component2) {
-    _inherits(RightArrow, _React$Component2);
-
+  component: function () {
     function RightArrow() {
       _classCallCheck(this, RightArrow);
-
-      return _possibleConstructorReturn(this, (RightArrow.__proto__ || Object.getPrototypeOf(RightArrow)).apply(this, arguments));
     }
 
     _createClass(RightArrow, [{
       key: 'render',
       value: function render() {
-        return _react2.default.createElement('button', {
-          style: this.getButtonStyles(this.props.currentSlide === 0 && !this.props.wrapAround),
-          className: 'fa fa-angle-right',
-          'aria-hidden': 'true',
-          id: 'rightButton',
-          onClick: this.handleClick });
+        console.log('rendering arrow right');
+        return _react2.default.createElement(
+          'div',
+          {
+            style: this.styleArrow(this.props.currentSlide === this.props.slideCount - 1),
+            onClick: this.props.nextSlide },
+          _react2.default.createElement('i', { className: 'icon-chevron-right' })
+        );
       }
     }, {
-      key: 'handleClick',
-      value: function handleClick(e) {
-        e.preventDefault();
-        this.props.nextSlide();
+      key: 'shouldComponentUpdate',
+      value: function shouldComponentUpdate() {
+        return this.props.currentSlide === this.props.slideCount - 1;
       }
     }, {
-      key: 'getButtonStyles',
-      value: function getButtonStyles(disabled) {
-        return {
-          border: 0,
-          background: 'rgba(0,0,0,0)',
-          color: 'white',
-          padding: 10,
-          outline: 0,
-          opacity: disabled ? 0.3 : 1
-        };
+      key: 'styleArrow',
+      value: function styleArrow(disabled) {
+        return { opacity: disabled ? 0 : 1 };
       }
     }]);
 
     return RightArrow;
-  }(_react2.default.Component),
+  }(),
   position: 'CenterRight'
-  // {
-  //   component: class Index extends React.Component {
-  //     render() {
-  //       const self = this;
-  //       const indexes = this.getIndexes(self.props.slideCount, self.props.slidesToScroll);
-  //       return (
-  //         <ul style={self.getListStyles()}>
-  //           {
-  //             indexes.map(function(index) {
-  //               return (
-  //                 <li style={self.getListItemStyles()} key={index}>
-  //                   <button
-  //                     style={self.getButtonStyles(self.props.currentSlide === index)}
-  //                     onClick={self.props.goToSlide.bind(null, index)}>
-  //                     &bull;
-  //                   </button>
-  //                 </li>
-  //               );
-  //             })
-  //           }
-  //         </ul>
-  //       );
-  //     }
-  //     getIndexes(count, inc) {
-  //       const arr = [];
-  //       for (let i = 0; i < count; i += inc) {
-  //         arr.push(i);
-  //       }
-  //       return arr;
-  //     }
-  //     getListStyles() {
-  //       return {
-  //         // position: 'absolute',
-  //         // margin: 0,
-  //         // top: -10,
-  //         // padding: 0
-  //         display: 'flex',
-  //         width: '300',
-  //         height: '300'
-  //       };
-  //     }
-  //     getListItemStyles() {
-  //       return ({
-  //         // listStyleType: 'none'
-  //         // display: 'flex'
-  //       });
-  //     }
-  //     getButtonStyles(active) {
-  //       return {
-  //         border: 0,
-  //         background: 'transparent',
-  //         // color: 'black',
-  //         cursor: 'pointer',
-  //         padding: 10,
-  //         outline: 0,
-  //         fontSize: 24,
-  //         opacity: active ? 1 : 0.5
-  //       };
-  //     }
-  //   },
-  //   position: 'CenterCenter'
-  // }
 }];
-
-exports.default = Decorators;
 
 /***/ })
 /******/ ]);

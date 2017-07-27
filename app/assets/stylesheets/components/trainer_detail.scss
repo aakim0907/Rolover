@@ -24,16 +24,10 @@
 .trainer-header-box-1 {
   display: flex;
   flex: 2.3;
-
-  // img {
-  //   object-fit: contain;
-  //   margin: auto;
-  //   height: 100%;
-  // }
 }
 
 .trainer-carousel-slide {
-  border: 1px solid $green;
+  // border: 1px solid $green;
   // display: flex;
 
   img {
@@ -44,9 +38,9 @@
 }
 
 .carousel-img {
-  object-fit: contain;
-  margin: auto;
-  height: 100%;
+  // object-fit: contain;
+  width: 595px;
+  height: 600px;
 }
 
 .trainer-header-box-2 {

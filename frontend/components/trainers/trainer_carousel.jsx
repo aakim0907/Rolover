@@ -7,12 +7,12 @@ class TrainerCarousel extends React.Component {
     const { images } = this.props;
 
     return (
-      <Carousel wrapAround={true} autoplay={true} autoplayInterval={10000} width={595} initialHeight={396}>
+      <Carousel wrapAround={true} autoplay={true} autoplayInterval={10000} width={595} initialHeight={600}>
         { images.map(image => {
           return (
-            // <div  className='trainer-carousel-slide'>
-              <img className='carousel-img' key={image.id} src={image.img_url} />
-            // </div>
+            <div key={image.id} className='trainer-carousel-slide'>
+              <img className='carousel-img' src={image.img_url} />
+            </div>
           );
         })}
       </Carousel>
@@ -21,8 +21,3 @@ class TrainerCarousel extends React.Component {
 }
 
 export default TrainerCarousel;
-
-
-// <div className='project-carousel-slide'>
-//   <img src="http://res.cloudinary.com/ds1qfel8a/image/upload/c_scale,w_1080/v1495216601/Stock/Splash_emwijn.jpg" />
-// </div>
