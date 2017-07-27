@@ -8,7 +8,7 @@ const Decorators = [
           <div
             style={this.styleArrow(this.props.currentSlide === 0)}
             onClick={this.props.previousSlide}>
-            Previous Slide
+            &lt;
           </div>
         );
       }
@@ -20,8 +20,8 @@ const Decorators = [
           opacity: disabled ? 0.5 : 1,
           size: 10,
           color: 'white',
-          padding: 10,
-          fontSize: 17,
+          padding: 15,
+          fontSize: 40,
           cursor: 'pointer'
         };
       }
@@ -34,7 +34,7 @@ const Decorators = [
           <div
             style={this.styleArrow(this.props.currentSlide === this.props.slideCount - 1)}
             onClick={this.props.nextSlide}>
-            Next Slide
+            &gt;
           </div>
         );
       }
@@ -46,8 +46,8 @@ const Decorators = [
           opacity: disabled ? 0.5 : 1,
           size: 10,
           color: 'white',
-          padding: 10,
-          fontSize: 17,
+          padding: 15,
+          fontSize: 40,
           cursor: 'pointer'
         };
       }
