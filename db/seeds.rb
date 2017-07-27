@@ -1,14 +1,41 @@
+User.create([
+  { email: 'guest@rolover.dog', password: 'woofbark', profile_img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500676799/patrick-hendry-221863_wumywk.jpg'},
+  { email: 'ying@gmail.com', password: 'ying@gmail', profile_img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500676799/yingchou-han-1120404_narkbn.jpg' },
+  { email: 'alex@gmail.com', password: 'alex@gmail', profile_img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500614251/user_profile/alex-klopcic-302332_epi8zb.jpg' },
+  { email: 'hannah@gmail.com', password: 'hannah@gmail', profile_img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500615274/user_profile/hannah-busing-310503_dyj1vz.jpg'},
+  { email: 'belle@gmail.com', password: 'belle@gmail', profile_img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500615279/user_profile/pete-bellis-191833_nulkd9.jpg' },
+  { email: 'jennifer@rolover.dog', password: 'alexandria@gmail', profile_img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500615252/user_profile/pete-bellis-217830_o7hl7o.jpg'},
+  { email: 'teddy@gmail.com', password: 'teddy@gmail', profile_img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500615300/user_profile/teddy-kelley-124043_ameyan.jpg' }
+  ])
+
+  Trainer.create([
+    # { name: 'Kelly', obedience: true, behavior: true, advanced: true, profile_quote: 'Y\'all good?', description: 'Hash Browns', price: 50, zip: 94109, city: 'San Francisco', state: 'California' },
+    # { name: 'Hope', obedience: true, behavior: true, advanced: true, profile_quote: 'Corgis rock!', description: 'Love for Sir Toast<3', price: 45, zip: 94109, city: 'San Francisco', state: 'California' },
+    # { name: 'David', obedience: true, behavior: false, advanced: false, profile_quote: 'Capybara David', description: 'I will take care of your dogs!!', price: 20, zip: 94109, city: 'San Francisco', state: 'California' },
+    # { name: 'Aaron', obedience: true, behavior: true, advanced: false, profile_quote: 'Love for dogs', description: 'React is awesome', price: 20, zip: 94109, city: 'San Francisco', state: 'California' }
+    { name: 'Cesar Millan', obedience: true, behavior: true, advanced: true, profile_quote: "Creating balanced relationships between humans and canines", description: "Cesar Millan is a Mexican-American dog behaviorist with over 25 years of canine experience. He is widely known for his Emmy-nominated television series 'Dog Whisperer with Cesar Millan'.", price: 150, zip: 94109, city: 'San Francisco', state: 'California'},
+    { name: 'James Hamm', obedience: true, behavior: false, advanced: false, profile_quote: 'Lonestar dog trainer providing real world dog training!', description: 'James is a retired United States Army Command Sergeant Major who served for 30 years on Active Duty. He is responsible for leading the preservation of balanced and human approaches to dog training', price: 120, zip: 76540, city: 'Killeen', state: 'Texas' },
+    { name: 'Linda Michaels', obedience: true, behavior: false, advanced: false, profile_quote: "Our clients aren't just dogs, they're family!", description: 'Linda focuses on the psychological aspects of dog behavior that often mirror human psychological conditions, such as: fear, separation/attachment disorders, and aggression towards humans ad other dogs. She teaches private, customized basic manners/obedience lessons for dogs of all ages and every breed.', price: 130, zip: 92130, city: 'San Diego', state: 'California' },
+    { name: 'Tonya Wilhelm', obedience: false, behavior: true, advanced: false, profile_quote: 'Raising your pets naturally', description: 'Tonya Wilhelm provides positive dog training services, helping thousands of dog owners over twenty years to start happy relationship with their dogs. The dog owners get the needed tools and learn the necessary skills for the positive training of their dogs', price: 125, zip: 43528, city: 'Holland', state: 'Ohio' },
+    { name: 'Martin Deely', obedience: false, behavior: true, advanced: true, profile_quote: 'To give you a lifetime of happy companionship', description: 'Martin Deely is an internationally renowned for over 35 years as a trainer, author and teacher. He is widely known as a professional canine behaviorist and dog training expert.', price: 125, zip: 94104, city: 'San Francisco', state: 'California' },
+    { name: 'Ian Dunbar', obedience: true, behavior: true, advanced: false, profile_quote: 'Dogs with Dunbar', description: 'Dr. Ian Dunbar is not just a professional dog trainer as he is also a veterinarian and animal behaviorist. He is the first in the whole world to design and teach off-leash puppy socialization and training classes.', price: 135, zip: 94109, city: 'San Francisco', state: 'California' },
+    { name: 'Kyra Sundance', obedience: false, behavior: false, advanced: true, profile_quote: 'Do more with your dog!', description: 'Training dogs for Kyra is a lifestyle and is also about involving your dog in your life through sports, training, and more.', price: 140, zip: 94109, city: 'San Francisco', state: 'California' },
+    { name: 'Dan Perata', obedience: true, behavior: true, advanced: true, profile_quote: 'Key to a successful relationship with any living creature is interest', description: 'Dan Perata is a professional dog trainer and canine behavior specialist with over 25 years of experience working to help owners build successful, fulfilling, and healthy relationships with their dogs.', price: 130, zip: 94124, city: 'San Francisco', state: 'California' },
+    { name: 'Travis Brorsen', obedience: true, behavior: false, advanced: false, profile_quote: 'We help dogs (and their humans) thrive in any environment!', description: "Travis Brorsen is the all-american dog trainer that's been focused on helping owners and their pups for the past 8 years going from Oklahoma to LA and currently resides in NYC. Travis not only provides hands-on training and dog walking to his canine clients and their humans, but his company is also a veritable training center for the next generation of top dog trainers.", price: 150, zip: 10014, city: 'New York', state: 'New York' },
+    { name: 'Ivan Balabanov', obedience: false, behavior: false, advanced: true, profile_quote: 'Teaching without conflict', description: 'Ivan has a reputation for winning a world championship twice back to back with a dog that he bred, raised and trained. Competing against the best 120 dog trainers in the world and winning is a statement for sure.', price: 160, zip: 94109, city: 'San Francisco', state: 'California' }
+    ])
+
+Dog.create([
+  { user_id: 1, name: 'Ruby', age_year: 1, age_month: 3, weight: 30, breed: 'Shitzhu', sex: 'F' },
+  { user_id: 1, name: 'Java', age_year: 3, weight: 15, breed: 'Maltize', sex: 'M' }
+  ])
+
 d1 = DateTime.new(2017,7,27)
 d2 = DateTime.new(2017,7,31)
 
 Booking.create([
   { user_id: 1, dog_id: 1, trainer_id: 3, start_date: d1, end_date: d2, status: 'APPROVED', message: 'Requesting a training session for my one-year-old. We just got her and would like to receive basic obedience training.', training_type: 'obedience' },
   { user_id: 1, dog_id: 2, trainer_id: 6, start_date: d1, end_date: d2, status: 'PENDING', message: 'Would love to sign up for a training session!', training_type: 'behavior' }
-  ])
-
-Dog.create([
-  { user_id: 1, name: 'Ruby', age_year: 1, age_month: 3, weight: 30, breed: 'Shitzhu', sex: 'F' },
-  { user_id: 1, name: 'Java', age_year: 3, weight: 15, breed: 'Maltize', sex: 'M' }
   ])
 
 Image.create([
@@ -105,31 +132,4 @@ Image.create([
     { user_id: 6, trainer_id: 9, rating: 5, body: 'Travis helped me start off great with our new dog! It was such a meaningful experience. I can wait to spend more time with our dog!!!' },
     { user_id: 2, trainer_id: 10, rating: 3, body: 'Travis knew his way around with the dogs. The training was intense, but my dog and I were able to enjoy at the dog contest!' },
     { user_id: 3, trainer_id: 10, rating: 5, body: 'Ivan was overflowing with positive energy. He was very motivated and dedicated to help me and my dog enjoy dog sports. At the same time, he was so considerate. I really enjoyed the training session.' }
-    ])
-
-  Trainer.create([
-    # { name: 'Kelly', obedience: true, behavior: true, advanced: true, profile_quote: 'Y\'all good?', description: 'Hash Browns', price: 50, zip: 94109, city: 'San Francisco', state: 'California' },
-    # { name: 'Hope', obedience: true, behavior: true, advanced: true, profile_quote: 'Corgis rock!', description: 'Love for Sir Toast<3', price: 45, zip: 94109, city: 'San Francisco', state: 'California' },
-    # { name: 'David', obedience: true, behavior: false, advanced: false, profile_quote: 'Capybara David', description: 'I will take care of your dogs!!', price: 20, zip: 94109, city: 'San Francisco', state: 'California' },
-    # { name: 'Aaron', obedience: true, behavior: true, advanced: false, profile_quote: 'Love for dogs', description: 'React is awesome', price: 20, zip: 94109, city: 'San Francisco', state: 'California' }
-    { name: 'Cesar Millan', obedience: true, behavior: true, advanced: true, profile_quote: "Creating balanced relationships between humans and canines", description: "Cesar Millan is a Mexican-American dog behaviorist with over 25 years of canine experience. He is widely known for his Emmy-nominated television series 'Dog Whisperer with Cesar Millan'.", price: 150, zip: 94109, city: 'San Francisco', state: 'California'},
-    { name: 'James Hamm', obedience: true, behavior: false, advanced: false, profile_quote: 'Lonestar dog trainer providing real world dog training!', description: 'James is a retired United States Army Command Sergeant Major who served for 30 years on Active Duty. He is responsible for leading the preservation of balanced and human approaches to dog training', price: 120, zip: 76540, city: 'Killeen', state: 'Texas' },
-    { name: 'Linda Michaels', obedience: true, behavior: false, advanced: false, profile_quote: "Our clients aren't just dogs, they're family!", description: 'Linda focuses on the psychological aspects of dog behavior that often mirror human psychological conditions, such as: fear, separation/attachment disorders, and aggression towards humans ad other dogs. She teaches private, customized basic manners/obedience lessons for dogs of all ages and every breed.', price: 130, zip: 92130, city: 'San Diego', state: 'California' },
-    { name: 'Tonya Wilhelm', obedience: false, behavior: true, advanced: false, profile_quote: 'Raising your pets naturally', description: 'Tonya Wilhelm provides positive dog training services, helping thousands of dog owners over twenty years to start happy relationship with their dogs. The dog owners get the needed tools and learn the necessary skills for the positive training of their dogs', price: 125, zip: 43528, city: 'Holland', state: 'Ohio' },
-    { name: 'Martin Deely', obedience: false, behavior: true, advanced: true, profile_quote: 'To give you a lifetime of happy companionship', description: 'Martin Deely is an internationally renowned for over 35 years as a trainer, author and teacher. He is widely known as a professional canine behaviorist and dog training expert.', price: 125, zip: 94104, city: 'San Francisco', state: 'California' },
-    { name: 'Ian Dunbar', obedience: true, behavior: true, advanced: false, profile_quote: 'Dogs with Dunbar', description: 'Dr. Ian Dunbar is not just a professional dog trainer as he is also a veterinarian and animal behaviorist. He is the first in the whole world to design and teach off-leash puppy socialization and training classes.', price: 135, zip: 94109, city: 'San Francisco', state: 'California' },
-    { name: 'Kyra Sundance', obedience: false, behavior: false, advanced: true, profile_quote: 'Do more with your dog!', description: 'Training dogs for Kyra is a lifestyle and is also about involving your dog in your life through sports, training, and more.', price: 140, zip: 94109, city: 'San Francisco', state: 'California' },
-    { name: 'Dan Perata', obedience: true, behavior: true, advanced: true, profile_quote: 'Key to a successful relationship with any living creature is interest', description: 'Dan Perata is a professional dog trainer and canine behavior specialist with over 25 years of experience working to help owners build successful, fulfilling, and healthy relationships with their dogs.', price: 130, zip: 94124, city: 'San Francisco', state: 'California' },
-    { name: 'Travis Brorsen', obedience: true, behavior: false, advanced: false, profile_quote: 'We help dogs (and their humans) thrive in any environment!', description: "Travis Brorsen is the all-american dog trainer that's been focused on helping owners and their pups for the past 8 years going from Oklahoma to LA and currently resides in NYC. Travis not only provides hands-on training and dog walking to his canine clients and their humans, but his company is also a veritable training center for the next generation of top dog trainers.", price: 150, zip: 10014, city: 'New York', state: 'New York' },
-    { name: 'Ivan Balabanov', obedience: false, behavior: false, advanced: true, profile_quote: 'Teaching without conflict', description: 'Ivan has a reputation for winning a world championship twice back to back with a dog that he bred, raised and trained. Competing against the best 120 dog trainers in the world and winning is a statement for sure.', price: 160, zip: 94109, city: 'San Francisco', state: 'California' }
-    ])
-
-  User.create([
-    { email: 'guest@rolover.dog', password: 'woofbark', profile_img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500676799/patrick-hendry-221863_wumywk.jpg'},
-    { email: 'ying@gmail.com', password: 'ying@gmail', profile_img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500676799/yingchou-han-1120404_narkbn.jpg' },
-    { email: 'alex@gmail.com', password: 'alex@gmail', profile_img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500614251/user_profile/alex-klopcic-302332_epi8zb.jpg' },
-    { email: 'hannah@gmail.com', password: 'hannah@gmail', profile_img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500615274/user_profile/hannah-busing-310503_dyj1vz.jpg'},
-    { email: 'belle@gmail.com', password: 'belle@gmail', profile_img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500615279/user_profile/pete-bellis-191833_nulkd9.jpg' },
-    { email: 'jennifer@rolover.dog', password: 'alexandria@gmail', profile_img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500615252/user_profile/pete-bellis-217830_o7hl7o.jpg'},
-    { email: 'teddy@gmail.com', password: 'teddy@gmail', profile_img_url: 'http://res.cloudinary.com/rolover/image/upload/v1500615300/user_profile/teddy-kelley-124043_ameyan.jpg' }
     ])
