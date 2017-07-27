@@ -48192,7 +48192,7 @@ var TrainerDetail = function (_React$Component) {
         return img.img_type === 'main';
       });
 
-      // <TrainerCarousel images={images} />
+      // <img src={images[0].img_url}/>
       return _react2.default.createElement(
         'div',
         { className: 'trainer-detail-container' },
@@ -48205,7 +48205,7 @@ var TrainerDetail = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'trainer-header-box-1' },
-              _react2.default.createElement('img', { src: images[0].img_url })
+              _react2.default.createElement(_trainer_carousel2.default, { images: images })
             ),
             _react2.default.createElement(
               'div',
@@ -48370,12 +48370,13 @@ var TrainerCarousel = function (_React$Component) {
 
       return _react2.default.createElement(
         _nukaCarousel2.default,
-        { wrapAround: true, autoplay: true, autoplayInterval: 10000, initialSlideHeight: 590, initialSlideWidth: 880 },
+        { wrapAround: true, autoplay: true, autoplayInterval: 10000, width: 595, initialHeight: 396 },
         images.map(function (image) {
-          return _react2.default.createElement(
-            'div',
-            { className: 'trainer-carousel-slide' },
-            _react2.default.createElement('img', { key: image.id, src: image.img_url })
+          return (
+            // <div  className='trainer-carousel-slide'>
+            _react2.default.createElement('img', { className: 'carousel-img', key: image.id, src: image.img_url })
+            // </div>
+
           );
         })
       );
@@ -51486,31 +51487,38 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
 var Decorators = [{
-  component: function () {
+  component: function (_React$Component) {
+    _inherits(LeftArrow, _React$Component);
+
     function LeftArrow() {
       _classCallCheck(this, LeftArrow);
+
+      return _possibleConstructorReturn(this, (LeftArrow.__proto__ || Object.getPrototypeOf(LeftArrow)).apply(this, arguments));
     }
 
     _createClass(LeftArrow, [{
-      key: "render",
+      key: 'render',
       value: function render() {
-        return _react2.default.createElement(
-          "button",
-          {
-            style: this.getButtonStyles(this.props.currentSlide === 0 && !this.props.wrapAround) },
-          _react2.default.createElement("img", { src: "http://res.cloudinary.com/ds1qfel8a/image/upload/v1497369678/left_qdsoo8.png",
-            id: "leftButton", onClick: this.handleClick })
-        );
+        return _react2.default.createElement('button', {
+          style: this.getButtonStyles(this.props.currentSlide === 0 && !this.props.wrapAround),
+          className: 'fa fa-angle-left',
+          'aria-hidden': 'true',
+          id: 'leftButton',
+          onClick: this.handleClick });
       }
     }, {
-      key: "handleClick",
+      key: 'handleClick',
       value: function handleClick(e) {
         e.preventDefault();
         this.props.previousSlide();
       }
     }, {
-      key: "getButtonStyles",
+      key: 'getButtonStyles',
       value: function getButtonStyles(disabled) {
         return {
           border: 0,
@@ -51524,33 +51532,36 @@ var Decorators = [{
     }]);
 
     return LeftArrow;
-  }(),
+  }(_react2.default.Component),
   position: 'CenterLeft'
 }, {
-  component: function () {
+  component: function (_React$Component2) {
+    _inherits(RightArrow, _React$Component2);
+
     function RightArrow() {
       _classCallCheck(this, RightArrow);
+
+      return _possibleConstructorReturn(this, (RightArrow.__proto__ || Object.getPrototypeOf(RightArrow)).apply(this, arguments));
     }
 
     _createClass(RightArrow, [{
-      key: "render",
+      key: 'render',
       value: function render() {
-        return _react2.default.createElement(
-          "button",
-          {
-            style: this.getButtonStyles(this.props.currentSlide + this.props.slidesToScroll >= this.props.slideCount && !this.props.wrapAround) },
-          _react2.default.createElement("img", { src: "http://res.cloudinary.com/ds1qfel8a/image/upload/v1497369678/right_kamca8.png",
-            id: "rightButton", onClick: this.handleClick })
-        );
+        return _react2.default.createElement('button', {
+          style: this.getButtonStyles(this.props.currentSlide === 0 && !this.props.wrapAround),
+          className: 'fa fa-angle-right',
+          'aria-hidden': 'true',
+          id: 'rightButton',
+          onClick: this.handleClick });
       }
     }, {
-      key: "handleClick",
+      key: 'handleClick',
       value: function handleClick(e) {
         e.preventDefault();
         this.props.nextSlide();
       }
     }, {
-      key: "getButtonStyles",
+      key: 'getButtonStyles',
       value: function getButtonStyles(disabled) {
         return {
           border: 0,
@@ -51564,13 +51575,13 @@ var Decorators = [{
     }]);
 
     return RightArrow;
-  }(),
+  }(_react2.default.Component),
   position: 'CenterRight'
   // {
-  //   component: class Index {
+  //   component: class Index extends React.Component {
   //     render() {
-  //       var self = this;
-  //       var indexes = this.getIndexes(self.props.slideCount, self.props.slidesToScroll);
+  //       const self = this;
+  //       const indexes = this.getIndexes(self.props.slideCount, self.props.slidesToScroll);
   //       return (
   //         <ul style={self.getListStyles()}>
   //           {
@@ -51590,31 +51601,34 @@ var Decorators = [{
   //       );
   //     }
   //     getIndexes(count, inc) {
-  //       var arr = [];
-  //       for (var i = 0; i < count; i += inc) {
+  //       const arr = [];
+  //       for (let i = 0; i < count; i += inc) {
   //         arr.push(i);
   //       }
   //       return arr;
   //     }
   //     getListStyles() {
   //       return {
-  //         position: 'absolute',
-  //         margin: 0,
-  //         top: -10,
-  //         padding: 0
+  //         // position: 'absolute',
+  //         // margin: 0,
+  //         // top: -10,
+  //         // padding: 0
+  //         display: 'flex',
+  //         width: '300',
+  //         height: '300'
   //       };
   //     }
   //     getListItemStyles() {
   //       return ({
-  //         listStyleType: 'none',
-  //         display: 'flex'
+  //         // listStyleType: 'none'
+  //         // display: 'flex'
   //       });
   //     }
   //     getButtonStyles(active) {
   //       return {
   //         border: 0,
   //         background: 'transparent',
-  //         color: 'black',
+  //         // color: 'black',
   //         cursor: 'pointer',
   //         padding: 10,
   //         outline: 0,

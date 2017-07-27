@@ -57,14 +57,14 @@ class TrainerDetail extends React.Component {
     const profile = trainer.images.find(img => img.img_type === 'profile');
     const images = trainer.images.filter(img => img.img_type === 'main');
 
-    // <TrainerCarousel images={images} />
+    // <img src={images[0].img_url}/>
     return (
       <div className='trainer-detail-container'>
         <div className='trainer-header'>
           <div className='trainer-header-box'>
 
             <div className='trainer-header-box-1'>
-              <img src={images[0].img_url}/>
+              <TrainerCarousel images={images} />
             </div>
 
             <div className='trainer-header-box-2'>
