@@ -2,23 +2,8 @@ import React from 'react';
 import ReactDOM from 'react-dom';
 import Modal from 'react-modal';
 
+import { customStyles } from './helper/auth_modal_style';
 import SessionFormContainer from './session_form/session_form_container';
-
-const customStyles = {
-  overlay : {
-    backgroundColor : 'rgba(0, 0, 0, 0.4)'
-  },
-  content : {
-    top         : '45%',
-    left        : '50%',
-    right       : 'auto',
-    bottom      : 'auto',
-    marginRight : '-50%',
-    transform   : 'translate(-50%, -50%)',
-    height      : '450px',
-    border      : '1px solid $green'
-  }
-};
 
 class AuthModal extends React.Component {
   constructor() {
@@ -66,11 +51,15 @@ class AuthModal extends React.Component {
 
   render() {
     const formType = this.state.formType;
-    return (
-      <div>
-        {this.displayModal(formType)}
-      </div>
-    );
+    if (this.props.loc === 'detail') {
+      this.openModal('login');
+    } else {
+      return (
+        <div>
+          {this.displayModal(formType)}
+        </div>
+      );
+    }
   }
 }
 

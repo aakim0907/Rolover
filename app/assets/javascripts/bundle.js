@@ -24774,6 +24774,8 @@ var _reactModal = __webpack_require__(295);
 
 var _reactModal2 = _interopRequireDefault(_reactModal);
 
+var _auth_modal_style = __webpack_require__(323);
+
 var _session_form_container = __webpack_require__(119);
 
 var _session_form_container2 = _interopRequireDefault(_session_form_container);
@@ -24785,22 +24787,6 @@ function _classCallCheck(instance, Constructor) { if (!(instance instanceof Cons
 function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
 
 function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
-
-var customStyles = {
-  overlay: {
-    backgroundColor: 'rgba(0, 0, 0, 0.4)'
-  },
-  content: {
-    top: '45%',
-    left: '50%',
-    right: 'auto',
-    bottom: 'auto',
-    marginRight: '-50%',
-    transform: 'translate(-50%, -50%)',
-    height: '450px',
-    border: '1px solid $green'
-  }
-};
 
 var AuthModal = function (_React$Component) {
   _inherits(AuthModal, _React$Component);
@@ -24857,7 +24843,7 @@ var AuthModal = function (_React$Component) {
           {
             isOpen: this.state.modalIsOpen,
             onRequestClose: this.closeModal,
-            style: customStyles,
+            style: _auth_modal_style.customStyles,
             contentLabel: 'modal' },
           _react2.default.createElement(_session_form_container2.default, { formType: formType, modalFunction: this.openModal.bind(this) })
         )
@@ -24867,11 +24853,15 @@ var AuthModal = function (_React$Component) {
     key: 'render',
     value: function render() {
       var formType = this.state.formType;
-      return _react2.default.createElement(
-        'div',
-        null,
-        this.displayModal(formType)
-      );
+      if (this.props.loc === 'detail') {
+        this.openModal('login');
+      } else {
+        return _react2.default.createElement(
+          'div',
+          null,
+          this.displayModal(formType)
+        );
+      }
     }
   }]);
 
@@ -46175,7 +46165,7 @@ var App = function App() {
         _react2.default.createElement(_reactRouterDom.Route, { path: '/trainers/:id/bookings/new', component: _booking_form_container2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/trainers/:id', component: _trainer_detail_container2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/trainers', component: _trainer_list_container2.default }),
-        _react2.default.createElement(_reactRouterDom.Route, { path: '/profile', component: _user_profile_container2.default }),
+        _react2.default.createElement(_route_util.ProtectedRoute, { path: '/profile', component: _user_profile_container2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _main_page2.default })
       )
     )
@@ -46213,7 +46203,7 @@ var Protected = function Protected(_ref) {
       path = _ref.path,
       loggedIn = _ref.loggedIn;
   return _react2.default.createElement(_reactRouterDom.Route, { path: path, render: function render(props) {
-      return loggedIn ? _react2.default.createElement(Component, props) : _react2.default.createElement(_reactRouterDom.Redirect, { to: '/login' });
+      return loggedIn ? _react2.default.createElement(Component, props) : _react2.default.createElement(_reactRouterDom.Redirect, { to: '/' });
     } });
 };
 
@@ -48013,19 +48003,29 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
+var _reactModal = __webpack_require__(295);
+
+var _reactModal2 = _interopRequireDefault(_reactModal);
+
 var _reactRouterDom = __webpack_require__(9);
-
-var _trainer_carousel = __webpack_require__(308);
-
-var _trainer_carousel2 = _interopRequireDefault(_trainer_carousel);
 
 var _auth_modal = __webpack_require__(71);
 
 var _auth_modal2 = _interopRequireDefault(_auth_modal);
 
+var _session_form_container = __webpack_require__(119);
+
+var _session_form_container2 = _interopRequireDefault(_session_form_container);
+
 var _review_container = __webpack_require__(313);
 
 var _review_container2 = _interopRequireDefault(_review_container);
+
+var _trainer_carousel = __webpack_require__(308);
+
+var _trainer_carousel2 = _interopRequireDefault(_trainer_carousel);
+
+var _auth_modal_style = __webpack_require__(323);
 
 var _star = __webpack_require__(72);
 
@@ -48061,7 +48061,10 @@ var TrainerDetail = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (TrainerDetail.__proto__ || Object.getPrototypeOf(TrainerDetail)).call(this, props));
 
+    _this.state = { modalIsOpen: false };
+
     _this.handleBooking = _this.handleBooking.bind(_this);
+    _this.closeModal = _this.closeModal.bind(_this);
     return _this;
   }
 
@@ -48076,10 +48079,18 @@ var TrainerDetail = function (_React$Component) {
       if (currentUser) {
         this.props.history.push('/trainers/' + trainer.id + '/bookings/new');
       } else {
-        // const modal = <AuthModal />;
-        // console.log(modal);
-        // modal.openModal('login');
+        this.openModal();
       }
+    }
+  }, {
+    key: 'openModal',
+    value: function openModal() {
+      this.setState({ modalIsOpen: true });
+    }
+  }, {
+    key: 'closeModal',
+    value: function closeModal() {
+      this.setState({ modalIsOpen: false });
     }
   }, {
     key: 'render',
@@ -48206,6 +48217,15 @@ var TrainerDetail = function (_React$Component) {
           'div',
           { className: 'trainer-detail-body' },
           _react2.default.createElement(_review_container2.default, { currentTrainerId: trainer.id })
+        ),
+        _react2.default.createElement(
+          _reactModal2.default,
+          {
+            isOpen: this.state.modalIsOpen,
+            onRequestClose: this.closeModal,
+            style: _auth_modal_style.customStyles,
+            contentLabel: 'modal' },
+          _react2.default.createElement(_session_form_container2.default, { formType: 'login', modalFunction: this.openModal.bind(this) })
         )
       );
     }
@@ -51181,6 +51201,32 @@ var Footer = function Footer() {
 };
 
 exports.default = Footer;
+
+/***/ }),
+/* 323 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var customStyles = exports.customStyles = {
+  overlay: {
+    backgroundColor: 'rgba(0, 0, 0, 0.4)'
+  },
+  content: {
+    top: '45%',
+    left: '50%',
+    right: 'auto',
+    bottom: 'auto',
+    marginRight: '-50%',
+    transform: 'translate(-50%, -50%)',
+    height: '450px',
+    border: '1px solid $green'
+  }
+};
 
 /***/ })
 /******/ ]);

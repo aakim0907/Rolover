@@ -1,9 +1,13 @@
 import React from 'react';
+import Modal from 'react-modal';
 import { Route, Link } from 'react-router-dom';
 
-import TrainerCarousel from './trainer_carousel';
 import AuthModal from '../auth_modal';
+import SessionFormContainer from '../session_form/session_form_container';
 import ReviewContainer from '../reviews/review_container';
+
+import TrainerCarousel from './trainer_carousel';
+import { customStyles } from '../helper/auth_modal_style';
 import renderStars from '../helper/star';
 
 class TrainerDetail extends React.Component {
@@ -19,7 +23,10 @@ class TrainerDetail extends React.Component {
 
   constructor(props) {
     super(props);
+    this.state = { modalIsOpen: false };
+
     this.handleBooking = this.handleBooking.bind(this);
+    this.closeModal = this.closeModal.bind(this);
   }
 
   handleBooking() {
@@ -28,10 +35,16 @@ class TrainerDetail extends React.Component {
     if (currentUser) {
       this.props.history.push(`/trainers/${trainer.id}/bookings/new`);
     } else {
-      // const modal = <AuthModal />;
-      // console.log(modal);
-      // modal.openModal('login');
+      this.openModal();
     }
+  }
+
+  openModal() {
+    this.setState({ modalIsOpen: true  });
+  }
+
+  closeModal() {
+    this.setState({ modalIsOpen: false });
   }
 
   render() {
@@ -95,7 +108,18 @@ class TrainerDetail extends React.Component {
         <div className='trainer-detail-body'>
           <ReviewContainer currentTrainerId={trainer.id}/>
         </div>
+
+        <Modal
+          isOpen={this.state.modalIsOpen}
+          onRequestClose={this.closeModal}
+          style={customStyles}
+          contentLabel='modal'>
+          <SessionFormContainer formType={'login'} modalFunction={this.openModal.bind(this)}/>
+        </Modal>
+
       </div>
+
+
     );
   }
 }

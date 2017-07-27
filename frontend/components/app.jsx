@@ -22,7 +22,7 @@ const App = () => (
         <Route path='/trainers/:id/bookings/new' component={BookingFormContainer} />
         <Route path='/trainers/:id' component={TrainerDetailContainer} />
         <Route path='/trainers' component={TrainerListContainer} />
-        <Route path='/profile' component={UserProfileContainer} />
+        <ProtectedRoute path='/profile' component={UserProfileContainer} />
         <Route exact path="/" component={MainPage} />
       </Switch>
     </div>

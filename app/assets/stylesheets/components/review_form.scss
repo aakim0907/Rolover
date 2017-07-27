@@ -23,12 +23,15 @@
 
   &:hover {
     background-position: 30px 30px;
+    cursor: pointer;
   }
 
   &:checked {
     background-position: 30px 30px;
   }
+}
 
+input[type='radio'] {
   &:focus{
     outline: none;
   }
