@@ -19,7 +19,7 @@ const App = () => (
 
     <div className='body-content'>
       <Switch>
-        <Route path='/trainers/:id/bookings/new' component={BookingFormContainer} />
+        <ProtectedRoute path='/trainers/:id/bookings/new' component={BookingFormContainer} />
         <Route path='/trainers/:id' component={TrainerDetailContainer} />
         <Route path='/trainers' component={TrainerListContainer} />
         <ProtectedRoute path='/profile' component={UserProfileContainer} />

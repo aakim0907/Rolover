@@ -46162,7 +46162,7 @@ var App = function App() {
       _react2.default.createElement(
         _reactRouterDom.Switch,
         null,
-        _react2.default.createElement(_reactRouterDom.Route, { path: '/trainers/:id/bookings/new', component: _booking_form_container2.default }),
+        _react2.default.createElement(_route_util.ProtectedRoute, { path: '/trainers/:id/bookings/new', component: _booking_form_container2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/trainers/:id', component: _trainer_detail_container2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { path: '/trainers', component: _trainer_list_container2.default }),
         _react2.default.createElement(_route_util.ProtectedRoute, { path: '/profile', component: _user_profile_container2.default }),
