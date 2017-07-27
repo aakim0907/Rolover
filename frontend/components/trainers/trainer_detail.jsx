@@ -48,11 +48,12 @@ class TrainerDetail extends React.Component {
   }
 
   render() {
-    if (!this.props.trainer) {
+    const { currentUser, trainer } = this.props;
+
+    if (!trainer) {
       return null;
     }
 
-    const { trainer } = this.props;
     const profile = trainer.images.find(img => img.img_type === 'profile');
     const images = trainer.images.filter(img => img.img_type === 'main');
 

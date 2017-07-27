@@ -48095,11 +48095,14 @@ var TrainerDetail = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      if (!this.props.trainer) {
+      var _props2 = this.props,
+          currentUser = _props2.currentUser,
+          trainer = _props2.trainer;
+
+
+      if (!trainer) {
         return null;
       }
-
-      var trainer = this.props.trainer;
 
       var profile = trainer.images.find(function (img) {
         return img.img_type === 'profile';
