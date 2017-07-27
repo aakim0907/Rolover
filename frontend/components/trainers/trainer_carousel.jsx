@@ -7,10 +7,10 @@ class TrainerCarousel extends React.Component {
     const { images } = this.props;
 
     return (
-      <Carousel wrapAround={true} autoplay={true} autoplayInterval={10000} width={600} initialHeight={600}>
+      <Carousel wrapAround={true} autoplay={true} autoplayInterval={10000} width={600} initialHeight={600} decorators={Decorators}>
         { images.map(image => {
           return (
-            <img className='carousel-img' src={image.img_url} />
+            <img key={image.id} className='carousel-img' src={image.img_url} />
           );
         })}
       </Carousel>

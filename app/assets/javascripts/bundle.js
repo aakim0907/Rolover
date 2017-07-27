@@ -48369,9 +48369,9 @@ var TrainerCarousel = function (_React$Component) {
 
       return _react2.default.createElement(
         _nukaCarousel2.default,
-        { wrapAround: true, autoplay: true, autoplayInterval: 10000, width: 600, initialHeight: 600 },
+        { wrapAround: true, autoplay: true, autoplayInterval: 10000, width: 600, initialHeight: 600, decorators: _carousel_decorators2.default },
         images.map(function (image) {
-          return _react2.default.createElement('img', { className: 'carousel-img', src: image.img_url });
+          return _react2.default.createElement('img', { key: image.id, className: 'carousel-img', src: image.img_url });
         })
       );
     }
@@ -51477,22 +51477,29 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-exports.default = [{
-  component: function () {
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var Decorators = [{
+  component: function (_React$Component) {
+    _inherits(LeftArrow, _React$Component);
+
     function LeftArrow() {
       _classCallCheck(this, LeftArrow);
+
+      return _possibleConstructorReturn(this, (LeftArrow.__proto__ || Object.getPrototypeOf(LeftArrow)).apply(this, arguments));
     }
 
     _createClass(LeftArrow, [{
       key: 'render',
       value: function render() {
-        console.log('rendering arrow left');
         return _react2.default.createElement(
           'div',
           {
             style: this.styleArrow(this.props.currentSlide === 0),
             onClick: this.props.previousSlide },
-          _react2.default.createElement('i', { className: 'icon-chevron-left' })
+          'Previous Slide'
         );
       }
     }, {
@@ -51503,29 +51510,39 @@ exports.default = [{
     }, {
       key: 'styleArrow',
       value: function styleArrow(disabled) {
-        return { opacity: disabled ? 0 : 1 };
+        return {
+          opacity: disabled ? 0.5 : 1,
+          size: 10,
+          color: 'white',
+          padding: 10,
+          fontSize: 17,
+          cursor: 'pointer'
+        };
       }
     }]);
 
     return LeftArrow;
-  }(),
+  }(_react2.default.Component),
   position: 'CenterLeft'
 }, {
-  component: function () {
+  component: function (_React$Component2) {
+    _inherits(RightArrow, _React$Component2);
+
     function RightArrow() {
       _classCallCheck(this, RightArrow);
+
+      return _possibleConstructorReturn(this, (RightArrow.__proto__ || Object.getPrototypeOf(RightArrow)).apply(this, arguments));
     }
 
     _createClass(RightArrow, [{
       key: 'render',
       value: function render() {
-        console.log('rendering arrow right');
         return _react2.default.createElement(
           'div',
           {
             style: this.styleArrow(this.props.currentSlide === this.props.slideCount - 1),
             onClick: this.props.nextSlide },
-          _react2.default.createElement('i', { className: 'icon-chevron-right' })
+          'Next Slide'
         );
       }
     }, {
@@ -51536,14 +51553,23 @@ exports.default = [{
     }, {
       key: 'styleArrow',
       value: function styleArrow(disabled) {
-        return { opacity: disabled ? 0 : 1 };
+        return {
+          opacity: disabled ? 0.5 : 1,
+          size: 10,
+          color: 'white',
+          padding: 10,
+          fontSize: 17,
+          cursor: 'pointer'
+        };
       }
     }]);
 
     return RightArrow;
-  }(),
+  }(_react2.default.Component),
   position: 'CenterRight'
 }];
+
+exports.default = Decorators;
 
 /***/ })
 /******/ ]);

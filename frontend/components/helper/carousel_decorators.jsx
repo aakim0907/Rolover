@@ -1,36 +1,59 @@
 import React from 'react';
 
-export default [{
-  component: class LeftArrow {
-    render() {
-      console.log('rendering arrow left');
+const Decorators = [
+  {
+    component: class LeftArrow extends React.Component {
+      render() {
         return (
-            <div
-              style={this.styleArrow(this.props.currentSlide === 0)}
-              onClick={this.props.previousSlide}>
-              <i className='icon-chevron-left'></i>
-            </div>
+          <div
+            style={this.styleArrow(this.props.currentSlide === 0)}
+            onClick={this.props.previousSlide}>
+            Previous Slide
+          </div>
         );
-    }
-    shouldComponentUpdate() { return this.props.currentSlide === 0; }
-    styleArrow(disabled) { return { opacity: disabled ? 0 : 1 }; }
-  },
-  position: 'CenterLeft'
-},
-{
-  component: class RightArrow {
-    render() {
-      console.log('rendering arrow right');
-      return (
-        <div
-          style={this.styleArrow(this.props.currentSlide === this.props.slideCount - 1)}
-          onClick={this.props.nextSlide}>
-          <i className='icon-chevron-right'></i>
-        </div>
-      );
-    }
-    shouldComponentUpdate() { return this.props.currentSlide === this.props.slideCount - 1; }
-    styleArrow(disabled) { return { opacity: disabled ? 0 : 1 }; }
-  },
-  position: 'CenterRight'
-}];
+      }
+      shouldComponentUpdate() {
+        return this.props.currentSlide === 0;
+      }
+      styleArrow(disabled) {
+        return {
+          opacity: disabled ? 0.5 : 1,
+          size: 10,
+          color: 'white',
+          padding: 10,
+          fontSize: 17,
+          cursor: 'pointer'
+        };
+      }
+    },
+    position: 'CenterLeft'
+  }, {
+    component: class RightArrow extends React.Component {
+      render() {
+        return (
+          <div
+            style={this.styleArrow(this.props.currentSlide === this.props.slideCount - 1)}
+            onClick={this.props.nextSlide}>
+            Next Slide
+          </div>
+        );
+      }
+      shouldComponentUpdate() {
+        return this.props.currentSlide === this.props.slideCount - 1;
+      }
+      styleArrow(disabled) {
+        return {
+          opacity: disabled ? 0.5 : 1,
+          size: 10,
+          color: 'white',
+          padding: 10,
+          fontSize: 17,
+          cursor: 'pointer'
+        };
+      }
+    },
+    position: 'CenterRight'
+  }
+];
+
+export default Decorators;
