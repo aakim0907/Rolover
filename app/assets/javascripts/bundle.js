@@ -28985,7 +28985,7 @@ function compose() {
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.createBooking = exports.fetchBookings = exports.receiveBooking = exports.receiveBookings = exports.RECEIVE_BOOKING = exports.RECEIVE_BOOKINGS = undefined;
+exports.createBooking = exports.fetchBookings = exports.clearBookingErrors = exports.receiveBookingErrors = exports.receiveBooking = exports.receiveBookings = exports.CLEAR_BOOKING_ERRORS = exports.RECEIVE_BOOKING_ERRORS = exports.RECEIVE_BOOKING = exports.RECEIVE_BOOKINGS = undefined;
 
 var _booking_api_util = __webpack_require__(252);
 
@@ -28995,6 +28995,8 @@ function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj;
 
 var RECEIVE_BOOKINGS = exports.RECEIVE_BOOKINGS = 'RECEIVE_BOOKINGS';
 var RECEIVE_BOOKING = exports.RECEIVE_BOOKING = 'RECEIVE_BOOKING';
+var RECEIVE_BOOKING_ERRORS = exports.RECEIVE_BOOKING_ERRORS = 'RECEIVE_BOOKING_ERRORS';
+var CLEAR_BOOKING_ERRORS = exports.CLEAR_BOOKING_ERRORS = 'CLEAR_BOOKING_ERRORS';
 
 // sync action
 var receiveBookings = exports.receiveBookings = function receiveBookings(bookings) {
@@ -29011,6 +29013,19 @@ var receiveBooking = exports.receiveBooking = function receiveBooking(booking) {
   };
 };
 
+var receiveBookingErrors = exports.receiveBookingErrors = function receiveBookingErrors(errors) {
+  return {
+    type: RECEIVE_BOOKING_ERRORS,
+    errors: errors
+  };
+};
+
+var clearBookingErrors = exports.clearBookingErrors = function clearBookingErrors() {
+  return {
+    type: CLEAR_BOOKING_ERRORS
+  };
+};
+
 // async action
 var fetchBookings = exports.fetchBookings = function fetchBookings(userId) {
   return function (dispatch) {
@@ -29024,6 +29039,8 @@ var createBooking = exports.createBooking = function createBooking(booking) {
   return function (dispatch) {
     return APIUtil.createBooking(booking).then(function (newBooking) {
       return dispatch(receiveBooking(newBooking));
+    }, function (err) {
+      return dispatch(receiveBookingErrors(err.responseJSON));
     });
   };
 };
@@ -30139,7 +30156,7 @@ var selectAllReviews = exports.selectAllReviews = function selectAllReviews(revi
 };
 
 var selectAllBookings = exports.selectAllBookings = function selectAllBookings(bookings) {
-  return (0, _lodash.values)(bookings);
+  return (0, _lodash.values)(bookings.entities);
 };
 
 /***/ }),
@@ -43192,20 +43209,33 @@ var _booking_actions = __webpack_require__(110);
 
 function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
 
+var defaultState = {
+  entities: {},
+  errors: []
+};
+
 var bookingReducer = function bookingReducer() {
-  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : {};
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultState;
   var action = arguments[1];
 
   Object.freeze(state);
 
   switch (action.type) {
     case _booking_actions.RECEIVE_BOOKINGS:
-      var bookings = action.bookings;
-      return (0, _lodash.merge)({}, bookings);
+      return (0, _lodash.merge)({}, state, { entities: action.bookings });
 
     case _booking_actions.RECEIVE_BOOKING:
       var booking = action.booking;
-      return (0, _lodash.merge)({}, state, _defineProperty({}, booking.id, booking));
+      return (0, _lodash.merge)({}, state, { entities: _defineProperty({}, booking.id, booking) });
+
+    case _booking_actions.RECEIVE_BOOKING_ERRORS:
+      var errors = action.errors;
+      return (0, _lodash.merge)({}, state, { errors: errors });
+
+    case _booking_actions.CLEAR_BOOKING_ERRORS:
+      var newState = (0, _lodash.merge)({}, state);
+      newState.errors = [];
+      return newState;
 
     default:
       return state;
@@ -50510,6 +50540,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var ReviewForm = function (_React$Component) {
   _inherits(ReviewForm, _React$Component);
 
+  _createClass(ReviewForm, [{
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.props.clearReviewErrors();
+    }
+  }]);
+
   function ReviewForm(props) {
     _classCallCheck(this, ReviewForm);
 
@@ -50528,11 +50565,6 @@ var ReviewForm = function (_React$Component) {
   }
 
   _createClass(ReviewForm, [{
-    key: 'componentWillUnmount',
-    value: function componentWillUnmount() {
-      this.props.clearReviewErrors();
-    }
-  }, {
     key: 'update',
     value: function update(field) {
       var _this2 = this;
@@ -50669,7 +50701,8 @@ var mapStateToProps = function mapStateToProps(state, _ref) {
   var match = _ref.match;
   return {
     currentUserId: state.session.currentUser.id,
-    currentTrainerId: parseInt(match.params.id)
+    currentTrainerId: parseInt(match.params.id),
+    errors: state.bookings.errors
   };
 };
 
@@ -50677,6 +50710,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     createBooking: function createBooking(booking) {
       return dispatch((0, _booking_actions.createBooking)(booking));
+    },
+    clearBookingErrors: function clearBookingErrors() {
+      return dispatch((0, _booking_actions.clearBookingErrors)());
     }
   };
 };
@@ -50715,6 +50751,13 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var BookingForm = function (_React$Component) {
   _inherits(BookingForm, _React$Component);
 
+  _createClass(BookingForm, [{
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.props.clearBookingErrors();
+    }
+  }]);
+
   function BookingForm(props) {
     _classCallCheck(this, BookingForm);
 
@@ -50744,18 +50787,31 @@ var BookingForm = function (_React$Component) {
   }, {
     key: 'handleSubmit',
     value: function handleSubmit(e) {
-      var _this3 = this;
-
       e.preventDefault();
       var booking = this.state;
-      this.props.createBooking(booking).then(function () {
-        return _this3.props.history.push('/profile');
-      });
+      this.props.createBooking(booking);
+      // .then(() =>
+      // this.props.history.push('/profile'));
     }
   }, {
     key: 'toggleTraining',
     value: function toggleTraining(type) {
       this.setState(_defineProperty({}, 'training_type', type));
+    }
+  }, {
+    key: 'renderErrors',
+    value: function renderErrors() {
+      return _react2.default.createElement(
+        'ul',
+        { className: 'errors' },
+        this.props.errors.map(function (error, i) {
+          return _react2.default.createElement(
+            'li',
+            { key: 'error-' + i },
+            error
+          );
+        })
+      );
     }
   }, {
     key: 'renderDogForm',
@@ -50853,7 +50909,7 @@ var BookingForm = function (_React$Component) {
   }, {
     key: 'render',
     value: function render() {
-      var _this4 = this;
+      var _this3 = this;
 
       console.log(this.state);
 
@@ -50865,6 +50921,7 @@ var BookingForm = function (_React$Component) {
           null,
           'Contact Trainer'
         ),
+        this.renderErrors(),
         _react2.default.createElement(
           'form',
           { onSubmit: this.handleSubmit },
@@ -50883,7 +50940,7 @@ var BookingForm = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: this.state['training_type'] === 'obedience' ? 'booking-training-selected' : 'booking-training', onClick: function onClick() {
-                  return _this4.toggleTraining('obedience');
+                  return _this3.toggleTraining('obedience');
                 } },
               _react2.default.createElement(
                 'div',
@@ -50899,7 +50956,7 @@ var BookingForm = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: this.state['training_type'] === 'behavior' ? 'booking-training-selected' : 'booking-training', onClick: function onClick() {
-                  return _this4.toggleTraining('behavior');
+                  return _this3.toggleTraining('behavior');
                 } },
               _react2.default.createElement(
                 'div',
@@ -50915,7 +50972,7 @@ var BookingForm = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: this.state['training_type'] === 'advanced' ? 'booking-training-selected' : 'booking-training', onClick: function onClick() {
-                  return _this4.toggleTraining('advanced');
+                  return _this3.toggleTraining('advanced');
                 } },
               _react2.default.createElement(
                 'div',

@@ -2,6 +2,10 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 class BookingForm extends React.Component {
+  componentWillUnmount() {
+    this.props.clearBookingErrors();
+  }
+
   constructor(props) {
     super(props);
 
@@ -22,14 +26,27 @@ class BookingForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const booking = this.state;
-    this.props.createBooking(booking).then(() =>
-      this.props.history.push('/profile'));
+    this.props.createBooking(booking);
+    // .then(() =>
+      // this.props.history.push('/profile'));
   }
 
   toggleTraining(type) {
     this.setState({
       ['training_type']: type
     });
+  }
+
+  renderErrors() {
+    return(
+      <ul className='errors'>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   renderDogForm() {
@@ -96,6 +113,7 @@ class BookingForm extends React.Component {
     return (
       <div className='booking-form-container'>
         <h3>Contact Trainer</h3>
+        {this.renderErrors()}
         <form onSubmit={this.handleSubmit}>
           <div className='booking-form-question'>
             <p>Which training type would you like? (Select one)</p>

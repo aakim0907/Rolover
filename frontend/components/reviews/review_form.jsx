@@ -4,6 +4,10 @@ import { withRouter } from 'react-router-dom';
 import AuthModal from '../auth_modal';
 
 class ReviewForm extends React.Component {
+  componentWillUnmount() {
+    this.props.clearReviewErrors();
+  }
+
   constructor(props) {
     super(props);
 
@@ -17,11 +21,7 @@ class ReviewForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  componentWillUnmount() {
-    this.props.clearReviewErrors();
-  }
-
-  update(field) {
+    update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
