@@ -1,5 +1,5 @@
 class Booking < ApplicationRecord
-  validates :user_id, :dog_id, :trainer_id, :start_date, :end_date, :message, presence: true
+  validates :user_id, :dog_id, :trainer_id, :start_date, :end_date, :message, :training_type, presence: true
   validates :status, presence: true, inclusion: %w(PENDING APPROVED DENIED)
 
   belongs_to :user

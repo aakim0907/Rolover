@@ -22,6 +22,15 @@
   }
 }
 
+.booking-error {
+  border: 1.3px solid red;
+  border-radius: 3px;
+}
+
+.error-msg {
+  color: red;
+}
+
 .booking-form-question {
   width: 100%;
   height: 28px;
@@ -37,9 +46,8 @@
   }
 }
 
-
 .booking-form-training {
-  width: 100%;
+  width: 54%;
   display: flex;
 }
 

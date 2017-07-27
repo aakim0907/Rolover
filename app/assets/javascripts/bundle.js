@@ -50732,6 +50732,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
+
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(2);
@@ -50773,6 +50775,7 @@ var BookingForm = function (_React$Component) {
 
     _this.currentDate = new Date().toJSON().slice(0, 10);
     _this.toggleTraining = _this.toggleTraining.bind(_this);
+    _this.handleErrors = _this.handleErrors.bind(_this);
     _this.handleSubmit = _this.handleSubmit.bind(_this);
     return _this;
   }
@@ -50789,31 +50792,20 @@ var BookingForm = function (_React$Component) {
   }, {
     key: 'handleSubmit',
     value: function handleSubmit(e) {
+      var _this3 = this;
+
       e.preventDefault();
       var booking = this.state;
-      this.props.createBooking(booking);
-      // .then(() =>
-      // this.props.history.push('/profile'));
+      this.props.createBooking(booking).then(function () {
+        if (_this3.props.errors.length === 0) {
+          _this3.props.history.push('/profile');
+        }
+      });
     }
   }, {
     key: 'toggleTraining',
     value: function toggleTraining(type) {
       this.setState(_defineProperty({}, 'training_type', type));
-    }
-  }, {
-    key: 'renderErrors',
-    value: function renderErrors() {
-      return _react2.default.createElement(
-        'ul',
-        { className: 'errors' },
-        this.props.errors.map(function (error, i) {
-          return _react2.default.createElement(
-            'li',
-            { key: 'error-' + i },
-            error
-          );
-        })
-      );
     }
   }, {
     key: 'renderDogForm',
@@ -50909,11 +50901,33 @@ var BookingForm = function (_React$Component) {
       // }
     }
   }, {
+    key: 'handleErrors',
+    value: function handleErrors(field) {
+      this.props.errors.find(function (err) {
+        return err.split(' ')[0] === field;
+      });
+      var a = this.props.errors.find(function (err) {
+        return err.split(' ')[0] === 'Training';
+      });
+      console.log(typeof a === 'undefined' ? 'undefined' : _typeof(a));
+    }
+  }, {
+    key: 'renderErrorMsg',
+    value: function renderErrorMsg() {
+      if (this.props.errors.length !== 0) {
+        return _react2.default.createElement(
+          'span',
+          { className: 'error-msg' },
+          'Please fill out all required fields'
+        );
+      }
+    }
+  }, {
     key: 'render',
     value: function render() {
-      var _this3 = this;
+      var _this4 = this;
 
-      console.log(this.state);
+      console.log(typeof this.handleErrors('Training') === 'undefined' ? 'null' : 'booking-error');
 
       return _react2.default.createElement(
         'div',
@@ -50923,7 +50937,7 @@ var BookingForm = function (_React$Component) {
           null,
           'Contact Trainer'
         ),
-        this.renderErrors(),
+        this.renderErrorMsg(),
         _react2.default.createElement(
           'form',
           { onSubmit: this.handleSubmit },
@@ -50938,11 +50952,11 @@ var BookingForm = function (_React$Component) {
           ),
           _react2.default.createElement(
             'div',
-            { className: 'booking-form-training' },
+            { className: 'booking-form-training pull-right ' + (typeof this.handleErrors('Training') === 'undefined' ? 'null' : 'booking-error') },
             _react2.default.createElement(
               'div',
               { className: this.state['training_type'] === 'obedience' ? 'booking-training-selected' : 'booking-training', onClick: function onClick() {
-                  return _this3.toggleTraining('obedience');
+                  return _this4.toggleTraining('obedience');
                 } },
               _react2.default.createElement(
                 'div',
@@ -50958,7 +50972,7 @@ var BookingForm = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: this.state['training_type'] === 'behavior' ? 'booking-training-selected' : 'booking-training', onClick: function onClick() {
-                  return _this3.toggleTraining('behavior');
+                  return _this4.toggleTraining('behavior');
                 } },
               _react2.default.createElement(
                 'div',
@@ -50974,7 +50988,7 @@ var BookingForm = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: this.state['training_type'] === 'advanced' ? 'booking-training-selected' : 'booking-training', onClick: function onClick() {
-                  return _this3.toggleTraining('advanced');
+                  return _this4.toggleTraining('advanced');
                 } },
               _react2.default.createElement(
                 'div',

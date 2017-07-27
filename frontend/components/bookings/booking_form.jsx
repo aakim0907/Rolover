@@ -14,6 +14,7 @@ class BookingForm extends React.Component {
 
     this.currentDate = (new Date()).toJSON().slice(0, 10);
     this.toggleTraining = this.toggleTraining.bind(this);
+    this.handleErrors = this.handleErrors.bind(this);
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
@@ -26,27 +27,19 @@ class BookingForm extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const booking = this.state;
-    this.props.createBooking(booking);
-    // .then(() =>
-      // this.props.history.push('/profile'));
+    this.props.createBooking(booking).then(
+      () => {
+        if (this.props.errors.length === 0) {
+          this.props.history.push('/profile');
+        }
+      }
+    );
   }
 
   toggleTraining(type) {
     this.setState({
       ['training_type']: type
     });
-  }
-
-  renderErrors() {
-    return(
-      <ul className='errors'>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
   }
 
   renderDogForm() {
@@ -107,19 +100,35 @@ class BookingForm extends React.Component {
     // }
   }
 
+  handleErrors(field) {
+    this.props.errors.find(err => err.split(' ')[0] === field);
+    const a = this.props.errors.find(err => err.split(' ')[0] === 'Training');
+    console.log(typeof a);
+  }
+
+  renderErrorMsg() {
+    if (this.props.errors.length !== 0) {
+      return (
+        <span className='error-msg'>Please fill out all required fields</span>
+      );
+    }
+  }
+
   render() {
-    console.log(this.state);
+    console.log(typeof this.handleErrors('Training') === 'undefined' ? 'null' : 'booking-error');
 
     return (
       <div className='booking-form-container'>
         <h3>Contact Trainer</h3>
-        {this.renderErrors()}
+
+        {this.renderErrorMsg()}
+
         <form onSubmit={this.handleSubmit}>
           <div className='booking-form-question'>
             <p>Which training type would you like? (Select one)</p>
           </div>
 
-          <div className='booking-form-training'>
+          <div className={`booking-form-training pull-right ${typeof this.handleErrors('Training') === 'undefined' ? 'null' : 'booking-error'}`}>
             <div className={this.state['training_type'] === 'obedience' ? 'booking-training-selected' : 'booking-training' } onClick={() => this.toggleTraining('obedience')}>
               <div className='booking-icon'>
                 <img src={window.images.obedience} alt='obedience-icon'/>
