@@ -2,6 +2,7 @@ import React from 'react';
 import { Route, Link } from 'react-router-dom';
 
 import TrainerCarousel from './trainer_carousel';
+import AuthModal from '../auth_modal';
 import ReviewContainer from '../reviews/review_container';
 import renderStars from '../helper/star';
 
@@ -13,6 +14,23 @@ class TrainerDetail extends React.Component {
   componentWillReceiveProps(nextProps) {
     if (this.props.match.params.id !== nextProps.match.params.id) {
       this.props.fetchTrainer(this.props.match.params.id);
+    }
+  }
+
+  constructor(props) {
+    super(props);
+    this.handleBooking = this.handleBooking.bind(this);
+  }
+
+  handleBooking() {
+    const { trainer, currentUser } = this.props;
+
+    if (currentUser) {
+      this.props.history.push(`/trainers/${trainer.id}/bookings/new`);
+    } else {
+      // const modal = <AuthModal />;
+      // console.log(modal);
+      // modal.openModal('login');
     }
   }
 
@@ -67,7 +85,7 @@ class TrainerDetail extends React.Component {
               </div>
 
               <div className='th-booking'>
-                <Link to={`/trainers/${trainer.id}/bookings/new`} className='btn green'>Booking</Link>
+                <button className='btn green' onClick={this.handleBooking}>Book Session</button>
               </div>
             </div>
           </div>

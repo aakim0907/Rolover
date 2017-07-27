@@ -48019,6 +48019,10 @@ var _trainer_carousel = __webpack_require__(308);
 
 var _trainer_carousel2 = _interopRequireDefault(_trainer_carousel);
 
+var _auth_modal = __webpack_require__(71);
+
+var _auth_modal2 = _interopRequireDefault(_auth_modal);
+
 var _review_container = __webpack_require__(313);
 
 var _review_container2 = _interopRequireDefault(_review_container);
@@ -48038,12 +48042,6 @@ function _inherits(subClass, superClass) { if (typeof superClass !== "function" 
 var TrainerDetail = function (_React$Component) {
   _inherits(TrainerDetail, _React$Component);
 
-  function TrainerDetail() {
-    _classCallCheck(this, TrainerDetail);
-
-    return _possibleConstructorReturn(this, (TrainerDetail.__proto__ || Object.getPrototypeOf(TrainerDetail)).apply(this, arguments));
-  }
-
   _createClass(TrainerDetail, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
@@ -48054,6 +48052,33 @@ var TrainerDetail = function (_React$Component) {
     value: function componentWillReceiveProps(nextProps) {
       if (this.props.match.params.id !== nextProps.match.params.id) {
         this.props.fetchTrainer(this.props.match.params.id);
+      }
+    }
+  }]);
+
+  function TrainerDetail(props) {
+    _classCallCheck(this, TrainerDetail);
+
+    var _this = _possibleConstructorReturn(this, (TrainerDetail.__proto__ || Object.getPrototypeOf(TrainerDetail)).call(this, props));
+
+    _this.handleBooking = _this.handleBooking.bind(_this);
+    return _this;
+  }
+
+  _createClass(TrainerDetail, [{
+    key: 'handleBooking',
+    value: function handleBooking() {
+      var _props = this.props,
+          trainer = _props.trainer,
+          currentUser = _props.currentUser;
+
+
+      if (currentUser) {
+        this.props.history.push('/trainers/' + trainer.id + '/bookings/new');
+      } else {
+        // const modal = <AuthModal />;
+        // console.log(modal);
+        // modal.openModal('login');
       }
     }
   }, {
@@ -48169,9 +48194,9 @@ var TrainerDetail = function (_React$Component) {
                 'div',
                 { className: 'th-booking' },
                 _react2.default.createElement(
-                  _reactRouterDom.Link,
-                  { to: '/trainers/' + trainer.id + '/bookings/new', className: 'btn green' },
-                  'Booking'
+                  'button',
+                  { className: 'btn green', onClick: this.handleBooking },
+                  'Book Session'
                 )
               )
             )
