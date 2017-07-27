@@ -35,7 +35,7 @@ export const fetchReviews = trainerId => dispatch => (
 
 export const createReview = review => dispatch => (
   APIUtil.createReview(review).then(
-    newReview => (dispatch(receiveReview(newReview)),
-    err => dispatch(receiveReviewErrors(err.responseJSON)))
+    newReview => (dispatch(receiveReview(newReview))),
+    err => (dispatch(receiveReviewErrors(err.responseJSON)))
   )
 );

@@ -22278,9 +22278,9 @@ var fetchReviews = exports.fetchReviews = function fetchReviews(trainerId) {
 var createReview = exports.createReview = function createReview(review) {
   return function (dispatch) {
     return APIUtil.createReview(review).then(function (newReview) {
-      return dispatch(receiveReview(newReview)), function (err) {
-        return dispatch(receiveReviewErrors(err.responseJSON));
-      };
+      return dispatch(receiveReview(newReview));
+    }, function (err) {
+      return dispatch(receiveReviewErrors(err.responseJSON));
     });
   };
 };
@@ -30135,7 +30135,7 @@ var selectAllTrainers = exports.selectAllTrainers = function selectAllTrainers(t
 };
 
 var selectAllReviews = exports.selectAllReviews = function selectAllReviews(reviews) {
-  return (0, _lodash.values)(reviews);
+  return (0, _lodash.values)(reviews.entities);
 };
 
 var selectAllBookings = exports.selectAllBookings = function selectAllBookings(bookings) {
@@ -50446,11 +50446,10 @@ var _review_form2 = _interopRequireDefault(_review_form);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var mapStateToProps = function mapStateToProps(_ref) {
-  var session = _ref.session;
+var mapStateToProps = function mapStateToProps(state) {
   return {
-    // loggedIn: Boolean(session.currentUser)
-    currentUser: session.currentUser
+    currentUser: state.session.currentUser,
+    errors: state.reviews.errors
   };
 };
 
@@ -50458,6 +50457,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     createReview: function createReview(review) {
       return dispatch((0, _review_actions.createReview)(review));
+    },
+    clearReviewErrors: function clearReviewErrors() {
+      return dispatch((0, _review_actions.clearReviewErrors)());
     }
   };
 };
@@ -50517,13 +50519,12 @@ var ReviewForm = function (_React$Component) {
     return _this;
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (this.props.formType !== nextProps.formType) {
-  //     this.props.clearErrors();
-  //   }
-  // }
-
   _createClass(ReviewForm, [{
+    key: 'componentWillUnmount',
+    value: function componentWillUnmount() {
+      this.props.clearReviewErrors();
+    }
+  }, {
     key: 'update',
     value: function update(field) {
       var _this2 = this;
@@ -50540,19 +50541,21 @@ var ReviewForm = function (_React$Component) {
       this.props.createReview(review);
       this.setState({ rating: '', body: '' });
     }
-
-    // renderErrors() {
-    //   return(
-    //     <ul className='errors'>
-    //       {this.props.errors.map( (error, i) => (
-    //         <li key={`error-${i}`}>
-    //           {error}
-    //         </li>
-    //       ))}
-    //     </ul>
-    //   );
-    // }
-
+  }, {
+    key: 'renderErrors',
+    value: function renderErrors() {
+      return _react2.default.createElement(
+        'ul',
+        { className: 'errors' },
+        this.props.errors.map(function (error, i) {
+          return _react2.default.createElement(
+            'li',
+            { key: 'error-' + i },
+            error
+          );
+        })
+      );
+    }
   }, {
     key: 'render',
     value: function render() {
@@ -50560,6 +50563,7 @@ var ReviewForm = function (_React$Component) {
         return _react2.default.createElement(
           'div',
           { className: 'review-form-container' },
+          this.renderErrors(),
           _react2.default.createElement(
             'form',
             { onSubmit: this.handleSubmit },

@@ -17,11 +17,9 @@ class ReviewForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-  // componentWillReceiveProps(nextProps) {
-  //   if (this.props.formType !== nextProps.formType) {
-  //     this.props.clearErrors();
-  //   }
-  // }
+  componentWillUnmount() {
+    this.props.clearReviewErrors();
+  }
 
   update(field) {
     return e => this.setState({
@@ -36,22 +34,23 @@ class ReviewForm extends React.Component {
     this.setState({ rating: '', body: '' });
   }
 
-  // renderErrors() {
-  //   return(
-  //     <ul className='errors'>
-  //       {this.props.errors.map( (error, i) => (
-  //         <li key={`error-${i}`}>
-  //           {error}
-  //         </li>
-  //       ))}
-  //     </ul>
-  //   );
-  // }
+  renderErrors() {
+    return(
+      <ul className='errors'>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
+  }
 
   render() {
     if ( this.props.currentUser ) {
       return (
         <div className='review-form-container'>
+          {this.renderErrors()}
           <form onSubmit={this.handleSubmit}>
             <div className='review-form-container-1'>
               <div className='review-form-rating'>
