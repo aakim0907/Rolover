@@ -48369,13 +48369,9 @@ var TrainerCarousel = function (_React$Component) {
 
       return _react2.default.createElement(
         _nukaCarousel2.default,
-        { wrapAround: true, autoplay: true, autoplayInterval: 10000, width: 595, initialHeight: 600 },
+        { wrapAround: true, autoplay: true, autoplayInterval: 10000, width: 600, initialHeight: 600 },
         images.map(function (image) {
-          return _react2.default.createElement(
-            'div',
-            { key: image.id, className: 'trainer-carousel-slide' },
-            _react2.default.createElement('img', { className: 'carousel-img', src: image.img_url })
-          );
+          return _react2.default.createElement('img', { className: 'carousel-img', src: image.img_url });
         })
       );
     }
