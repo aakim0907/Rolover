@@ -47526,7 +47526,7 @@ var MainPage = function MainPage() {
             { className: 'intro-num' },
             '1'
           ),
-          _react2.default.createElement('i', { className: 'fa fa-search', 'aria-hidden': 'true' }),
+          _react2.default.createElement('i', { className: 'fa-intro fa fa-search', 'aria-hidden': 'true' }),
           _react2.default.createElement(
             'p',
             { className: 'intro-bold' },
@@ -47546,7 +47546,7 @@ var MainPage = function MainPage() {
             { className: 'intro-num' },
             '2'
           ),
-          _react2.default.createElement('i', { className: 'fa fa-comments-o', 'aria-hidden': 'true' }),
+          _react2.default.createElement('i', { className: 'fa-intro fa fa-comments-o', 'aria-hidden': 'true' }),
           _react2.default.createElement(
             'p',
             { className: 'intro-bold' },
@@ -47566,7 +47566,7 @@ var MainPage = function MainPage() {
             { className: 'intro-num' },
             '3'
           ),
-          _react2.default.createElement('i', { className: 'fa fa-paw', 'aria-hidden': 'true' }),
+          _react2.default.createElement('i', { className: 'fa-intro fa fa-paw', 'aria-hidden': 'true' }),
           _react2.default.createElement(
             'p',
             { className: 'intro-bold' },
