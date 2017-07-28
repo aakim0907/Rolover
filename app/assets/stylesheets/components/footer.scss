@@ -1,7 +1,6 @@
 .footer {
   border-top: 1px solid $light-gray;
   padding-top: 20px;
-  margin-top: 15px;
   text-align: center;
 
   small {
@@ -15,9 +14,10 @@
   i {
     font-size: 2em;
     margin: 0 8px;
+    color: $dark-gray;
 
     &:hover {
-      color: $black;
+      color: $dark-green;
     }
   }
 
