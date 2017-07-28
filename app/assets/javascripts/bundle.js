@@ -30143,7 +30143,7 @@ exports.default = (0, _reactRedux.connect)(null, mapDispatchToProps)(_search_box
 Object.defineProperty(exports, "__esModule", {
   value: true
 });
-exports.selectAllBookings = exports.selectAllReviews = exports.selectAllTrainers = undefined;
+exports.selectAllDogs = exports.selectAllBookings = exports.selectAllReviews = exports.selectAllTrainers = undefined;
 
 var _lodash = __webpack_require__(26);
 
@@ -30157,6 +30157,10 @@ var selectAllReviews = exports.selectAllReviews = function selectAllReviews(revi
 
 var selectAllBookings = exports.selectAllBookings = function selectAllBookings(bookings) {
   return (0, _lodash.values)(bookings.entities);
+};
+
+var selectAllDogs = exports.selectAllDogs = function selectAllDogs(dogs) {
+  return (0, _lodash.values)(dogs.entities);
 };
 
 /***/ }),
@@ -51144,6 +51148,8 @@ var _user_profile2 = _interopRequireDefault(_user_profile);
 
 var _booking_actions = __webpack_require__(110);
 
+var _dog_actions = __webpack_require__(328);
+
 var _selectors = __webpack_require__(126);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
@@ -51151,7 +51157,8 @@ function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { de
 var mapStateToProps = function mapStateToProps(state) {
   return {
     currentUser: state.session.currentUser,
-    bookings: (0, _selectors.selectAllBookings)(state.bookings)
+    bookings: (0, _selectors.selectAllBookings)(state.bookings),
+    dogs: (0, _selectors.selectAllDogs)(state.dogs)
   };
 };
 
@@ -51159,6 +51166,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   return {
     fetchBookings: function fetchBookings(id) {
       return dispatch((0, _booking_actions.fetchBookings)(id));
+    },
+    fetchDogs: function fetchDogs(id) {
+      return dispatch((0, _dog_actions.fetchDogs)(id));
     }
   };
 };
@@ -51205,13 +51215,17 @@ var UserProfile = function (_React$Component) {
     key: 'componentDidMount',
     value: function componentDidMount() {
       this.props.fetchBookings(this.props.currentUser.id);
+      this.props.fetchDogs(this.props.currentUser.id);
     }
   }, {
     key: 'renderDogs',
     value: function renderDogs() {
-      var currentUser = this.props.currentUser;
+      var _props = this.props,
+          currentUser = _props.currentUser,
+          dogs = _props.dogs;
 
-      if (currentUser.dogs.length === 0) {
+      console.log(dogs);
+      if (dogs.length === 0) {
         return _react2.default.createElement(
           'span',
           { className: 'empty-span' },
@@ -51221,7 +51235,7 @@ var UserProfile = function (_React$Component) {
         return _react2.default.createElement(
           'ul',
           null,
-          currentUser.dogs.map(function (dog) {
+          dogs.map(function (dog) {
             return _react2.default.createElement(
               'li',
               { key: dog.id },
@@ -51768,7 +51782,7 @@ var fetchDogs = exports.fetchDogs = function fetchDogs(userId) {
 var createDog = exports.createDog = function createDog(dog) {
   return $.ajax({
     method: 'POST',
-    url: 'api/dogs',
+    url: '/api/dogs',
     data: { dog: dog }
   });
 };

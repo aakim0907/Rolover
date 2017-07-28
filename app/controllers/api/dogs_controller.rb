@@ -2,7 +2,7 @@ class Api::DogsController < ApplicationController
   skip_before_action :verify_authenticity_token
 
   def index
-    @dogs = User.find(params[:user_id]).bookings
+    @dogs = User.find(params[:user_id]).dogs
   end
 
   def create

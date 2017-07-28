@@ -8,7 +8,7 @@ export const fetchDogs = userId => (
 export const createDog = dog => (
   $.ajax({
     method: 'POST',
-    url: 'api/dogs',
+    url: '/api/dogs',
     data: { dog }
   })
 );

@@ -5,3 +5,5 @@ export const selectAllTrainers = trainers => values(trainers);
 export const selectAllReviews = reviews => values(reviews.entities);
 
 export const selectAllBookings = bookings => values(bookings.entities);
+
+export const selectAllDogs = dogs => values(dogs.entities);

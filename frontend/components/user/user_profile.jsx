@@ -4,18 +4,20 @@ import { withRouter, Link } from 'react-router-dom';
 class UserProfile extends React.Component {
   componentDidMount() {
     this.props.fetchBookings(this.props.currentUser.id);
+    this.props.fetchDogs(this.props.currentUser.id);
   }
 
   renderDogs() {
-    const { currentUser } = this.props;
-    if (currentUser.dogs.length === 0) {
+    const { currentUser, dogs } = this.props;
+    console.log(dogs);
+    if (dogs.length === 0) {
       return (
         <span className='empty-span'>( You don't have any dogs saved )</span>
       );
     } else {
       return (
         <ul>
-          { currentUser.dogs.map(dog => (
+          { dogs.map(dog => (
             <li key={dog.id}>{dog.name} ({dog.sex}) - {dog.breed}
             </li>
           ))}
