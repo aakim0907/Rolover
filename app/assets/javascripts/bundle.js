@@ -51222,7 +51222,7 @@ var BookingForm = function (_React$Component) {
             return _react2.default.createElement(
               'div',
               { key: dog.id, className: 'existing-dog' },
-              _react2.default.createElement('input', { type: 'radio', value: dog.name }),
+              _react2.default.createElement('input', { type: 'radio', name: 'dog', value: dog.name }),
               dog.name
             );
           })

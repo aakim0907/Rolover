@@ -102,7 +102,7 @@ class BookingForm extends React.Component {
           {dogs.map(dog => {
             return (
               <div key={dog.id} className='existing-dog'>
-                <input type='radio' value={dog.name}/>{dog.name}
+                <input type='radio' name='dog' value={dog.name}/>{dog.name}
               </div>
             );
           })}
