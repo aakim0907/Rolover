@@ -46236,13 +46236,12 @@ var App = function App() {
         _react2.default.createElement(_route_util.ProtectedRoute, { path: '/profile', component: _user_profile_container2.default }),
         _react2.default.createElement(_reactRouterDom.Route, { exact: true, path: '/', component: _main_page2.default })
       )
-    )
+    ),
+    _react2.default.createElement(_footer2.default, null)
   );
 };
 
 exports.default = App;
-
-// add footer
 
 /***/ }),
 /* 290 */
@@ -51415,30 +51414,38 @@ var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
 
-var _reactRouterDom = __webpack_require__(9);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var Footer = function Footer() {
+var Footer = function Footer(props) {
   return _react2.default.createElement(
     'div',
     { className: 'footer' },
     _react2.default.createElement(
       'div',
-      { className: 'footer-wrapper' },
+      null,
       _react2.default.createElement(
-        'div',
-        { className: 'footer-container' },
-        _react2.default.createElement(
-          'div',
-          { className: 'footer-about' },
-          _react2.default.createElement(
-            'p',
-            { className: 'footer-p' },
-            'Rolover is a web application inspired by Rover built using Ruby on Rails for backend and React/Redux for frontend.'
-          )
-        ),
-        _react2.default.createElement('div', { className: 'footer-about-me' })
+        'small',
+        null,
+        'For Portfolio Purposes Only'
+      )
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'icon-box' },
+      _react2.default.createElement(
+        'a',
+        { href: 'mailto:aakim0907@gmail.com' },
+        _react2.default.createElement('i', { className: 'fa fa-envelope-o', 'aria-hidden': 'true' })
+      ),
+      _react2.default.createElement(
+        'a',
+        { href: 'https://github.com/aakim0907/Rolover', target: '_blank' },
+        _react2.default.createElement('i', { className: 'fa fa-github', 'aria-hidden': 'true' })
+      ),
+      _react2.default.createElement(
+        'a',
+        { href: 'https://www.linkedin.com/in/young-eun-kim/', target: '_blank' },
+        _react2.default.createElement('i', { className: 'fa fa-linkedin', 'aria-hidden': 'true' })
       )
     )
   );

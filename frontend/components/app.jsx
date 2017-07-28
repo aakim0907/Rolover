@@ -1,7 +1,7 @@
 import React from 'react';
-import {Route, Switch, Link} from 'react-router-dom';
+import { Route, Switch } from 'react-router-dom';
 
-import {ProtectedRoute} from '../util/route_util';
+import { ProtectedRoute } from '../util/route_util';
 
 import NavBar from './nav_bar';
 import MainPage from './main_page';
@@ -19,17 +19,16 @@ const App = () => (
 
     <div className='body-content'>
       <Switch>
-        <ProtectedRoute path='/trainers/:id/bookings/new' component={BookingFormContainer} />
-        <Route path='/trainers/:id' component={TrainerDetailContainer} />
-        <Route path='/trainers' component={TrainerListContainer} />
-        <ProtectedRoute path='/profile' component={UserProfileContainer} />
-        <Route exact path="/" component={MainPage} />
+        <ProtectedRoute path='/trainers/:id/bookings/new' component={BookingFormContainer}/>
+        <Route path='/trainers/:id' component={TrainerDetailContainer}/>
+        <Route path='/trainers' component={TrainerListContainer}/>
+        <ProtectedRoute path='/profile' component={UserProfileContainer}/>
+        <Route exact path="/" component={MainPage}/>
       </Switch>
     </div>
-
+    
+    <Footer/>
   </div>
 );
 
 export default App;
-
-// add footer

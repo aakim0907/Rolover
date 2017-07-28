@@ -1,22 +1,15 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
 
-const Footer = () => (
-  <div className="footer">
-    <div className="footer-wrapper">
-      <div className="footer-container">
-        <div className="footer-about">
-          <p className="footer-p">
-            Rolover is a web application inspired by Rover built using Ruby on Rails for backend
-            and React/Redux for frontend.
-          </p>
-        </div>
-
-        <div className="footer-about-me">
-          
-        </div>
+const Footer = (props) => (
+  <div className='footer'>
+      <div>
+        <small>For Portfolio Purposes Only</small>
       </div>
-    </div>
+      <div className='icon-box'>
+        <a href='mailto:aakim0907@gmail.com'><i className='fa fa-envelope-o' aria-hidden='true'></i></a>
+        <a href='https://github.com/aakim0907/Rolover' target='_blank'><i className='fa fa-github' aria-hidden='true'></i></a>
+        <a href='https://www.linkedin.com/in/young-eun-kim/' target='_blank'><i className='fa fa-linkedin' aria-hidden='true'></i></a>
+      </div>
   </div>
 );
 

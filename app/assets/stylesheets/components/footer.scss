@@ -1,32 +1,24 @@
 .footer {
-  border: 1px solid $light-gray;
-  // background-color: $light-gray;
-  height: 50px;
+  border-top: 1px solid $light-gray;
+  padding-top: 20px;
+  margin-top: 15px;
+  text-align: center;
+
+  small {
+    color: $gray;
+  }
 }
 
-.footer-wrapper {
-  display: flex;
-  justify-content: center;
-  // padding: 2em 0;
-}
+.icon-box {
+  margin: 10px 0;
 
-.footer-container {
-  display: flex;
-  max-width: 1020px;
-  margin-left: auto;
-  margin-right: auto;
-}
+  i {
+    font-size: 2em;
+    margin: 0 8px;
 
-.footer-about {
-  width: 564px;
-  font-weight: 100;
-  font-family: Helvetica;
-  color: $gray;
-  line-height: 1.625;
-  font-size: 12px;
-  letter-spacing: 0.52px;
-}
+    &:hover {
+      color: $black;
+    }
+  }
 
-.footer-p {
-  margin-bottom: 0.825em;
 }
