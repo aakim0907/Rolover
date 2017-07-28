@@ -42956,13 +42956,18 @@ var _booking_reducer = __webpack_require__(251);
 
 var _booking_reducer2 = _interopRequireDefault(_booking_reducer);
 
+var _dog_reducer = __webpack_require__(327);
+
+var _dog_reducer2 = _interopRequireDefault(_dog_reducer);
+
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 var rootReducer = (0, _redux.combineReducers)({
   session: _session_reducer2.default,
   trainers: _trainer_reducer2.default,
   reviews: _review_reducer2.default,
-  bookings: _booking_reducer2.default
+  bookings: _booking_reducer2.default,
+  dogs: _dog_reducer2.default
 });
 
 exports.default = rootReducer;
@@ -51620,6 +51625,153 @@ var Decorators = [{
 }];
 
 exports.default = Decorators;
+
+/***/ }),
+/* 327 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _lodash = __webpack_require__(26);
+
+var _dog_actions = __webpack_require__(328);
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+var defaultState = {
+  entities: {},
+  errors: []
+};
+
+var dogReducer = function dogReducer() {
+  var state = arguments.length > 0 && arguments[0] !== undefined ? arguments[0] : defaultState;
+  var action = arguments[1];
+
+  Object.freeze(state);
+
+  switch (action.type) {
+    case _dog_actions.RECEIVE_DOGS:
+      return (0, _lodash.merge)({}, state, { entities: action.dogs });
+
+    case _dog_actions.RECEIVE_DOG:
+      var dog = action.dog;
+      return (0, _lodash.merge)({}, state, { entities: _defineProperty({}, dog.id, dog) });
+
+    case _dog_actions.RECEIVE_DOG_ERRORS:
+      var errors = action.errors;
+      return (0, _lodash.merge)({}, state, { errors: errors });
+
+    case _dog_actions.CLEAR_DOG_ERRORS:
+      var newState = (0, _lodash.merge)({}, state);
+      newState.errors = [];
+      return newState;
+
+    default:
+      return state;
+  }
+};
+
+exports.default = dogReducer;
+
+/***/ }),
+/* 328 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+exports.createDog = exports.fetchDogs = exports.clearDogErrors = exports.receiveDogErrors = exports.receiveDog = exports.receiveDogs = exports.CLEAR_DOG_ERRORS = exports.RECEIVE_DOG_ERRORS = exports.RECEIVE_DOG = exports.RECEIVE_DOGS = undefined;
+
+var _dog_api_util = __webpack_require__(329);
+
+var APIUtil = _interopRequireWildcard(_dog_api_util);
+
+function _interopRequireWildcard(obj) { if (obj && obj.__esModule) { return obj; } else { var newObj = {}; if (obj != null) { for (var key in obj) { if (Object.prototype.hasOwnProperty.call(obj, key)) newObj[key] = obj[key]; } } newObj.default = obj; return newObj; } }
+
+var RECEIVE_DOGS = exports.RECEIVE_DOGS = 'RECEIVE_DOGS';
+var RECEIVE_DOG = exports.RECEIVE_DOG = 'RECEIVE_DOG';
+var RECEIVE_DOG_ERRORS = exports.RECEIVE_DOG_ERRORS = 'RECEIVE_DOG_ERRORS';
+var CLEAR_DOG_ERRORS = exports.CLEAR_DOG_ERRORS = 'CLEAR_DOG_ERRORS';
+
+// sync action
+var receiveDogs = exports.receiveDogs = function receiveDogs(dogs) {
+  return {
+    type: RECEIVE_DOGS,
+    dogs: dogs
+  };
+};
+
+var receiveDog = exports.receiveDog = function receiveDog(dog) {
+  return {
+    type: RECEIVE_DOG,
+    dog: dog
+  };
+};
+
+var receiveDogErrors = exports.receiveDogErrors = function receiveDogErrors(errors) {
+  return {
+    type: RECEIVE_DOG_ERRORS,
+    errors: errors
+  };
+};
+
+var clearDogErrors = exports.clearDogErrors = function clearDogErrors() {
+  return {
+    type: CLEAR_DOG_ERRORS
+  };
+};
+
+// async action
+var fetchDogs = exports.fetchDogs = function fetchDogs(userId) {
+  return function (dispatch) {
+    return APIUtil.fetchDogs(userId).then(function (dogs) {
+      return dispatch(receiveDogs(dogs));
+    });
+  };
+};
+
+var createDog = exports.createDog = function createDog(dog) {
+  return function (dispatch) {
+    return APIUtil.createDog(dog).then(function (newDog) {
+      return dispatch(receiveDog(newDog));
+    }, function (err) {
+      return dispatch(receiveDogErrors(err.responseJSON));
+    });
+  };
+};
+
+/***/ }),
+/* 329 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+var fetchDogs = exports.fetchDogs = function fetchDogs(userId) {
+  return $.ajax({
+    method: 'GET',
+    url: '/api/users/' + userId + '/dogs'
+  });
+};
+
+var createDog = exports.createDog = function createDog(dog) {
+  return $.ajax({
+    method: 'POST',
+    url: 'api/dogs',
+    data: { dog: dog }
+  });
+};
 
 /***/ })
 /******/ ]);
