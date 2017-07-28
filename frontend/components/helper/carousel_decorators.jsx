@@ -6,7 +6,7 @@ const Decorators = [
       render() {
         return (
           <div
-            style={this.styleArrow(this.props.currentSlide === 0)}
+            style={this.styleArrow()}
             onClick={this.props.previousSlide}>
             &lt;
           </div>
@@ -15,14 +15,14 @@ const Decorators = [
       shouldComponentUpdate() {
         return this.props.currentSlide === 0;
       }
-      styleArrow(disabled) {
+      styleArrow() {
         return {
-          opacity: disabled ? 0.5 : 1,
-          size: 10,
+          size: 9,
           color: 'white',
           padding: 15,
           fontSize: 40,
-          cursor: 'pointer'
+          cursor: 'pointer',
+          background: 'rgba(0, 0, 0, 0.2)'
         };
       }
     },
@@ -32,7 +32,7 @@ const Decorators = [
       render() {
         return (
           <div
-            style={this.styleArrow(this.props.currentSlide === this.props.slideCount - 1)}
+            style={this.styleArrow()}
             onClick={this.props.nextSlide}>
             &gt;
           </div>
@@ -41,14 +41,14 @@ const Decorators = [
       shouldComponentUpdate() {
         return this.props.currentSlide === this.props.slideCount - 1;
       }
-      styleArrow(disabled) {
+      styleArrow() {
         return {
-          opacity: disabled ? 0.5 : 1,
-          size: 10,
+          size: 9,
           color: 'white',
           padding: 15,
           fontSize: 40,
-          cursor: 'pointer'
+          cursor: 'pointer',
+          background: 'rgba(0, 0, 0, 0.2)'
         };
       }
     },
