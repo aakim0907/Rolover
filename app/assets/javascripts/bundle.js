@@ -47473,24 +47473,111 @@ var MainPage = function MainPage() {
       'div',
       { className: 'main-banner' },
       _react2.default.createElement(
+        'h1',
+        null,
+        'Unleash your dog\'s potential'
+      ),
+      _react2.default.createElement(
+        'h4',
+        null,
+        'Teaching old dog new tricks, new dog old tricks'
+      ),
+      _react2.default.createElement('br', null),
+      _react2.default.createElement(_search_container2.default, { where: 'mainpage' })
+    ),
+    _react2.default.createElement(
+      'div',
+      { className: 'main-content' },
+      _react2.default.createElement(
+        'h3',
+        null,
+        'Welcome to the nation\'s most active network of devoted and caring dog trainers'
+      ),
+      _react2.default.createElement(
+        'p',
+        null,
+        'Here\'s how it works'
+      ),
+      _react2.default.createElement('br', null),
+      _react2.default.createElement(
         'div',
-        { className: 'main-banner-h1' },
+        { className: 'intro-1' },
         _react2.default.createElement(
-          'h1',
+          'p',
           null,
-          'Unleash your dog\'s potential'
+          '1'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          '2'
+        ),
+        _react2.default.createElement(
+          'p',
+          null,
+          '3'
+        )
+      ),
+      _react2.default.createElement('div', { className: 'intro-2' }),
+      _react2.default.createElement(
+        'div',
+        { className: 'intro-3' },
+        _react2.default.createElement(
+          'div',
+          { className: 'intro-3-1' },
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-bold' },
+            'Search for the training type you want'
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-weak' },
+            'Browse profiles and read reviews'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'intro-3-2' },
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-bold' },
+            'Contact a trainer'
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-weak' },
+            'Send request to book a trianing session'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'intro-3-3' },
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-bold' },
+            'Attend session and learn new tricks'
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-weak' },
+            'Meet with the trainer to train your dog'
+          )
         )
       ),
       _react2.default.createElement(
         'div',
-        { className: 'main-banner-h4' },
+        { className: 'intro-comment' },
         _react2.default.createElement(
-          'h4',
-          null,
-          'Teaching old dog new tricks, new dog old tricks'
+          'div',
+          { className: 'intro-comment-card' },
+          _react2.default.createElement(
+            'h3',
+            null,
+            'We now have confidence in walking with our dog off leash and know he will return when called back. Amazing results with awesome trainers! :)'
+          )
         )
-      ),
-      _react2.default.createElement(_search_container2.default, { where: 'mainpage' })
+      )
     )
   );
 };

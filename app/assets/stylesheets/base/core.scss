@@ -2,6 +2,7 @@ body {
   color: $dark-gray;
   font-family: $font-stack;
   background-color: $background;
+  line-height: 1.4;
 }
 
 html,
@@ -113,37 +114,13 @@ button {
     font-size: 14px;
   }
 
-  // &.md {
-  //   font-size: 16px;
-  // }
-
   &.lg {
     font-size: 18px;
   }
-  //
-  // &.xlg {
-  //   font-size: 20px;
-  // }
-  //
-  // &.sm-marg i {
-  //   margin: 0 2px;
-  // }
-  //
-  // &.md-marg i {
-  //   margin: 0 3px;
-  // }
-  //
-  // &.lg-marg i {
-  //   margin: 0 5px;
-  // }
 }
 
 .review {
   color: $dark-gray;
-
-  // &.xsm {
-  //   font-size: 12px;
-  // }
 
   &.sm {
     font-size: 14px;
@@ -152,46 +129,4 @@ button {
   &.md {
     font-size: 16px;
   }
-  //
-  // &.lg {
-  //   font-size: 18px;
-  // }
 }
-
-// .hallow-button {
-//   background-color: transparent;
-//   border-radius: 4px;
-//   padding: 7px 12px;
-//
-//   &.green {
-//     border: 2px solid $green;
-//     color: $green;
-//   }
-//
-//   &:focus {
-//     outline: none;
-//     border-color: $black;
-//   }
-// }
-//
-// .full-button {
-//   background-color: transparent;
-//   border-radius: 4px;
-//   padding: 7px 12px;
-//   color: $white;
-//
-//   &.green {
-//     border: 2px solid $green;
-//     background-color: $green;
-//   }
-//
-//   &:focus {
-//     outline: none;
-//     border-color: $black;
-//   }
-// }
-
-// .space-between {
-//   display: flex;
-//   justify-content: space-between;
-// }

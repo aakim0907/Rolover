@@ -1,9 +1,9 @@
 .mainpage-container {
   display: flex;
+  flex-direction: column;
 }
 
 .main-image {
-  display: flex;
   background: url(http://res.cloudinary.com/rolover/image/upload/v1500506606/roll_over1_pizv9e.jpg) no-repeat center;
   height: 75%;
   width: 100%;
@@ -18,29 +18,84 @@
   flex-direction: column;
   z-index: 0;
   margin-top: 160px;
-}
-
-.main-banner-h1 {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  color: $white;
+  align-items: center;
 
   h1 {
     font-size: 60px;
     font-family: 'Kaushan Script', cursive;
+    color: $white;
   }
-}
-
-.main-banner-h4 {
-  display: flex;
-  width: 100%;
-  justify-content: center;
-  color: $white;
-  margin-bottom: 75px;
 
   h4 {
     font-size: 30px;
     font-family: 'Open Sans Condensed', sans-serif;
+    color: $white;
   }
+}
+
+// main content
+.main-content {
+  background-color: $white;
+  display: flex;
+  flex-direction: column;
+  width: 100%;
+  align-items: center;
+  margin-top: 185px;
+  padding-top: 70px;
+}
+
+.intro-1, .intro-2 {
+  display: flex;
+  justify-content: space-between;
+  width: 800px;
+}
+
+.intro-1 {
+  margin-top: 20px;
+
+  p {
+    color: $green;
+    border: 2px solid $green;
+    border-radius: 50%;
+    padding: 5px 10px 5px 10px;
+    font-size: 11px;
+  }
+}
+
+.intro-3 {
+  display: flex;
+  justify-content: space-between;
+  width: 1030px;
+  padding-top: 15px;
+  padding-bottom: 15px;
+  margin-bottom: 50px;
+}
+
+.intro-3-1, .intro-3-2, .intro-3-3 {
+  align-items: center;
+  display: flex;
+  flex-direction: column;
+}
+
+.intro-bold {
+  margin-bottom: 5px!important;
+  font-weight: 700px;
+  font-size: 16px;
+  line-height: 1.6;
+}
+
+.intro-weak {
+  margin-bottom: 0;
+  color: $light-gray;
+  line-height: 1.6;
+}
+
+.intro-comment {
+  background: url(http://res.cloudinary.com/rolover/image/upload/v1500615295/marvin-meyer-188676_wnyexr.jpg) no-repeat;
+  z-index: 2;
+}
+
+.intro-comment-card {
+  width: 360px;
+  height: 250px;
 }
