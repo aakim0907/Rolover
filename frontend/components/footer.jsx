@@ -3,6 +3,8 @@ import React from 'react';
 const Footer = (props) => (
   <div className='footer'>
       <div>
+        <small>Project by: Young Eun Kim</small>
+        <br/>
         <small>For Portfolio Purposes Only</small>
       </div>
       <div className='icon-box'>
