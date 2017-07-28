@@ -35,6 +35,23 @@
     }
   }
 
+  .side-icon {
+    float: left;
+    position: relative;
+    z-index: 2;
+    color: $gray;
+
+    &.fa-envelope-o {
+      margin-left: 15px;
+      margin-top: -38px;
+    }
+
+    &.fa-lock {
+      margin-left: 18px;
+      margin-top: -37px;
+    }
+  }
+
   .session-redirect-btn {
     background-color: $white;
     font-size: 17px;
@@ -56,7 +73,6 @@
 .session-form-box {
   width: 500px;
   text-align: left;
-  // display: block;
   padding-top: 0px;
   padding-right: 10px;
   padding-left: 10px;

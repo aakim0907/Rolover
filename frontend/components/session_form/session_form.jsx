@@ -94,17 +94,18 @@ class SessionForm extends React.Component {
               <input type='text'
                 value={this.state.email}
                 onChange={this.update('email')}
-                placeholder='&#f003; Enter your email address'
+                placeholder='        Enter your email address'
                 className='session-input'
                 />
+              <i className='fa fa-envelope-o fa-lg side-icon' aria-hidden='true'></i>
             <br/>
-
               <input type='password'
                 value={this.state.password}
                 onChange={this.update('password')}
-                placeholder='&#f023; Password'
+                placeholder='        Enter your password'
                 className='session-input'
                 />
+              <i className='fa fa-lock fa-lg side-icon' aria-hidden='true'></i>
             <br/>
 
             {this.renderErrors()}
