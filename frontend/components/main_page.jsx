@@ -43,7 +43,7 @@ const MainPage = () => (
         <div className='intro-comment-card'>
           <div></div>
           <h3>Now we can go horsebackriding with our dog. Thank you Rolover!!</h3>
-          <p>Kelly C.</p>
+          <p>Jay K.</p>
         </div>
       </div>
 

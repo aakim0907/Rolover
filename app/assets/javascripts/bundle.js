@@ -47594,7 +47594,7 @@ var MainPage = function MainPage() {
           _react2.default.createElement(
             'p',
             null,
-            'Kelly C.'
+            'Jay K.'
           )
         )
       ),
