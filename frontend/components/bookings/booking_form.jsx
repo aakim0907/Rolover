@@ -50,13 +50,13 @@ class BookingForm extends React.Component {
             <div className='df-1-1'>
               <label>Name
                 <br/>
-                <input type='text' className='booking-input'></input>
+                <input type='text' className='booking-input' placeholder='  e.g.) Rover'></input>
               </label>
             </div>
             <div className='df-1-2'>
               <label>Weight (lbs.)
                 <br/>
-                <input type='text' className='booking-input'></input>
+                <input type='text' className='booking-input' placeholder='  e.g.) 6'></input>
               </label>
             </div>
           </div>
@@ -64,7 +64,7 @@ class BookingForm extends React.Component {
           <div className='dog-form-2'>
             <label>Breeds
               <br/>
-              <input type='text' className='booking-input'></input>
+              <input type='text' className='booking-input' placeholder='  e.g.) Maltize'></input>
             </label>
           </div>
 
@@ -72,13 +72,13 @@ class BookingForm extends React.Component {
             <div className='df-3-1'>
               <label>Age (years)
                 <br/>
-                <input type='text' className='booking-input'></input>
+                <input type='text' className='booking-input' placeholder='  2'></input>
               </label>
             </div>
             <div className='df-3-2'>
               <label>Age (months)
                 <br/>
-                <input type='text' className='booking-input'></input>
+                <input type='text' className='booking-input' placeholder='  5'></input>
               </label>
             </div>
             <div className='df-3-3'>
@@ -101,9 +101,7 @@ class BookingForm extends React.Component {
   }
 
   handleErrors(field) {
-    this.props.errors.find(err => err.split(' ')[0] === field);
-    const a = this.props.errors.find(err => err.split(' ')[0] === 'Training');
-    console.log(typeof a);
+    return this.props.errors.find(err => err.split(' ')[0] === field);
   }
 
   renderErrorMsg() {
@@ -115,8 +113,6 @@ class BookingForm extends React.Component {
   }
 
   render() {
-    console.log(typeof this.handleErrors('Training') === 'undefined' ? 'null' : 'booking-error');
-
     return (
       <div className='booking-form-container'>
         <h3>Contact Trainer</h3>
@@ -158,11 +154,11 @@ class BookingForm extends React.Component {
           <div className='booking-form-date'>
             <div className='bfd-1'>
               <span>Start: </span>
-              <input type='date' name='start_date' value={this.state.start_date} onChange={this.update('start_date')} min={this.currentDate} />
+              <input type='date' name='start_date' value={this.state.start_date} onChange={this.update('start_date')} min={this.currentDate} className={`${typeof this.handleErrors('Start') === 'undefined' ? 'null' : 'booking-error'}`}/>
             </div>
             <div className='bfd-2'>
               <span>End: </span>
-              <input type='date' name='end_date' value={this.state.end_date} onChange={this.update('end_date')} min={this.currentDate} />
+              <input type='date' name='end_date' value={this.state.end_date} onChange={this.update('end_date')} min={this.currentDate} className={`${typeof this.handleErrors('End') === 'undefined' ? 'null' : 'booking-error'}`}/>
             </div>
           </div>
 
@@ -182,6 +178,7 @@ class BookingForm extends React.Component {
               cols='70'
               value={this.state.message}
               onChange={this.update('message')}
+              className={`${typeof this.handleErrors('Message') === 'undefined' ? 'null' : 'booking-error'}`}
             ></textarea>
           </div>
 

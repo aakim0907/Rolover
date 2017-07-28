@@ -46345,6 +46345,8 @@ Object.defineProperty(exports, "__esModule", {
 
 var _reactRedux = __webpack_require__(14);
 
+var _reactRouterDom = __webpack_require__(9);
+
 var _session_actions = __webpack_require__(65);
 
 var _greeting = __webpack_require__(293);
@@ -46374,7 +46376,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_greeting2.default);
+exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_greeting2.default));
 
 /***/ }),
 /* 293 */
@@ -46420,6 +46422,7 @@ var Greeting = function (_React$Component) {
     var _this = _possibleConstructorReturn(this, (Greeting.__proto__ || Object.getPrototypeOf(Greeting)).call(this, props));
 
     _this.handleDemoClick = _this.handleDemoClick.bind(_this);
+    _this.handleLogout = _this.handleLogout.bind(_this);
     return _this;
   }
 
@@ -46430,9 +46433,20 @@ var Greeting = function (_React$Component) {
       this.props.login({ email: "guest@rolover.dog", password: "woofbark" });
     }
   }, {
+    key: 'handleLogout',
+    value: function handleLogout() {
+      var _this2 = this;
+
+      var logout = this.props.logout;
+
+      logout().then(function () {
+        return _this2.props.history.push('/');
+      });
+    }
+  }, {
     key: 'render',
     value: function render() {
-      var _this2 = this;
+      var _this3 = this;
 
       var _props = this.props,
           currentUser = _props.currentUser,
@@ -46445,14 +46459,14 @@ var Greeting = function (_React$Component) {
           { className: 'login-signup' },
           _react2.default.createElement(
             'button',
-            { className: 'demo', onClick: _this2.handleDemoClick },
+            { className: 'demo', onClick: _this3.handleDemoClick },
             'Demo Account'
           ),
-          _react2.default.createElement(_auth_modal2.default, { clearErrors: _this2.props.clearErrors })
+          _react2.default.createElement(_auth_modal2.default, { clearErrors: _this3.props.clearErrors })
         );
       };
 
-      var personalGreeting = function personalGreeting(currentUser, logout) {
+      var personalGreeting = function personalGreeting(currentUser) {
         return _react2.default.createElement(
           'div',
           { className: 'login-signup' },
@@ -46467,7 +46481,7 @@ var Greeting = function (_React$Component) {
           ),
           _react2.default.createElement(
             'button',
-            { onClick: logout },
+            { onClick: _this3.handleLogout },
             'Log Out'
           )
         );
@@ -46599,7 +46613,7 @@ var SessionForm = function (_React$Component) {
         _react2.default.createElement(
           'button',
           { className: 'session-redirect-btn', onClick: function onClick() {
-              return _this5.props.modalFunction(redirect.redirectForm);
+              return _this5.props.openModal(redirect.redirectForm);
             } },
           redirect.buttonName
         )
@@ -51027,8 +51041,6 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
-var _typeof = typeof Symbol === "function" && typeof Symbol.iterator === "symbol" ? function (obj) { return typeof obj; } : function (obj) { return obj && typeof Symbol === "function" && obj.constructor === Symbol && obj !== Symbol.prototype ? "symbol" : typeof obj; };
-
 var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
 
 var _react = __webpack_require__(2);
@@ -51120,7 +51132,7 @@ var BookingForm = function (_React$Component) {
               null,
               'Name',
               _react2.default.createElement('br', null),
-              _react2.default.createElement('input', { type: 'text', className: 'booking-input' })
+              _react2.default.createElement('input', { type: 'text', className: 'booking-input', placeholder: '  e.g.) Rover' })
             )
           ),
           _react2.default.createElement(
@@ -51131,7 +51143,7 @@ var BookingForm = function (_React$Component) {
               null,
               'Weight (lbs.)',
               _react2.default.createElement('br', null),
-              _react2.default.createElement('input', { type: 'text', className: 'booking-input' })
+              _react2.default.createElement('input', { type: 'text', className: 'booking-input', placeholder: '  e.g.) 6' })
             )
           )
         ),
@@ -51143,7 +51155,7 @@ var BookingForm = function (_React$Component) {
             null,
             'Breeds',
             _react2.default.createElement('br', null),
-            _react2.default.createElement('input', { type: 'text', className: 'booking-input' })
+            _react2.default.createElement('input', { type: 'text', className: 'booking-input', placeholder: '  e.g.) Maltize' })
           )
         ),
         _react2.default.createElement(
@@ -51157,7 +51169,7 @@ var BookingForm = function (_React$Component) {
               null,
               'Age (years)',
               _react2.default.createElement('br', null),
-              _react2.default.createElement('input', { type: 'text', className: 'booking-input' })
+              _react2.default.createElement('input', { type: 'text', className: 'booking-input', placeholder: '  2' })
             )
           ),
           _react2.default.createElement(
@@ -51168,7 +51180,7 @@ var BookingForm = function (_React$Component) {
               null,
               'Age (months)',
               _react2.default.createElement('br', null),
-              _react2.default.createElement('input', { type: 'text', className: 'booking-input' })
+              _react2.default.createElement('input', { type: 'text', className: 'booking-input', placeholder: '  5' })
             )
           ),
           _react2.default.createElement(
@@ -51198,13 +51210,9 @@ var BookingForm = function (_React$Component) {
   }, {
     key: 'handleErrors',
     value: function handleErrors(field) {
-      this.props.errors.find(function (err) {
+      return this.props.errors.find(function (err) {
         return err.split(' ')[0] === field;
       });
-      var a = this.props.errors.find(function (err) {
-        return err.split(' ')[0] === 'Training';
-      });
-      console.log(typeof a === 'undefined' ? 'undefined' : _typeof(a));
     }
   }, {
     key: 'renderErrorMsg',
@@ -51221,8 +51229,6 @@ var BookingForm = function (_React$Component) {
     key: 'render',
     value: function render() {
       var _this4 = this;
-
-      console.log(typeof this.handleErrors('Training') === 'undefined' ? 'null' : 'booking-error');
 
       return _react2.default.createElement(
         'div',
@@ -51317,7 +51323,7 @@ var BookingForm = function (_React$Component) {
                 null,
                 'Start: '
               ),
-              _react2.default.createElement('input', { type: 'date', name: 'start_date', value: this.state.start_date, onChange: this.update('start_date'), min: this.currentDate })
+              _react2.default.createElement('input', { type: 'date', name: 'start_date', value: this.state.start_date, onChange: this.update('start_date'), min: this.currentDate, className: '' + (typeof this.handleErrors('Start') === 'undefined' ? 'null' : 'booking-error') })
             ),
             _react2.default.createElement(
               'div',
@@ -51327,7 +51333,7 @@ var BookingForm = function (_React$Component) {
                 null,
                 'End: '
               ),
-              _react2.default.createElement('input', { type: 'date', name: 'end_date', value: this.state.end_date, onChange: this.update('end_date'), min: this.currentDate })
+              _react2.default.createElement('input', { type: 'date', name: 'end_date', value: this.state.end_date, onChange: this.update('end_date'), min: this.currentDate, className: '' + (typeof this.handleErrors('End') === 'undefined' ? 'null' : 'booking-error') })
             )
           ),
           _react2.default.createElement(
@@ -51356,7 +51362,8 @@ var BookingForm = function (_React$Component) {
               rows: '4',
               cols: '70',
               value: this.state.message,
-              onChange: this.update('message')
+              onChange: this.update('message'),
+              className: '' + (typeof this.handleErrors('Message') === 'undefined' ? 'null' : 'booking-error')
             })
           ),
           _react2.default.createElement(

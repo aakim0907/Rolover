@@ -9,11 +9,19 @@ class Greeting extends React.Component {
     super(props);
 
     this.handleDemoClick = this.handleDemoClick.bind(this);
+    this.handleLogout = this.handleLogout.bind(this);
   }
 
   handleDemoClick(e) {
     e.preventDefault();
     this.props.login({email: "guest@rolover.dog", password: "woofbark"});
+  }
+
+  handleLogout() {
+    const { logout } = this.props;
+    logout().then(
+      () => (this.props.history.push('/'))
+    );
   }
 
   render() {
@@ -27,10 +35,10 @@ class Greeting extends React.Component {
       </div>
     );
 
-    const personalGreeting = (currentUser, logout) => (
+    const personalGreeting = currentUser => (
     	<div className="login-signup">
         <Link to={'/profile'}><span className="header-name">{currentUser.email}</span></Link>
-        <button onClick={logout}>Log Out</button>
+        <button onClick={this.handleLogout}>Log Out</button>
     	</div>
     );
 
