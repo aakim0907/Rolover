@@ -47929,6 +47929,8 @@ Object.defineProperty(exports, "__esModule", {
   value: true
 });
 
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
 var _react = __webpack_require__(2);
 
 var _react2 = _interopRequireDefault(_react);
@@ -47941,89 +47943,137 @@ var _star2 = _interopRequireDefault(_star);
 
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
-var TrainerIndexItem = function TrainerIndexItem(_ref) {
-  var trainer = _ref.trainer;
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
-  var profile = trainer.images.find(function (img) {
-    return img.img_type === 'profile';
-  });
-  return _react2.default.createElement(
-    'div',
-    { className: 'trainer-list-item' },
-    _react2.default.createElement(
-      'div',
-      { className: 'trainer-list-profile' },
-      _react2.default.createElement('img', { src: profile.img_url })
-    ),
-    _react2.default.createElement(
-      'div',
-      { className: 'trainer-list-main' },
-      _react2.default.createElement(
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var TrainerIndexItem = function (_React$Component) {
+  _inherits(TrainerIndexItem, _React$Component);
+
+  function TrainerIndexItem() {
+    _classCallCheck(this, TrainerIndexItem);
+
+    return _possibleConstructorReturn(this, (TrainerIndexItem.__proto__ || Object.getPrototypeOf(TrainerIndexItem)).apply(this, arguments));
+  }
+
+  _createClass(TrainerIndexItem, [{
+    key: 'showTrainingType',
+    value: function showTrainingType(trainer) {
+      var types = [];
+
+      if (trainer.obedience) {
+        types.push(_react2.default.createElement('img', { src: window.images.obedience, alt: 'obedience-icon', className: 'display-type' }));
+      }
+      if (trainer.behavior) {
+        types.push(_react2.default.createElement('img', { src: window.images.behavior, alt: 'behavior-icon', className: 'display-type' }));
+      }
+      if (trainer.advanced) {
+        types.push(_react2.default.createElement('img', { src: window.images.advanced, alt: 'advanced-icon', className: 'display-type' }));
+      }
+
+      return types;
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      var trainer = this.props.trainer;
+
+      var profile = trainer.images.find(function (img) {
+        return img.img_type === 'profile';
+      });
+
+      return _react2.default.createElement(
         'div',
-        { className: 'trainer-list-head' },
+        { className: 'trainer-list-item' },
         _react2.default.createElement(
           'div',
-          { className: 'trainer-list-name' },
-          _react2.default.createElement(
-            'h3',
-            null,
-            trainer.name
-          )
+          { className: 'trainer-list-profile' },
+          _react2.default.createElement('img', { src: profile.img_url })
         ),
         _react2.default.createElement(
           'div',
-          { className: 'trainer-list-price' },
+          { className: 'trainer-list-main' },
           _react2.default.createElement(
-            'span',
-            null,
-            '$',
-            trainer.price
+            'div',
+            { className: 'trainer-list-head' },
+            _react2.default.createElement(
+              'div',
+              { className: 'trainer-list-name' },
+              _react2.default.createElement(
+                'h3',
+                null,
+                trainer.name
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'trainer-list-price' },
+              _react2.default.createElement(
+                'span',
+                null,
+                '$',
+                trainer.price
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'trainer-list-rating' },
+            _react2.default.createElement(
+              'span',
+              { className: 'star m' },
+              (0, _star2.default)(trainer.rating)
+            ),
+            _react2.default.createElement(
+              'span',
+              { className: 'review sm' },
+              ' (',
+              trainer.review_count + ' ' + (trainer.review_count === 1 ? 'review' : 'reviews'),
+              ')'
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'trainer-list-address' },
+            _react2.default.createElement(
+              'p',
+              null,
+              trainer.city,
+              ', ',
+              trainer.state,
+              ', ',
+              trainer.zip
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'trainer-list-bottom' },
+            _react2.default.createElement(
+              'div',
+              { className: 'trainer-list-quote' },
+              _react2.default.createElement(
+                'p',
+                null,
+                '"',
+                trainer.profile_quote,
+                '"'
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'trainer-list-type' },
+              this.showTrainingType(trainer)
+            )
           )
         )
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'trainer-list-rating' },
-        _react2.default.createElement(
-          'span',
-          { className: 'star m' },
-          (0, _star2.default)(trainer.rating)
-        ),
-        _react2.default.createElement(
-          'span',
-          { className: 'review sm' },
-          ' (',
-          trainer.review_count + ' ' + (trainer.review_count === 1 ? 'review' : 'reviews'),
-          ')'
-        )
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'trainer-list-address' },
-        _react2.default.createElement(
-          'p',
-          null,
-          trainer.city,
-          ', ',
-          trainer.state,
-          ', ',
-          trainer.zip
-        )
-      ),
-      _react2.default.createElement(
-        'div',
-        { className: 'trainer-list-quote' },
-        _react2.default.createElement(
-          'p',
-          null,
-          '"',
-          trainer.profile_quote,
-          '"'
-        )
-      )
-    )
-  );
-};
+      );
+    }
+  }]);
+
+  return TrainerIndexItem;
+}(_react2.default.Component);
 
 exports.default = TrainerIndexItem;
 
