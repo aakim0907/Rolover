@@ -79,13 +79,12 @@ const MainPage = () => (
             <p className='intro-bold'>Advanced Training</p>
             <img src={window.images.advanced} alt='advanced-icon'/>
             <p>Dogs are capable of learning a wide variety of skills just like people. Explore what more your dog can do with our best trainers.</p>
-            <p className='intro-weak'>Loose Leash Walking</p>
-            <p className='intro-weak'>Sit/Stay</p>
-            <p className='intro-weak'>Down/Stay</p>
-            <p className='intro-weak'>Place Command</p>
-            <p className='intro-weak'>Crate Training</p>
-            <p className='intro-weak'>Waiting for Food</p>
-            <p className='intro-weak'>Waiting at Thresholds (Doors, Car, Crate, etc.)</p>
+            <p className='intro-weak'>Roll-over</p>
+            <p className='intro-weak'>High five</p>
+            <p className='intro-weak'>Wave goodbye</p>
+            <p className='intro-weak'>Play dead</p>
+            <p className='intro-weak'>Catch/Fetch</p>
+            <p className='intro-weak'>Dog Sports</p>
           </div>
         </div>
       </div>

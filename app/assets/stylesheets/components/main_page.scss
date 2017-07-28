@@ -68,7 +68,7 @@
   width: 1030px;
   padding-top: 15px;
   padding-bottom: 15px;
-  margin-bottom: 70px;
+  margin-bottom: 100px;
 }
 
 .intro-3-1, .intro-3-2, .intro-3-3 {
@@ -97,19 +97,19 @@
 .intro-4 {
   background-image: url(http://res.cloudinary.com/rolover/image/upload/v1501259507/dog-horse_bkqcdu.jpg);
   background-size: cover;
-  width: 90%;
-  height: 600px;
+  width: 80%;
+  height: 730px;
   display: flex;
   flex-direction: column;
 }
 
 .intro-comment-card {
-  width: 370px;
+  width: 380px;
   height: 215px;
   background-color: $white;
-  padding: 20px;
-  margin-left: 70px;
-  margin-top: -35px;
+  padding: 23px;
+  margin-left: 145px;
+  margin-top: -55px;
   border: 1px solid $light-gray;
   border-radius: 3px;
 

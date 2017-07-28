@@ -47721,37 +47721,32 @@ var MainPage = function MainPage() {
             _react2.default.createElement(
               'p',
               { className: 'intro-weak' },
-              'Loose Leash Walking'
+              'Roll-over'
             ),
             _react2.default.createElement(
               'p',
               { className: 'intro-weak' },
-              'Sit/Stay'
+              'High five'
             ),
             _react2.default.createElement(
               'p',
               { className: 'intro-weak' },
-              'Down/Stay'
+              'Wave goodbye'
             ),
             _react2.default.createElement(
               'p',
               { className: 'intro-weak' },
-              'Place Command'
+              'Play dead'
             ),
             _react2.default.createElement(
               'p',
               { className: 'intro-weak' },
-              'Crate Training'
+              'Catch/Fetch'
             ),
             _react2.default.createElement(
               'p',
               { className: 'intro-weak' },
-              'Waiting for Food'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'intro-weak' },
-              'Waiting at Thresholds (Doors, Car, Crate, etc.)'
+              'Dog Sports'
             )
           )
         )
