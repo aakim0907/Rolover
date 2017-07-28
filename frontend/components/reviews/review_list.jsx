@@ -26,8 +26,6 @@ class ReviewList extends React.Component {
           { reviews.reverse().map(review => (
             <ReviewListItem key={review.id} review={review} />
           ))}
-
-          <div className='review-list-item'><br/></div>
         </div>
       );
     }

@@ -50417,12 +50417,7 @@ var ReviewList = function (_React$Component) {
           _react2.default.createElement(_review_form_container2.default, { currentTrainerId: this.props.currentTrainerId }),
           reviews.reverse().map(function (review) {
             return _react2.default.createElement(_review_list_item2.default, { key: review.id, review: review });
-          }),
-          _react2.default.createElement(
-            'div',
-            { className: 'review-list-item' },
-            _react2.default.createElement('br', null)
-          )
+          })
         );
       }
     }
