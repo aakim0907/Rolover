@@ -1,5 +1,8 @@
 import React from 'react';
 import { withRouter, Link } from 'react-router-dom';
+import { merge } from 'lodash';
+
+import DogFormContainer from '../dogs/dog_form_container';
 
 class UserProfile extends React.Component {
   componentDidMount() {
@@ -9,43 +12,7 @@ class UserProfile extends React.Component {
 
   constructor(props) {
     super(props);
-
-    const { currentUser } = this.props;
-    this.state = {
-      formOpen: false,
-      dog: { user_id: currentUser.id, name: '', age_year: '', age_month: '', weight: '', breed: '', sex: '' }
-    };
-
-    this.handleSubmit = this.handleSubmit.bind(this);
-  }
-
-  handleSubmit(e) {
-    e.preventDefault();
-    const { dog } = this.state;
-    console.log(dog);
-    const { currentUser } = this.props;
-    this.props.createDog(dog).then(
-      () => {
-        if (this.props.errors.length === 0) {
-          this.setState({
-            formOpen: false,
-            dog: { user_id: currentUser.id, name: '', age_year: '', age_month: '', weight: '', breed: '', sex: '' }
-          });
-        }
-      }
-    );
-  }
-
-  renderErrors() {
-    return(
-      <ul className='errors'>
-        {this.props.errors.map((error, i) => (
-          <li key={`error-${i}`}>
-            {error}
-          </li>
-        ))}
-      </ul>
-    );
+    this.state = { formOpen: false };
   }
 
   renderDogs() {
@@ -66,71 +33,9 @@ class UserProfile extends React.Component {
     }
   }
 
-  update(field) {
-    return e => this.setState({
-      dog: {
-        [field]: e.currentTarget.value
-      }
-    });
-  }
-
   renderDogForm() {
     if (this.state.formOpen) {
-      const { dog } = this.state;
-      return (
-        <div className='df-container'>
-          <form onSubmit={this.handleSubmit}>
-            <div className='df-1'>
-              <label>Name
-                <br/>
-                <input type='text' value={dog.name} onChange={this.update('name')}></input>
-              </label>
-            </div>
-            <div className='df-2'>
-              <label>Breed
-                <br/>
-                <input type='text' value={dog.breed} onChange={this.update('breed')}></input>
-              </label>
-            </div>
-            <div className='df-3'>
-              <div className='df-3-1'>
-                <label>Weight (lbs)
-                  <br/>
-                  <input type='text' value={dog.weight} onChange={this.update('weight')}></input>
-                </label>
-              </div>
-              <div className='df-3-2'>
-                <label>Sex
-                  <br/>
-                  <input type='radio' value='M' onChange={this.update('sex')}/>Male
-                  <input type='radio' value='F' onChange={this.update('sex')}/>Female
-                </label>
-              </div>
-            </div>
-
-            <div className='df-4'>
-              <div className='df-4-1'>
-                <label>Age (years)
-                  <br/>
-                  <input type='text' value={dog.age_year} onChange={this.update('age_year')}></input>
-                </label>
-              </div>
-              <div className='df-4-2'>
-                <label>Age (months)
-                  <br/>
-                  <input type='text' value={dog.age_month} onChange={this.update('age_month')}></input>
-                </label>
-              </div>
-            </div>
-
-            {this.renderErrors()}
-
-            <div className='df-5'>
-              <button className='btn green' onClick={this.handleSubmit}>Submit</button>
-            </div>
-          </form>
-        </div>
-      );
+      return (<DogFormContainer />);
     } else {
       return (
         <button className='btn green' onClick={() => this.setState({ formOpen: true })}>Add Dog</button>
@@ -138,7 +43,7 @@ class UserProfile extends React.Component {
     }
   }
 
-  renderStatus(status) {
+  renderBookingStatus(status) {
     let className;
     if (status === 'APPROVED') {
       className = 'approved';
@@ -168,7 +73,7 @@ class UserProfile extends React.Component {
                 <p>{booking.training_type.toUpperCase()} training with {booking.trainer_name}</p>
               </div>
               <div className='bl-2'>
-                {this.renderStatus(booking.status)}
+                {this.renderBookingStatus(booking.status)}
               </div>
             </div>
           ))}
@@ -179,7 +84,6 @@ class UserProfile extends React.Component {
 
   render() {
     const { currentUser } = this.props;
-
     return (
       <div className='user-profile-container'>
         <div className='up-1'>
@@ -194,7 +98,7 @@ class UserProfile extends React.Component {
           <div className='up-1-2'>
             <h4 className='up-header'>Dogs</h4>
             {this.renderDogs()}
-            {this.renderDogForm()}
+            {this.renderDogForm()}            
           </div>
         </div>
 

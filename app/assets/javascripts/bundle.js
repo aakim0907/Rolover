@@ -47488,7 +47488,7 @@ var MainPage = function MainPage() {
         _react2.default.createElement(
           'h4',
           null,
-          'Find and book dog trainers to your needs'
+          'Teaching old dog new tricks, new dog old tricks'
         )
       ),
       _react2.default.createElement(_search_container2.default, { where: 'mainpage' })
@@ -51158,8 +51158,7 @@ var mapStateToProps = function mapStateToProps(state) {
   return {
     currentUser: state.session.currentUser,
     bookings: (0, _selectors.selectAllBookings)(state.bookings),
-    dogs: (0, _selectors.selectAllDogs)(state.dogs),
-    errors: state.dogs.errors
+    dogs: (0, _selectors.selectAllDogs)(state.dogs)
   };
 };
 
@@ -51170,9 +51169,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     fetchDogs: function fetchDogs(id) {
       return dispatch((0, _dog_actions.fetchDogs)(id));
-    },
-    createDog: function createDog(dog) {
-      return dispatch((0, _dog_actions.createDog)(dog));
     }
   };
 };
@@ -51198,9 +51194,13 @@ var _react2 = _interopRequireDefault(_react);
 
 var _reactRouterDom = __webpack_require__(9);
 
-function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+var _lodash = __webpack_require__(26);
 
-function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+var _dog_form_container = __webpack_require__(330);
+
+var _dog_form_container2 = _interopRequireDefault(_dog_form_container);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
 
 function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
 
@@ -51224,53 +51224,11 @@ var UserProfile = function (_React$Component) {
 
     var _this = _possibleConstructorReturn(this, (UserProfile.__proto__ || Object.getPrototypeOf(UserProfile)).call(this, props));
 
-    var currentUser = _this.props.currentUser;
-
-    _this.state = {
-      formOpen: false,
-      dog: { user_id: currentUser.id, name: '', age_year: '', age_month: '', weight: '', breed: '', sex: '' }
-    };
-
-    _this.handleSubmit = _this.handleSubmit.bind(_this);
+    _this.state = { formOpen: false };
     return _this;
   }
 
   _createClass(UserProfile, [{
-    key: 'handleSubmit',
-    value: function handleSubmit(e) {
-      var _this2 = this;
-
-      e.preventDefault();
-      var dog = this.state.dog;
-
-      console.log(dog);
-      var currentUser = this.props.currentUser;
-
-      this.props.createDog(dog).then(function () {
-        if (_this2.props.errors.length === 0) {
-          _this2.setState({
-            formOpen: false,
-            dog: { user_id: currentUser.id, name: '', age_year: '', age_month: '', weight: '', breed: '', sex: '' }
-          });
-        }
-      });
-    }
-  }, {
-    key: 'renderErrors',
-    value: function renderErrors() {
-      return _react2.default.createElement(
-        'ul',
-        { className: 'errors' },
-        this.props.errors.map(function (error, i) {
-          return _react2.default.createElement(
-            'li',
-            { key: 'error-' + i },
-            error
-          );
-        })
-      );
-    }
-  }, {
     key: 'renderDogs',
     value: function renderDogs() {
       var _props = this.props,
@@ -51302,132 +51260,25 @@ var UserProfile = function (_React$Component) {
       }
     }
   }, {
-    key: 'update',
-    value: function update(field) {
-      var _this3 = this;
-
-      return function (e) {
-        return _this3.setState({
-          dog: _defineProperty({}, field, e.currentTarget.value)
-        });
-      };
-    }
-  }, {
     key: 'renderDogForm',
     value: function renderDogForm() {
-      var _this4 = this;
+      var _this2 = this;
 
       if (this.state.formOpen) {
-        var dog = this.state.dog;
-
-        return _react2.default.createElement(
-          'div',
-          { className: 'df-container' },
-          _react2.default.createElement(
-            'form',
-            { onSubmit: this.handleSubmit },
-            _react2.default.createElement(
-              'div',
-              { className: 'df-1' },
-              _react2.default.createElement(
-                'label',
-                null,
-                'Name',
-                _react2.default.createElement('br', null),
-                _react2.default.createElement('input', { type: 'text', value: dog.name, onChange: this.update('name') })
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'df-2' },
-              _react2.default.createElement(
-                'label',
-                null,
-                'Breed',
-                _react2.default.createElement('br', null),
-                _react2.default.createElement('input', { type: 'text', value: dog.breed, onChange: this.update('breed') })
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'df-3' },
-              _react2.default.createElement(
-                'div',
-                { className: 'df-3-1' },
-                _react2.default.createElement(
-                  'label',
-                  null,
-                  'Weight (lbs)',
-                  _react2.default.createElement('br', null),
-                  _react2.default.createElement('input', { type: 'text', value: dog.weight, onChange: this.update('weight') })
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'df-3-2' },
-                _react2.default.createElement(
-                  'label',
-                  null,
-                  'Sex',
-                  _react2.default.createElement('br', null),
-                  _react2.default.createElement('input', { type: 'radio', value: 'M', onChange: this.update('sex') }),
-                  'Male',
-                  _react2.default.createElement('input', { type: 'radio', value: 'F', onChange: this.update('sex') }),
-                  'Female'
-                )
-              )
-            ),
-            _react2.default.createElement(
-              'div',
-              { className: 'df-4' },
-              _react2.default.createElement(
-                'div',
-                { className: 'df-4-1' },
-                _react2.default.createElement(
-                  'label',
-                  null,
-                  'Age (years)',
-                  _react2.default.createElement('br', null),
-                  _react2.default.createElement('input', { type: 'text', value: dog.age_year, onChange: this.update('age_year') })
-                )
-              ),
-              _react2.default.createElement(
-                'div',
-                { className: 'df-4-2' },
-                _react2.default.createElement(
-                  'label',
-                  null,
-                  'Age (months)',
-                  _react2.default.createElement('br', null),
-                  _react2.default.createElement('input', { type: 'text', value: dog.age_month, onChange: this.update('age_month') })
-                )
-              )
-            ),
-            this.renderErrors(),
-            _react2.default.createElement(
-              'div',
-              { className: 'df-5' },
-              _react2.default.createElement(
-                'button',
-                { className: 'btn green', onClick: this.handleSubmit },
-                'Submit'
-              )
-            )
-          )
-        );
+        return _react2.default.createElement(_dog_form_container2.default, null);
       } else {
         return _react2.default.createElement(
           'button',
           { className: 'btn green', onClick: function onClick() {
-              return _this4.setState({ formOpen: true });
+              return _this2.setState({ formOpen: true });
             } },
           'Add Dog'
         );
       }
     }
   }, {
-    key: 'renderStatus',
-    value: function renderStatus(status) {
+    key: 'renderBookingStatus',
+    value: function renderBookingStatus(status) {
       var className = void 0;
       if (status === 'APPROVED') {
         className = 'approved';
@@ -51446,7 +51297,7 @@ var UserProfile = function (_React$Component) {
   }, {
     key: 'renderBookings',
     value: function renderBookings() {
-      var _this5 = this;
+      var _this3 = this;
 
       var bookings = this.props.bookings;
 
@@ -51478,7 +51329,7 @@ var UserProfile = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'bl-2' },
-                _this5.renderStatus(booking.status)
+                _this3.renderBookingStatus(booking.status)
               )
             );
           })
@@ -51489,7 +51340,6 @@ var UserProfile = function (_React$Component) {
     key: 'render',
     value: function render() {
       var currentUser = this.props.currentUser;
-
 
       return _react2.default.createElement(
         'div',
@@ -51964,6 +51814,243 @@ var createDog = exports.createDog = function createDog(dog) {
     data: { dog: dog }
   });
 };
+
+/***/ }),
+/* 330 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _reactRedux = __webpack_require__(14);
+
+var _dog_form = __webpack_require__(331);
+
+var _dog_form2 = _interopRequireDefault(_dog_form);
+
+var _dog_actions = __webpack_require__(328);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+var mapStateToProps = function mapStateToProps(state) {
+  return {
+    currentUser: state.session.currentUser,
+    errors: state.dogs.errors
+  };
+};
+
+var mapDispatchToProps = function mapDispatchToProps(dispatch) {
+  return {
+    createDog: function createDog(dog) {
+      return dispatch((0, _dog_actions.createDog)(dog));
+    }
+  };
+};
+
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_dog_form2.default);
+
+/***/ }),
+/* 331 */
+/***/ (function(module, exports, __webpack_require__) {
+
+"use strict";
+
+
+Object.defineProperty(exports, "__esModule", {
+  value: true
+});
+
+var _createClass = function () { function defineProperties(target, props) { for (var i = 0; i < props.length; i++) { var descriptor = props[i]; descriptor.enumerable = descriptor.enumerable || false; descriptor.configurable = true; if ("value" in descriptor) descriptor.writable = true; Object.defineProperty(target, descriptor.key, descriptor); } } return function (Constructor, protoProps, staticProps) { if (protoProps) defineProperties(Constructor.prototype, protoProps); if (staticProps) defineProperties(Constructor, staticProps); return Constructor; }; }();
+
+var _react = __webpack_require__(2);
+
+var _react2 = _interopRequireDefault(_react);
+
+var _lodash = __webpack_require__(26);
+
+function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
+
+function _defineProperty(obj, key, value) { if (key in obj) { Object.defineProperty(obj, key, { value: value, enumerable: true, configurable: true, writable: true }); } else { obj[key] = value; } return obj; }
+
+function _classCallCheck(instance, Constructor) { if (!(instance instanceof Constructor)) { throw new TypeError("Cannot call a class as a function"); } }
+
+function _possibleConstructorReturn(self, call) { if (!self) { throw new ReferenceError("this hasn't been initialised - super() hasn't been called"); } return call && (typeof call === "object" || typeof call === "function") ? call : self; }
+
+function _inherits(subClass, superClass) { if (typeof superClass !== "function" && superClass !== null) { throw new TypeError("Super expression must either be null or a function, not " + typeof superClass); } subClass.prototype = Object.create(superClass && superClass.prototype, { constructor: { value: subClass, enumerable: false, writable: true, configurable: true } }); if (superClass) Object.setPrototypeOf ? Object.setPrototypeOf(subClass, superClass) : subClass.__proto__ = superClass; }
+
+var DogForm = function (_React$Component) {
+  _inherits(DogForm, _React$Component);
+
+  function DogForm(props) {
+    _classCallCheck(this, DogForm);
+
+    var _this = _possibleConstructorReturn(this, (DogForm.__proto__ || Object.getPrototypeOf(DogForm)).call(this, props));
+
+    var currentUser = _this.props.currentUser;
+
+    _this.state = { user_id: currentUser.id, name: '', age_year: '', age_month: '', weight: '', breed: '', sex: '' };
+
+    _this.handleSubmit = _this.handleSubmit.bind(_this);
+    return _this;
+  }
+
+  _createClass(DogForm, [{
+    key: 'handleSubmit',
+    value: function handleSubmit(e) {
+      var _this2 = this;
+
+      e.preventDefault();
+      var currentUser = this.props.currentUser;
+
+      var dog = this.state;
+      console.log(dog);
+      this.props.createDog(dog).then(function () {
+        if (_this2.props.errors.length === 0) {
+          _this2.setState({
+            user_id: currentUser.id,
+            name: '',
+            age_year: '',
+            age_month: '',
+            weight: '',
+            breed: '',
+            sex: ''
+          });
+        }
+      });
+    }
+  }, {
+    key: 'renderErrors',
+    value: function renderErrors() {
+      return _react2.default.createElement(
+        'ul',
+        { className: 'errors' },
+        this.props.errors.map(function (error, i) {
+          return _react2.default.createElement(
+            'li',
+            { key: 'error-' + i },
+            error
+          );
+        })
+      );
+    }
+  }, {
+    key: 'update',
+    value: function update(field) {
+      var _this3 = this;
+
+      return function (e) {
+        return _this3.setState(_defineProperty({}, field, e.currentTarget.value));
+      };
+    }
+  }, {
+    key: 'render',
+    value: function render() {
+      return _react2.default.createElement(
+        'div',
+        { className: 'df-container' },
+        _react2.default.createElement(
+          'form',
+          { onSubmit: this.handleSubmit },
+          _react2.default.createElement(
+            'div',
+            { className: 'df-1' },
+            _react2.default.createElement(
+              'label',
+              null,
+              'Name',
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('input', { type: 'text', value: this.state.name, onChange: this.update('name') })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'df-2' },
+            _react2.default.createElement(
+              'label',
+              null,
+              'Breed',
+              _react2.default.createElement('br', null),
+              _react2.default.createElement('input', { type: 'text', value: this.state.breed, onChange: this.update('breed') })
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'df-3' },
+            _react2.default.createElement(
+              'div',
+              { className: 'df-3-1' },
+              _react2.default.createElement(
+                'label',
+                null,
+                'Weight (lbs)',
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('input', { type: 'text', value: this.state.weight, onChange: this.update('weight') })
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'df-3-2' },
+              _react2.default.createElement(
+                'label',
+                null,
+                'Sex',
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('input', { type: 'radio', value: 'M', onChange: this.update('sex') }),
+                'Male',
+                _react2.default.createElement('input', { type: 'radio', value: 'F', onChange: this.update('sex') }),
+                'Female'
+              )
+            )
+          ),
+          _react2.default.createElement(
+            'div',
+            { className: 'df-4' },
+            _react2.default.createElement(
+              'div',
+              { className: 'df-4-1' },
+              _react2.default.createElement(
+                'label',
+                null,
+                'Age (years)',
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('input', { type: 'text', value: this.state.age_year, onChange: this.update('age_year') })
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'df-4-2' },
+              _react2.default.createElement(
+                'label',
+                null,
+                'Age (months)',
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('input', { type: 'text', value: this.state.age_month, onChange: this.update('age_month') })
+              )
+            )
+          ),
+          this.renderErrors(),
+          _react2.default.createElement(
+            'div',
+            { className: 'df-5' },
+            _react2.default.createElement(
+              'button',
+              { className: 'btn green', onClick: this.handleSubmit },
+              'Submit'
+            )
+          )
+        )
+      );
+    }
+  }]);
+
+  return DogForm;
+}(_react2.default.Component);
+
+exports.default = DogForm;
 
 /***/ })
 /******/ ]);

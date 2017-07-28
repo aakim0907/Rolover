@@ -11,7 +11,7 @@ const MainPage = () => (
         <h1>Unleash your dog's potential</h1>
       </div>
       <div className='main-banner-h4'>
-        <h4>Find and book dog trainers to your needs</h4>
+        <h4>Teaching old dog new tricks, new dog old tricks</h4>
       </div>
       <SearchContainer where='mainpage'/>
     </div>
