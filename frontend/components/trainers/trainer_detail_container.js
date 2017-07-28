@@ -9,7 +9,6 @@ const mapStateToProps = (state, { match }) => ({
 
 const mapDispatchToProps = dispatch => ({
   fetchTrainer: id => dispatch(fetchTrainer(id))
-  //loading
 });
 
 export default connect(

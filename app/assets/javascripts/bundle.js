@@ -48381,7 +48381,6 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     fetchTrainer: function fetchTrainer(id) {
       return dispatch((0, _trainer_actions.fetchTrainer)(id));
     }
-    //loading
   };
 };
 
