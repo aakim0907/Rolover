@@ -12,7 +12,7 @@ class UserProfile extends React.Component {
 
     const { currentUser } = this.props;
     this.state = {
-      formOpen: true,
+      formOpen: false,
       dog: { user_id: currentUser.id, name: '', age_year: '', age_month: '', weight: '', breed: '', sex: '' }
     };
 
@@ -22,12 +22,30 @@ class UserProfile extends React.Component {
   handleSubmit(e) {
     e.preventDefault();
     const { dog } = this.state;
+    console.log(dog);
     const { currentUser } = this.props;
-    this.props.createDog(dog);
-    this.setState({
-      formOpen: false,
-      dog: { user_id: currentUser.id, name: '', age_year: '', age_month: '', weight: '', breed: '', sex: '' }
-    });
+    this.props.createDog(dog).then(
+      () => {
+        if (this.props.errors.length === 0) {
+          this.setState({
+            formOpen: false,
+            dog: { user_id: currentUser.id, name: '', age_year: '', age_month: '', weight: '', breed: '', sex: '' }
+          });
+        }
+      }
+    );
+  }
+
+  renderErrors() {
+    return(
+      <ul className='errors'>
+        {this.props.errors.map((error, i) => (
+          <li key={`error-${i}`}>
+            {error}
+          </li>
+        ))}
+      </ul>
+    );
   }
 
   renderDogs() {
@@ -84,8 +102,8 @@ class UserProfile extends React.Component {
               <div className='df-3-2'>
                 <label>Sex
                   <br/>
-                  <input type='radio' value='Male'/>Male
-                  <input type='radio' value='Female'/>Female
+                  <input type='radio' value='M' onChange={this.update('sex')}/>Male
+                  <input type='radio' value='F' onChange={this.update('sex')}/>Female
                 </label>
               </div>
             </div>
@@ -104,6 +122,8 @@ class UserProfile extends React.Component {
                 </label>
               </div>
             </div>
+
+            {this.renderErrors()}
 
             <div className='df-5'>
               <button className='btn green' onClick={this.handleSubmit}>Submit</button>

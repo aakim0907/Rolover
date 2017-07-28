@@ -51227,7 +51227,7 @@ var UserProfile = function (_React$Component) {
     var currentUser = _this.props.currentUser;
 
     _this.state = {
-      formOpen: true,
+      formOpen: false,
       dog: { user_id: currentUser.id, name: '', age_year: '', age_month: '', weight: '', breed: '', sex: '' }
     };
 
@@ -51238,15 +51238,37 @@ var UserProfile = function (_React$Component) {
   _createClass(UserProfile, [{
     key: 'handleSubmit',
     value: function handleSubmit(e) {
+      var _this2 = this;
+
       e.preventDefault();
       var dog = this.state.dog;
+
+      console.log(dog);
       var currentUser = this.props.currentUser;
 
-      this.props.createDog(dog);
-      this.setState({
-        formOpen: false,
-        dog: { user_id: currentUser.id, name: '', age_year: '', age_month: '', weight: '', breed: '', sex: '' }
+      this.props.createDog(dog).then(function () {
+        if (_this2.props.errors.length === 0) {
+          _this2.setState({
+            formOpen: false,
+            dog: { user_id: currentUser.id, name: '', age_year: '', age_month: '', weight: '', breed: '', sex: '' }
+          });
+        }
       });
+    }
+  }, {
+    key: 'renderErrors',
+    value: function renderErrors() {
+      return _react2.default.createElement(
+        'ul',
+        { className: 'errors' },
+        this.props.errors.map(function (error, i) {
+          return _react2.default.createElement(
+            'li',
+            { key: 'error-' + i },
+            error
+          );
+        })
+      );
     }
   }, {
     key: 'renderDogs',
@@ -51282,10 +51304,10 @@ var UserProfile = function (_React$Component) {
   }, {
     key: 'update',
     value: function update(field) {
-      var _this2 = this;
+      var _this3 = this;
 
       return function (e) {
-        return _this2.setState({
+        return _this3.setState({
           dog: _defineProperty({}, field, e.currentTarget.value)
         });
       };
@@ -51293,7 +51315,7 @@ var UserProfile = function (_React$Component) {
   }, {
     key: 'renderDogForm',
     value: function renderDogForm() {
-      var _this3 = this;
+      var _this4 = this;
 
       if (this.state.formOpen) {
         var dog = this.state.dog;
@@ -51348,9 +51370,9 @@ var UserProfile = function (_React$Component) {
                   null,
                   'Sex',
                   _react2.default.createElement('br', null),
-                  _react2.default.createElement('input', { type: 'radio', value: 'Male' }),
+                  _react2.default.createElement('input', { type: 'radio', value: 'M', onChange: this.update('sex') }),
                   'Male',
-                  _react2.default.createElement('input', { type: 'radio', value: 'Female' }),
+                  _react2.default.createElement('input', { type: 'radio', value: 'F', onChange: this.update('sex') }),
                   'Female'
                 )
               )
@@ -51381,6 +51403,7 @@ var UserProfile = function (_React$Component) {
                 )
               )
             ),
+            this.renderErrors(),
             _react2.default.createElement(
               'div',
               { className: 'df-5' },
@@ -51396,7 +51419,7 @@ var UserProfile = function (_React$Component) {
         return _react2.default.createElement(
           'button',
           { className: 'btn green', onClick: function onClick() {
-              return _this3.setState({ formOpen: true });
+              return _this4.setState({ formOpen: true });
             } },
           'Add Dog'
         );
@@ -51423,7 +51446,7 @@ var UserProfile = function (_React$Component) {
   }, {
     key: 'renderBookings',
     value: function renderBookings() {
-      var _this4 = this;
+      var _this5 = this;
 
       var bookings = this.props.bookings;
 
@@ -51455,7 +51478,7 @@ var UserProfile = function (_React$Component) {
               _react2.default.createElement(
                 'div',
                 { className: 'bl-2' },
-                _this4.renderStatus(booking.status)
+                _this5.renderStatus(booking.status)
               )
             );
           })
