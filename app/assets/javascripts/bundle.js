@@ -48229,12 +48229,18 @@ var TrainerIndexItem = function (_React$Component) {
 
       if (trainer.obedience) {
         types.push(_react2.default.createElement('img', { src: window.images.obedience, alt: 'obedience-icon', className: 'display-type' }));
+      } else {
+        types.push(_react2.default.createElement('div', { className: 'display-type' }));
       }
       if (trainer.behavior) {
         types.push(_react2.default.createElement('img', { src: window.images.behavior, alt: 'behavior-icon', className: 'display-type' }));
+      } else {
+        types.push(_react2.default.createElement('div', { className: 'display-type' }));
       }
       if (trainer.advanced) {
         types.push(_react2.default.createElement('img', { src: window.images.advanced, alt: 'advanced-icon', className: 'display-type' }));
+      } else {
+        types.push(_react2.default.createElement('div', { className: 'display-type' }));
       }
 
       return types;
@@ -48440,6 +48446,7 @@ var TrainerDetail = function (_React$Component) {
   _createClass(TrainerDetail, [{
     key: 'componentDidMount',
     value: function componentDidMount() {
+      window.scrollTo(0, 0);
       this.props.fetchTrainer(this.props.match.params.id);
     }
   }, {

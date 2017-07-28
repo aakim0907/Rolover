@@ -8,12 +8,18 @@ class TrainerIndexItem extends React.Component {
 
     if (trainer.obedience) {
       types.push(<img src={window.images.obedience} alt='obedience-icon' className='display-type'/>);
+    } else {
+      types.push(<div className='display-type'></div>);
     }
     if (trainer.behavior) {
       types.push(<img src={window.images.behavior} alt='behavior-icon' className='display-type'/>);
+    } else {
+      types.push(<div className='display-type'></div>);
     }
     if (trainer.advanced) {
       types.push(<img src={window.images.advanced} alt='advanced-icon' className='display-type'/>);
+    } else {
+      types.push(<div className='display-type'></div>);
     }
 
     return types;

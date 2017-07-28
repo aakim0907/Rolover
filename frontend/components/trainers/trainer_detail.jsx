@@ -12,6 +12,7 @@ import renderStars from '../helper/star';
 
 class TrainerDetail extends React.Component {
   componentDidMount() {
+    window.scrollTo(0,0);
     this.props.fetchTrainer(this.props.match.params.id);
   }
 
