@@ -6,9 +6,11 @@ Rails.application.routes.draw do
     end
     resources :users, only: [:show, :create] do
       resources :bookings, only: [:index]
+      resources :dogs, only: [:index]
     end
     resources :reviews, only: [:create]
     resources :bookings, only: [:create]
+    resources :dogs, only: [:create]
   end
 
   root "static_pages#root"
