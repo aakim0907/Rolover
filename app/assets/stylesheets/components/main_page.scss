@@ -75,6 +75,26 @@
   display: flex;
   flex-direction: column;
   align-items: center;
+
+  &.fa {
+    margin-top: 30px;
+    margin-bottom: 30px;
+
+    &.fa-search {
+      color: #14A4BE;
+      font-size: 60px;
+    }
+
+    &.fa-comments-o {
+      color: #A179D0;
+      font-size: 60px;
+    }
+
+    &.fa-paw {
+      color: $green;
+      font-size: 60px;
+    }
+  }
 }
 
 .intro-num {
@@ -84,26 +104,6 @@
   padding: 5px 10px 5px 10px;
   font-size: 11px;
   width: 30px;
-}
-
-.fa {
-  margin-top: 30px;
-  margin-bottom: 30px;
-
-  &.fa-search {
-    color: #14A4BE;
-    font-size: 60px;
-  }
-
-  &.fa-comments-o {
-    color: #A179D0;
-    font-size: 60px;
-  }
-
-  &.fa-paw {
-    color: $green;
-    font-size: 60px;
-  }
 }
 
 .intro-2 {
