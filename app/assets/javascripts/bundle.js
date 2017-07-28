@@ -30186,11 +30186,7 @@ var _root = __webpack_require__(253);
 
 var _root2 = _interopRequireDefault(_root);
 
-var _review_actions = __webpack_require__(44);
-
 function _interopRequireDefault(obj) { return obj && obj.__esModule ? obj : { default: obj }; }
-
-// END TESTING
 
 document.addEventListener('DOMContentLoaded', function () {
   var store = void 0;
@@ -30208,16 +30204,7 @@ document.addEventListener('DOMContentLoaded', function () {
 
   var root = document.getElementById('root');
   _reactDom2.default.render(_react2.default.createElement(_root2.default, { store: store }), root);
-
-  // START TESTING
-  window.getState = store.getState;
-  window.dispatch = store.dispatch;
-  window.fetchReviews = _review_actions.fetchReviews;
-  window.createReview = _review_actions.createReview;
-  // END TESTING
 });
-
-// START TESTING
 
 /***/ }),
 /* 128 */
@@ -46345,8 +46332,6 @@ Object.defineProperty(exports, "__esModule", {
 
 var _reactRedux = __webpack_require__(14);
 
-var _reactRouterDom = __webpack_require__(9);
-
 var _session_actions = __webpack_require__(65);
 
 var _greeting = __webpack_require__(293);
@@ -46376,7 +46361,7 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
   };
 };
 
-exports.default = (0, _reactRouterDom.withRouter)((0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_greeting2.default));
+exports.default = (0, _reactRedux.connect)(mapStateToProps, mapDispatchToProps)(_greeting2.default);
 
 /***/ }),
 /* 293 */
@@ -46494,7 +46479,7 @@ var Greeting = function (_React$Component) {
   return Greeting;
 }(_react2.default.Component);
 
-exports.default = Greeting;
+exports.default = (0, _reactRouterDom.withRouter)(Greeting);
 
 /***/ }),
 /* 294 */
@@ -52192,7 +52177,6 @@ var DogForm = function (_React$Component) {
       var currentUser = this.props.currentUser;
 
       var dog = this.state;
-      console.log(dog);
       this.props.createDog(dog).then(function () {
         if (_this2.props.errors.length === 0) {
           _this2.setState({

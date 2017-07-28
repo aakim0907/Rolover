@@ -15,7 +15,6 @@ class DogForm extends React.Component {
     e.preventDefault();
     const { currentUser } = this.props;
     const dog = this.state;
-    console.log(dog);
     this.props.createDog(dog).then(
       () => {
         if (this.props.errors.length === 0) {

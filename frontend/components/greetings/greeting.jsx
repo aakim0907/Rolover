@@ -1,5 +1,5 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { Link, withRouter } from 'react-router-dom';
 
 import SessionFormContainer from '../session_form/session_form_container';
 import AuthModal from '../auth_modal';
@@ -48,4 +48,4 @@ class Greeting extends React.Component {
   }
 }
 
-export default Greeting;
+export default withRouter(Greeting);
