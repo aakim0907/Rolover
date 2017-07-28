@@ -47517,28 +47517,14 @@ var MainPage = function MainPage() {
         'div',
         { className: 'intro-1' },
         _react2.default.createElement(
-          'p',
-          null,
-          '1'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          '2'
-        ),
-        _react2.default.createElement(
-          'p',
-          null,
-          '3'
-        )
-      ),
-      _react2.default.createElement('div', { className: 'intro-2' }),
-      _react2.default.createElement(
-        'div',
-        { className: 'intro-3' },
-        _react2.default.createElement(
           'div',
-          { className: 'intro-3-1' },
+          { className: 'intro-1-1' },
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-num' },
+            '1'
+          ),
+          _react2.default.createElement('i', { className: 'fa fa-search', 'aria-hidden': 'true' }),
           _react2.default.createElement(
             'p',
             { className: 'intro-bold' },
@@ -47552,7 +47538,13 @@ var MainPage = function MainPage() {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'intro-3-2' },
+          { className: 'intro-1-2' },
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-num' },
+            '2'
+          ),
+          _react2.default.createElement('i', { className: 'fa fa-comments-o', 'aria-hidden': 'true' }),
           _react2.default.createElement(
             'p',
             { className: 'intro-bold' },
@@ -47566,7 +47558,13 @@ var MainPage = function MainPage() {
         ),
         _react2.default.createElement(
           'div',
-          { className: 'intro-3-3' },
+          { className: 'intro-1-3' },
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-num' },
+            '3'
+          ),
+          _react2.default.createElement('i', { className: 'fa fa-paw', 'aria-hidden': 'true' }),
           _react2.default.createElement(
             'p',
             { className: 'intro-bold' },
@@ -47581,7 +47579,7 @@ var MainPage = function MainPage() {
       ),
       _react2.default.createElement(
         'div',
-        { className: 'intro-4' },
+        { className: 'intro-2' },
         _react2.default.createElement(
           'div',
           { className: 'intro-comment-card' },
@@ -47599,155 +47597,151 @@ var MainPage = function MainPage() {
         )
       ),
       _react2.default.createElement(
+        'h3',
+        null,
+        'Services at Rolover'
+      ),
+      _react2.default.createElement(
         'div',
-        { className: 'intro-5' },
+        { className: 'intro-3' },
         _react2.default.createElement(
-          'h3',
-          null,
-          'Services at Rolover'
+          'div',
+          { className: 'intro-3-1' },
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-bold intro-type' },
+            'Obedience Training'
+          ),
+          _react2.default.createElement('img', { src: window.images.obedience, alt: 'obedience-icon' }),
+          _react2.default.createElement(
+            'p',
+            { className: 'type-description' },
+            'Obedience Training provides you solutions for basic obedience. Work on addressing your dog\'s state of mind, creating a happy, balanced and well behaved dog.'
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-weak' },
+            'Loose Leash Walking'
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-weak' },
+            'Sit/Stay'
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-weak' },
+            'Down/Stay'
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-weak' },
+            'Place Command'
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-weak' },
+            'Crate Training'
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-weak' },
+            'Waiting for Food'
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-weak' },
+            'Waiting at Thresholds'
+          )
         ),
         _react2.default.createElement(
           'div',
-          { className: 'intro-5-wrap' },
+          { className: 'intro-3-2' },
           _react2.default.createElement(
-            'div',
-            { className: 'intro-5-1' },
-            _react2.default.createElement(
-              'p',
-              { className: 'intro-bold' },
-              'Obedience Training'
-            ),
-            _react2.default.createElement('img', { src: window.images.obedience, alt: 'obedience-icon' }),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Obedience Training provides you solutions for basic obedience. Work on addressing your dog\'s state of mind, creating a happy, balanced and well behaved dog.'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'intro-weak' },
-              'Loose Leash Walking'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'intro-weak' },
-              'Sit/Stay'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'intro-weak' },
-              'Down/Stay'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'intro-weak' },
-              'Place Command'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'intro-weak' },
-              'Crate Training'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'intro-weak' },
-              'Waiting for Food'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'intro-weak' },
-              'Waiting at Thresholds (Doors, Car, Crate, etc.)'
-            )
+            'p',
+            { className: 'intro-bold intro-type' },
+            'Behavior Training'
+          ),
+          _react2.default.createElement('img', { src: window.images.behavior, alt: 'behavior-icon', className: 'behavior-icon' }),
+          _react2.default.createElement(
+            'p',
+            { className: 'type-description' },
+            'Behavior Training addresses mostly aggression issues. Find out the source of the problem behavior, what is causing it, and address the behavior of the dog and owner together.'
           ),
           _react2.default.createElement(
-            'div',
-            { className: 'intro-5-2' },
-            _react2.default.createElement(
-              'p',
-              { className: 'intro-bold' },
-              'Behavior Training'
-            ),
-            _react2.default.createElement('img', { src: window.images.behavior, alt: 'behavior-icon' }),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Behavior Training addresses mostly aggression issues. Find out the source of the problem behavior, what is causing it, and address the behavior of the dog and owner together.'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'intro-weak' },
-              'Human Aggression'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'intro-weak' },
-              'Leash Reactivity'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'intro-weak' },
-              'Dog-to-Dog Aggression'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'intro-weak' },
-              'Food and/or Resource Guarding'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'intro-weak' },
-              'Separation Anxiety'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'intro-weak' },
-              'Severe Fear Issues'
-            )
+            'p',
+            { className: 'intro-weak' },
+            'Human Aggression'
           ),
           _react2.default.createElement(
-            'div',
-            { className: 'intro-5-3' },
-            _react2.default.createElement(
-              'p',
-              { className: 'intro-bold' },
-              'Advanced Training'
-            ),
-            _react2.default.createElement('img', { src: window.images.advanced, alt: 'advanced-icon' }),
-            _react2.default.createElement(
-              'p',
-              null,
-              'Dogs are capable of learning a wide variety of skills just like people. Explore what more your dog can do with our best trainers.'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'intro-weak' },
-              'Roll-over'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'intro-weak' },
-              'High five'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'intro-weak' },
-              'Wave goodbye'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'intro-weak' },
-              'Play dead'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'intro-weak' },
-              'Catch/Fetch'
-            ),
-            _react2.default.createElement(
-              'p',
-              { className: 'intro-weak' },
-              'Dog Sports'
-            )
+            'p',
+            { className: 'intro-weak' },
+            'Leash Reactivity'
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-weak' },
+            'Dog-to-Dog Aggression'
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-weak' },
+            'Food and/or Resource Guarding'
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-weak' },
+            'Separation Anxiety'
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-weak' },
+            'Severe Fear Issues'
+          )
+        ),
+        _react2.default.createElement(
+          'div',
+          { className: 'intro-3-3' },
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-bold intro-type' },
+            'Advanced Training'
+          ),
+          _react2.default.createElement('img', { src: window.images.advanced, alt: 'advanced-icon' }),
+          _react2.default.createElement(
+            'p',
+            { className: 'type-description' },
+            'Dogs are capable of learning a wide variety of skills just like people. Explore what more your dog can do with our best trainers.'
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-weak' },
+            'Roll-over'
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-weak' },
+            'High five'
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-weak' },
+            'Wave goodbye'
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-weak' },
+            'Play dead'
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-weak' },
+            'Catch/Fetch'
+          ),
+          _react2.default.createElement(
+            'p',
+            { className: 'intro-weak' },
+            'Dog Sports'
           )
         )
       )

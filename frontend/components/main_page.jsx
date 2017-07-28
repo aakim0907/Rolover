@@ -19,29 +19,27 @@ const MainPage = () => (
       <br/>
 
       <div className='intro-1'>
-        <p>1</p>
-        <p>2</p>
-        <p>3</p>
-      </div>
-      <div className='intro-2'>
-
-      </div>
-      <div className='intro-3'>
-        <div className='intro-3-1'>
+        <div className='intro-1-1'>
+          <p className='intro-num'>1</p>
+          <i className='fa fa-search' aria-hidden='true'></i>
           <p className='intro-bold'>Search for the training type you want</p>
           <p className='intro-weak'>Browse profiles and read reviews</p>
         </div>
-        <div className='intro-3-2'>
+        <div className='intro-1-2'>
+          <p className='intro-num'>2</p>
+          <i className='fa fa-comments-o' aria-hidden='true'></i>
           <p className='intro-bold'>Contact a trainer</p>
           <p className='intro-weak'>Send request to book a trianing session</p>
         </div>
-        <div className='intro-3-3'>
+        <div className='intro-1-3'>
+          <p className='intro-num'>3</p>
+          <i className='fa fa-paw' aria-hidden='true'></i>
           <p className='intro-bold'>Attend session and learn new tricks</p>
           <p className='intro-weak'>Meet with the trainer to train your dog</p>
         </div>
       </div>
 
-      <div className='intro-4'>
+      <div className='intro-2'>
         <div className='intro-comment-card'>
           <div></div>
           <h3>Now we can go horsebackriding with our dog. Thank you Rolover!!</h3>
@@ -49,43 +47,42 @@ const MainPage = () => (
         </div>
       </div>
 
-      <div className='intro-5'>
-        <h3>Services at Rolover</h3>
-        <div className='intro-5-wrap'>
-          <div className='intro-5-1'>
-            <p className='intro-bold'>Obedience Training</p>
-            <img src={window.images.obedience} alt='obedience-icon'/>
-            <p>Obedience Training provides you solutions for basic obedience. Work on addressing your dog's state of mind, creating a happy, balanced and well behaved dog.</p>
-            <p className='intro-weak'>Loose Leash Walking</p>
-            <p className='intro-weak'>Sit/Stay</p>
-            <p className='intro-weak'>Down/Stay</p>
-            <p className='intro-weak'>Place Command</p>
-            <p className='intro-weak'>Crate Training</p>
-            <p className='intro-weak'>Waiting for Food</p>
-            <p className='intro-weak'>Waiting at Thresholds (Doors, Car, Crate, etc.)</p>
-          </div>
-          <div className='intro-5-2'>
-            <p className='intro-bold'>Behavior Training</p>
-            <img src={window.images.behavior} alt='behavior-icon'/>
-            <p>Behavior Training addresses mostly aggression issues. Find out the source of the problem behavior, what is causing it, and address the behavior of the dog and owner together.</p>
-            <p className='intro-weak'>Human Aggression</p>
-            <p className='intro-weak'>Leash Reactivity</p>
-            <p className='intro-weak'>Dog-to-Dog Aggression</p>
-            <p className='intro-weak'>Food and/or Resource Guarding</p>
-            <p className='intro-weak'>Separation Anxiety</p>
-            <p className='intro-weak'>Severe Fear Issues</p>
-          </div>
-          <div className='intro-5-3'>
-            <p className='intro-bold'>Advanced Training</p>
-            <img src={window.images.advanced} alt='advanced-icon'/>
-            <p>Dogs are capable of learning a wide variety of skills just like people. Explore what more your dog can do with our best trainers.</p>
-            <p className='intro-weak'>Roll-over</p>
-            <p className='intro-weak'>High five</p>
-            <p className='intro-weak'>Wave goodbye</p>
-            <p className='intro-weak'>Play dead</p>
-            <p className='intro-weak'>Catch/Fetch</p>
-            <p className='intro-weak'>Dog Sports</p>
-          </div>
+      <h3>Services at Rolover</h3>
+
+      <div className='intro-3'>
+        <div className='intro-3-1'>
+          <p className='intro-bold intro-type'>Obedience Training</p>
+          <img src={window.images.obedience} alt='obedience-icon'/>
+          <p className='type-description'>Obedience Training provides you solutions for basic obedience. Work on addressing your dog's state of mind, creating a happy, balanced and well behaved dog.</p>
+          <p className='intro-weak'>Loose Leash Walking</p>
+          <p className='intro-weak'>Sit/Stay</p>
+          <p className='intro-weak'>Down/Stay</p>
+          <p className='intro-weak'>Place Command</p>
+          <p className='intro-weak'>Crate Training</p>
+          <p className='intro-weak'>Waiting for Food</p>
+          <p className='intro-weak'>Waiting at Thresholds</p>
+        </div>
+        <div className='intro-3-2'>
+          <p className='intro-bold intro-type'>Behavior Training</p>
+          <img src={window.images.behavior} alt='behavior-icon' className='behavior-icon'/>
+          <p className='type-description'>Behavior Training addresses mostly aggression issues. Find out the source of the problem behavior, what is causing it, and address the behavior of the dog and owner together.</p>
+          <p className='intro-weak'>Human Aggression</p>
+          <p className='intro-weak'>Leash Reactivity</p>
+          <p className='intro-weak'>Dog-to-Dog Aggression</p>
+          <p className='intro-weak'>Food and/or Resource Guarding</p>
+          <p className='intro-weak'>Separation Anxiety</p>
+          <p className='intro-weak'>Severe Fear Issues</p>
+        </div>
+        <div className='intro-3-3'>
+          <p className='intro-bold intro-type'>Advanced Training</p>
+          <img src={window.images.advanced} alt='advanced-icon'/>
+          <p className='type-description'>Dogs are capable of learning a wide variety of skills just like people. Explore what more your dog can do with our best trainers.</p>
+          <p className='intro-weak'>Roll-over</p>
+          <p className='intro-weak'>High five</p>
+          <p className='intro-weak'>Wave goodbye</p>
+          <p className='intro-weak'>Play dead</p>
+          <p className='intro-weak'>Catch/Fetch</p>
+          <p className='intro-weak'>Dog Sports</p>
         </div>
       </div>
     </div>
