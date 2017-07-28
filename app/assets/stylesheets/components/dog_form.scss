@@ -1,0 +1,31 @@
+.df-container {
+  display: flex;
+
+  form {
+    display: flex;
+    flex-direction: column;
+    padding: 20px;
+    background: $light-green;
+  }
+}
+
+.df-1, .df-2, .df-3, .df-4, .df-5 {
+  display: flex;
+  width: 100%;
+}
+
+.df-3, .df-4 {
+  justify-content: space-between;
+}
+
+.df-3-1, .df-3-2, .df-4-1, .df-4-2 {
+  width: 40%;
+
+  input[type='text'] {
+    width: 100px;
+  }
+}
+
+.df-3-2 {
+  margin-top: 3px;
+}

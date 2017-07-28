@@ -21,7 +21,7 @@ class ReviewForm extends React.Component {
     this.handleSubmit = this.handleSubmit.bind(this);
   }
 
-    update(field) {
+  update(field) {
     return e => this.setState({
       [field]: e.currentTarget.value
     });
