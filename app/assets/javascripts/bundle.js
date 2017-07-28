@@ -51002,6 +51002,10 @@ var _reactRedux = __webpack_require__(14);
 
 var _booking_actions = __webpack_require__(110);
 
+var _dog_actions = __webpack_require__(328);
+
+var _selectors = __webpack_require__(126);
+
 var _booking_form = __webpack_require__(319);
 
 var _booking_form2 = _interopRequireDefault(_booking_form);
@@ -51013,6 +51017,7 @@ var mapStateToProps = function mapStateToProps(state, _ref) {
   return {
     currentUserId: state.session.currentUser.id,
     currentTrainerId: parseInt(match.params.id),
+    dogs: (0, _selectors.selectAllDogs)(state.dogs),
     errors: state.bookings.errors
   };
 };
@@ -51024,6 +51029,9 @@ var mapDispatchToProps = function mapDispatchToProps(dispatch) {
     },
     clearBookingErrors: function clearBookingErrors() {
       return dispatch((0, _booking_actions.clearBookingErrors)());
+    },
+    fetchDogs: function fetchDogs(id) {
+      return dispatch((0, _dog_actions.fetchDogs)(id));
     }
   };
 };
@@ -51063,6 +51071,11 @@ var BookingForm = function (_React$Component) {
   _inherits(BookingForm, _React$Component);
 
   _createClass(BookingForm, [{
+    key: 'componentDidMount',
+    value: function componentDidMount() {
+      this.props.fetchDogs(this.props.currentUserId);
+    }
+  }, {
     key: 'componentWillUnmount',
     value: function componentWillUnmount() {
       this.props.clearBookingErrors();
@@ -51097,6 +51110,11 @@ var BookingForm = function (_React$Component) {
       };
     }
   }, {
+    key: 'toggleTraining',
+    value: function toggleTraining(type) {
+      this.setState(_defineProperty({}, 'training_type', type));
+    }
+  }, {
     key: 'handleSubmit',
     value: function handleSubmit(e) {
       var _this3 = this;
@@ -51110,102 +51128,106 @@ var BookingForm = function (_React$Component) {
       });
     }
   }, {
-    key: 'toggleTraining',
-    value: function toggleTraining(type) {
-      this.setState(_defineProperty({}, 'training_type', type));
-    }
-  }, {
     key: 'renderDogForm',
     value: function renderDogForm() {
-      // if (this.props.currentUser.dogs.length !== 0) {
-      return _react2.default.createElement(
-        'div',
-        { className: 'booking-form-dog' },
-        _react2.default.createElement(
+      var dogs = this.props.dogs;
+
+      if (dogs.length === 0) {
+        return _react2.default.createElement(
           'div',
-          { className: 'dog-form-1' },
+          { className: 'booking-form-dog' },
           _react2.default.createElement(
             'div',
-            { className: 'df-1-1' },
+            { className: 'dog-form-1' },
             _react2.default.createElement(
-              'label',
-              null,
-              'Name',
-              _react2.default.createElement('br', null),
-              _react2.default.createElement('input', { type: 'text', className: 'booking-input', placeholder: '  e.g.) Rover' })
+              'div',
+              { className: 'df-1-1' },
+              _react2.default.createElement(
+                'label',
+                null,
+                'Name',
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('input', { type: 'text', className: 'booking-input', placeholder: '  e.g.) Rover' })
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'df-1-2' },
+              _react2.default.createElement(
+                'label',
+                null,
+                'Weight (lbs.)',
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('input', { type: 'text', className: 'booking-input', placeholder: '  e.g.) 6' })
+              )
             )
           ),
           _react2.default.createElement(
             'div',
-            { className: 'df-1-2' },
+            { className: 'dog-form-2' },
             _react2.default.createElement(
               'label',
               null,
-              'Weight (lbs.)',
+              'Breeds',
               _react2.default.createElement('br', null),
-              _react2.default.createElement('input', { type: 'text', className: 'booking-input', placeholder: '  e.g.) 6' })
-            )
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'dog-form-2' },
-          _react2.default.createElement(
-            'label',
-            null,
-            'Breeds',
-            _react2.default.createElement('br', null),
-            _react2.default.createElement('input', { type: 'text', className: 'booking-input', placeholder: '  e.g.) Maltize' })
-          )
-        ),
-        _react2.default.createElement(
-          'div',
-          { className: 'dog-form-3' },
-          _react2.default.createElement(
-            'div',
-            { className: 'df-3-1' },
-            _react2.default.createElement(
-              'label',
-              null,
-              'Age (years)',
-              _react2.default.createElement('br', null),
-              _react2.default.createElement('input', { type: 'text', className: 'booking-input', placeholder: '  2' })
+              _react2.default.createElement('input', { type: 'text', className: 'booking-input', placeholder: '  e.g.) Maltize' })
             )
           ),
           _react2.default.createElement(
             'div',
-            { className: 'df-3-2' },
+            { className: 'dog-form-3' },
             _react2.default.createElement(
-              'label',
-              null,
-              'Age (months)',
-              _react2.default.createElement('br', null),
-              _react2.default.createElement('input', { type: 'text', className: 'booking-input', placeholder: '  5' })
-            )
-          ),
-          _react2.default.createElement(
-            'div',
-            { className: 'df-3-3' },
+              'div',
+              { className: 'df-3-1' },
+              _react2.default.createElement(
+                'label',
+                null,
+                'Age (years)',
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('input', { type: 'text', className: 'booking-input', placeholder: '  2' })
+              )
+            ),
             _react2.default.createElement(
-              'label',
-              null,
-              'Sex',
-              _react2.default.createElement('br', null),
-              _react2.default.createElement('input', { type: 'radio', value: 'Male' }),
-              'Male',
-              _react2.default.createElement('input', { type: 'radio', value: 'Female' }),
-              'Female'
+              'div',
+              { className: 'df-3-2' },
+              _react2.default.createElement(
+                'label',
+                null,
+                'Age (months)',
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('input', { type: 'text', className: 'booking-input', placeholder: '  5' })
+              )
+            ),
+            _react2.default.createElement(
+              'div',
+              { className: 'df-3-3' },
+              _react2.default.createElement(
+                'label',
+                null,
+                'Sex',
+                _react2.default.createElement('br', null),
+                _react2.default.createElement('input', { type: 'radio', value: 'Male' }),
+                'Male',
+                _react2.default.createElement('input', { type: 'radio', value: 'Female' }),
+                'Female'
+              )
             )
           )
-        )
-      );
-      // } else {
-      //   return (
-      //     <div className='booking-form-dog'>
-      //
-      //     </div>
-      //   );
-      // }
+        );
+      } else {
+        return _react2.default.createElement(
+          'div',
+          { className: 'booking-form-dog' },
+          dogs.map(function (dog) {
+            return _react2.default.createElement(
+              'div',
+              { key: dog.id, className: 'existing-dog' },
+              _react2.default.createElement('input', { type: 'radio', value: dog.name }),
+              dog.name
+            );
+          })
+        );
+      }
     }
   }, {
     key: 'handleErrors',

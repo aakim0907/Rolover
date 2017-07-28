@@ -2,6 +2,10 @@ import React from 'react';
 import { Link, withRouter } from 'react-router-dom';
 
 class BookingForm extends React.Component {
+  componentDidMount() {
+    this.props.fetchDogs(this.props.currentUserId);
+  }
+
   componentWillUnmount() {
     this.props.clearBookingErrors();
   }
@@ -24,6 +28,12 @@ class BookingForm extends React.Component {
     });
   }
 
+  toggleTraining(type) {
+    this.setState({
+      ['training_type']: type
+    });
+  }
+
   handleSubmit(e) {
     e.preventDefault();
     const booking = this.state;
@@ -36,14 +46,9 @@ class BookingForm extends React.Component {
     );
   }
 
-  toggleTraining(type) {
-    this.setState({
-      ['training_type']: type
-    });
-  }
-
   renderDogForm() {
-    // if (this.props.currentUser.dogs.length !== 0) {
+    const { dogs } = this.props;
+    if (dogs.length === 0) {
       return (
         <div className='booking-form-dog'>
           <div className='dog-form-1'>
@@ -91,13 +96,19 @@ class BookingForm extends React.Component {
           </div>
         </div>
       );
-    // } else {
-    //   return (
-    //     <div className='booking-form-dog'>
-    //
-    //     </div>
-    //   );
-    // }
+    } else {
+      return (
+        <div className='booking-form-dog'>
+          {dogs.map(dog => {
+            return (
+              <div key={dog.id} className='existing-dog'>
+                <input type='radio' value={dog.name}/>{dog.name}
+              </div>
+            );
+          })}
+        </div>
+      );
+    }
   }
 
   handleErrors(field) {
