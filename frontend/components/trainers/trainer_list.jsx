@@ -34,9 +34,9 @@ class TrainerList extends React.Component {
           <SearchContainer where='trainerlist' />
           <div className='trainer-container'>
             <div className='trainer-list'>
-              { trainers.map(trainer => (
-                <Link key={trainer.id} to={`/trainers/${trainer.id}`}>
-                  <TrainerListItem trainer={trainer} />
+              { trainers.map((trainer, idx) => (
+                <Link key={idx} to={`/trainers/${trainer.id}`}>
+                  <TrainerListItem key={idx} trainer={trainer} />
                 </Link>
               ))}
             </div>

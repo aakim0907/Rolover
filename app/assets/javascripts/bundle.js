@@ -47688,12 +47688,12 @@ var MainPage = function MainPage() {
           _react2.default.createElement(
             'p',
             { className: 'intro-bold' },
-            'Search for the training type you want'
+            'Search with training types'
           ),
           _react2.default.createElement(
             'p',
             { className: 'intro-weak' },
-            'Browse profiles and read reviews'
+            'Browse trainer profiles and read reviews'
           )
         ),
         _react2.default.createElement(
@@ -47713,7 +47713,7 @@ var MainPage = function MainPage() {
           _react2.default.createElement(
             'p',
             { className: 'intro-weak' },
-            'Send request to book a trianing session'
+            'Send request to book a training session'
           )
         ),
         _react2.default.createElement(
@@ -47728,7 +47728,7 @@ var MainPage = function MainPage() {
           _react2.default.createElement(
             'p',
             { className: 'intro-bold' },
-            'Attend session and learn new tricks'
+            'Attend session and learn new tricks!'
           ),
           _react2.default.createElement(
             'p',
@@ -48320,11 +48320,11 @@ var TrainerList = function (_React$Component) {
             _react2.default.createElement(
               'div',
               { className: 'trainer-list' },
-              trainers.map(function (trainer) {
+              trainers.map(function (trainer, idx) {
                 return _react2.default.createElement(
                   _reactRouterDom.Link,
-                  { key: trainer.id, to: '/trainers/' + trainer.id },
-                  _react2.default.createElement(_trainer_list_item2.default, { trainer: trainer })
+                  { key: idx, to: '/trainers/' + trainer.id },
+                  _react2.default.createElement(_trainer_list_item2.default, { key: idx, trainer: trainer })
                 );
               })
             ),

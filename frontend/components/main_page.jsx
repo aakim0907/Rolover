@@ -22,19 +22,19 @@ const MainPage = () => (
         <div className='intro-1-1'>
           <p className='intro-num'>1</p>
           <i className='fa-intro fa fa-search' aria-hidden='true'></i>
-          <p className='intro-bold'>Search for the training type you want</p>
-          <p className='intro-weak'>Browse profiles and read reviews</p>
+          <p className='intro-bold'>Search with training types</p>
+          <p className='intro-weak'>Browse trainer profiles and read reviews</p>
         </div>
         <div className='intro-1-2'>
           <p className='intro-num'>2</p>
           <i className='fa-intro fa fa-comments-o' aria-hidden='true'></i>
           <p className='intro-bold'>Contact a trainer</p>
-          <p className='intro-weak'>Send request to book a trianing session</p>
+          <p className='intro-weak'>Send request to book a training session</p>
         </div>
         <div className='intro-1-3'>
           <p className='intro-num'>3</p>
           <i className='fa-intro fa fa-paw' aria-hidden='true'></i>
-          <p className='intro-bold'>Attend session and learn new tricks</p>
+          <p className='intro-bold'>Attend session and learn new tricks!</p>
           <p className='intro-weak'>Meet with the trainer to train your dog</p>
         </div>
       </div>
