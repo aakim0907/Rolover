@@ -52287,7 +52287,7 @@ var Footer = function Footer(props) {
       _react2.default.createElement(
         'small',
         null,
-        'Project by: Young Eun Kim'
+        'Inspired by Rover, made by Young Eun Kim'
       ),
       _react2.default.createElement('br', null),
       _react2.default.createElement(
