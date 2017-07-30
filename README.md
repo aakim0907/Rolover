@@ -23,8 +23,6 @@ Rolover is a personal project by Young Eun Kim.
 * Click through search results to reach trainer detail page
 * Additional search bar on trainer index page to assist users with further search
 
-![Trainer search][trainer search]
-
 ### Send a booking request to a Trainer
 * Send request to a trainer for a training session
 * Different booking form for users with/without saved dog information
@@ -37,13 +35,9 @@ Rolover is a personal project by Young Eun Kim.
 * Review count and average rating available
 * Only logged in users can leave a review
 
-![Review][review]
-
 ### User profile page
 * Keep track of booking records
 * Can add dog information
-
-![Dog][dog]
 
 ## Project Design
 
@@ -210,10 +204,6 @@ Trainers can make an account to upload their information and either approve/deny
 [splash]: ./docs/images/splash.png "Rolover splash"
 [index page]: ./docs/images/home_index.png
 [auth modal]: ./docs/images/auth_modal.gif
-[trainer search]: ./docs/images/trainer_search.gif
 [booking]: ./docs/images/booking.gif
-[review]: ./docs/images/review.gif
-[review]: ./docs/images/dog.gif
-
 [proposal]: ./docs/README.md
 [schema]: ./docs/schema.md
