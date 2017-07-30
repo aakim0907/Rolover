@@ -176,24 +176,26 @@ handleSubmit(e) {
 ```
 
 ## Technology
-
 Rolover is a single-page application built on the following technologies:
 
 ### Backend
 - Ruby on Rails
 - PostgreSQL database
-- Hosting on Heroku platform
 - Cloudinary for image upload and storage
 - BCrypt for password-salting and hashing for a secure authentication system
 
 ### Frontend
-- React / Redux
+- React.js with Redux
 - React DOM
 - React Router
-- jQuery to make AJAX calls to the Rails server
+- jQuery
 - React Modal
 - Nuka Carousel
+- GoogleMap API
 - Webpack as the bundler for all frontend components. The bundled file is located in `/app/assets/javascripts` and is included in `application.js`.
+
+### Hosting
+- Heroku platform
 
 ## Future Implementations
 
@@ -203,7 +205,7 @@ Users can also search with zipcode.
 
 #### Develop trainer accounts
 
-Trainers can make an account to upload their information and either approve/deny booking requests. 
+Trainers can make an account to upload their information and either approve/deny booking requests.
 
 [splash]: ./docs/images/splash.png "Rolover splash"
 [index page]: ./docs/images/home_index.png
