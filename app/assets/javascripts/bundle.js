@@ -46834,7 +46834,7 @@ var SessionForm = function (_React$Component) {
             _react2.default.createElement('input', { type: 'text',
               value: this.state.email,
               onChange: this.update('email'),
-              placeholder: '        Enter your email address',
+              placeholder: ' Enter your email address',
               className: 'session-input'
             }),
             _react2.default.createElement('i', { className: 'fa fa-envelope-o fa-lg side-icon', 'aria-hidden': 'true' }),
@@ -46842,7 +46842,7 @@ var SessionForm = function (_React$Component) {
             _react2.default.createElement('input', { type: 'password',
               value: this.state.password,
               onChange: this.update('password'),
-              placeholder: '        Enter your password',
+              placeholder: ' Enter your password',
               className: 'session-input'
             }),
             _react2.default.createElement('i', { className: 'fa fa-lock fa-lg side-icon', 'aria-hidden': 'true' }),
