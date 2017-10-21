@@ -4,8 +4,6 @@
 
 [Rolover](http://rolover.dog) is a full-stack web application, inspired by Rover. Rolover enables users to search for dog trainers according to different training types, and send a request to book a training session with a trainer.
 
-Rolover is a personal project by Young Eun Kim.
-
 ![Rolover splash page][splash]
 ![Rolover trainer index page][index page]
 
