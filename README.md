@@ -1,6 +1,6 @@
 # Rolover
 
-[http://rolover.dog](https://rolover.dog)
+[http://rolover.herokuapp.com](https://rolover.herokuapp.com)
 
 [Rolover](http://rolover.dog) is a full-stack web application, inspired by Rover. Rolover enables users to search for dog trainers according to different training types, and send a request to book a training session with a trainer.
 
